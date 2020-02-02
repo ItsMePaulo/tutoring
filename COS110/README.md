@@ -12,3 +12,6 @@ COS 110 starts at Chapter 13 an *Introduction to Classes* and continues till
 chapter 18 *Stacks and Queues*. I cover examples throughout the textbok as well 
 as my own to try and guide learners to a better understanding of concepts as 
 well as the pracical understanding of the language. 
+<br>
+***Lessons convered***
+1.  [Introduction to Classes](https://gitlab.com/Paul_Wood_96/tutoring/blob/master/COS110/introduction_to_classes.md) 
