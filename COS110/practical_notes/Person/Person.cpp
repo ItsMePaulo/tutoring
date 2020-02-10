@@ -2,7 +2,7 @@
 // Created by paul on 2/10/20.
 //
 
-#include "Book.h"
+#include "Person.h"
 #include <iostream>
 
 using namespace std;

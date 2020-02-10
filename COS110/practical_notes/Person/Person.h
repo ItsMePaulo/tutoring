@@ -2,8 +2,8 @@
 // Created by paul on 2/10/20.
 //
 
-#ifndef PRACTICAL_NOTES_BOOK_H
-#define PRACTICAL_NOTES_BOOK_H
+#ifndef PRACTICAL_NOTES_PERSON_H
+#define PRACTICAL_NOTES_PERSON_H
 
 #include <iostream>
 using namespace std;
@@ -25,4 +25,4 @@ public:
 };
 
 
-#endif //PRACTICAL_NOTES_BOOK_H
+#endif //PRACTICAL_NOTES_PERSON_H
