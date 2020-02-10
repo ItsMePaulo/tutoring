@@ -14,7 +14,7 @@ as my own to try and guide learners to a better understanding of concepts as
 well as the pracical understanding of the language. 
 <br>
 ***Lessons convered***
-1.  [Introduction to Classes](https://gitlab.com/Paul_Wood_96/tutoring/blob/master/COS110/introduction_to_classes.md) 
+1.  [Introduction to Classes](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS110/notes/introduction_to_classes.md) 
 
 <div align="center"><h1> Code Base</h1></div>
 
