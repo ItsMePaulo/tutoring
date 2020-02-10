@@ -1,7 +1,7 @@
 <h1> Tutorials for COS Modules
 
 A git repo containing notes on computer science modules I am tutoring. The notes 
-cover exptensive examples and implementations of key features taught throughout 
+cover extensive examples and implementations of key features taught throughout 
 the CS degree at the University of Pretoria. 
 
 The modules covered in this repo include:
