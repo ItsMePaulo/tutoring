@@ -111,6 +111,15 @@ Private and implement Public getters and setters.
 Getters and setters are [member functions](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS110/notes/introduction_to_classes.md#member-functions) 
 in classes that pretty much do what they say. One gets the attribute the other sets it. 
 I will let you decide which is which. 
+<h3>Why though?</h3>
+Why have private attributes, especially because if they were public there would 
+be no need to have public getters and setters. The answer does not make sense 
+until you have learnt how easy it is to break code. Limiting the access of 
+setting attributes by means of public setters forces the change to take place 
+<b>ONLY</b> by the <b>OBJECT</b> holding the value and not by some other method somewhere else. 
+This restricts the user forcing you to use the code in a certain way that is less 
+error prone, ultimately this leads to better coding practices. But it won't 
+truly make sense without practice.
 
 
 
