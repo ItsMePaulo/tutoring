@@ -106,9 +106,9 @@ accessible to all other classes/files.
 <br>
 
 <h2> Best Practices </h2>
-Always make your [attributes](https://gitlab.com/Paul_Wood_96/tutoring/-/edit/master/COS110/notes/introduction_to_classes.md#attributes-or-member-variables) 
+Always make your [attributes](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS110/notes/introduction_to_classes.md#attributes-or-member-variables) 
 Private and implement Public getters and setters. 
-Getters and setters are [member functions](https://gitlab.com/Paul_Wood_96/tutoring/-/edit/master/COS110/notes/introduction_to_classes.md#attributes-or-member-variables) 
+Getters and setters are [member functions](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS110/notes/introduction_to_classes.md#attributes-or-member-variables) 
 in classes that pretty much do what they say. One gets the attribute the other sets it. 
 I will let you decide which is which. 
 
