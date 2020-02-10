@@ -1,4 +1,4 @@
-<h1> About 110 </h1>
+<div align="center"><h1> About 110 </h1></div>
 
 COS 110 is the continuation to the module 132, an introduction to c++. The module 
 follows the text book:
@@ -16,8 +16,9 @@ well as the pracical understanding of the language.
 ***Lessons convered***
 1.  [Introduction to Classes](https://gitlab.com/Paul_Wood_96/tutoring/blob/master/COS110/introduction_to_classes.md) 
 
-<h1> Code Base</h1>
+<div align="center"><h1> Code Base</h1></div>
 
 This Repo also contains code examples for the that appear throughout the notes. 
 
 <h3> Chapter 13 </h3> 
+[Basic Example of Person Class]()
