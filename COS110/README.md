@@ -21,4 +21,4 @@ well as the pracical understanding of the language.
 This Repo also contains code examples for the that appear throughout the notes. 
 
 <h3> Chapter 13 </h3> 
-[Basic Example of Person Class]()
+[Basic Example of Person Class](https://gitlab.com/Paul_Wood_96/tutoring/-/tree/master/COS110/practical_notes/Person)
