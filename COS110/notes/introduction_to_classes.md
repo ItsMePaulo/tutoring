@@ -121,7 +121,22 @@ This restricts the user forcing you to use the code in a certain way that is les
 error prone, ultimately this leads to better coding practices. But it won't 
 truly make sense without practice.
 
+<h2> Class Terminology </h2>
+Up till this point I have mentioned two words interchangeably; <i>Object</i> and 
+<i>Class.</i> They seem similar but there is a big difference between these two. 
+A class is an objects definition and an object is an instantiation of a class. 
+WHAT THE HELL DOES THAT MEAN!!!  <br>
+Think of a recipe ie. for a cake. The recipe tells us what the cake is made of 
+and what steps are needed to make the cake. Very similarly a class tells us what 
+makes up an “object”. A class then is like a recipe it defines the object it will 
+create. A cake then is like an object, it is an instance of 
+the cake recipe. <br>
+<b>Accesors</b> and <b>Mutators</b>, fancy words for getters and setters. A member 
+function that gets a value from a class’s [member variables](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS110/notes/introduction_to_classes.md#attributes-or-member-variables) 
+<b>BUT</b> does not change it is known as an Accessor. A member function that 
+stores a value/changes the value of a member variable is known as a Mutator. 
 
+Using const with getters. Forcefully tells the compiler that calling of the object is constant. Trying to change the calling objects data will throw a compiler error. 
 
 
 
