@@ -1,4 +1,4 @@
-<h1><div align="center">Classes in C++</div></h1>
+<div align="center"><h1>Classes in C++</h1></div>
 
 <h2>Procedural vs Object Oriented</h2>
 Procedural programming is centered around creating functions and variables to store, 
