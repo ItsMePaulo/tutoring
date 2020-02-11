@@ -168,9 +168,9 @@ implement all of the methods defined in the earlier header file.
     #endif
 ```
 
-Notice the ```#ifndef```, this field is known as the <i>include guard</i>.
+Notice the <b>#ifndef</b>, this field is known as the <i>include guard</i>.
 It prevents the file from being included more than once. Think of it as a 
 a simple condition for the preprocessor. If it has <b>NOT</b> been defined it 
 will continue to the next line and define the class else if it has been defined 
-it will jump ahead to the ```#endif``` 
+it will jump ahead to the <b>#endif</b> 
 
