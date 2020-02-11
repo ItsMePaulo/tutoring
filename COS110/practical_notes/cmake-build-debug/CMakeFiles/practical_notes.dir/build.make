@@ -57,42 +57,42 @@ include CMakeFiles/practical_notes.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/practical_notes.dir/flags.make
 
-CMakeFiles/practical_notes.dir/main.cpp.o: CMakeFiles/practical_notes.dir/flags.make
-CMakeFiles/practical_notes.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/paul/Documents/tutoring/tutoring/COS110/practical_notes/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/practical_notes.dir/main.cpp.o"
-	/usr/lib64/ccache/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/practical_notes.dir/main.cpp.o -c /home/paul/Documents/tutoring/tutoring/COS110/practical_notes/main.cpp
+CMakeFiles/practical_notes.dir/Person/main.cpp.o: CMakeFiles/practical_notes.dir/flags.make
+CMakeFiles/practical_notes.dir/Person/main.cpp.o: ../Person/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/paul/Documents/tutoring/tutoring/COS110/practical_notes/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/practical_notes.dir/Person/main.cpp.o"
+	/usr/lib64/ccache/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/practical_notes.dir/Person/main.cpp.o -c /home/paul/Documents/tutoring/tutoring/COS110/practical_notes/Person/main.cpp
 
-CMakeFiles/practical_notes.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/practical_notes.dir/main.cpp.i"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/paul/Documents/tutoring/tutoring/COS110/practical_notes/main.cpp > CMakeFiles/practical_notes.dir/main.cpp.i
+CMakeFiles/practical_notes.dir/Person/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/practical_notes.dir/Person/main.cpp.i"
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/paul/Documents/tutoring/tutoring/COS110/practical_notes/Person/main.cpp > CMakeFiles/practical_notes.dir/Person/main.cpp.i
 
-CMakeFiles/practical_notes.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/practical_notes.dir/main.cpp.s"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/paul/Documents/tutoring/tutoring/COS110/practical_notes/main.cpp -o CMakeFiles/practical_notes.dir/main.cpp.s
+CMakeFiles/practical_notes.dir/Person/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/practical_notes.dir/Person/main.cpp.s"
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/paul/Documents/tutoring/tutoring/COS110/practical_notes/Person/main.cpp -o CMakeFiles/practical_notes.dir/Person/main.cpp.s
 
-CMakeFiles/practical_notes.dir/Book.cpp.o: CMakeFiles/practical_notes.dir/flags.make
-CMakeFiles/practical_notes.dir/Book.cpp.o: ../Book.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/paul/Documents/tutoring/tutoring/COS110/practical_notes/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/practical_notes.dir/Book.cpp.o"
-	/usr/lib64/ccache/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/practical_notes.dir/Book.cpp.o -c /home/paul/Documents/tutoring/tutoring/COS110/practical_notes/Book.cpp
+CMakeFiles/practical_notes.dir/Person/Person.cpp.o: CMakeFiles/practical_notes.dir/flags.make
+CMakeFiles/practical_notes.dir/Person/Person.cpp.o: ../Person/Person.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/paul/Documents/tutoring/tutoring/COS110/practical_notes/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/practical_notes.dir/Person/Person.cpp.o"
+	/usr/lib64/ccache/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/practical_notes.dir/Person/Person.cpp.o -c /home/paul/Documents/tutoring/tutoring/COS110/practical_notes/Person/Person.cpp
 
-CMakeFiles/practical_notes.dir/Book.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/practical_notes.dir/Book.cpp.i"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/paul/Documents/tutoring/tutoring/COS110/practical_notes/Book.cpp > CMakeFiles/practical_notes.dir/Book.cpp.i
+CMakeFiles/practical_notes.dir/Person/Person.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/practical_notes.dir/Person/Person.cpp.i"
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/paul/Documents/tutoring/tutoring/COS110/practical_notes/Person/Person.cpp > CMakeFiles/practical_notes.dir/Person/Person.cpp.i
 
-CMakeFiles/practical_notes.dir/Book.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/practical_notes.dir/Book.cpp.s"
-	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/paul/Documents/tutoring/tutoring/COS110/practical_notes/Book.cpp -o CMakeFiles/practical_notes.dir/Book.cpp.s
+CMakeFiles/practical_notes.dir/Person/Person.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/practical_notes.dir/Person/Person.cpp.s"
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/paul/Documents/tutoring/tutoring/COS110/practical_notes/Person/Person.cpp -o CMakeFiles/practical_notes.dir/Person/Person.cpp.s
 
 # Object files for target practical_notes
 practical_notes_OBJECTS = \
-"CMakeFiles/practical_notes.dir/main.cpp.o" \
-"CMakeFiles/practical_notes.dir/Book.cpp.o"
+"CMakeFiles/practical_notes.dir/Person/main.cpp.o" \
+"CMakeFiles/practical_notes.dir/Person/Person.cpp.o"
 
 # External object files for target practical_notes
 practical_notes_EXTERNAL_OBJECTS =
 
-practical_notes: CMakeFiles/practical_notes.dir/main.cpp.o
-practical_notes: CMakeFiles/practical_notes.dir/Book.cpp.o
+practical_notes: CMakeFiles/practical_notes.dir/Person/main.cpp.o
+practical_notes: CMakeFiles/practical_notes.dir/Person/Person.cpp.o
 practical_notes: CMakeFiles/practical_notes.dir/build.make
 practical_notes: CMakeFiles/practical_notes.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/paul/Documents/tutoring/tutoring/COS110/practical_notes/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable practical_notes"

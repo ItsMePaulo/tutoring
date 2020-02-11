@@ -80,13 +80,13 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/paul/Documents/tutoring/tutoring/COS110/practical_notes/Book.cpp">
+		<Unit filename="/home/paul/Documents/tutoring/tutoring/COS110/practical_notes/Person/Person.cpp">
 			<Option target="practical_notes"/>
 		</Unit>
-		<Unit filename="/home/paul/Documents/tutoring/tutoring/COS110/practical_notes/Book.h">
+		<Unit filename="/home/paul/Documents/tutoring/tutoring/COS110/practical_notes/Person/Person.h">
 			<Option target="practical_notes"/>
 		</Unit>
-		<Unit filename="/home/paul/Documents/tutoring/tutoring/COS110/practical_notes/main.cpp">
+		<Unit filename="/home/paul/Documents/tutoring/tutoring/COS110/practical_notes/Person/main.cpp">
 			<Option target="practical_notes"/>
 		</Unit>
 		<Unit filename="/home/paul/Documents/tutoring/tutoring/COS110/practical_notes/CMakeLists.txt">

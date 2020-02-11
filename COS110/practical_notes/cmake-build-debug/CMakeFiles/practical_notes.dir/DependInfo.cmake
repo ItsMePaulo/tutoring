@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/paul/Documents/tutoring/tutoring/COS110/practical_notes/Book.cpp" "/home/paul/Documents/tutoring/tutoring/COS110/practical_notes/cmake-build-debug/CMakeFiles/practical_notes.dir/Book.cpp.o"
-  "/home/paul/Documents/tutoring/tutoring/COS110/practical_notes/main.cpp" "/home/paul/Documents/tutoring/tutoring/COS110/practical_notes/cmake-build-debug/CMakeFiles/practical_notes.dir/main.cpp.o"
+  "/home/paul/Documents/tutoring/tutoring/COS110/practical_notes/Person/Person.cpp" "/home/paul/Documents/tutoring/tutoring/COS110/practical_notes/cmake-build-debug/CMakeFiles/practical_notes.dir/Person/Person.cpp.o"
+  "/home/paul/Documents/tutoring/tutoring/COS110/practical_notes/Person/main.cpp" "/home/paul/Documents/tutoring/tutoring/COS110/practical_notes/cmake-build-debug/CMakeFiles/practical_notes.dir/Person/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

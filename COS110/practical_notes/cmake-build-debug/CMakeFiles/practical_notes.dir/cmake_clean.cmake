@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/practical_notes.dir/Book.cpp.o"
-  "CMakeFiles/practical_notes.dir/main.cpp.o"
+  "CMakeFiles/practical_notes.dir/Person/Person.cpp.o"
+  "CMakeFiles/practical_notes.dir/Person/main.cpp.o"
   "practical_notes"
   "practical_notes.pdb"
 )

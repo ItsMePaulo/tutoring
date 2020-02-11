@@ -1,1 +1,1 @@
-/usr/lib64/ccache/c++  -g   CMakeFiles/practical_notes.dir/main.cpp.o CMakeFiles/practical_notes.dir/Book.cpp.o  -o practical_notes 
+/usr/lib64/ccache/c++  -g   CMakeFiles/practical_notes.dir/Person/main.cpp.o CMakeFiles/practical_notes.dir/Person/Person.cpp.o  -o practical_notes 

@@ -123,59 +123,59 @@ practical_notes/fast:
 	$(MAKE) -f CMakeFiles/practical_notes.dir/build.make CMakeFiles/practical_notes.dir/build
 .PHONY : practical_notes/fast
 
-Book.o: Book.cpp.o
+Person/Person.o: Person/Person.cpp.o
 
-.PHONY : Book.o
-
-# target to build an object file
-Book.cpp.o:
-	$(MAKE) -f CMakeFiles/practical_notes.dir/build.make CMakeFiles/practical_notes.dir/Book.cpp.o
-.PHONY : Book.cpp.o
-
-Book.i: Book.cpp.i
-
-.PHONY : Book.i
-
-# target to preprocess a source file
-Book.cpp.i:
-	$(MAKE) -f CMakeFiles/practical_notes.dir/build.make CMakeFiles/practical_notes.dir/Book.cpp.i
-.PHONY : Book.cpp.i
-
-Book.s: Book.cpp.s
-
-.PHONY : Book.s
-
-# target to generate assembly for a file
-Book.cpp.s:
-	$(MAKE) -f CMakeFiles/practical_notes.dir/build.make CMakeFiles/practical_notes.dir/Book.cpp.s
-.PHONY : Book.cpp.s
-
-main.o: main.cpp.o
-
-.PHONY : main.o
+.PHONY : Person/Person.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/practical_notes.dir/build.make CMakeFiles/practical_notes.dir/main.cpp.o
-.PHONY : main.cpp.o
+Person/Person.cpp.o:
+	$(MAKE) -f CMakeFiles/practical_notes.dir/build.make CMakeFiles/practical_notes.dir/Person/Person.cpp.o
+.PHONY : Person/Person.cpp.o
 
-main.i: main.cpp.i
+Person/Person.i: Person/Person.cpp.i
 
-.PHONY : main.i
+.PHONY : Person/Person.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/practical_notes.dir/build.make CMakeFiles/practical_notes.dir/main.cpp.i
-.PHONY : main.cpp.i
+Person/Person.cpp.i:
+	$(MAKE) -f CMakeFiles/practical_notes.dir/build.make CMakeFiles/practical_notes.dir/Person/Person.cpp.i
+.PHONY : Person/Person.cpp.i
 
-main.s: main.cpp.s
+Person/Person.s: Person/Person.cpp.s
 
-.PHONY : main.s
+.PHONY : Person/Person.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/practical_notes.dir/build.make CMakeFiles/practical_notes.dir/main.cpp.s
-.PHONY : main.cpp.s
+Person/Person.cpp.s:
+	$(MAKE) -f CMakeFiles/practical_notes.dir/build.make CMakeFiles/practical_notes.dir/Person/Person.cpp.s
+.PHONY : Person/Person.cpp.s
+
+Person/main.o: Person/main.cpp.o
+
+.PHONY : Person/main.o
+
+# target to build an object file
+Person/main.cpp.o:
+	$(MAKE) -f CMakeFiles/practical_notes.dir/build.make CMakeFiles/practical_notes.dir/Person/main.cpp.o
+.PHONY : Person/main.cpp.o
+
+Person/main.i: Person/main.cpp.i
+
+.PHONY : Person/main.i
+
+# target to preprocess a source file
+Person/main.cpp.i:
+	$(MAKE) -f CMakeFiles/practical_notes.dir/build.make CMakeFiles/practical_notes.dir/Person/main.cpp.i
+.PHONY : Person/main.cpp.i
+
+Person/main.s: Person/main.cpp.s
+
+.PHONY : Person/main.s
+
+# target to generate assembly for a file
+Person/main.cpp.s:
+	$(MAKE) -f CMakeFiles/practical_notes.dir/build.make CMakeFiles/practical_notes.dir/Person/main.cpp.s
+.PHONY : Person/main.cpp.s
 
 # Help Target
 help:
@@ -186,12 +186,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... practical_notes"
 	@echo "... edit_cache"
-	@echo "... Book.o"
-	@echo "... Book.i"
-	@echo "... Book.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... Person/Person.o"
+	@echo "... Person/Person.i"
+	@echo "... Person/Person.s"
+	@echo "... Person/main.o"
+	@echo "... Person/main.i"
+	@echo "... Person/main.s"
 .PHONY : help
 
 

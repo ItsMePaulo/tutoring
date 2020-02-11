@@ -138,6 +138,12 @@ stores a value/changes the value of a member variable is known as a Mutator.
 
 Using const with getters. Forcefully tells the compiler that calling of the object is constant. Trying to change the calling objects data will throw a compiler error. 
 
-
-
-
+<h2>Creating Classes</h2>
+To create a class you will need to create two separate files. A header file which 
+is used to store the class deceleration is called a <i>class specification</i>
+file. The name of the specification file is usually the same as the name of the class.
+ie <b>Person.h</b> A header file contains all the member function headers 
+(Function headers for that class) <br>
+The Second file you will need is a separate .cpp file called the <i>class implementation</i>
+file. This file also usually has the same name as the class. In this class you will 
+implement all of the methods defined in the earlier header file. 
