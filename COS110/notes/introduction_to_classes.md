@@ -95,12 +95,14 @@ multiple programs. Using similar syntax:
 
 *   #include &lt;string&gt;  uses ‘&lt;’ & ‘&gt;’ this tells you that you are including a C++ system Header file 
 such iostream. (Basically this means the file is located in the compilers include file directory)
-*   When you are including a header file that you have written you enclose the name with double quotes ie “Person.h”
+*   When you want to include a header file for a class that you have written however, you enclose the 
+name with double quotes ie “Person.h”. This tells the compiler to look outside the scope of it's own defined classes. 
 
 <br>
 <h2>Access Specifiers</h2>
-Most languages use two key words to denote access privileges to class members 
-and attributes. <b>Private</b> and <b>Public</b>. Private fields are only accessible from 
+Most languages use two key words to denote access privileges to class [member functions](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS110/notes/introduction_to_classes.md#member-functions)
+and [attributes](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS110/notes/introduction_to_classes.md#attributes-or-member-variables). 
+<b>Private</b> and <b>Public</b>. Private fields are only accessible from 
 inside the class, no other file can use that block of code. Public classes are 
 accessible to all other classes/files.
 <br>
@@ -125,12 +127,12 @@ truly make sense without practice.
 Up till this point I have mentioned two words interchangeably; <i>Object</i> and 
 <i>Class.</i> They seem similar but there is a big difference between these two. 
 A class is an objects definition and an object is an instantiation of a class. 
-WHAT THE HELL DOES THAT MEAN!!!  <br>
+WHAT THE HELL DOES THAT MEAN!!!  <br><br>
 Think of a recipe ie. for a cake. The recipe tells us what the cake is made of 
 and what steps are needed to make the cake. Very similarly a class tells us what 
 makes up an “object”. A class then is like a recipe it defines the object it will 
 create. A cake then is like an object, it is an instance of 
-the cake recipe. <br>
+the cake recipe. <br><br>
 <b>Accesors</b> and <b>Mutators</b>, fancy words for getters and setters. A member 
 function that gets a value from a class’s [member variables](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS110/notes/introduction_to_classes.md#attributes-or-member-variables) 
 <b>BUT</b> does not change it is known as an Accessor. A member function that 
@@ -139,16 +141,18 @@ stores a value/changes the value of a member variable is known as a Mutator.
 Using const with getters. Forcefully tells the compiler that calling of the object is constant. Trying to change the calling objects data will throw a compiler error. 
 
 <h2>Creating Classes</h2>
-To create a class you will need to create two separate files. A header file which 
+
+To create a class you will need to create two separate files. A header ```.h``` file which 
 is used to store the class deceleration is called a <i>class specification</i>
 file. The name of the specification file is usually the same as the name of the class.
-ie <b>Person.h</b> A header file contains all the member function headers 
+ie <b>Person.h</b> A header file contains all the [member functions](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS110/notes/introduction_to_classes.md#member-functions) headers 
 (Function headers for that class) <br>
-The Second file you will need is a separate .cpp file called the <i>class implementation</i>
-file. This file also usually has the same name as the class. In this class you will 
+The Second file you will need is a separate ```.cpp``` file called the <i>class implementation</i>
+file. This file also usually has the same name as the class. In this file you will 
 implement all of the methods defined in the earlier header file. 
 
 <h4>Contents of a header file</h4> 
+
 ```c++
     #ifndef PERSON_H
     #define PERSON_H
@@ -168,9 +172,51 @@ implement all of the methods defined in the earlier header file.
     #endif
 ```
 
-Notice the <b>#ifndef</b>, this field is known as the <i>include guard</i>.
+Notice the ```#ifndef```, this field is known as the <i>include guard</i>.
 It prevents the file from being included more than once. Think of it as a 
 a simple condition for the preprocessor. If it has <b>NOT</b> been defined it 
 will continue to the next line and define the class else if it has been defined 
-it will jump ahead to the <b>#endif</b> 
+it will jump ahead to the ```#endif``` 
+
+<h4>Contents of an implementation file</h4>
+
+```c++
+    #include "Person.h"
+    #include <iostream>
+    
+    using namespace std;
+    
+    string Person::getName() const {
+        return name;
+    }
+    
+    void Person::setName(string newName) {
+        name = newName;
+    }
+    
+    int Person::getAge() {
+        return age;
+    }
+    
+    void Person::setAge(int ag) {
+        age = ag;
+    }
+
+```
+
+Notice the ```#include Person.h``` This tells essentially tells the compiler to include 
+all member definitions in this file at the point of the include. Remeber that 
+in c++ we need to define the header of the function before it's implementation, 
+this is why we include the header file at the top of the file. <br>
+Also notice each function definition is preceded by the name of the class ```Person::``` 
+the two colons are called the <i>scope resolution operator</i>. When it appears 
+infront of a function in a function header it identifies the function as being 
+apart of the Person class. Here is general format for member functions:
+
+```
+    ReturnType ClassName:::functionName(parameters ...)
+```
+
+
+
 
