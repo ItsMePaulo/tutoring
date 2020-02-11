@@ -204,9 +204,9 @@ it will jump ahead to the ```#endif```
 
 Notice the ```#include Person.h``` This tells essentially tells the compiler to include 
 all member definitions in this file at the point of the include. Remeber that 
-in c++ needs the header of the member class to be defined before it's implementation, 
+in c++ we need to define the header of the function before it's implementation, 
 this is why we include the header file at the top of the file. <br>
-Also each function definition is preceded by the name of the class ```Person::``` 
+Also notice each function definition is preceded by the name of the class ```Person::``` 
 the two colons are called the <i>scope resolution operator</i>. When it appears 
 infront of a function in a function header it identifies the function as being 
 apart of the Person class. Here is general format for member functions:
