@@ -1,3 +1,0 @@
-/home/paul/Documents/tutoring/tutoring/COS110/practical_notes/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/paul/Documents/tutoring/tutoring/COS110/practical_notes/cmake-build-debug/CMakeFiles/practical_notes.dir
-/home/paul/Documents/tutoring/tutoring/COS110/practical_notes/cmake-build-debug/CMakeFiles/edit_cache.dir
