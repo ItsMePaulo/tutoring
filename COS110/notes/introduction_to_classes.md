@@ -178,7 +178,7 @@ a simple condition for the preprocessor. If it has <b>NOT</b> been defined it
 will continue to the next line and define the class else if it has been defined 
 it will jump ahead to the ```#endif``` 
 
-<h4>Contents of a implementation file</h4>
+<h4>Contents of an implementation file</h4>
 
 ```c++
     #include "Person.h"
