@@ -184,7 +184,6 @@ it will jump ahead to the ```#endif```
     using namespace std;
     
     string Person::getName() const {
-        name = "Mary"; // this is not
         return name;
     }
     
