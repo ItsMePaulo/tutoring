@@ -77,8 +77,8 @@ getName on a person object it should retun the name of the person
 <br>
 <br>
 <br>
-<div align="center"><h4><b>NB!!: The main idea behind classes is to group/encapsulate operations, 
-logic and data into one central idea.<h4></div>
+<div align="center"><h4>NB!!: The main idea behind classes is to group/encapsulate operations, 
+logic and data into one central idea.</h4></div>
 <br>
 <h2> Code reusability: </h2>
 Another bonus of OOP is that it can be used across many different programs and 
@@ -147,3 +147,30 @@ ie <b>Person.h</b> A header file contains all the member function headers
 The Second file you will need is a separate .cpp file called the <i>class implementation</i>
 file. This file also usually has the same name as the class. In this class you will 
 implement all of the methods defined in the earlier header file. 
+
+<h4>Contents of a header file</h4> 
+```c++
+    #ifndef PERSON_H
+    #define PERSON_H
+    
+    //class deceleration
+    class Person {     
+        private: 
+            string name;
+            int age;
+        public:   
+            string getName() const;
+            void setName(string name);
+            
+            int getAge();
+            void setAge(int age);
+    };
+    #endif
+```
+
+Notice the ```#ifndef```, this field is known as the <i>include guard</i>.
+It prevents the file from being included more than once. Think of it as a 
+a simple condition for the preprocessor. If it has <b>NOT</b> been defined it 
+will continue to the next line and define the class else if it has been defined 
+it will jump ahead to the ```#endif``` 
+
