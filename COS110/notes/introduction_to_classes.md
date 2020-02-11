@@ -149,6 +149,7 @@ file. This file also usually has the same name as the class. In this class you w
 implement all of the methods defined in the earlier header file. 
 
 <h4>Contents of a header file</h4> 
+
 ```c++
     #ifndef PERSON_H
     #define PERSON_H
