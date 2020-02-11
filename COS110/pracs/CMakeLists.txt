@@ -3,4 +3,4 @@ project(pracs)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(pracs main.cpp)
+add_executable(pracs Person/main.cpp)
