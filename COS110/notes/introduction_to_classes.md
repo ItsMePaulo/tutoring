@@ -169,9 +169,52 @@ implement all of the methods defined in the earlier header file.
     #endif
 ```
 
-Notice the <b>#ifndef</b>, this field is known as the <i>include guard</i>.
+Notice the ```#ifndef```, this field is known as the <i>include guard</i>.
 It prevents the file from being included more than once. Think of it as a 
 a simple condition for the preprocessor. If it has <b>NOT</b> been defined it 
 will continue to the next line and define the class else if it has been defined 
-it will jump ahead to the <b>#endif</b> 
+it will jump ahead to the ```#endif``` 
+
+<h4>Contents of a implementation file</h4>
+
+```c++
+    #include "Person.h"
+    #include <iostream>
+    
+    using namespace std;
+    
+    string Person::getName() const {
+        name = "Mary"; // this is not
+        return name;
+    }
+    
+    void Person::setName(string newName) {
+        name = newName;
+    }
+    
+    int Person::getAge() {
+        return age;
+    }
+    
+    void Person::setAge(int ag) {
+        age = ag;
+    }
+
+```
+
+Notice the ```#include Person.h``` This tells essentially tells the compiler to include 
+all member definitions in this file at the point of the include. Remeber that 
+in c++ needs the header of the member class to be defined before it's implementation, 
+this is why we include the header file at the top of the file. <br>
+Also each function definition is preceded by the name of the class ```Person::``` 
+the two colons are called the <i>scope resolution operator</i>. When it appears 
+infront of a function in a function header it identifies the function as being 
+apart of the Person class. Here is general format for member functions:
+
+```
+    ReturnType ClassName:::functionName(parameters ...)
+```
+
+
+
 
