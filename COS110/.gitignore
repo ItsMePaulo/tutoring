@@ -1,1 +1,3 @@
 /.idea/*
+/pracs/*/.idea/*
+/pracs/*/cmake-build-debug/*
