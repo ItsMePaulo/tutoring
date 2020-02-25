@@ -1,37 +1,60 @@
 #include <iostream>
-#include "ValidationClass.h"
-#include "GridElements.h"
 #include "GridClass.h"
 
 using namespace std;
 
-
-int getEntry(ValidationClass *validationClass, string field);
-
+void playTickTackToe(int, GridClass*);
+int swapPlayer(int);
 
 int main() {
 
-    ValidationClass *validationClass = new ValidationClass();
     GridClass *gridClass = new GridClass();
+    int player = 0;
 
+    cout << "Who goes first player 1 or 2?: ";
+    cin >> player;
 
-    cout << "===========================================================================" << endl;
-    cout << "                            Tick Tack Toe                                  " << endl;
-    cout << "===========================================================================" << endl;
+    if(player > 2 || player < 1) {
+        player = 1;
+    }
 
-//    int x = getEntry(validationClass, "row");
-//    int y = getEntry(validationClass, "column");
-
+    cout << "=======================================================================================" << endl;
+    cout << "                                  Tick-Tack-Toe                                  " << endl;
+    cout << "=======================================================================================" << endl;
+    cout << endl;
     gridClass -> printGrid();
+
+    playTickTackToe(player, gridClass);
 
     return 0;
 }
 
-int getEntry(ValidationClass *validationClass, string field) {
-    int val;
-    do {
-        cout << "Player 1 please enter a " << field << " number from 1-3: " << endl;
-        cin >> val;
+void playTickTackToe(int player, GridClass* grid) {
+    int round = 0;
 
-    } while (!validationClass->isValidNumber(val));
+    while (round < 9) {
+        round++;
+
+        int row;
+        int column;
+        cout << endl;
+        cout << "Player " << player << " please enter a row from 1 - 3: ";
+        cin >> row;
+
+        cout << "Pleas enter a column from 1-3: ";
+        cin >> column;
+
+        if(player == 1) {
+            grid -> drawX(row, column);
+        } else {
+            grid -> drawO(row, column);
+        }
+
+        player = swapPlayer(player);
+    }
 }
+
+int swapPlayer(int currentPlayer) {
+    return (currentPlayer == 1) ? 2 : 1;
+}
+

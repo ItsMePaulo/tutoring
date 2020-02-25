@@ -11,15 +11,18 @@
  *
  */
 
-
-
 class GridClass {
+
 private:
-    char grid[13][13];
+    char grid[17][17];
 
 public:
     GridClass();
     void printGrid();
+
+    void drawX(int row, int column);
+    void drawO(int row, int column);
+
 };
 
 
