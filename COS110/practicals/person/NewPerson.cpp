@@ -3,8 +3,17 @@
 //
 
 #include "NewPerson.h"
+#include <iostream>
+using namespace std;
 
+// overloaded constructor
 NewPerson::NewPerson(const std::string &name, int age) : name(name), age(age) {}
+
+// default constructor
+NewPerson::NewPerson() {
+    cout << "Hello From inside person constructor";
+}
+
 
 const std::string &NewPerson::getName() const {
     return name;
@@ -20,8 +29,4 @@ int NewPerson::getAge() const {
 
 void NewPerson::setAge(int age) {
     NewPerson::age = age;
-}
-
-NewPerson::NewPerson() {
-
 }

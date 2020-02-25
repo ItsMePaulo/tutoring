@@ -3,8 +3,6 @@
 
 int main() {
 
-    std::cout << "Person class with new knowledge of Clion" << std::endl;
-
     NewPerson person;
 
     person.setName("Paul");
