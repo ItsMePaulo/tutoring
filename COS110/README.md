@@ -15,7 +15,7 @@ well as the pracical understanding of the language.
 <br>
 ***Lessons convered***
 1.  [Introduction to Classes](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS110/notes/introduction_to_classes.md) 
-2.  [Constructors]()
+2.  [Constructors](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS110/notes/constructors.md)
 
 <div align="center"><h1> Code Base</h1></div>
 
