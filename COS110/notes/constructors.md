@@ -1,7 +1,7 @@
 <div align="center"><h1> Constructors in C++ </h1></div> 
 
-A constructor is a member function that is automatically called when an 
-object is created. Constructors do not have return types in method headers.
+A constructor is a [member function](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS110/notes/introduction_to_classes.md#member-functions) 
+that is automatically called when an object is created. Constructors do not have return types in method headers.
 Instead Constructors have the name of the class as a there return type, this is 
 becuase, they are returning an instance of the class and the compiler can tell that.
 
