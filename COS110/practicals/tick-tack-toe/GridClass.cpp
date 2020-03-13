@@ -80,6 +80,7 @@ void GridClass::drawX(int row, int column) {
  */
 
 void GridClass::drawO(int row, int column) {
+
     int xOffset = getOffset(row);
     int yOffset = getOffset(column);
 
