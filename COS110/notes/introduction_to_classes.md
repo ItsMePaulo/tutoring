@@ -4,7 +4,7 @@
 Procedural programming is centered around creating functions and variables to store, 
 manage and perform operations on data in a pretty standard and sequential manner.  
 Data is coupled with functions that perform operations on data but that data and 
-functions are seperate. 
+functions are separate. 
 <br>
 <br>
 <h3>Problems with the procedural approach</h3>
@@ -100,6 +100,7 @@ name with double quotes ie “Person.h”. This tells the compiler to look outsi
 
 <br>
 <h2>Access Specifiers</h2>
+
 Most languages use two key words to denote access privileges to class [member functions](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS110/notes/introduction_to_classes.md#member-functions)
 and [attributes](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS110/notes/introduction_to_classes.md#attributes-or-member-variables). 
 <b>Private</b> and <b>Public</b>. Private fields are only accessible from 
