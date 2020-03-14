@@ -110,7 +110,43 @@ default values is still calling a constructor without passing in any values.
         name = name
         age = a
     }
-
-    // create person without sending in any parameters
-    Person paul() 
 ```
+
+When calling this constructor we can send in no parameters. 
+
+```Person paul() ```
+
+<h2>Destructors</h2>
+Destructors are member functions that get called when an object gets destroyed. In 
+The same way Constructors are called to perform object set up destructors are called
+to perform object shutdown. Like constructors have no return type and the same name
+of the class, the difference is Destructors are marked with the `~` (tilda).
+
+```c++
+     class Person {
+           
+            private:
+                string firstName;
+                string secondName;
+                int age; 
+                string email;
+    
+            public:
+                Person(string, string, int, age);
+                // and here is the destructor
+                ~Person();
+        }
+```
+<h4>Dynamic memory allocation for objects</h4>
+Creating pointers to objects to hold, can be done using the `new` keyword 
+
+```Person person = new Person("Paul", 23)```
+
+The `person` variable now holds a reference to the object. This means it's a pointer 
+accessing member variables can no longer make use of the `.` syntax. Instead 
+we now need to use the following `->` syntax to call member functions. Calling the 
+destructor can now also be done using the `delete` keyword. 
+
+```delete person```
+
+<h2>Overloading Constructors</h2>
