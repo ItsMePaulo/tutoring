@@ -80,7 +80,7 @@ at least default to 18. Implementing this in the code is quite straight forward
 we just add an `=` sign after the parameter. 
 
 ```c++ 
-    Person::Person (string fName, string sName, int ag = 18, string mail) {
+    Person::Person (string fName, string sName, string mail, int ag = 18,) {
         firstName = fName;
         secondName = sName;
         int age = ag;
@@ -88,9 +88,29 @@ we just add an `=` sign after the parameter.
     }
 ```
 
-When calling the constructor for Person we can now omit the age from the call. 
-Interestingly if every parameter was given a default parameter then we can call 
-the constructor as if it was a default constructor. Remember the definitions of 
-a Default constructor is any function that can be called without any parameters, 
-well omitting all the parameters because they are default values is still calling 
-a constructor without passing in any values. 
+Something important to note about default parameters. Default parameters must be 
+defined as the last parameters in the function header list. You can of course 
+have more than one default parameter in a function but as soon as you define one 
+you must define all following parameters as default parameters. The reason for this 
+is that you can omit them in function calls, if you do the compiler won't be able to determine 
+default parameters from regular ones. 
+
+```Person person("Paul", "Wood", "myrealemail.com")```   
+
+When calling the constructor for a Person object we can now omit the age from 
+the call. 
+Interestingly if every parameter in the constructor was given a default parameter 
+then we can call the constructor as if it was a default constructor. Remember 
+the definition of a Default constructor is any function that can be called 
+without any parameters, well omitting all the parameters because they are 
+default values is still calling a constructor without passing in any values. 
+
+```c++
+    Person::Person(string n = "Paul", int a = 23 ) { 
+        name = name
+        age = a
+    }
+
+    // create person without sending in any parameters
+    Person paul() 
+```
