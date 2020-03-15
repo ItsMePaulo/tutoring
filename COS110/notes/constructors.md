@@ -141,6 +141,7 @@ marked with the `~` (tilda).
         }
 ```
 <h4>Dynamic memory allocation for objects</h4>
+
 Creating pointers to hold objects, can be done using the `new` keyword 
 
 ```Person person = new Person("Paul", 23)```
@@ -148,7 +149,7 @@ Creating pointers to hold objects, can be done using the `new` keyword
 The `person` variable now holds a reference to the object. This means it's a pointer 
 accessing member variables can no longer make use of the `.` syntax. Instead 
 we now need to use the following `->` syntax to call member functions. Calling the 
-destructor can now also be done using the `delete` keyword. 
+destructor is now done by using the `delete` keyword. 
 
 ```delete person```
 
