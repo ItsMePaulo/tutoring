@@ -26,7 +26,7 @@ constructor
 
         public:
             // this is the constructor 
-            Person(string, string, int, age);
+            Person(string, string, int, string);
             // notice that no return type was used
     }
 ```
@@ -132,7 +132,7 @@ of the class, the difference is Destructors are marked with the `~` (tilda).
                 string email;
     
             public:
-                Person(string, string, int, age);
+                Person(string, string, int, string);
                 // and here is the destructor
                 ~Person();
         }
@@ -150,3 +150,72 @@ destructor can now also be done using the `delete` keyword.
 ```delete person```
 
 <h2>Overloading Constructors</h2>
+
+It is possible to have more than one constructor. Let's say one application that made use
+of your object needed you to initialize every parameter like in the Person [example above](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS110/notes/constructors.md#constructors-in-c).
+Another application needed a [default constructor](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS110/notes/constructors.md#a-special-kind-of-constructor-the-default-constructor).
+Well there is no rule saying you can't have both. 
+
+```c++
+     class Person {
+           
+        ...
+    
+        public:
+            // Using two different constructors
+            Person(string, string, int, string);
+            Person()
+            ~Person();
+        }
+```
+
+How will the compiler decide which constructor to call? Remember when you call the the 
+default constructor you don't send in any parameters... well that's how. When you call 
+the constructors you will either send in all the parameters and call the first 
+constructor or no parameters and call the default constructor. <br />
+Also there is no rule that says you have to have an all or none ratio of parameters, you
+can have constructors that only initialize one member parameter. 
+ 
+ ```c++
+      class Person {
+            
+         ...
+     
+         public:
+             Person(string, string, int, age);
+             Person(string firstName, int age)             
+             Person()
+            
+             ~Person();
+         }
+ ```
+
+In this example 3 constructors are listed. One for all parameters, a default constructor 
+and a constructor that takes in only a single string and an int for age. Notice 
+in this example we named the string that was coming in, this is just common standard 
+to help identify which parameters you will likely set when only sending in a few. 
+Note we can't create unique constructors for every parameter if they have the same 
+type. What I mean by this is we can't have the following. 
+
+ ```c++
+      class Person {
+            
+         ...
+     
+         public:
+             // the following is invalid
+             Person(string firstname);
+             Person(string secondName)
+         }
+ ```
+
+Remember constructors are called by there signatures. A function signature is like 
+it's definition, it is the functions name and the parameters they take in. In the 
+example above there are two functions with the same name and the same parameters,
+the name you give the parameter does not make a difference the compiler does not look 
+at that it only looks at the type of the parameter, Unfortunately, this limits 
+constructors as it would be nice to be able to initialize objects at a granular 
+level, but there is a solution to this, you can use named static constructors but we will 
+get to that in a later lesson. For now try thinking of another condition, like in the 
+example above, that also leads to two constructors with the same signature, but this time, 
+have your constructor take in two parameters.   
