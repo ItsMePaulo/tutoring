@@ -31,3 +31,6 @@ your CLion environment: [CLion set-up]()
 method and atrribute declerations*
 3. [tick-tack-toe game: Prac 2](https://gitlab.com/Paul_Wood_96/tutoring/-/tree/master/COS110/practicals/tick-tack-toe). *A more complexe 
 class covers multi-dimmensional arrays and class constructors.* 
+
+<div align="center"><h1>  Questions and memos </h1></div>
+1. [Chapter 13](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS110/quizes/cchapter_13.md)
