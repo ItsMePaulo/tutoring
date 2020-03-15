@@ -175,9 +175,9 @@ Well there is no rule saying you can't have both.
 ```
 
 How will the compiler decide which constructor to call? Remember when you call the the 
-default constructor you don't send in any parameters... well that's how. When you call 
-the constructors you will either send in all the parameters and call the first 
-constructor or no parameters and call the default constructor. <br />
+default constructor you don't send in any parameters... well that's how. The compiler 
+decides based off function signature, so if no parameters were sent in then 
+it will call the constructor with the matching signature. <br />
 Also there is no rule that says you have to have an all or none ratio of parameters, you
 can have constructors that only initialize one member parameter. 
  
@@ -195,10 +195,10 @@ can have constructors that only initialize one member parameter.
          }
  ```
 
-In this example 3 constructors are listed. One for all parameters, a default constructor 
-and a constructor that takes in only a single string and an int for age. Notice 
+In this example three constructors are listed. One for all parameters, a default constructor 
+and a constructor that takes in only a single string for firstName and an int for age. Notice 
 in this example we named the string that was coming in, this is just common standard 
-to help identify which parameters you will likely set when only sending in a few. 
+to help identify which one of the three strings you intend to set. 
 Note we can't create unique constructors for every parameter if they have the same 
 type. What I mean by this is we can't have the following. 
 
@@ -214,12 +214,11 @@ type. What I mean by this is we can't have the following.
          }
  ```
 
-Remember constructors are called by there signatures. A function signature is like 
-it's definition, it is the functions name and the parameters they take in. In the 
-example above there are two functions with the same name and the same parameters,
-the name you give the parameter does not make a difference the compiler does not look 
-at that it only looks at the type of the parameter, Unfortunately, this limits 
-constructors as it would be nice to be able to initialize objects at a granular 
+Remember constructors are called by their signatures. A function signature is like 
+it's definition, it is the functions name and the parameters they take in. 
+The name you give the parameter does not make a difference the compiler does not look 
+at that it only looks at the type of the parameter. Unfortunately, this limits 
+constructors as it would have been nice to be initialize objects at a granular 
 level, but there is a solution to this, you can use named static constructors but we will 
 get to that in a later lesson. For now try thinking of another condition, like in the 
 example above, that also leads to two constructors with the same signature, but this time, 
