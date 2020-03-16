@@ -30,7 +30,7 @@
 ```
 
  <b> b) Correct the implementation for the constructor above but also, 
- make the `endangered` parameter defaults value false. (4)  </b>
+ give the `endangered` paramter a default value; false. (4)  </b>
  
  <b> c) Add a custom Constructor that only sets the name and color parameters, 
  show both implementations, the `.h` and the implementation for 
