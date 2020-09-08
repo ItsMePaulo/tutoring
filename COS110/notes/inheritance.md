@@ -59,7 +59,13 @@ all you do is add `: public Person` after the class name definition like so.
 
 Notice also that the variables `name` and `age` where removed as well as the `sayHello()` method. However, they are still 
 accessible in the Student class. We can still call `student->sayHello()` and can still access the `name` and `age` 
-variables as if they were defined in the Student object itself, because technically they are. 
+variables as if they were defined in the Student object itself, because technically they are. Like so 
+
+```c++
+    Student* student = new Student()
+    student->sayHello()
+    student->name = "Paul"
+```
 
 ### How do we represent Inheritance in UML diagrams?
 With the empty triangle like so. Let's also imagine that we had another class Adult, which had a unique method to being 
@@ -92,4 +98,85 @@ does not have everything necessary to be a Student.
 
 #### Why do we care about which class can go into which class?
 The answer to that is the reason behind using Polymorphism, and we will get to that a little later. First let's define 
-what Polymorphism is. 
+what Polymorphism is. So my base understanding of something that is Polymoriphic is something that can change it's shape 
+or adapt its appearance, but you can find an official definition [here](https://www.lexico.com/definition/polymorphic). 
+The basic principle behind it is that it can be different or that it can change. Continuing from our example above 
+lets say we were not happy with the common method `sayHello()`, that was not really descriptive enough. 
+Student's should instead output the string "What's up, I'm a student" and Adults should instead output the string 
+"Good day, I am indeed old". But currently both just output "Hello " + their name which is the default behaviour 
+defined in the base class (Person). We can change the implementation of this method in the Student and Adult 
+by making the sayHello method `virtual`.
+
+###Virtual methods
+Virtual methods, or virtual functions, are methods that allow us to overwrite the behaviour of methods defined in our 
+base class with methods defined in our sub class. Okay quickly just to recap Person is our base class, Student is our 
+Sub Class. What this means is we can actually change the outcome of the sayHello method by defining a new 
+implementation of it in the Child class. For instance lets add the different sayHello methods we 
+mentioned earlier to the Student and Adult classes. 
+
+```c++
+    class Student {
+        public:
+            void sayHello() {
+                 std::cout << "Whats up, I'm a student" << std::endl;
+            }
+            ..// as above
+    }
+
+    class Adult {
+        public:
+            void sayHello() {
+                 std::cout << "Good day, I am indeed old" << std::endl;
+            }
+    }
+```
+
+Cool we now have to unique say hello implementations defined in the Adult and Student class, but there is a problem. 
+If we use Polymorphism (yes we will get to this later) and store either of the sub classes as a base class variable and
+call the sayHello method, we get some pretty unexpected behaviour. 
+
+```c++
+    *Person student = new Student()
+    student->sayHello() // outputs "Hello " + name
+```
+
+That is weird, although student is defined as a Person it is still an instance of the Student class, is it not? So 
+why is the sayHello method not calling the sayHello function defined in the student class. The reason for this has to 
+do with how C++ stores references to virtual methods, it does so by creating what is known as a V-table, in memory. 
+This is essentially just a small data set/list of all of the virtual methods that the method has implementations for. 
+The compiler can decide at run time which implementation to call in that V-Table based on the type of the object. 
+The only problem here is we haven't told C++ to make a V-Table for the sayHello method yet. Doing so is really simple
+(you don't need to worry about making dynamic arrays) all you do is add the `virtual` keyword to the begining of the 
+sayHello function like so: 
+
+```c++
+    virtual sayHello() {
+        ..// as above
+    }
+```
+
+Now if we rerun the snippet above the student will output the expected sayHello method. That is enough to get it 
+to work but there is one more step we can take to be sure. We can also add the `override` keyword to our children 
+methods. There are two reasons we do this;
+1. To make the code more readable 
+2. To make the code less error prone by reducing the risk of misspelling or overriding methods that do not exists in
+the base class.
+
+You do not add the `override` keyword at the beginning of the method as you did with the virtual, instead you add it 
+after the name of the method as seen below. 
+     
+```c++
+    class Student {
+        public:
+            void sayHello() override {
+                 std::cout << "Whats up, I'm a student" << std::endl;
+            }
+            ..// as above
+    }
+
+    class Adult {
+        public:
+            void sayHello() override {
+                 std::cout << "Good day, I am indeed old" << std::endl;
+            }
+    }
