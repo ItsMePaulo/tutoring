@@ -34,7 +34,7 @@ public:
         }
     }
 
-    bool operator&&(std::string patientName) {
+    bool operator&&(const std::string& patientName) {
         for (int i = 0; i < capacity; i++) {
             if (patient[i]->getName() == patientName && patient[i]->getDays() > 0) {
                 return true;
@@ -42,6 +42,20 @@ public:
         }
 
         return false;
+    }
+
+    // Questions 4's += operator
+    Ward& operator+=(Patient& p) {
+        for (int i = 0; i < capacity; i++) {
+            if (patient[i] == nullptr) {
+                // save the address of the patient
+                patient[i] = &p;
+                // return self
+                return *this;
+            }
+        }
+        std::cout << "The ward is full!" << std::endl;
+        return *this;
     }
 };
 

@@ -14,9 +14,15 @@ private:
 
 public:
 
-    Patient(std::string &basicString, int i) {
+    Patient(const std::string &basicString, int i = 10) {
         name = basicString;
-        days = 1;
+        days = i;
+    }
+
+    // added copy constructor for question four
+    Patient(const Patient& p) {
+        name = p.name;
+        days = p.days;
     }
 
     int getDays() {
@@ -26,8 +32,6 @@ public:
     std::string getName() {
         return name;
     }
-
-
 };
 
 #endif //COS110_PATIENT_H

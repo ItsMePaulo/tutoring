@@ -20,5 +20,20 @@ int main() {
         std::cout << "Paul is nowhere to be found" << std::endl;
     }
 
+    // Question4 overload the plus equal operator
+    Ward ward(1);
+    Patient paul = Patient("Paul", 1);
+    Patient zelda = Patient("Zelda", 1);
+
+    (ward += paul) += zelda;
+
+    // Question13 explicit operator calls
+    ward.operator+=(paul).operator+=(zelda);
+
+    // Question14 left hand operator
+    PizzaPrice nextYear2 = 50.90 - today;
+    std::cout << nextYear2.getPrice() << std::endl;
+
+
     return 0;
 }

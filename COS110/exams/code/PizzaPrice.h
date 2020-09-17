@@ -35,4 +35,10 @@ public:
 };
 
 
+// trick here was that the variable was on the left hand side so we needed to pass in both
+PizzaPrice operator-(const float &lhs, const PizzaPrice &rhs) {
+    float newPrice = lhs - rhs.getPrice();
+    return PizzaPrice(rhs.getName(), newPrice);
+}
+
 #endif
