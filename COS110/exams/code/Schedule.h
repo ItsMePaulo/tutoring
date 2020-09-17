@@ -37,9 +37,9 @@ public:
     // Question 12: a big operation overloading task
     Schedule operator+(const Schedule &s) {
         Schedule newS = Schedule(this->days, this->timeslots);
-        auto **a = new Activity *[this->timeslots];
+        auto **a = new Activity *[this->days];
         for (int i = 0; i < this->days; ++i) {
-            a[i] = new Activity[this->days];
+            a[i] = new Activity[this->timeslots];
 
             for (int j = 0; j < this->timeslots; j++) {
 
@@ -47,7 +47,7 @@ public:
                     // this condition looks for an overlap when both current obj and obj passed in have a course
                     // at the same time slot
                     if (s.mySchedule[i][j]) {
-                        // this line the assigned the activity based on the higher priority, use the ?: operator to make
+                        // this line then assigned the activity based on the higher priority, use the ?: operator to make
                         // a quick inline if statement
                         a[i][j] = this->mySchedule[i][j]->getPriority() > s.mySchedule[i][j]->getPriority()
                                   ? *this->mySchedule[i][j] : *s.mySchedule[i][j];
