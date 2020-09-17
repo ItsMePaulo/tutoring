@@ -107,9 +107,9 @@ Student's should instead output the string "What's up, I'm a student" and Adults
 defined in the base class (Person). We can change the implementation of this method in the Student and Adult 
 by making the sayHello method `virtual`.
 
-###Virtual methods
-Virtual methods, or virtual functions, are methods that allow us to overwrite the behaviour of methods defined in our 
-base class with methods defined in our sub class. Okay quickly just to recap Person is our base class, Student is our 
+### Virtual methods
+Virtual methods, or virtual functions, are methods that allow us to overwrite the behaviour of the method defined in our 
+base class with a method defined in our sub class. Okay quickly just to recap Person is our base class, Student is our 
 Sub Class. What this means is we can actually change the outcome of the sayHello method by defining a new 
 implementation of it in the Child class. For instance lets add the different sayHello methods we 
 mentioned earlier to the Student and Adult classes. 

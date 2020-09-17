@@ -1,4 +1,4 @@
-<h1> Tutorials for COS Modules
+<h1> CS Modules available in the repo
 
 A git repo containing notes on computer science modules I am tutoring. The notes 
 cover extensive examples and implementations of key features taught throughout 
