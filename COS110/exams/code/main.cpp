@@ -7,13 +7,18 @@ int main() {
 
     // Question2 overload the multiply operator
     PizzaPrice today("Something meaty", 40.90);
+
     PizzaPrice nextYear = today * 1.6;
-    std::cout << nextYear.getPrice() << std::endl;
+
+    // different params
+    today.showVariables();
+    nextYear.showVariables();
 
     // Question3 overload the && operator to return a boolean
     Ward fieldHospital;
     fieldHospital.addPatient("Paul");
 
+    // return type of if is boolean
     if (fieldHospital && "Paul") {
         std::cout << "Paul has been admitted to the ward" << std::endl;
     } else {
@@ -25,7 +30,9 @@ int main() {
     Patient paul = Patient("Paul", 1);
     Patient zelda = Patient("Zelda", 1);
 
-    (ward += paul) += zelda;
+
+//    {(ward += paul)} return something that could be added to right habd side
+     (ward += paul) += zelda;
 
     // Question13 explicit operator calls
     ward.operator+=(paul).operator+=(zelda);
@@ -34,6 +41,7 @@ int main() {
     PizzaPrice nextYear2 = 50.90 - today;
     std::cout << nextYear2.getPrice() << std::endl;
 
-
     return 0;
 }
+
+

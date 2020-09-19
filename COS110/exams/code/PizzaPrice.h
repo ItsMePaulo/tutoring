@@ -28,11 +28,25 @@ public:
         price = p;
     }
 
+
+    void showVariables() {
+        std::cout << price << std::endl;
+    }
+
+    //ret name (params) {
+        // body
+    //}
+
     PizzaPrice operator*(const float rhs) {
         float newPrice = this->getPrice() * rhs;
         return PizzaPrice(this->getName(), newPrice);
     }
 };
+
+//PizzaPrice operator*(PizzaPrice p, float f) {
+//    float newPrice = p.getPrice() * rhs;
+//    return PizzaPrice(p.getName(), newPrice);
+//}
 
 
 // trick here was that the variable was on the left hand side so we needed to pass in both
