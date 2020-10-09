@@ -1,6 +1,6 @@
 <div align="center"><h1> Templates </h1></div> 
 
-##Algorithms
+## Algorithms
 Algorithms are steps or sequences you execute to get to a certain result. You 
 use algorithms all day everyday without really knowing about it. For example 
 when brushing your teeth, you know you need to put toothpaste on the brush, take the 
@@ -9,7 +9,7 @@ specific steps in between but generally that sequence remains the same.
 An algorithm is a sequence, an order of steps to follow which alwasy produce the same 
 result. Lets look at a very common algorithm `max()`
 
-####Max()
+#### Max()
 Max is a method that takes in two or more values, compares them values and returns 
 the biggest value. The steps are pretty straight forward. 
 1. take in two or more values 
@@ -60,7 +60,7 @@ max between doubles? well that would look like this.
 Notice how all we are doing is changing the type but our algorithm (what we do) remains 
 the same. So how do we fix this?
 
-##Function Templates 
+## Function Templates 
 Function templates are `"generic"`, what we mean when we say this is that they can 
 handle different type data. When the compiler encounters a call to the generic function
 it actually writes out the correct code for you, the code with correct types. 
@@ -94,7 +94,7 @@ but this obviously will not work if the type coming in is not a primitive type. 
 the type coming in is an object you created, we will need to make sure we have overloaded 
 the `<` operator for that class. 
 
-##Multiple Template Parameters 
+## Multiple Template Parameters 
 What if we had a function that could take in a string and a string, but also a string and an
 int, but also an int and a string... The variations can become endless, usually we overload the
 function continuously over and over again, but instead to handle the infinitely possible number 
@@ -121,7 +121,7 @@ different, the second line of code passing in two strings and that would be comp
 code. 
 
 
-##Class Templates
+## Class Templates
 There is one more thing we need to know about templates, they are not restricted to just 
 functions. We can have class templates as well. 
     
