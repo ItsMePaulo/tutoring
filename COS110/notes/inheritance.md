@@ -1,4 +1,4 @@
-<div align="center"><h1> Inheritance and Polymorphism </h1></div> 
+<div align="center"><h1> Inheritance </h1></div> 
 
 <h2>What is Inheritance?</h2>
 Think of it as creating a [hierarchy](https://dictionary.cambridge.org/dictionary/english/hierarchy), but for your code.
