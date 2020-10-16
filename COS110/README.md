@@ -18,7 +18,8 @@ well as the pracical understanding of the language.
 2.  [Constructors](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS110/notes/constructors.md)
 3.  [Inheritance](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS110/notes/inheritance.md)
 4.  [Polymorphism](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS110/notes/polymorphism.md)
-4.  [Linked Lists](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS110/notes/linked_lists.md)
+5.  [Templates](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS110/notes/Templates.md)
+6.  [Linked Lists](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS110/notes/linked_lists.md)
 
 <div align="center"><h1> Code Base</h1></div>
 
@@ -34,7 +35,8 @@ your CLion environment: [CLion set-up]()
 method and atrribute declerations*
 3. [tick-tack-toe game: Prac 2](https://gitlab.com/Paul_Wood_96/tutoring/-/tree/master/COS110/practicals/tick-tack-toe). *A more complexe 
 class covers multi-dimmensional arrays and class constructors.* 
-4. 
+4. [Inheritence](https://gitlab.com/Paul_Wood_96/tutoring/-/tree/master/COS110/practicals/Inheritence)
+5. [Templates](https://gitlab.com/Paul_Wood_96/tutoring/-/tree/master/COS110/practicals/templates)
 
 <div align="center"><h1>  Questions and memos </h1></div>
 1. [Chapter 13](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS110/quizes/cchapter_13.md)
