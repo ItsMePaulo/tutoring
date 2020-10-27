@@ -1,15 +1,10 @@
 #include <iostream>
 
 #include "storage.h"
-#include "storage.cpp"
 #include "cLL.h"
-#include "cLL.cpp"
 #include "dLL.h"
-#include "dLL.cpp"
 #include "citem.h"
-#include "citem.cpp"
 #include "ditem.h"
-#include "ditem.cpp"
 
 int main() {
 

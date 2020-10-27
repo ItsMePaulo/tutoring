@@ -26,6 +26,5 @@ public:
 };
 
 
-
-
+#include "citem.cpp"
 #endif //INC_9_CITEM_H

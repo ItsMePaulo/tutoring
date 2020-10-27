@@ -13,8 +13,8 @@
 //+printCList():void
 //+printDList():void
 
-#ifndef INC_9_STORAGE_H
-#define INC_9_STORAGE_H
+#ifndef STORAGE_H
+#define STORAGE_H
 
 
 #include "cLL.h"
@@ -36,6 +36,5 @@ public:
 };
 
 
-
-
+#include "storage.cpp"
 #endif //INC_9_STORAGE_H

@@ -38,6 +38,5 @@ public:
 };
 
 
-
-
+#include "cLL.cpp"
 #endif //INC_9_CLL_H

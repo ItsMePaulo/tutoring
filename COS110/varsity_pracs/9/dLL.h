@@ -46,6 +46,5 @@ public:
 };
 
 
-
-
+#include "dLL.cpp"
 #endif //INC_9_DLL_H

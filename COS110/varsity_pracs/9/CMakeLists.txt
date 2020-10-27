@@ -3,4 +3,4 @@ project(9)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(9 main.cpp storage.cpp storage.h cLL.cpp cLL.h dLL.cpp dLL.h ditem.cpp ditem.h citem.cpp citem.h)
+add_executable(9 main.cpp storage.h cLL.h dLL.h ditem.h citem.h)

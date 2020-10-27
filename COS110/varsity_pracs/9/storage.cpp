@@ -3,7 +3,6 @@
 //
 
 #include "storage.h"
-#include <string>
 
 template<class T>
 storage<T>::storage(int rs) {

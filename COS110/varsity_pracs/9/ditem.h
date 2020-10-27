@@ -28,6 +28,5 @@ public:
 };
 
 
-
-
+#include "ditem.cpp"
 #endif //INC_9_DITEM_H
