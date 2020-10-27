@@ -37,4 +37,4 @@ public:
 
 
 #include "storage.cpp"
-#endif //INC_9_STORAGE_H
+#endif

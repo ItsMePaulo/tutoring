@@ -17,7 +17,6 @@ storage<T>::~storage() {
     delete *dlist;
 }
 
-
 template<class T>
 void storage<T>::storeData(T data) {
 
@@ -39,7 +38,6 @@ void storage<T>::storeData(T data) {
         auto newItem = new ditem<T>(data);
         dlist->push(newItem);
     }
-
 }
 
 template<class T>

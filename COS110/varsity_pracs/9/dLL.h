@@ -39,7 +39,7 @@ public:
     ditem<T>* getTail();
     void push(ditem<T>* newItem);
     ditem<T>* pop();
-    ditem<T> getItem();
+    ditem<T>* getItem(int i);
     T minNode();
     int getSize();
     void printList();

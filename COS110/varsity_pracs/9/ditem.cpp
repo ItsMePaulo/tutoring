@@ -17,5 +17,5 @@ T ditem<T>::getData() {
 
 template<class T>
 ditem<T>::~ditem() {
-    std::cout << data <<" Deleted";
+    std::cout << data <<" Deleted" << std::endl;
 }
