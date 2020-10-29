@@ -20,7 +20,6 @@ ditem<T> *makeDItem(T data) {
 int main() {
 
     auto *store1 = new storage<int>(5);
-    auto *store2 = new storage<double>(2);
 //
     std::cout << "Testing the list with int expected output" << std::endl;
 
@@ -54,9 +53,6 @@ int main() {
 
     std::cout << "Add and Print functions work on int types. Storage class is pretty much tested in full" << std::endl;
     std::cout << "======================================================================================" << std::endl;
-
-    store2->storeData(1.0);
-    store2->storeData(2.1);
 
     std::cout << std::endl;
     auto *circularList = new cLL<int>();
@@ -260,5 +256,12 @@ int main() {
     std::cout << "Actual Size: \t\t\t " << doubleLinkedList->getSize() << std::endl;
 
     std::cout << std::endl;
+
+    delete store1;
+    std::cout << std::endl;
+    delete circularList;
+    std::cout << std::endl;
+    delete doubleLinkedList;
+
     return 0;
 }

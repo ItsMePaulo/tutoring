@@ -13,8 +13,8 @@ storage<T>::storage(int rs) {
 
 template<class T>
 storage<T>::~storage() {
-    delete *clist;
-    delete *dlist;
+    delete clist;
+    delete dlist;
 }
 
 template<class T>

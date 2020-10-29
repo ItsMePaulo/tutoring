@@ -14,8 +14,14 @@ dLL<T>::dLL() {
 
 template<class T>
 dLL<T>::~dLL() {
-    //TODO: finish the destructor
+    while(head != nullptr) {
+        auto tmp = head;
+        head = tmp->next;
 
+        delete(tmp);
+    }
+
+    delete head;
 }
 
 template<class T>

@@ -13,7 +13,16 @@ cLL<T>::cLL() {
 
 template<class T>
 cLL<T>::~cLL() {
-    // TODO: delete circular list
+
+    auto tmp = head->next;
+    while(tmp != head) {
+        auto prev = tmp;
+        tmp = tmp->next;
+
+        delete(prev);
+    }
+
+    delete head;
 }
 
 /**

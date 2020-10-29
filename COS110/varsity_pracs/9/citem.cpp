@@ -12,7 +12,7 @@ citem<T>::citem(T t) {
 
 template<class T>
 citem<T>::~citem() {
-    std::cout << data <<" Deleted";
+    std::cout << data <<" Deleted\n";
 }
 
 template<class T>
