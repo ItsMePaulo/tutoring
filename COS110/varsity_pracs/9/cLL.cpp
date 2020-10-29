@@ -80,6 +80,10 @@ int cLL<T>::getSize() {
 
 template<class T>
 void cLL<T>::printList() {
+    if(head == nullptr) {
+        return;
+    }
+
     auto tmp = head;
 
     while(tmp->next != head) {
@@ -98,6 +102,12 @@ citem<T> *cLL<T>::pop() {
     if (head == nullptr) {
         return nullptr;
     }
+    else if (head->next == head) {
+        auto oldHead = head;
+        head = nullptr;
+        size--;
+        return oldHead;
+    }
 
     auto oldHead = head;
     auto tail = head->next;
@@ -108,6 +118,7 @@ citem<T> *cLL<T>::pop() {
 
     tail->next = head->next;
     head = head->next;
+    size--;
     return oldHead;
 }
 
@@ -119,15 +130,8 @@ citem<T> *cLL<T>::removeAt(T x) {
     if (head == nullptr) {
         return nullptr;
     } else if (head->getData() == x) {
-        auto oldHead = tmp;
 
-        while (tmp->next != head) {
-            tmp = tmp->next;
-        }
-
-        tmp->next = head->next;
-        head = head->next;
-        return oldHead;
+        return pop();
     } else {
         auto previous = head;
 
@@ -137,6 +141,7 @@ citem<T> *cLL<T>::removeAt(T x) {
                 // remove
                 previous->next = tmp->next;
                 tmp->next = nullptr;
+                size--;
                 return tmp;
             }
             previous = tmp;

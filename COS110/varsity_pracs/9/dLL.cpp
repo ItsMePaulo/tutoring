@@ -126,21 +126,13 @@ ditem<T> *dLL<T>::pop() {
         head = head->next;
     }
 
+    size--;
     return tmp;
 }
 
 template<class T>
 ditem<T>* dLL<T>::getItem(int i) {
 
-    // 0 -> 1 -> 2 -> 3 -> 4 => index
-    // 5 -> 3 -> 6 -> 1 -> -8 -> nullptr => list
-
-    // we have size soooo => we can check
-    // simple >= size return null
-
-    // index = 3
-    // counter int keep ++ in the loop
-    // while(counter != i) => keep going through
 
     if (i >= size) {
         return nullptr;

@@ -7,20 +7,20 @@
 #include "ditem.h"
 
 
-template <class T>
-citem<T>* makeCItem(T data) {
+template<class T>
+citem<T> *makeCItem(T data) {
     return new citem<T>(data);
 }
 
-template <class T>
-ditem<T>* makeDItem(T data) {
+template<class T>
+ditem<T> *makeDItem(T data) {
     return new ditem<T>(data);
 }
 
 int main() {
 
-    auto* store1 = new storage<int>(5);
-    auto* store2 = new storage<double >(2);
+    auto *store1 = new storage<int>(5);
+    auto *store2 = new storage<double>(2);
 //
     std::cout << "Testing the list with int expected output" << std::endl;
 
@@ -59,7 +59,80 @@ int main() {
     store2->storeData(2.1);
 
     std::cout << std::endl;
-    auto* circularList = new cLL<int>();
+    auto *circularList = new cLL<int>();
+    circularList->push(makeCItem(8));
+    circularList->push(makeCItem(22));
+    circularList->push(makeCItem(6));
+    circularList->push(makeCItem(19));
+    circularList->push(makeCItem(5));
+
+
+    std::cout << "Testing some circular list functions " << std::endl;
+    std::cout << "######################################################################################" << std::endl;
+    std::cout << "Original circular list looks like this: \t\t ";
+    circularList->printList();
+
+    std::cout << "Testing get size:" << std::endl;
+    std::cout << "Expected: \t\t\t\t\t\t\t\t 5" << std::endl;
+    std::cout << "Actual: \t\t\t\t\t\t\t\t " << circularList->getSize() << std::endl;
+
+    std::cout << std::endl;
+    std::cout << "Testing the pop functions for circular list " << std::endl;
+    std::cout << "======================================================================================" << std::endl;
+    std::cout << "The original list looks like this: \t\t ";
+    circularList->printList();
+
+    std::cout << std::endl;
+
+    std::cout << "Expected: \t\t\t\t\t\t\t 8,6,19,5" << std::endl;
+    circularList->pop();
+    std::cout << "Actual: \t\t\t\t\t\t\t ";
+    circularList->printList();
+
+    std::cout << "Expected Size:\t\t\t\t\t\t 4" << std::endl;
+    std::cout << "Actual Size: \t\t\t\t\t\t " << circularList->getSize() << std::endl;
+
+
+    std::cout << std::endl;
+
+    std::cout << "Expected: \t\t\t\t\t\t\t 6,19,5" << std::endl;
+    circularList->pop();
+    std::cout << "Actual: \t\t\t\t\t\t\t ";
+    circularList->printList();
+
+    std::cout << "Expected Size: \t\t\t\t\t\t 3" << std::endl;
+    std::cout << "Actual Size: \t\t\t\t\t\t " << circularList->getSize() << std::endl;
+
+    std::cout << std::endl;
+
+    std::cout << "Expected: \t\t\t\t\t\t\t 19,5" << std::endl;
+    circularList->pop();
+    std::cout << "Actual: \t\t\t\t\t\t\t ";
+    circularList->printList();
+
+    std::cout << "Expected Size: \t\t\t\t\t\t 2" << std::endl;
+    std::cout << "Actual Size: \t\t\t\t\t\t " << circularList->getSize() << std::endl;
+
+    std::cout << std::endl;
+
+    std::cout << "Expected: \t\t\t\t\t\t\t 5" << std::endl;
+    circularList->pop();
+    std::cout << "Actual: \t\t\t\t\t\t\t ";
+    circularList->printList();
+
+    std::cout << "Expected Size: \t\t\t\t\t\t 1" << std::endl;
+    std::cout << "Actual Size: \t\t\t\t\t\t " << circularList->getSize() << std::endl;
+
+    std::cout << std::endl;
+
+    std::cout << "Expected: \t\t\t\t\t\t\t " << std::endl;
+    circularList->pop();
+    std::cout << "Actual: \t\t\t\t\t\t\t \n";
+    circularList->printList();
+
+    std::cout << "Expected Size: \t\t\t\t\t\t 0" << std::endl;
+    std::cout << "Actual Size: \t\t\t\t\t\t " << circularList->getSize() << std::endl;
+
 
     circularList->push(makeCItem(8));
     circularList->push(makeCItem(22));
@@ -68,19 +141,51 @@ int main() {
     circularList->push(makeCItem(5));
 
     std::cout << std::endl;
-    std::cout <<"Testing the pop functions for circular list " << std::endl;
+    std::cout << "Testing remove at function for circular list " << std::endl;
     std::cout << "======================================================================================" << std::endl;
-    std::cout <<"The original list looks like this: \t\t ";
+    std::cout << "Original circular list looks like this: \t\t ";
     circularList->printList();
 
-    std::cout<<"Expected: \t\t\t\t\t\t\t\t 8,6,19,5" << std::endl;
-    circularList->pop();
-    std::cout<<"Actual: \t\t\t\t\t\t\t\t ";
+    std::cout << "Removing 3 (no action required 3 is not in the list)" << std::endl;
+    circularList->removeAt(3);
+    std::cout << "Expected: \t\t\t\t\t\t\t 22,8,6,19,5" << std::endl;
+    std::cout << "Actual: \t\t\t\t\t\t\t ";
     circularList->printList();
+    std::cout << std::endl;
 
+
+    std::cout << "Removing 6" << std::endl;
+    circularList->removeAt(6);
+    std::cout << "Expected: \t\t\t\t\t\t\t 22,8,19,5" << std::endl;
+    std::cout << "Actual: \t\t\t\t\t\t\t ";
+    circularList->printList();
+    std::cout << std::endl;
+
+    std::cout << "Removing 5 (removing tail)" << std::endl;
+    circularList->removeAt(5);
+    std::cout << "Expected: \t\t\t\t\t\t\t 22,8,19" << std::endl;
+    std::cout << "Actual: \t\t\t\t\t\t\t ";
+    circularList->printList();
+    std::cout << std::endl;
+
+    std::cout << "Removing 22 (removing head)" << std::endl;
+    circularList->removeAt(22);
+    std::cout << "Expected: \t\t\t\t\t\t\t 8,19" << std::endl;
+    std::cout << "Actual: \t\t\t\t\t\t\t ";
+    circularList->printList();
+    std::cout << std::endl;
+
+    std::cout << "Expected Size: \t\t\t\t\t\t 2" << std::endl;
+    std::cout << "Actual Size: \t\t\t\t\t\t " << circularList->getSize() << std::endl;
 
     std::cout << std::endl;
-    auto* doubleLinkedList = new dLL<int>();
+    std::cout << "Finished testing Circular List functions" << std::endl;
+    std::cout << std::endl;
+    std::cout << "######################################################################################" << std::endl;
+    std::cout << "Testing Double Linked List functions" << std::endl;
+    std::cout << "######################################################################################" << std::endl;
+    std::cout << std::endl;
+    auto *doubleLinkedList = new dLL<int>();
 
     doubleLinkedList->push(makeDItem(8));
     doubleLinkedList->push(makeDItem(22));
@@ -88,49 +193,72 @@ int main() {
     doubleLinkedList->push(makeDItem(19));
     doubleLinkedList->push(makeDItem(5));
 
-    std::cout<<"Testing the getItem function for doubly linked list " << std::endl;
+    std::cout << "Testing the getItem function for doubly linked list " << std::endl;
     std::cout << "======================================================================================" << std::endl;
-    std::cout<<"We want to fetch the item at index: 3" << std::endl;
-    std::cout<<"The original list looks like this: \t\t ";
+    std::cout << "The original list looks like this: \t\t ";
     doubleLinkedList->printList();
-    std::cout<<"Expected: \t\t\t\t\t\t\t\t 22" << std::endl;
-    std::cout<<"Actual: \t\t\t\t\t\t\t\t " << doubleLinkedList->getItem(3)->getData() << std::endl;
+    std::cout << std::endl;
+
+    std::cout << "Fetching item at index: 3" << std::endl;
+    std::cout << "Expected: \t\t\t\t\t\t\t\t 22" << std::endl;
+    std::cout << "Actual: \t\t\t\t\t\t\t\t " << doubleLinkedList->getItem(3)->getData() << std::endl;
 
     std::cout << std::endl;
-    std::cout<<"Testing the pop functions for doubly linked list " << std::endl;
+
+    std::cout << "Fetching item at index: 6" << std::endl;
+    std::cout << "Expected: \t\t\t\t\t\t\t\t 0" << std::endl; // output a null pointer and you get 0
+    std::cout << "Actual: \t\t\t\t\t\t\t\t " << doubleLinkedList->getItem(6) << std::endl;
+
+    std::cout << std::endl;
+
+    std::cout << "Fetching item at index: 0" << std::endl;
+    std::cout << "Expected: \t\t\t\t\t\t\t\t 5" << std::endl;
+    std::cout << "Actual: \t\t\t\t\t\t\t\t " << doubleLinkedList->getItem(0)->getData() << std::endl;
+
+    std::cout << std::endl;
+
+    std::cout << "Testing the pop functions for doubly linked list " << std::endl;
     std::cout << "======================================================================================" << std::endl;
-    std::cout<<"The original list looks like this: \t\t ";
+    std::cout << "The original list looks like this: \t\t ";
     doubleLinkedList->printList();
-    std::cout<<"Expected: \t\t\t\t 6,8,22,19" << std::endl;
+
+    std::cout << "Expected Size: \t\t\t 5" << std::endl;
+    std::cout << "Actual Size: \t\t\t " << doubleLinkedList->getSize() << std::endl;
+
+    std::cout << "Expected: \t\t\t\t 6,8,22,19" << std::endl;
     doubleLinkedList->pop();
-    std::cout<<"Actual: \t\t\t\t ";
+    std::cout << "Actual: \t\t\t\t ";
     doubleLinkedList->printList();
     std::cout << std::endl;
 
-    std::cout<<"Expected: \t\t\t\t 8,22,19" << std::endl;
+    std::cout << "Expected: \t\t\t\t 8,22,19" << std::endl;
     doubleLinkedList->pop();
-    std::cout<<"Actual: \t\t\t\t ";
+    std::cout << "Actual: \t\t\t\t ";
     doubleLinkedList->printList();
     std::cout << std::endl;
 
-    std::cout<<"Expected: \t\t\t\t 22,19" << std::endl;
+    std::cout << "Expected: \t\t\t\t 22,19" << std::endl;
     doubleLinkedList->pop();
-    std::cout<<"Actual: \t\t\t\t ";
+    std::cout << "Actual: \t\t\t\t ";
     doubleLinkedList->printList();
     std::cout << std::endl;
 
-    std::cout<<"Expected: \t\t\t\t 19" << std::endl;
+    std::cout << "Expected: \t\t\t\t 19" << std::endl;
     doubleLinkedList->pop();
-    std::cout<<"Actual: \t\t\t\t ";
+    std::cout << "Actual: \t\t\t\t ";
     doubleLinkedList->printList();
     std::cout << std::endl;
 
-    std::cout<<"Expected: \t\t\t\t " << std::endl;
+    std::cout << "Expected: \t\t\t\t " << std::endl;
     doubleLinkedList->pop();
-    std::cout<<"Actual: \t\t\t\t ";
+    std::cout << "Actual: \t\t\t\t ";
     doubleLinkedList->printList();
     std::cout << std::endl;
+    std::cout << std::endl;
 
+    std::cout << "Expected Size: \t\t\t 0" << std::endl;
+    std::cout << "Actual Size: \t\t\t " << doubleLinkedList->getSize() << std::endl;
 
+    std::cout << std::endl;
     return 0;
 }
