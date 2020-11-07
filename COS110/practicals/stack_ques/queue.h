@@ -8,33 +8,14 @@
 
 #include "list.h"
 
-template <class T>
+template<class T>
 class queue : public list<T> {
 
-private:
-    node<T>* head;
-
 public:
-    node<T>* pop() override;
-    void push(node<T>* n) override;
+    node<T> *pop() override;
 
-    void print() {
-        if (head == nullptr) {
-            std::cout << "Empty List" << std::endl;
-            return;
-        }
-
-        auto tmp = head;
-
-        while (tmp->next != nullptr) {
-            std::cout << tmp->getItem() << ", ";
-            tmp = tmp->next;
-        }
-
-        std::cout << tmp->getItem() << std::endl;
-    }
+    void push(node<T> *n) override;
 };
-
 
 
 #endif //STACK_QUES_QUEUE_H

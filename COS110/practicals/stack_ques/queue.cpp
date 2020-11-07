@@ -10,15 +10,15 @@ node<T> *queue<T>::pop() {
     // tmp => 1 -> nullptr
 
 
-    if (head == nullptr) {
+    if (this->head == nullptr) {
         return nullptr;
-    } else if (head->next == nullptr) {
-        auto tmp = head;
-        head = nullptr; // list becomes empty when head is equal to null
+    } else if (this->head->next == nullptr) {
+        auto tmp = this->head;
+        this->head = nullptr; // list becomes empty when head is equal to null
         return tmp;
     } else {
-        auto tmp = head;
-        head = head->next;
+        auto tmp = this->head;
+        this->head = this->head->next;
 
         tmp->next = nullptr;
         return tmp;
@@ -30,10 +30,10 @@ void queue<T>::push(node<T> *n) {
 
     // 1 -> 2 -> 3 -> 4 -> nullptr
 
-    if (head == nullptr) {
-        head = n;
+    if (this->head == nullptr) {
+        this->head = n;
     } else {
-        auto tmp = head;
+        auto tmp = this->head;
 
         while (tmp->next != nullptr) {
             tmp = tmp->next;

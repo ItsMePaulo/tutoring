@@ -9,15 +9,15 @@ template<class T>
 node<T> *stack<T>::pop() {
     // 1 -> 2 -> 3 -> 4 -> nullptr
     //          prev tmp
-    if (head == nullptr) {
+    if (this->head == nullptr) {
         return nullptr;
-    } else if (head->next == nullptr) {
-        auto tmp = head;
-        head = nullptr;
+    } else if (this->head->next == nullptr) {
+        auto tmp = this->head;
+        this->head = nullptr;
         return tmp;
     } else {
-        auto tmp = head->next;
-        auto prev = head;
+        auto tmp = this->head->next;
+        auto prev = this->head;
 
         while (tmp->next != nullptr) {
             prev = tmp;
@@ -34,10 +34,10 @@ void stack<T>::push(node<T> *n) {
 
     // 1 -> 2 -> 3 -> 4 -> nullptr
 
-    if (head == nullptr) {
-        head = n;
+    if (this->head == nullptr) {
+        this->head = n;
     } else {
-        auto tmp = head;
+        auto tmp = this->head;
 
         while (tmp->next != nullptr) {
             tmp = tmp->next;

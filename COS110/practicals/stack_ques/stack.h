@@ -10,28 +10,12 @@
 
 template <class T>
 class stack : public list<T> {
-private:
-    node<T>* head;
-
 public:
+
+    stack() : list<T>() {}
+
     node<T>* pop() override;
     void push(node<T>* n) override;
-
-    void print() {
-        if (head == nullptr) {
-            std::cout << "Empty List" << std::endl;
-            return;
-        }
-
-        auto tmp = head;
-
-        while (tmp->next != nullptr) {
-            std::cout << tmp->getItem() << ", ";
-            tmp = tmp->next;
-        }
-
-        std::cout << tmp->getItem() << std::endl;
-    }
 };
 
 

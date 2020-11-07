@@ -11,7 +11,11 @@
 template<class T>
 class list {
 public:
-    node<T>* head;
+
+    list() {
+        head = nullptr;
+    }
+
     virtual node<T>* pop() = 0;
 
     virtual void push(node<T>* i) = 0;
@@ -25,10 +29,14 @@ public:
 
         while (tmp->next != nullptr) {
             std::cout << tmp->getItem() << ", ";
+            tmp = tmp->next;
         }
 
         std::cout << tmp->getItem() << std::endl;
     }
+
+protected:
+    node<T>* head;
 };
 
 
