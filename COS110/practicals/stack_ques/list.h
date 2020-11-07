@@ -6,16 +6,29 @@
 #define STACK_QUES_LIST_H
 
 #include "node.h"
+#include <iostream>
 
 template<class T>
 class list {
-
-protected:
-    node<T> head;
 public:
-    virtual node<T> pop() = 0;
+    node<T>* head;
+    virtual node<T>* pop() = 0;
 
-    virtual void push(node<T> i) = 0;
+    virtual void push(node<T>* i) = 0;
+
+    virtual void print() {
+        if (head == nullptr) {
+            return;
+        }
+
+        auto tmp = head;
+
+        while (tmp->next != nullptr) {
+            std::cout << tmp->getItem() << ", ";
+        }
+
+        std::cout << tmp->getItem() << std::endl;
+    }
 };
 
 
