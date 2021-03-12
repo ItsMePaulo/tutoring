@@ -28,7 +28,6 @@ were mentioned in the notes. The IDE we used to code is called [CLion](https://w
 It is a bit complex to follow you can use the following tutorial to help you set up 
 your CLion environment: [CLion set-up]() 
 
-<h3> Chapter 13 </h3> 
 
 1. [Basic Example of Person Class](https://gitlab.com/Paul_Wood_96/tutoring/-/tree/master/COS110/practicals/person). <i>Cover a basic layout of a class</i>
 2. [Integer class: Prac 1](https://gitlab.com/Paul_Wood_96/tutoring/-/tree/master/COS110/practicals/Integer). *Covers class basics like
@@ -40,6 +39,3 @@ with examples. Looks at the "Is A" relationship, and the "Has A" relationship*
 5. [Templates](https://gitlab.com/Paul_Wood_96/tutoring/-/tree/master/COS110/practicals/templates) *First glance 
 at generic code using template parameters*
    
-<div align="center"><h1>  Questions and memos </h1></div>
-
-1. [Chapter 13](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS110/quizes/cchapter_13.md)
