@@ -8,12 +8,20 @@ public class Main {
 
         Calculator calculator = new Calculator();
 
-        System.out.println(calculator.add( 3, 5));
 
-        System.out.println(calculator.multiply(7, 10));
+        System.out.println(calculator.multiply(7, 15));
 
         System.out.println(calculator.divide(4, 0));
         System.out.println(calculator.divide(4, 2));
+
+
+
+
+
+
+
+
+
 
     }
 }
