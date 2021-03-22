@@ -13,15 +13,6 @@ public class Main {
 
         System.out.println(calculator.divide(4, 0));
         System.out.println(calculator.divide(4, 2));
-
-
-
-
-
-
-
-
-
-
+        System.out.println( "Should be: " + calculator.divide(10, 5));
     }
 }
