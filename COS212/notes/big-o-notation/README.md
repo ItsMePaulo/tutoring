@@ -1,6 +1,3 @@
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
 <div align="center"><h1> BigO Notation </h1></div>
 
 We use BigO notation to indicate the complexity of an algorithm, the complexity refers to the amount of effort needed to
@@ -68,7 +65,7 @@ for (int i = 0;i < n; i++) {
 In this example `i` is assigned, the outer for loop executes `n` times updating the value of i each time, the 
 inner for loop assigns `j` and also iterates `n` times. 
 
-> We say this equates 1 + n(1 + n) = 1 + n + n<sup>2</sup> thus the complexity is O(n)
+> We say this equates to: 1 + n(1 + n) = 1 + n + n<sup>2</sup>. Thus the complexity is O(n<sup>2</sup>)
 
 
 Looking at 2 more special examples with inner for loops
@@ -85,5 +82,90 @@ In this example the only thing we have changed is that the inner loop is now ite
 The important thing to realise here is that as `n` grows so to will the inner  loop, both grow by the size of 
 n. the inner loop will execute incrementally to the size of `n`
 
+> We say this equates to: 1 + n(1 + 2 + ... n - 1) = 1 + n (n - 1)  = 1 -n + n<sup>2</sup>. Thus the complexity is O(n<sup>2</sup>) 
 
-\sum_{i=1}^n a_i.
+```kotlin
+for (int i = 4;i < n; i++) {
+    for (int j =  i - 3;j <= i; j++){
+        sum += i;
+    }
+}
+```
+
+In  this example we need to pay special attention to the inner for loop. How many times will this for loop iterate? It 
+will *always iterate 4 times*. Look closely, we initialize `j` to `i - 3`, and then we loop until `j` is greater than `i` 
+which is 3 moore than `j` at initialization. Thus the number of iterations in the inner for loop is constant.
+
+> We say this equates to 1 + (n - 4)(1 + 4) = 1 -20 + n + 4n = -19 + 5n. Thus the complexity is O(n) 
+
+# Examples
+
+## 1.Linear O(n)
+
+```kotlin
+
+for (int i = 0;i < n; i++){
+    sum += i;
+}
+```
+
+## 2.Quadratic 
+
+```kotlin
+for (int i = 0;i < n; i++) {
+    for (int j =  0;j < n; j++){
+        sum += i;
+    }
+}
+```
+
+```kotlin
+for (int i = 0;i < n; i++) {
+    for (int j =  0;j < n; j++){
+        for (int k =  0;j < n; k++){
+            for (int l =  0;j < n; l++){
+                sum += i;
+            }
+        }
+    }
+}
+```
+
+## 3.Exponential O(n<sup>2</sup>)
+
+```kotlin
+recursive()
+{
+    //stuff 
+    return recursive() * recursive ();
+}
+```
+
+## 4.Log based O(Log<sub>n</sub>)
+
+```kotlin
+
+for (int i = 0;i < n; i++ * 2){
+    sum += i;
+}
+```
+
+## 5.Linear and Log based O(n(Log<sub>n</sub>))
+```kotlin
+
+for (int i = 0;i < n; i++ * 2){
+    for (int j =  0;j < n; j++){
+        sum += i;
+    }
+}
+```
+
+## 6.immediate  O(1)
+
+```kotlin
+
+function()
+{
+    return 1
+}
+```
