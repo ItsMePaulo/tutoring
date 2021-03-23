@@ -3,10 +3,10 @@
 We use BigO notation to indicate the complexity of an algorithm, the complexity refers to the amount of effort needed to
 apply the algorithm. Now the exact amount of effort needed to solve the algorithm is **NOT** BIG_O notation. We don't
 use BigO notation to determine how many assignment operations occur in an algorithm or how many iterations occur in a
-couple while/for loops, instead what we are really trying to focus on, is the factor of the algorithm that will scale
-the most given a large n.
+couple of while/for loops, instead what we are really trying to focus on, is the factor of the algorithm that will scale
+the most given a scalable n.
 
-By ignoring the entire algorithm and only focussing on the large contributing factor of the algorithm we perform an
+By ignoring the entire algorithm and only focussing on the largest contributing factor of the algorithm we perform an
 approximation of efficiency, commonly known as the *asymptotic complexity*. To understand this it's good to lay out an
 algorithm and see which part of the algorithm scales depending on n. Let's say we have the following algorithm
 
@@ -109,7 +109,7 @@ for (int i = 0;i < n; i++){
 }
 ```
 
-## 2.Quadratic 
+## 2.Quadratic  O(n<sup>2</sup>) |  O(n<sup>4</sup>)
 
 ```kotlin
 for (int i = 0;i < n; i++) {
@@ -131,7 +131,7 @@ for (int i = 0;i < n; i++) {
 }
 ```
 
-## 3.Exponential O(n<sup>2</sup>)
+## 3.Exponential  O<sup>n</sup>
 
 ```kotlin
 recursive()
