@@ -101,10 +101,53 @@ public class SkipList<T extends Comparable<? super T>> {
     }
 
     public T search(T key) {
-        // your code goes here
+        int lvl;
+        SkipListNode<T> prev, curr;
 
-        return null;
+        // find the highest non null
+        for (lvl = maxLevel - 1; lvl >= 0 && root[lvl] == null; lvl--) {
+            // empty body
+        }
 
+        prev = curr = root[lvl];
+
+        // I wouldn't usually make infinite loops like this
+        while (true) {
+            if (key.equals(curr.key)) {
+                return curr.key;
+            }
+            // compare to next
+            else if (key.compareTo(curr.key) < 0) {
+                if (lvl == 0) {
+                    System.out.println("Item not found in the list");
+                    return null;
+                }
+                // still on root node
+                else if (curr == root[lvl]) {
+                    curr = root[--lvl];
+                }
+                // have moved a bit
+                else {
+                    curr = prev.next[lvl];
+                }
+            } else {
+                prev = curr;
+                if (curr.next != null) {
+                    curr = curr.next[lvl];
+                } else {
+                    // find the highest non null from current lvl - 1
+                    for (--lvl; lvl >= 0 && root[lvl] == null; lvl--) {
+                        // empty body
+                    }
+                    if (lvl >= 0) {
+                        curr = curr.next[lvl];
+                    } else {
+                        System.out.println("Item not found in the list");
+                        return null;
+                    }
+                }
+            }
+        }
     }
 
     public String getPathToLastNode() {
