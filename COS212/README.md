@@ -51,7 +51,7 @@ They can follow this link to see how to download and set up the IDE for Windows 
 
 # Practicals 
 
-1. [prac1]()
+1. [prac1](https://gitlab.com/Paul_Wood_96/tutoring/-/tree/master/COS212/practicals/prac1)
 1. [prac2]()
 1. [prac3]()
 1. [prac4]()
