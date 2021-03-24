@@ -56,7 +56,8 @@ public class Main {
 	public static void main(String[] args) {
 		// Some code to help you test
 		SkipList<Integer> skipList = new SkipList<Integer>();
-		
+		SkipList<String> skipList2 = new SkipList<String>();
+
 		skipList.insert(5);
 		skipList.insert(55);
 		skipList.insert(10);
@@ -67,7 +68,7 @@ public class Main {
 		skipList.insert(60);
 		skipList.insert(99);
 		skipList.insert(29);
-		
+
 		printList(skipList);
 		firstKey(skipList);
 		pathToLastKey(skipList);
@@ -82,7 +83,7 @@ public class Main {
 		searchKey(skipList, 55);
 		firstKey(skipList);
 		pathToLastKey(skipList);
-		
+
 		/*Expected output
 
 		Level 0: 3 5 10 19 22 29 55 60 99 

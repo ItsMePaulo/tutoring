@@ -132,11 +132,11 @@ public class SkipList<T extends Comparable<? super T>> {
                 }
             } else {
                 prev = curr;
-                if (curr.next != null) {
+                if (curr.next[lvl] != null) {
                     curr = curr.next[lvl];
                 } else {
                     // find the highest non null from current lvl - 1
-                    for (--lvl; lvl >= 0 && root[lvl] == null; lvl--) {
+                    for (--lvl; lvl >= 0 && curr.next[lvl] == null; lvl--) {
                         // empty body
                     }
                     if (lvl >= 0) {
@@ -153,7 +153,31 @@ public class SkipList<T extends Comparable<? super T>> {
     public String getPathToLastNode() {
         // your code goes here
 
-        return "";
+        int lvl;
+
+        for (lvl = maxLevel - 1; lvl >= 0 && root[lvl] == null; lvl--) {
+            // empty body
+        }
+
+        return getPath(lvl, root[lvl], "");
     }
 
+    private String getPath(int lvl, SkipListNode<T> skipListNode, String result) {
+        if(skipListNode == null) {
+            return "";
+        }
+
+        result += "[" + skipListNode.key + "]";
+
+        // look for next valid next value by lvl
+        for ( ; lvl >= 0 && skipListNode.next[lvl] == null; lvl--) {
+            // empty body
+        }
+
+        if (lvl >= 0) {
+            result = getPath(lvl, skipListNode.next[lvl], result);
+        }
+
+        return result;
+    }
 }
