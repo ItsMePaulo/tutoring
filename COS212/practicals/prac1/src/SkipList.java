@@ -92,7 +92,6 @@ public class SkipList<T extends Comparable<? super T>> {
         // your code goes here
         int lvl;
 
-
         SkipListNode<T>[] curr = new SkipListNode[maxLevel];
         SkipListNode<T>[] prev = new SkipListNode[maxLevel];
 
@@ -132,7 +131,6 @@ public class SkipList<T extends Comparable<? super T>> {
         }
 
         return deleted;
-
     }
 
     public T first() {
