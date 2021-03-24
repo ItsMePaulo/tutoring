@@ -153,7 +153,7 @@ for (int i = 0;i < n; i *= 2){
 ## 5.Linear and Log based O(n(Log<sub>n</sub>))
 ```kotlin
 
-for (int i = 0;i < n; i++ * 2){
+for (int i = 0;i < n; i *= 2){
     for (int j =  0;j < n; j++){
         sum += i;
     }
