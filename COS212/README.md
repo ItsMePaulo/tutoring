@@ -35,12 +35,13 @@ They can follow this link to see how to download and set up the IDE for Windows 
 
 # Lessons covered
 
-1. [Complexity Analysis]()
-2. [Sparse Tables]()
-3. [Stacks and Queues]() 
-4. [Recursion]()
-5. [Binary Trees pt1]()
-6. [Binary Trees pt2]()
+1. [Complexity Analysis](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/BigONotation/README.md)
+2. [Skip Lists](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/SkipLists/README.md)
+3. [Sparse Tables]()
+4. [Stacks and Queues]() 
+5. [Recursion]()
+6. [Binary Trees pt1]()
+7. [Binary Trees pt2]()
 
 
 # Code Base 
