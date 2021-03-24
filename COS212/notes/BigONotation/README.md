@@ -7,8 +7,8 @@ couple of while/for loops, instead what we are really trying to focus on, is the
 the most given a scalable n.
 
 By ignoring the entire algorithm and only focussing on the largest contributing factor of the algorithm we perform an
-approximation of efficiency, commonly known as the *asymptotic complexity*. To understand this it's good to lay out an
-algorithm and see which part of the algorithm scales depending on n. Let's say we have the following algorithm
+approximation of efficiency, commonly known as the *asymptotic complexity*. To understand this it's a good idea to lay out an
+algorithm and see which part of the algorithm scales depending on a scalling n value. Let's say we have the following algorithm
 
 > f(n) = n<sup>2</sup> + 100n + log<sub>10</sub>n + 1000
 
