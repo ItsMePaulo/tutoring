@@ -73,7 +73,7 @@ public class Main {
 		firstKey(skipList);
 		pathToLastKey(skipList);
 		searchKey(skipList, 55);
-		
+
 		deleteKey(skipList, 55);
 		deleteKey(skipList, 3);
 		deleteKey(skipList, 99);

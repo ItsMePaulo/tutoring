@@ -63,7 +63,6 @@ public class SkipList<T extends Comparable<? super T>> {
 
             // not a base node
             if (lvl > 0) {
-
                 if (prev[lvl] == null) {
                     curr[lvl - 1] = root[lvl - 1];
                     prev[lvl - 1] = null;
@@ -71,7 +70,6 @@ public class SkipList<T extends Comparable<? super T>> {
                     curr[lvl - 1] = prev[lvl].next[lvl - 1];
                     prev[lvl - 1] = prev[lvl];
                 }
-
             }
         }
         // create a newNode
@@ -92,8 +90,49 @@ public class SkipList<T extends Comparable<? super T>> {
 
     public boolean delete(T key) {
         // your code goes here
+        int lvl;
 
-        return false;
+
+        SkipListNode<T>[] curr = new SkipListNode[maxLevel];
+        SkipListNode<T>[] prev = new SkipListNode[maxLevel];
+
+        curr[maxLevel - 1] = root[maxLevel - 1];
+        prev[maxLevel - 1] = null;
+
+        for (lvl = maxLevel - 1; lvl >= 0; lvl--) {
+
+            while (curr[lvl] != null && curr[lvl].key.compareTo(key) < 0) {
+                prev[lvl] = curr[lvl];
+                curr[lvl] = curr[lvl].next[lvl];
+            }
+
+            if (lvl > 0) {
+                if (prev[lvl] == null) {
+                    curr[lvl - 1] = root[lvl - 1];
+                    prev[lvl - 1] = null;
+                } else {
+                    curr[lvl - 1] = prev[lvl].next[lvl - 1];
+                    prev[lvl - 1] = prev[lvl];
+                }
+            }
+        }
+
+        boolean deleted = false;
+
+        for (int i = 0; i < maxLevel - 1; i++) {
+            if (curr[i] != null && key.equals(curr[i].key)) {
+                deleted = true;
+
+                if (prev[i] == null) {
+                    root[i] = curr[i].next[i];
+                } else {
+                    prev[i].next[i] = curr[i].next[i];
+                }
+            }
+        }
+
+        return deleted;
+
     }
 
     public T first() {
@@ -163,14 +202,14 @@ public class SkipList<T extends Comparable<? super T>> {
     }
 
     private String getPath(int lvl, SkipListNode<T> skipListNode, String result) {
-        if(skipListNode == null) {
+        if (skipListNode == null) {
             return "";
         }
 
         result += "[" + skipListNode.key + "]";
 
         // look for next valid next value by lvl
-        for ( ; lvl >= 0 && skipListNode.next[lvl] == null; lvl--) {
+        for (; lvl >= 0 && skipListNode.next[lvl] == null; lvl--) {
             // empty body
         }
 
