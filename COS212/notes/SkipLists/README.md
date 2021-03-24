@@ -47,14 +47,14 @@ At each iteration we save the value as the range needed to determine the level.
 
 Find the array of powers for a Skip List with a max level of 7.
 
-> > 2<sup>7</sup> = 128 <br />
-> > 128 - 2<sup>0</sup> = 127 ====> [127] level 7 <br />
-> > 127 - 2<sup>1</sup> = 125 ====> [125 - 126] level 6 <br />
-> > 125 - 2<sup>2</sup> = 121 ====> [121 - 124] level 5 <br />
-> > 121 - 2<sup>3</sup> = 113 ====> [113 - 120] level 4 <br />
-> > 113 - 2<sup>4</sup> = 97 ====> [97 - 112] level 3 <br />
-> > 97 - 2<sup>5</sup> = 65 ====> [65 - 96] level 2 <br />
-> > 97 - 2<sup>6</sup> = 1 ====> [1 - 64] level 1 <br />
+> 2<sup>7</sup> = 128 <br />
+> 128 - 2<sup>0</sup> = 127 ====> [127] level 7 <br />
+> 127 - 2<sup>1</sup> = 125 ====> [125 - 126] level 6 <br />
+> 125 - 2<sup>2</sup> = 121 ====> [121 - 124] level 5 <br />
+> 121 - 2<sup>3</sup> = 113 ====> [113 - 120] level 4 <br />
+> 113 - 2<sup>4</sup> = 97 ====> [97 - 112] level 3 <br />
+> 97 - 2<sup>5</sup> = 65 ====> [65 - 96] level 2 <br />
+> 97 - 2<sup>6</sup> = 1 ====> [1 - 64] level 1 <br />
 
 You can write it out as is or if you wanted you could write it out as follows:
 
@@ -95,14 +95,14 @@ class SkipList {
     public T search(T key) {
         int lvl;
         skipListNode<T> prev, curr;
-        
+
         // find the highest non null
-        for (lvl = maxLevel - 1; lvl >=0 && root[lvl] == null; lvl--) {
+        for (lvl = maxLevel - 1; lvl >= 0 && root[lvl] == null; lvl--) {
             // empty body    
         }
-        
+
         prev = curr = root[lvl];
-        
+
         // I wouldn't usually make infinite loops like this
         while (true) {
             if (key.equals(curr.key)) {
@@ -122,21 +122,18 @@ class SkipList {
                 else {
                     curr = prev.next[lvl];
                 }
-            }
-            else {
+            } else {
                 prev = curr;
                 if (curr.next != null) {
                     curr = curr.next[lvl];
-                }
-                else {
+                } else {
                     // find the highest non null from current lvl - 1
-                    for (--lvl; lvl >=0 && root[lvl] == null; lvl--) {
+                    for (--lvl; lvl >= 0 && root[lvl] == null; lvl--) {
                         // empty body    
                     }
                     if (lvl >= 0) {
                         curr = curr.next[lvl];
-                    }
-                    else {
+                    } else {
                         System.out.println("Item not found in the list");
                         return null;
                     }
