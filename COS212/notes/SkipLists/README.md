@@ -54,7 +54,7 @@ Find the array of powers for a Skip List with a max level of 7.
 > 121 - 2<sup>3</sup> = 113 ====> [113 - 120] level 4 <br />
 > 113 - 2<sup>4</sup> = 97 ====> [97 - 112] level 3 <br />
 > 97 - 2<sup>5</sup> = 65 ====> [65 - 96] level 2 <br />
-> 97 - 2<sup>6</sup> = 1 ====> [1 - 64] level 1 <br />
+> 65 - 2<sup>6</sup> = 1 ====> [1 - 64] level 1 <br />
 
 You can write it out as is or if you wanted you could write it out as follows:
 
