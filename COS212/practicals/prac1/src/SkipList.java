@@ -90,7 +90,13 @@ public class SkipList<T extends Comparable<? super T>> {
 
     public boolean delete(T key) {
         // your code goes here
+
+        if (isEmpty()) {
+            return false;
+        }
+
         int lvl;
+
 
         SkipListNode<T>[] curr = new SkipListNode[maxLevel];
         SkipListNode<T>[] prev = new SkipListNode[maxLevel];
@@ -118,7 +124,7 @@ public class SkipList<T extends Comparable<? super T>> {
 
         boolean deleted = false;
 
-        for (int i = 0; i < maxLevel - 1; i++) {
+        for (int i = 0; i < maxLevel; i++) {
             if (curr[i] != null && key.equals(curr[i].key)) {
                 deleted = true;
 
@@ -146,6 +152,10 @@ public class SkipList<T extends Comparable<? super T>> {
             // empty body
         }
 
+        if (lvl < 0) {
+            return null;
+        }
+
         prev = curr = root[lvl];
 
         // I wouldn't usually make infinite loops like this
@@ -165,7 +175,7 @@ public class SkipList<T extends Comparable<? super T>> {
                 }
                 // have moved a bit
                 else {
-                    curr = prev.next[lvl];
+                    curr = prev.next[--lvl];
                 }
             } else {
                 prev = curr;
@@ -194,6 +204,10 @@ public class SkipList<T extends Comparable<? super T>> {
 
         for (lvl = maxLevel - 1; lvl >= 0 && root[lvl] == null; lvl--) {
             // empty body
+        }
+
+        if (lvl < 0) {
+            return "";
         }
 
         return getPath(lvl, root[lvl], "");
