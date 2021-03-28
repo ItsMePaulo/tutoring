@@ -94,11 +94,15 @@ value we are looking for, OR a null next value, OR a next value larger than the 
 class SkipList {
     public T search(T key) {
         int lvl;
-        skipListNode<T> prev, curr;
+        SkipListNode<T> prev, curr;
 
         // find the highest non null
         for (lvl = maxLevel - 1; lvl >= 0 && root[lvl] == null; lvl--) {
-            // empty body    
+            // empty body
+        }
+
+        if (lvl < 0) {
+            return null;
         }
 
         prev = curr = root[lvl];
@@ -120,16 +124,16 @@ class SkipList {
                 }
                 // have moved a bit
                 else {
-                    curr = prev.next[lvl];
+                    curr = prev.next[--lvl];
                 }
             } else {
                 prev = curr;
-                if (curr.next != null) {
+                if (curr.next[lvl] != null) {
                     curr = curr.next[lvl];
                 } else {
                     // find the highest non null from current lvl - 1
-                    for (--lvl; lvl >= 0 && root[lvl] == null; lvl--) {
-                        // empty body    
+                    for (--lvl; lvl >= 0 && curr.next[lvl] == null; lvl--) {
+                        // empty body
                     }
                     if (lvl >= 0) {
                         curr = curr.next[lvl];
