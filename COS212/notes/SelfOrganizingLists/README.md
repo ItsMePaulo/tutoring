@@ -51,6 +51,30 @@ method.
 
 <img src="images/move_to_front.png" alt="move to front">
 
+```kotlin
+
+fun moveToFront(item: T) {
+    var tmp: Node<T> = head
+    var prev: Node<T>? = null
+
+    // no need to check for an empty list
+    while (tmp != null) {
+        if (tmp.key == item) {
+            break
+        }
+
+        prev = tmp
+        tmp = tmp.next
+    }
+
+    if (tmp != null) {
+        prev.next = tmp.next
+        tmp.next = head
+        head = tmp
+    }
+}
+```
+
 ## Transpose
 
 The bubble sort of self sorting, everytime an item is accessed (searched for), swap it with its predecessor, except in
@@ -59,12 +83,82 @@ constant if you the swap operation needs to occur.
 
 <img src="images/transpose.png" alt="transpose">
 
+```kotlin
+
+fun transpose(item: T) {
+
+    if (head == null || (head != null && head.key == item)) {
+        return
+    }
+
+    // this is a safe assignment
+    var tmp: Node<T> = head.next
+    var prev: Node<T> = head
+    var prevPrev: Node<T> = null
+
+    while (tmp != null) {
+        if (tmp.key == item) {
+            break
+        }
+
+        prevPrev = prev
+        prev = tmp
+        tmp = tmp.next
+    }
+
+    if (tmp != null) {
+        // check for? 
+        if (prevPrev == null) {
+            prev.next = tmp.next
+            tmp.next = prev
+            head = tmp
+        } else {
+            //      PP   P    T
+            // 1 -> 2 -> 3 -> 4 -> 5 => before 
+
+            prevPrev.next = tmp
+            prev.next = tmp.next
+            tmp.next = prev
+
+            //      PP   T    P
+            // 1 -> 2 -> 4 -> 3 -> 5 => After
+        }
+    }
+}
+```
+
 ## Count
 
 Keep track of how often the item has been accessed (searched for) and sort the items in the list by that value. Adds a
 complexity as the move operation is dependent on a sort operation which can be dynamic.
 
 <img src="images/count.png" alt="count">
+
+```kotlin
+
+fun transpose(item: T) {
+
+    var tmp: Node<T> = head
+
+    while (tmp != null) {
+        if (tmp.key == item) {
+            break
+        }
+
+        tmp = tmp.next
+    }
+
+    if (tmp != null) {
+        tmp.count++
+        sort(tmp)
+    }
+}
+
+fun sort(tmp: Node<T>) {
+    TODO()
+}
+
+```
 
 ## Drawbacks of Each
 
