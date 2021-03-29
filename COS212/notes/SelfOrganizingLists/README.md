@@ -64,6 +64,8 @@ constant if you the swap operation needs to occur.
 Keep track of how often the item has been accessed (searched for) and sort the items in the list by that value. Adds a
 complexity as the move operation is dependent on a sort operation which can be dynamic.
 
+<img src="images/count.png" alt="count">
+
 ## Drawbacks of Each
 
 * Add complexity or effort needed to the search algorithm
