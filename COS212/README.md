@@ -38,7 +38,7 @@ They can follow this link to see how to download and set up the IDE for Windows 
 1. [Complexity Analysis](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/BigONotation/README.md)
 2. [Skip Lists](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/SkipLists/README.md)
 3. [Self Organinizing Lists](https://gitlab.com/Paul_Wood_96/tutoring/-/tree/master/COS212/notes/SelfOrganizingLists/README.md)
-4. [Stacks and Queues]() 
+4. [Stacks and Queues](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/StacksAndQueus/README.md) 
 5. [Recursion]()
 6. [Binary Trees pt1]()
 7. [Binary Trees pt2]()
