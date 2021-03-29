@@ -36,7 +36,7 @@ This is an age-old question in 212, they do love asking it, so it's worthwhile p
 queue implemented as a Stack, you have access to the Stacks `pop()` and `push()` methods from the stack as well as the
 `isEmpty()` method.
 
-```Java
+```java
 
 class Queue<T> {
 
