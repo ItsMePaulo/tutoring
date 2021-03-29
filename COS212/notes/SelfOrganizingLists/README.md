@@ -63,8 +63,8 @@ fun moveToFront(item: T) {
             break
         }
 
-        prev = tmp
-        tmp = tmp.next
+        prev = tmp // need to update prev before tmp
+        tmp = tmp.next 
     }
 
     if (tmp != null) {
@@ -96,13 +96,10 @@ fun transpose(item: T) {
     var prev: Node<T> = head
     var prevPrev: Node<T> = null
 
-    while (tmp != null) {
-        if (tmp.key == item) {
-            break
-        }
-
-        prevPrev = prev
-        prev = tmp
+    while (tmp != null && tmp.key != item) {
+        
+        prevPrev = prev // need update prevPrev before we override prev
+        prev = tmp // need to update prev before tmp
         tmp = tmp.next
     }
 
@@ -140,11 +137,7 @@ fun transpose(item: T) {
 
     var tmp: Node<T> = head
 
-    while (tmp != null) {
-        if (tmp.key == item) {
-            break
-        }
-
+    while (tmp != null && tmp.key != item) {
         tmp = tmp.next
     }
 
