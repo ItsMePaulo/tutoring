@@ -60,7 +60,7 @@ class Main {
     public void simpleWhileLoop() {
         int i = 0;
 
-        while (i < array.length) {
+        while (i < array.length) { // iterative condition
             System.out.println(array[i++]);
         }
     }
@@ -71,9 +71,9 @@ Converted to a recursive function looks like this
 
 ```java
 class Main {
-    
+
     public void simpleRecursiveFunc(int i) {
-        if (i >= array.length) {
+        if (i >= array.length) { // base case
             return;
         } else {
             System.out.println(array[i]);
@@ -81,7 +81,6 @@ class Main {
         }
     }
 }
-
 ```
 
 Notice the base case and the iterative case. The condition for the iterative case is `while (i < array.length)` meaning
@@ -89,3 +88,77 @@ any value less than the array length would return true. the inverse of this cond
 values that would return false) is any value greater than or equal to the arrays length `if (i >= array.length)` and if
 we look at our base case, that is the exact condition.
 
+## Types of Recursion
+
+### Tail Recursion
+
+Only `one` recursive call `at the end of the function`, with no other operations after the recursive call. In this way
+the recursive call tails the function, hence the name tail recursion. Tail recursion is used as an alternative to simple
+iterative calls, like a replacement for a while loop.
+
+```kotlin
+fun method(x: Int) {
+    if (x < 0) return
+    else method(x - 1)
+}
+```
+
+### Non-Tail Recursion
+
+The recursive call is not the last operation, where at least one operation happens after the recursive call, this can be
+any mathematical operation to a returned value, multiple recursive calls etc...
+
+```kotlin
+fun method1(x: Int): Int {
+    if (x < 0) return 0
+    else {
+        return x + method1(x - 1) // single addition operation after the recursive method
+    }
+}
+```
+
+```kotlin
+fun method2(x: Int, y: Int): Int {
+    if (x < 0) return y
+    else {
+        return method2(x - 1, y * 2) * method2(x - 2, y * 4) // multiple operations after recursive calls
+    }
+}
+```
+
+### Indirect Recursion
+
+Functions calling functions that create a loop ultimately calling the function started the sequence again. Really
+complex to follow use with caution. A specialization is *Mutual Recursion* where only two functions call each other back
+and forth.
+
+```kotlin
+fun wash(clothes) {
+    iron(clothes)
+}
+fun iron(clothes) {
+    hangUp(clothes)
+}
+fun hungUp(clothes) {
+    wear(clothes)
+}
+fun wear(clothes) {
+    wash(clothes) // start at the beginning again
+}
+```
+
+### Nested Recursion
+
+Functions where the input of one recursive call is determined by the result of another recursive call, the most
+computational expensive function calls taught in 212. Nested recursive functions scale very quickly up very quickly and
+are often never used because of this
+
+```kotlin
+fun nestedFun(i: Int) {
+    if (i == 0) return 0
+    else if (i > 4) return i;
+    else {
+        return nestedFun(2 + 2 * nestedFun(2 * i)) // nested call
+    }
+}
+```
