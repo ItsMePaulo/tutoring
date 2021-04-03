@@ -190,22 +190,28 @@ the algorithmn is describes as follows
 
 ```kotlin
 fun placeQueen(row: Int) {
-    foreach col at a valid position 
-        place queen at position 
-        if (row < rows) 
-            placeQueen(row + 1)
-        else 
-            printBoard()
-    
-        remove queen at position 
+    foreach col at a valid position
+            place queen at position
+            if (row < rows)
+                placeQueen(row + 1)
+            else
+                printBoard()
+
+    remove queen at position
 }   
 ```
 
-implementation can be seen [here](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/code/demo-recursion/src/Queens.java) 
+implementation can be
+seen [here](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/code/demo-recursion/src/Queens.java)
 
-<img src="images/queens.png" alt="queen board">
-<br />
-<img src="images/queens_back.png" alt="queen board">
+<img src="images/queens.png" alt="queens">
+
+In this scenario the first 3 queens can be added with little concerns, but as soon as we attempt to add a forth queen,
+there is no valid column, so we backtrace one row up and try to move the queen that came before it. Again there is no
+valid space, so we move up again to the second row, but still there is no valid position to add the queen in the second
+row. In the end we end up backtracking all the way to the position of the first queen and reposition that piece. After
+that we continue the algorithm as expected.
+
 
 
 
