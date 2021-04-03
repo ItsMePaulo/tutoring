@@ -20,7 +20,7 @@ executing.
 
 ### The Difference between a Recursive condition and an Iterative condition
 
-In an iterative environment the condition is *the condition that tells the program to **CONTINUE** to repeat executing a
+In an iterative environment the condition is *the condition that tells the program to **CONTINUE** repeating a
 block of code*. For example, a simple while loop holds a condition that, while true, will continue to execute a
 specified block until, this will continue to happen until the condition becomes false.
 
