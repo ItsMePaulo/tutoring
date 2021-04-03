@@ -204,7 +204,7 @@ fun placeQueen(row: Int) {
 implementation can be seen [here](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/code/demo-recursion/src/Queens.java) 
 
 <img src="images/queens.png" alt="queen board">
-
+<br />
 <img src="images/queens_back.png" alt="queen board">
 
 
