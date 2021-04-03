@@ -46,8 +46,8 @@ They can follow this link to see how to download and set up the IDE for Windows 
 
 # Code Base 
 
-1. [Sparse Tables]()
-2. [Stacks And Queues]()
+1. [Demo project: Introduction to IntelliJ and Java](https://gitlab.com/Paul_Wood_96/tutoring/-/tree/master/COS212/code/demo/src)
+2. [Demo recursion: Recursive examples, backtracing, matrix algorithms](https://gitlab.com/Paul_Wood_96/tutoring/-/tree/master/COS212/code/demo-recursion/src)
 
 # Practicals 
 
