@@ -162,3 +162,50 @@ fun nestedFun(i: Int) {
     }
 }
 ```
+
+## Using Recursion, When and Why?
+
+Recursion can and should be used interchangeably with iterative calls when the recursive functions are easier to read
+and follow, but there is a separate scenario were recursive functions are more adapt than regular iterative calls.
+
+Recursion is incredibly useful in scenarios where we need to return to a specific point in time, and a specific state of
+the program. This is because we are not just passing a single variable to each recursive call but the entire function,
+this is thanks to the fundamental structure of recursion. Recursion uses the stack to keep state of each function at a
+point in the program, when an internal recursive call A) returns it returns to the point when it was called, point B).
+When the program returns to function B) it returns to the function with the exact state the program was in before the
+call to A). This means we have access to previous state when we start traversing backwards through the function
+calls. <br />
+When we make use of the stack we are taking advantage of **non-tail** recursion, and it is incredibly useful in
+scenarios which require any form of backtracking.
+
+### Backtracing
+
+Some algorithms require you to first explore a few options before realising the solution will unfortunately require some
+changes to one of the previous steps. Backtracing is a programs' ability to go backwards to a previous step in the
+algorithm.
+
+One such scenario is the N Queens algorithm. The N queens algorithm tries to place N queens on a NxN chess board in a
+position where no queen is attacking another. Queens can move vertically, horizontally and diagonally. The sudo code for
+the algorithmn is describes as follows
+
+```kotlin
+fun placeQueen(row: Int) {
+    foreach col at a valid position 
+        place queen at position 
+        if (row < rows) 
+            placeQueen(row + 1)
+        else 
+            printBoard()
+    
+        remove queen at position 
+}   
+```
+
+implementation can be seen [here](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/code/demo-recursion/src/Queens.java) 
+
+<img src="images/queens.png" alt="queen board">
+
+<img src="images/queens_back.png" alt="queen board">
+
+
+
