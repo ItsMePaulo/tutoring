@@ -22,7 +22,7 @@ executing.
 
 In an iterative environment the condition is *the condition that tells the program to **CONTINUE** repeating a
 block of code*. For example, a simple while loop holds a condition that, while true, will continue to execute a
-specified block until, this will continue to happen until the condition becomes false.
+specified block, this will continue to happen until the condition becomes false.
 
 ```kotlin
 fun iterativeMethods() {
