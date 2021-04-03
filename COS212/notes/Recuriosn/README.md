@@ -168,12 +168,12 @@ fun nestedFun(i: Int) {
 Recursion can and should be used interchangeably with iterative calls when the recursive functions are easier to read
 and follow, but there is a separate scenario were recursive functions are more adapt than regular iterative calls.
 
-Recursion is incredibly useful in scenarios where we need to return to a specific point in time, and a specific state of
-the program. This is because we are not just passing a single variable to each recursive call but the entire function,
-this is thanks to the fundamental structure of recursion. Recursion uses the stack to keep state of each function at a
-point in the program, when an internal recursive call A) returns it returns to the point when it was called, point B).
-When the program returns to function B) it returns to the function with the exact state the program was in before the
-call to A). This means we have access to previous state when we start traversing backwards through the function
+Recursion is incredibly useful in scenarios where we need to return to a specific point in time, and at a specific state
+of the program. This is because we are not just passing a single variable to each recursive call but the entire
+function, this is thanks to the fundamental structure of recursion. Recursion uses the stack to keep state of each
+function at a point in the program, when an internal recursive call A) returns, the function returns to the point when
+it was called, point B). When the program returns to function B) it has the exact same state it had when it called
+function A). This means we have access to previous state when we start traversing backwards through the function
 calls. <br />
 When we make use of the stack we are taking advantage of **non-tail** recursion, and it is incredibly useful in
 scenarios which require any form of backtracking.
@@ -204,13 +204,21 @@ fun placeQueen(row: Int) {
 implementation can be
 seen [here](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/code/demo-recursion/src/Queens.java)
 
-<img src="images/queens.png" alt="queens">
+<img src="images/queen_first.png" alt="queens">
 
-In this scenario the first 3 queens can be added with little concerns, but as soon as we attempt to add a forth queen,
-there is no valid column, so we backtrace one row up and try to move the queen that came before it. Again there is no
-valid space, so we move up again to the second row, but still there is no valid position to add the queen in the second
-row. In the end we end up backtracking all the way to the position of the first queen and reposition that piece. After
-that we continue the algorithm as expected.
+In the scenario the first 2 queens are added by simply finding the first available rows and column going from left to
+right, top to bottom. However, as it stand with the set up as is there is no valid position to add a queen in the third
+row, so the algorithm backtraces and moves the queen in the second row one place further hoping that it clears up a
+space for a queen to be added in the third row.
+
+<img src="images/queen_second.png">
+
+Moving the queen in the second row did allow us to add a queen in the third row, but the algorithm runs into a similar
+problem when we try to add a queen to the forth row. The algorithm backtraces one row up and tries to move the queen at
+row 3 but unfortunately there is no valid space, so we move up again to the second row, but still there is no valid
+position to add the queen. The algorithm backtraces all the way to the first row and moves the queen at this row, after
+that the algorithm will try adding queens to rows again as expected and it is with this backtrace step that the algorith
+eventually finds a valid setup.
 
 
 
