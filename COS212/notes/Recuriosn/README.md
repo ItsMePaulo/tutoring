@@ -16,7 +16,7 @@ would **NOT** continue to call the function and simply return.
 Where the function calls itself again, it is also where the function will return once all further calls have finished
 executing.
 
-<img src="images/base_recursive_case.png" alt="base and recursive case diagram">
+<img src="images/base_recursive_case.png" alt="base and recursive case diagram" width="60%">
 
 ### The Difference between a Recursive condition and an Iterative condition
 
