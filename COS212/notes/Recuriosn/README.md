@@ -106,7 +106,7 @@ fun method(x: Int) {
 ### Non-Tail Recursion
 
 The recursive call is not the last operation, where at least one operation happens after the recursive call, this can be
-any mathematical operation to a returned value, multiple recursive calls etc...
+any mathematical operation to a returned value, multiple recursive calls, lines of code after the recursive call etc...
 
 ```kotlin
 fun method1(x: Int): Int {
@@ -128,9 +128,7 @@ fun method2(x: Int, y: Int): Int {
 
 ### Indirect Recursion
 
-Functions calling functions that create a loop ultimately calling the function started the sequence again. Really
-complex to follow use with caution. A specialization is *Mutual Recursion* where only two functions call each other back
-and forth.
+Functions calling functions that create a loop ultimately calling the function that started the sequence again. Indirect recursion can lead to tricky to follow code and is sometimes considered an anti-pattern. A specialization is *Mutual Recursion* where only two functions call each other back and forth.
 
 ```kotlin
 fun wash(clothes) {
