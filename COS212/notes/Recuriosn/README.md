@@ -20,9 +20,9 @@ executing.
 
 ### The Difference between a Recursive condition and an Iterative condition
 
-In an iterative environment the condition is *the condition that tells the program to **CONTINUE** repeating a
-block of code*. For example, a simple while loop holds a condition that, while true, will continue to execute a
-specified block, this will continue to happen until the condition becomes false.
+In an iterative environment the condition is *the condition that tells the program to **CONTINUE** repeating a block of
+code*. For example, a simple while loop holds a condition that, while true, will continue to execute a specified block,
+this will continue to happen until the condition becomes false.
 
 ```kotlin
 fun iterativeMethods() {
@@ -128,7 +128,9 @@ fun method2(x: Int, y: Int): Int {
 
 ### Indirect Recursion
 
-Functions calling functions that create a loop ultimately calling the function that started the sequence again. Indirect recursion can lead to tricky to follow code and is sometimes considered an anti-pattern. A specialization is *Mutual Recursion* where only two functions call each other back and forth.
+Functions calling functions that create a loop ultimately calling the function that started the sequence again. Indirect
+recursion can lead to tricky to follow code and is sometimes considered an anti-pattern. A specialization is *Mutual
+Recursion* where only two functions call each other back and forth.
 
 ```kotlin
 fun wash(clothes) {
@@ -169,10 +171,11 @@ and follow, but there is a separate scenario were recursive functions are more a
 Recursion is incredibly useful in scenarios where we need to return to a specific point in time, and at a specific state
 of the program. This is because we are not just passing a single variable to each recursive call but the entire
 function, this is thanks to the fundamental structure of recursion. Recursion uses the stack to keep state of each
-function at a point in the program, when an internal recursive call A) returns, the function returns to the point when
-it was called, point B). When the program returns to function B) it has the exact same state it had when it called
-function A). This means we have access to previous state when we start traversing backwards through the function
-calls. <br />
+function at a point in the program, when a recursive call ultimately reaches its base case it returns to the previous
+penultimate function in the iteration. When the program returns to the previous function it has the exact same state it
+had just before it called the final function, and each function that came before the penultimate function would have its
+state returned to it in the exact same way as with the second to last function. This means we have access to previous
+state when we start traversing backwards through the function calls. <br />
 When we make use of the stack we are taking advantage of **non-tail** recursion, and it is incredibly useful in
 scenarios which require any form of backtracking.
 
