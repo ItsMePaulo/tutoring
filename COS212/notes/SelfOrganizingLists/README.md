@@ -52,7 +52,6 @@ method.
 <img src="images/move_to_front.png" alt="move to front">
 
 ```kotlin
-
 fun moveToFront(item: T) {
     var tmp: Node<T> = head
     var prev: Node<T>? = null
