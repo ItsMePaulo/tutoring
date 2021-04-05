@@ -10,10 +10,10 @@ sorted list at key points.
 <img src="images/folded_list.png" alt="folded list"> <br />
 <img src="images/tree.png" alt="folded list">
 
-When we "fold" the list like this we create a hierarchical structure, this structure is called a tree. But we do not
-want to just fold a list for the sake of giving the list a hierarchy, we do it because it significantly reduces the
-number of comparisons need to search for items in our set. Actually the complexity of a *complete* binary tree
-is `O(log(n))`.
+When we "fold" the list like this we create a hierarchical structure, this structure is called a *Tree*. Folding the
+tree looks cool but we do not want to just fold a list for the sake of giving the list a hierarchy, we do it because it
+significantly reduces the number of comparisons need to search for items in our set. Actually the complexity of a *
+complete* binary tree is `O(log(n))`. 
 
 > Quick recap the difference between a set and a list, is that items are unique in a set (they only appear once) and
 > they can be duplicated in a list. Also, by default sets usually do not worry about order were the order in a list
@@ -32,7 +32,7 @@ Trees are made of 3 components
 2) Arches
 3) Root
 
-<img src="images/tree_components.png" alt="tree components">
+<img src="images/tree_components.png" alt="tree components" width="60%">
 
 ### Nodes
 
@@ -45,7 +45,7 @@ previous but for now that's not really something to worry about.
 
 A Node in a Binary Tree looks like this.
 
-<img src="images/tree_node.png" alt="tree node">
+<img src="images/tree_node.png" alt="tree node" width="60%">
 
 Each node holds 3 fields, a key, and a left and right pointer/reference to the next Node in the Tree. Both Nodes at the
 left and right are **Children** to the current Node, the current Node is the **Parent** Node to both left and right
@@ -57,7 +57,7 @@ Every Node that does have at least 1 child is referred to as a *Non-terminal Nod
 this one. Basically it just means "Not Ending", it is not ending because there is at least one child that comes after
 this Node.
 
-<img src="images/leaf_and_terminal.png" alt="non-terminal nodes and leaf nodes">
+<img src="images/leaf_and_terminal.png" alt="non-terminal nodes and leaf nodes" width="60%">
 
 ### Arches
 
