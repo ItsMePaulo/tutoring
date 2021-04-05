@@ -1,4 +1,4 @@
-<div align="center"><h1> Binary Trees </h1></div>
+<div align="center"><h1> Binary Trees Part 1: Introduction to Trees </h1></div>
 
 Linked List are limited, searching small Lists is easy but as soon as the size of the list becomes large searching
 becomes expensive. As we have seen with sorting algorithms, the worst case complexity is always `O(n)`. Skip Lists are
