@@ -13,7 +13,9 @@ front of you entered the queue before you, and thus will leave the queue before 
 ## Stacks
 
 Stacks are the opposite, stacks follow the *First-In-Last-Out* principle (FILO). In this case the first item in the list
-will stay in the list until all items that have been added after that item are removed first.
+will stay in the list until all items that have been added after that item are removed first. Think of stacking a pile
+of plates, you start from the bottom and work your way up, but when you remove a plate you remove the plate at the top,
+likewise in a stack environment we remove the item at the top/back of the list.
 
 ## Pop and Push, Enqueue and Dequeue
 
