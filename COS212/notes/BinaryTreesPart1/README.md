@@ -196,7 +196,7 @@ Let's imagine we want to add a sorted List into a Tree, look what happens
 
 > Add 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7
 
-<img src="images/bad_tree.png" alt="bad tree" width="60%">
+<img src="images/bad_tree.png" alt="bad tree" width="40%">
 
 The outcome is disasters, the solution is no better than a Linked List. How often and how likely is it that keys will be
 added in a sorted list plays a big role in deciding how to handle unbalanced trees. In a later chapter we will look at
@@ -207,7 +207,7 @@ AVL trees which ensure the Tree is always balanced.
 A Strict tree is a Binary Tree in which every non-terminal Node has a non-empty left subtree, and a non-empty right
 subtree, but Leaf Nodes are not necessarily on the same level.
 
-<img src="images/strict.png" alt="strict tree">
+<img src="images/strict.png" alt="strict tree" width="50%">
 
 ### Complete Trees
 
@@ -215,7 +215,7 @@ A Complete Tree is where every non-terminal node has a complete left and right s
 same level. We can calculate how many Nodes are in each row of a Complete tree simply by using the sum of powers of
 2<sup>lvl - 1</sup>.
 
-<img src="images/complete.png" alt="complete tree">
+<img src="images/complete.png" alt="complete tree" width="50%">
 
 For example:
 > There are 2<sup>1 - 1</sup> nodes in a level 1 tree, <br />
