@@ -208,9 +208,9 @@ seen [here](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/code/d
 <img src="images/queen_first.png" alt="queens">
 
 In the scenario the first 2 queens are added by simply finding the first available rows and column going from left to
-right, top to bottom. However, as it stand with the set up as is there is no valid position to add a queen in the third
+right, top to bottom. However, as it stands, there is no valid position to add a queen in the third
 row, so the algorithm backtraces and moves the queen in the second row one place further hoping that it clears up a
-space for a queen to be added in the third row.
+valid space for a queen to be added in the third row.
 
 <img src="images/queen_second.png">
 
