@@ -42,7 +42,7 @@ fun recursiveMethod() {
     if ( /* condition = */ true) {
         // stop calling the function recursively
     } else {
-        // otherwise call recursive
+        // otherwise call recursively
         recursiveMethod()
     }
 }
@@ -84,7 +84,7 @@ class Main {
 ```
 
 Notice the base case and the iterative case. The condition for the iterative case is `while (i < array.length)` meaning
-any value less than the array length would return true. the inverse of this condition (the condition looking for all
+any value less than the array length would return true. The inverse of this condition (the condition looking for all
 values that would return false) is any value greater than or equal to the arrays length `if (i >= array.length)` and if
 we look at our base case, that is the exact condition.
 
