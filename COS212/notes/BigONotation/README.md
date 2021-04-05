@@ -28,7 +28,7 @@ significant and the quadratic function, *n<sup>2</sup>* became the more signific
 
 > When looking at BigO Notation we simplify this behaviour by only concerning ourselves with large values of N
 
-This means we do **NOT** need to worry about scenarios in which n is lower than 10 and 1000 would be the most
+This means we do **NOT** need to worry about scenarios in which n is lower than 10 and the constant value of 1000 would be the most
 significant factor of the algorithm.
 
 With this in mind a general rule of thumb for BigO Notation, is trying to identify the most significant section of an
