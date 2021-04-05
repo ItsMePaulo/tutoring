@@ -13,7 +13,7 @@ sorted list at key points.
 When we "fold" the list like this we create a hierarchical structure, this structure is called a *Tree*. Folding the
 tree looks cool but we do not want to just fold a list for the sake of giving the list a hierarchy, we do it because it
 significantly reduces the number of comparisons need to search for items in our set. Actually the complexity of a *
-complete* binary tree is `O(log(n))`. 
+complete* binary tree is `O(log(n))`.
 
 > Quick recap the difference between a set and a list, is that items are unique in a set (they only appear once) and
 > they can be duplicated in a list. Also, by default sets usually do not worry about order were the order in a list
@@ -45,7 +45,7 @@ previous but for now that's not really something to worry about.
 
 A Node in a Binary Tree looks like this.
 
-<img src="images/tree_node.png" alt="tree node" width="60%">
+<img src="images/tree_node.png" alt="tree node" width="40%">
 
 Each node holds 3 fields, a key, and a left and right pointer/reference to the next Node in the Tree. Both Nodes at the
 left and right are **Children** to the current Node, the current Node is the **Parent** Node to both left and right
@@ -188,11 +188,15 @@ with the key of the Node, if the key we want to add is greater than the key at t
 child, if the key is less than the node we want to add we move to the Nodes left child. We repeat this until we find an
 empty child at the correct position we wish to add the key.
 
+<img src="images/add_nodes.png" alt="adding a value to a tree">
+
 ## The Importance of the Order in which Keys are Added
 
 Let's imagine we want to add a sorted List into a Tree, look what happens
 
 > Add 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7
+
+<img src="images/bad_tree.png" alt="bad tree" width="60%">
 
 The outcome is disasters, the solution is no better than a Linked List. How often and how likely is it that keys will be
 added in a sorted list plays a big role in deciding how to handle unbalanced trees. In a later chapter we will look at
@@ -203,11 +207,15 @@ AVL trees which ensure the Tree is always balanced.
 A Strict tree is a Binary Tree in which every non-terminal Node has a non-empty left subtree, and a non-empty right
 subtree, but Leaf Nodes are not necessarily on the same level.
 
+<img src="images/strict.png" alt="strict tree">
+
 ### Complete Trees
 
 A Complete Tree is where every non-terminal node has a complete left and right subtree and all the leaf Nodes are on the
 same level. We can calculate how many Nodes are in each row of a Complete tree simply by using the sum of powers of
 2<sup>lvl - 1</sup>.
+
+<img src="images/complete.png" alt="complete tree">
 
 For example:
 > There are 2<sup>1 - 1</sup> nodes in a level 1 tree, <br />
