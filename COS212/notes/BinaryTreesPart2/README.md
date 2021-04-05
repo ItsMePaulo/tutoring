@@ -73,6 +73,8 @@ List as a stack) we can make use of recursion
 
 Let's look at a simple tree and see how the different algorithms will change the order in which nodes are visited
 
+<img src="images/depth_first.png" alt="depth first tree">
+
 ### Implementing PreOrder Depth First Traversal
 
 ```kotlin
