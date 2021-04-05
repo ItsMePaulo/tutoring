@@ -37,7 +37,12 @@ public class Queens {
         System.out.println();
     }
 
-
+    /**
+     * The put queen algorithm works it's way down the chess board attempting to add a queen at each row, if the
+     * Queen can be added at the row places the queen and updates all fields where a queen can no longer be added.
+     * In the case that no Queen can be added at any of the column backtracks to the previous queen and moves the
+     * queen at that row to it's next valid space
+     */
     public void putQueen(int row) {
         for (int col = 0; col < squares; col++) {
 

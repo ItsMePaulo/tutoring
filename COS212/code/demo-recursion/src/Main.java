@@ -8,6 +8,7 @@ public class Main {
             testArray[i] = i + 1;
         }
 
+
         print(0, testArray);
         System.out.println();
         reverse(0, testArray);
@@ -17,17 +18,8 @@ public class Main {
         System.out.println(pow(2, 4));
         System.out.println(fact(4));
 
-        Queens queens = new Queens();
-        System.out.println();
-        queens.putQueen(0);
 
-        System.out.println();
-        Matrix matrix = new Matrix(3);
-        matrix.printMatrix();
-
-        matrix.filterMatrix(2, 2);
-
-
+        // set a break point here to debug simple Recursion class, part 1 of recursion
         SimpleRecursion sr = new SimpleRecursion(7);
         sr.simpleRecursiveFunc(0);
 
@@ -35,6 +27,19 @@ public class Main {
 
         sr.method(4, 15);
         sr.methodIterative(4, 15);
+
+
+        // set a break point here to debug the Matrix recursion demo part 2 of recursion
+        System.out.println();
+        Matrix matrix = new Matrix(3);
+        matrix.printMatrix();
+
+        System.out.println("The Matrix derived is: " + matrix.derive());
+
+        // set a break point here to debug the queen recursion demo, part 3 of recursion
+        Queens queens = new Queens();
+        System.out.println();
+        queens.putQueen(0);
     }
 
     static public void print(int index, int[] array) {
