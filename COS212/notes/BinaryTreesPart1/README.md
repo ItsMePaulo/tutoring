@@ -211,7 +211,7 @@ subtree, but Leaf Nodes are not necessarily on the same level.
 
 ### Complete Trees
 
-A Complete Tree is where every non-terminal node has a complete left and right subtree and all the leaf Nodes are on the
+A Complete Tree is where every non-terminal node has a complete left and right subtree **AND** all the Leaf Nodes are on the
 same level. We can calculate how many Nodes are in each row of a Complete tree simply by using the sum of powers of
 2<sup>lvl - 1</sup>.
 
