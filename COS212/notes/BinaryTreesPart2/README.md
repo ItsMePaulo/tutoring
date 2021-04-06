@@ -60,10 +60,10 @@ fun <T> breadthFirst() {
 Is the easier of the two to implement but not so straight forward in determining the order in which nodes are visited.
 This is also due to the multiple Types of Depth First Traversal which are:
 
-1. PreOrder where parents are visited before children, in this case all non-terminal nodes are visited before their leaf
+1. [PreOrder:](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/BinaryTreesPart2/README.md#implementing-preorder-depth-first-traversal) where parents are visited before children, in this case all non-terminal nodes are visited before their leaf
    nodes in a single branch
-2. InOrder in this case the Nodes are visited in the sorted order of an unfolded List
-3. PostOrder where children are visited before parents, in this case all leaf nodes will be visited before their
+2. [InOrder:](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/BinaryTreesPart2/README.md#implementing-inorder-depth-first-traversal) in this case the Nodes are visited in the sorted order of an unfolded List
+3. [PostOrder:](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/BinaryTreesPart2/README.md#implementing-the-postorder-depth-first-traversal) where children are visited before parents, in this case all leaf nodes will be visited before their
    non-terminal nodes in a single branch.
 
 Implementing the Depth first traversal requires a Stack, so instead of creating an explicit Stack (or using an Array
