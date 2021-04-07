@@ -107,7 +107,7 @@ fun finMinimum(): T {
 2. The maximum value in the tree is always the value the farthest right from root
 
 ```kotlin
-fun finMinimum(): T {
+fun finMaximum(): T {
     if (root == null) {
         return null
     }
