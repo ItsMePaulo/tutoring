@@ -66,7 +66,7 @@ fun moveToFront(item: T) {
         tmp = tmp.next 
     }
 
-    if (tmp != null) {
+    if (tmp != null && prev != null) {
         prev.next = tmp.next
         tmp.next = head
         head = tmp
