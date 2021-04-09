@@ -19,7 +19,7 @@ complete* binary tree is `O(log(n))`.
 > they can be duplicated in a list. Also, by default sets usually do not worry about order were the order in a list
 > is very important. Binary Trees store ordered sets over lists (they do not allow duplicates).
 
-### Binary
+### "Binary" Trees
 
 The "Binary" part refers to the number of children each parent can have, trees are not limited to only having two
 children at each level, some have 3 or 4 and some even have arrays of children, but Binary trees only have 2.
