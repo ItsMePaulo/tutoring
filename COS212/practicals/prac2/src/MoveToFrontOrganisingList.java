@@ -18,7 +18,27 @@ public class MoveToFrontOrganisingList extends OrganisingList {
     public ListNode searchNode(Integer key) {
 
         //Your code goes here
-        return null;
+        ListNode tmp = root;
+        ListNode prev = null;
+
+        // no need to check for an empty list
+        while (tmp != null && !tmp.key.equals(key)) {
+
+            prev = tmp; // need to update prev before tmp
+            tmp = tmp.next;
+        }
+
+        if (tmp != null && prev != null) {
+            prev.next = tmp.next;
+            tmp.next = root;
+            root = tmp;
+
+        }
+
+        ListNode result =  (tmp != null) ? new ListNode(tmp.key, tmp.data) : null;
+
+        calculateData();
+        return result;
     }
 
 

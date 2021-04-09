@@ -107,7 +107,6 @@ abstract class OrganisingList {
      */
     public void insert(Integer key) {
 
-
         //Your code goes here
         if (isEmpty()) {
             root = new ListNode(key);
@@ -115,17 +114,13 @@ abstract class OrganisingList {
             return;
         }
 
-        if (root.key.equals(key)) {
-            return;
+        ListNode tmp = root;
+        while (tmp.next != null && !tmp.key.equals(key)) {
+            tmp = tmp.next;
         }
 
-        ListNode tmp = root;
-
-        while (tmp.next != null) {
-            if (tmp.key.equals(key)) {
-                return;
-            }
-            tmp = tmp.next;
+        if (tmp.key.equals(key)) {
+            return;
         }
 
         tmp.next = new ListNode(key);
@@ -142,15 +137,14 @@ abstract class OrganisingList {
         //Your code goes here
         ListNode tmp = root, prev = null;
 
-        while (tmp != null && tmp.key.equals(key)) {
+        while (tmp != null && !tmp.key.equals(key)) {
             prev = tmp;
             tmp = tmp.next;
         }
 
         if (tmp != null) {
             if (prev == null) {
-                tmp = tmp.next;
-                root = tmp;
+                root = tmp.next;
             } else {
                 prev.next = tmp.next;
             }
