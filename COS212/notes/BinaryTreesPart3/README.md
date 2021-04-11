@@ -20,7 +20,7 @@ class BinaryTree {
                 if (tmp.key.equals(elem)) {
                     return tmp.key;
                 }
-
+                // if elem at tmp is < elem being searched; go right else go left 
                 tmp = (tmp.key.compareTo(elem) < 0) ? tmp.right : tmp.left;
             }
         }
