@@ -51,7 +51,7 @@ For the sake of simplicity we will only assume a singly right threaded tree. We 
 able to simulate that backtrace effect you would get using a stack, we will use the right thread to immediately find a
 Nodes successor. </br >
 
-<img src="images/right_threaded.png" alt="right threaded tree">
+<img src="images/right_threaded.png" alt="right threaded tree" width="80%">
 
 To traverse the graph using the threads we will need start by going as far left as possible and starting with the lowest
 Node in the tree. From this point on we can only visit a Node if we are moving up and in a right direction, if we ever
