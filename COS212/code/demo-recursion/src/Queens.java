@@ -54,7 +54,6 @@ public class Queens {
                 rightDiagonal[row - col + norm] = !available;
 
                 if (row < squares - 1) {
-                    printBoard();
                     putQueen(row + 1);
                 } else {
                     printBoard();

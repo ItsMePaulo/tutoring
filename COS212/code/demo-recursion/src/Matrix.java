@@ -54,13 +54,12 @@ public class Matrix {
         int negate = 1;
         double sum = 0;
 
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < matrix.size; i++) {
             Matrix subMatrix = filterMatrix(matrix, 0, i);
             sum += matrix.matrix[0][i] * negate * deriveMatrix(subMatrix);
 
             negate *= -1;
         }
-
 
         return sum;
     }
@@ -119,5 +118,18 @@ public class Matrix {
             System.out.println();
         }
     }
+
+    @Override
+    public String toString() {
+        String s = "";
+
+        for (int i = 0; i < size; i++) {
+            s += matrix[0][i] + " ";
+        }
+
+        return s;
+    }
+
+
 
 }

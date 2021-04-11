@@ -23,7 +23,7 @@ public class Main {
         SimpleRecursion sr = new SimpleRecursion(7);
         sr.simpleRecursiveFunc(0);
 
-        sr.countVowelsRecursive("hello world", 0);
+        System.out.println("All the vowels" + sr.countVowelsRecursive("hello world", 0));
 
         sr.method(4, 15);
         sr.methodIterative(4, 15);
@@ -31,7 +31,7 @@ public class Main {
 
         // set a break point here to debug the Matrix recursion demo part 2 of recursion
         System.out.println();
-        Matrix matrix = new Matrix(3);
+        Matrix matrix = new Matrix(4);
         matrix.printMatrix();
 
         System.out.println("The Matrix derived is: " + matrix.derive());

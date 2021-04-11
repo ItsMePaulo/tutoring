@@ -40,11 +40,11 @@ public class SimpleRecursion {
 
 
     // TODO convert this method to a recursive method
-    public int countVowels(String s) {
+    public int countVowels(String word) {
         int counter = 0;
 
-        for (int i = 0; i < s.length(); i++) {
-            if (isVowel(s.charAt(i))) {
+        for (int i = 0; i < word.length(); i++) {
+            if (isVowel(word.charAt(i))) {
                 counter++;
             }
         }
@@ -53,8 +53,16 @@ public class SimpleRecursion {
     }
 
     public int countVowelsRecursive(String word, int i) {
-        return (i >= word.length()) ? 0 : (isVowel(word.charAt(i)))
-                ? 1 + countVowelsRecursive(word, i + 1) : countVowelsRecursive(word, i + 1);
+       // your code goes here
+        if (i >= word.length()) {
+            return 0;
+        }
+
+        if (isVowel(word.charAt(i))) {
+            return  1 + countVowelsRecursive(word, i + 1);
+        } else  {
+            return countVowelsRecursive(word, i + 1);
+        }
     }
 
 
