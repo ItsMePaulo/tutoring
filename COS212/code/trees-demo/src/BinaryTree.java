@@ -6,6 +6,22 @@ public class BinaryTree<T extends Comparable<? super T>> {
         root = null;
     }
 
+    public int getHeight() {
+        return getHeight(root);
+    }
+
+    private int getHeight(BinaryNode<T> node) {
+
+        if (node == null) {
+            return 0;
+        }
+
+        int left = 1 + getHeight(node.left);
+        int right = 1 + getHeight(node.right);
+
+        return (left > right) ? left : right;
+    }
+
     public T search(T elem) {
 
         // Condition 1. root = null

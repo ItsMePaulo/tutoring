@@ -17,6 +17,41 @@ public class Main {
             System.out.printf("\033[31mERROR: \033[0m Could not complete action test \"ALTERNATE_INSERT\" method failed with exception: %s%n", e);
         }
 
+        try {
+            testHeight();
+            System.out.println("\033[32mSUCCESSFULLY: Completed testHeight(), method passed all tests \033[0m");
+        } catch (NotEqualsException e) {
+            System.out.printf("\033[31mERROR: \033[0m Could not complete action test \"GET_HEIGHT\" method failed with exception: %s%n", e);
+        }
+
+    }
+
+    private static void testHeight() throws NotEqualsException {
+        BinaryTree<Integer> tree = new BinaryTree<Integer>();
+
+        assertEquals(0, tree.getHeight());
+
+        tree.add(10);
+        assertEquals(1, tree.getHeight());
+
+        tree.add(5);
+        assertEquals(2, tree.getHeight());
+
+        tree.add(15);
+        assertEquals(2, tree.getHeight());
+
+        tree.add(12);
+        tree.add(20);
+        assertEquals(3, tree.getHeight());
+
+        tree.add(35);
+        tree.add(27);
+        assertEquals(5, tree.getHeight());
+
+        tree.add(8);
+        tree.add(25);
+        tree.add(30);
+        assertEquals(6, tree.getHeight());
     }
 
 
