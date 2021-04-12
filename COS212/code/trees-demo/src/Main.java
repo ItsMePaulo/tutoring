@@ -37,18 +37,65 @@ public class Main {
         BinaryTree<Integer> tree = new BinaryTree<>();
 
         Integer returnedValue = tree.deleteByMergingLeft(12);
-        assertEquals(null, returnedValue);
+        assertNull(returnedValue);
 
         tree.add(10);
         tree.add(5);
         tree.add(3);
         tree.add(8);
+        tree.add(7);
+        tree.add(9);
         tree.add(20);
         tree.add(15);
         tree.add(30);
         tree.add(25);
-        tree.add();
+        tree.add(45);
+        tree.add(32);
 
+        String breadthFirst = tree.breadthFirst();
+        assertEquals("10,5,20,3,8,15,30,7,9,25,45,32", breadthFirst);
+
+        returnedValue = tree.deleteByMergingLeft(10);
+        breadthFirst = tree.breadthFirst();
+        assertEquals(10, returnedValue);
+        assertEquals("5,3,8,7,9,20,15,30,25,45,32", breadthFirst);
+
+        returnedValue = tree.deleteByMergingLeft(9);
+        breadthFirst = tree.breadthFirst();
+        assertEquals(9, returnedValue);
+        assertEquals("5,3,8,7,20,15,30,25,45,32", breadthFirst);
+
+        tree.deleteByMergingLeft(45);
+        breadthFirst = tree.breadthFirst();
+        assertEquals("5,3,8,7,20,15,30,25,32", breadthFirst);
+
+        returnedValue = tree.deleteByMergingLeft(45);
+        breadthFirst = tree.breadthFirst();
+        assertNull(returnedValue);
+        assertEquals("5,3,8,7,20,15,30,25,32", breadthFirst);
+
+        tree.deleteByMergingLeft(8);
+        breadthFirst = tree.breadthFirst();
+        assertEquals("5,3,7,20,15,30,25,32", breadthFirst);
+
+        returnedValue = tree.deleteByMergingLeft(3);
+        breadthFirst = tree.breadthFirst();
+        assertEquals(3, returnedValue);
+        assertEquals("5,7,20,15,30,25,32", breadthFirst);
+
+        returnedValue = tree.deleteByMergingLeft(5);
+        breadthFirst = tree.breadthFirst();
+        assertEquals(5, returnedValue);
+        assertEquals("7,20,15,30,25,32", breadthFirst);
+
+        tree.deleteByMergingLeft(7);
+        tree.deleteByMergingLeft(20);
+        tree.deleteByMergingLeft(15);
+        tree.deleteByMergingLeft(30);
+        tree.deleteByMergingLeft(25);
+        tree.deleteByMergingLeft(32);
+
+        assertNull(tree.getRoot());
     }
 
     private static void testHeight() throws NotEqualsException {
@@ -120,6 +167,12 @@ public class Main {
         }
 
         throw new NotEqualsException(String.format("Fields not equal expected value: %s actual value: %s", expected, actual));
+    }
+
+    static <T> void assertNull(T expected) throws NotEqualsException {
+        if (expected != null) {
+            throw new NotEqualsException(String.format("Field: %s was expected to be null but was not null", expected));
+        }
     }
 
 }

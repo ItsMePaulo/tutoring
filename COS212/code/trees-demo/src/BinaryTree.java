@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class BinaryTree<T extends Comparable<? super T>> {
 
     private BinaryNode<T> root;
@@ -122,7 +124,7 @@ public class BinaryTree<T extends Comparable<? super T>> {
 
         BinaryNode<T> tmp = root, parent = null;
 
-        while (tmp != null && tmp.key.equals(elem)) {
+        while (tmp != null && !tmp.key.equals(elem)) {
             parent = tmp;
             tmp = (tmp.key.compareTo(elem) < 0) ? tmp.right : tmp.left;
         }
@@ -186,6 +188,34 @@ public class BinaryTree<T extends Comparable<? super T>> {
         result += inOrderTraversal(node.left);
         result += node.key;
         return result += inOrderTraversal(node.right);
+    }
+
+    public String breadthFirst() {
+
+        if (root == null) {
+            return "";
+        }
+
+        StringBuilder result = new StringBuilder();
+        ArrayList<BinaryNode<T>> queue = new ArrayList<BinaryNode<T>>();
+
+        queue.add(root);
+
+        while (!queue.isEmpty()) {
+            BinaryNode<T> tmp = queue.remove(0);
+
+            result.append(tmp.key).append(",");
+
+            if (tmp.left != null) {
+                queue.add(tmp.left);
+            }
+            if (tmp.right != null) {
+                queue.add(tmp.right);
+            }
+        }
+
+        // remove the last comma
+        return result.delete(result.length() -1, result.length()).toString();
     }
 
     private void removeMiddleChild(BinaryNode<T> parent, BinaryNode<T> middleChild, BinaryNode<T> newChild) {
