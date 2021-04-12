@@ -48,6 +48,7 @@ They can follow this link to see how to download and set up the IDE for Windows 
 
 1. [Demo project: Introduction to IntelliJ and Java](https://gitlab.com/Paul_Wood_96/tutoring/-/tree/master/COS212/code/demo/src)
 2. [Demo recursion: Recursive examples, backtracing, matrix algorithms](https://gitlab.com/Paul_Wood_96/tutoring/-/tree/master/COS212/code/demo-recursion/src)
+3. [Demo trees: Tree operation functions, add, remove, search...](https://gitlab.com/Paul_Wood_96/tutoring/-/tree/master/COS212/code/trees-demo/src)
 
 # Practicals 
 
