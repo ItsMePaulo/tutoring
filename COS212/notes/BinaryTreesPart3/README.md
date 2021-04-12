@@ -97,12 +97,54 @@ class BinaryTree {
 
 ## Delete
 
-Deleting a Node in a tree is a challenge because...branches are not linear. If, a Node only had one child the delete
-operation would be simple, just make that nodes parent point to it's only child, however we can't do that if there are
-two children.
+Deleting a Node in a tree is a challenge because...branches are not linear. There are 3 conditions we need to consider;
+
+1. A Node is a leaf Node (it has no children)
+2. A Node has one child, either left or right
+3. A Node has both children
+
+If a Node is a leaf Node the delete operation is simple just remove the Node from the Tree.
+
+<img src="images/leaf_delete.png" alt="delete leaf node">
+
+If a Node only has one child the delete operation would be also be simple, just take the only child and place it where
+the parent used to be.
 
 <img src="images/simple_delete.png" alt="simple delete with single child">
 
-When there are two children we can't simply move both of them up as we did before.
+When there are two children though, which child do we choose?
 
 <img src="images/complex_delete.png" alt="complicated delete scenario with multiple children">
+
+### Delete by Merging
+
+The solution is one of 2 algorithms the first being *delete by merging*. In this scenario we take either the left or
+right child and replace it with the deleted parent. We then move the opposite child to the furthest opposite node of the
+first child which replaced the parent.
+
+In the case of selecting the left child as the Node to replace the deleted parent, move the right sibling of the left
+child to the rightmost subtree of the left child.
+
+<img src="images/left_merge.png" alt="delete by merge choosing the left child">
+
+> In this image the Triangle depicts an entire subtree not just 3 Nodes, this is used to indicate that
+> the tree could have multiple child nodes at each of these points we are only concerned about the edges
+
+In the case of selecting the right child as the Node to replace the deleted parent, move the left sibling of the right
+child to the leftmost subtree of the right child.
+
+<img src="images/right_merge.png" alt="delete by merge choosing the right child">
+
+> Delete by merging has a high likelihood of creating an unbalanced or skewed tree
+
+### Delete by Copying
+
+The more elegant of the 2 solutions is, *delete by copying*. In this scenario we delete the Node by finding either its
+`Predecessor` or its `Successor`. We then copy the value in that Node and place the value in the Node we want to delete,
+we then remove the Successor or Predecessor from the tree. We can do this because we know a Nodes Successor or
+Predecessor have the guarantee of at most having 1 child, if the did not they would not be the Successor or Predecessor
+of the Node we are deleting.
+
+<img src="images/delete_by_copying.png" alt="delete by copying">
+
+> Delete by Copying is far less likely to unbalance the tree
