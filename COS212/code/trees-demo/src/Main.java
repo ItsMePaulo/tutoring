@@ -24,6 +24,31 @@ public class Main {
             System.out.printf("\033[31mERROR: \033[0m Could not complete action test \"GET_HEIGHT\" method failed with exception: %s%n", e);
         }
 
+        try {
+            testDeleteByMergeLeft();
+            System.out.println("\033[32mSUCCESSFULLY: Completed testByDeleteMerge(), method passed all tests \033[0m");
+        } catch (NotEqualsException e) {
+            System.out.printf("\033[31mERROR: \033[0m Could not complete action test \"GET_HEIGHT\" method failed with exception: %s%n", e);
+        }
+
+    }
+
+    private static void testDeleteByMergeLeft() throws NotEqualsException {
+        BinaryTree<Integer> tree = new BinaryTree<>();
+
+        Integer returnedValue = tree.deleteByMergingLeft(12);
+        assertEquals(null, returnedValue);
+
+        tree.add(10);
+        tree.add(5);
+        tree.add(3);
+        tree.add(8);
+        tree.add(20);
+        tree.add(15);
+        tree.add(30);
+        tree.add(25);
+        tree.add();
+
     }
 
     private static void testHeight() throws NotEqualsException {

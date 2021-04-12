@@ -100,8 +100,7 @@ public class BinaryTree<T extends Comparable<? super T>> {
                     // move to the left child
                     tmp = tmp.right;
                 }
-            }
-            else {
+            } else {
                 if (tmp.left == null) {
                     // add the right child
                     tmp.left = new BinaryNode<>(elem);
@@ -112,6 +111,65 @@ public class BinaryTree<T extends Comparable<? super T>> {
                 }
             }
         }
+    }
+
+    public T deleteByMergingLeft(T elem) {
+
+        // condition 1. root = null
+        if (root == null) {
+            return null;
+        }
+
+        BinaryNode<T> tmp = root, parent = null;
+
+        while (tmp != null && tmp.key.equals(elem)) {
+            parent = tmp;
+            tmp = (tmp.key.compareTo(elem) < 0) ? tmp.right : tmp.left;
+        }
+
+        // condition 2. element was not in the tree
+        if (tmp == null) {
+            System.out.println("Element not found");
+            return null;
+        }
+
+        // condition 3.1. only 1 or no children
+        if (tmp.left == null) {
+            if (parent == null) {
+                root = tmp.right;
+            } else {
+                removeMiddleChild(parent, tmp, tmp.right);
+            }
+
+            return tmp.key;
+        }
+        // condition 3.2. only 1 child
+        if (tmp.right == null) {
+            if (parent == null) {
+                root = tmp.left;
+            } else {
+                removeMiddleChild(parent, tmp, tmp.left);
+            }
+
+            return tmp.key;
+        }
+
+        // condition 4. tmp has both children
+        BinaryNode<T> leftNodesRightMost = tmp.left;
+
+        while (leftNodesRightMost.right != null) {
+            leftNodesRightMost = leftNodesRightMost.right;
+        }
+
+        if (parent == null) {
+            root = tmp.left;
+        } else {
+            removeMiddleChild(parent, tmp, tmp.left);
+        }
+
+        leftNodesRightMost.right = tmp.right;
+
+        return tmp.key;
     }
 
     public BinaryNode<T> getRoot() {
@@ -128,6 +186,16 @@ public class BinaryTree<T extends Comparable<? super T>> {
         result += inOrderTraversal(node.left);
         result += node.key;
         return result += inOrderTraversal(node.right);
+    }
+
+    private void removeMiddleChild(BinaryNode<T> parent, BinaryNode<T> middleChild, BinaryNode<T> newChild) {
+
+        if (middleChild.key.compareTo(parent.key) < 0) {
+            parent.left = newChild;
+        } else {
+            parent.right = newChild;
+        }
+
     }
 
 }
