@@ -186,7 +186,7 @@ public class BST<T extends Comparable<? super T>> {
             pred = pred.right;
         }
 
-        // pred is now removed from the tree but we still hold pred
+        // pred will be removed from the tree but we still hold the pred variable
         removeNonCompleteNode(pred, predParent);
 
         nodeToDelete.element = pred.element;
@@ -209,7 +209,7 @@ public class BST<T extends Comparable<? super T>> {
         if (node != null) {
             BSTNode<T> pred = getPredecessor(node);
 
-            return (pred != null) ? node.element : null;
+            return (pred != null) ? pred.element : null;
         }
 
         return null;
@@ -223,7 +223,7 @@ public class BST<T extends Comparable<? super T>> {
         if (node != null) {
             BSTNode<T> succ = getSuccessor(node);
 
-            return (succ == null) ? node.element : null;
+            return (succ != null) ? succ.element : null;
         }
 
         return null;
@@ -233,8 +233,21 @@ public class BST<T extends Comparable<? super T>> {
     // helper functions
     private BSTNode<T> getPredecessor(BSTNode<T> node) {
         if (node.left == null) {
-            return null;
+            BSTNode<T> parent = findParent(node);
+
+            if (parent == null) {
+                return null;
+            }
+
+            BSTNode<T> child = node;
+
+            while (parent != null && parent.right != child) {
+                child = parent;
+                parent = findParent(parent);
+            }
+            return parent;
         }
+
 
         BSTNode<T> tmp = node.left;
 
@@ -247,8 +260,20 @@ public class BST<T extends Comparable<? super T>> {
 
     private BSTNode<T> getSuccessor(BSTNode<T> node) {
         if (node.right == null) {
-            return null;
+            BSTNode<T> parent = findParent(node);
+
+            if (parent == null) {
+                return null;
+            }
+
+            BSTNode<T> child = node;
+            while (parent != null && parent.left != child) {
+                child = parent;
+                parent = findParent(parent);
+            }
+            return parent;
         }
+
 
         BSTNode<T> tmp = node.right;
 
@@ -301,5 +326,17 @@ public class BST<T extends Comparable<? super T>> {
             parent.right = newChild;
         }
     }
-    
+
+    private BSTNode<T> findParent(BSTNode<T> node) {
+        BSTNode<T> tmp = root, parent = null;
+
+        // if the while loop breaks we run down to the final return statement and return null
+        while (tmp != null && !tmp.element.equals(node.element)) {
+            parent = tmp;
+            tmp = (tmp.element.compareTo(node.element) < 0) ? tmp.right : tmp.left;
+        }
+
+        return parent;
+    }
+
 }
