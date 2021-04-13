@@ -10,4 +10,9 @@ public class BinaryNode<T extends Comparable<? super T>> {
         left = null;
         right = null;
     }
+
+    @Override
+    public String toString() {
+        return key.toString();
+    }
 }

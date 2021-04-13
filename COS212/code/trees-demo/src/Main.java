@@ -9,7 +9,6 @@ public class Main {
             System.out.printf("\033[31mERROR: \033[0m Could not complete action test \"INSERT\" method failed with exception: %s%n", e);
         }
 
-
         try {
             testAlternateInsert();
             System.out.println("\033[32mSUCCESSFULLY: Completed testAlternateInsert(), method passed all tests \033[0m");
@@ -25,18 +24,31 @@ public class Main {
         }
 
         try {
-            testDeleteByMergeLeft();
-            System.out.println("\033[32mSUCCESSFULLY: Completed testByDeleteMerge(), method passed all tests \033[0m");
+            testDeleteByMergePredecessor();
+            System.out.println("\033[32mSUCCESSFULLY: Completed testByDeleteMergePredecessor(), method passed all tests \033[0m");
         } catch (NotEqualsException e) {
-            System.out.printf("\033[31mERROR: \033[0m Could not complete action test \"GET_HEIGHT\" method failed with exception: %s%n", e);
+            System.out.printf("\033[31mERROR: \033[0m Could not complete action test \"DELETE_BY_MERGING_PRED\" method failed with exception: %s%n", e);
         }
 
+        try {
+            testDeleteByMergingSuccessor();
+            System.out.println("\033[32mSUCCESSFULLY: Completed testByDeleteMergeSuccessor(), method passed all tests \033[0m");
+        } catch (NotEqualsException e) {
+            System.out.printf("\033[31mERROR: \033[0m Could not complete action test \"DELETE_BY_MERGING_SUCC\" method failed with exception: %s%n", e);
+        }
+
+        try {
+            testDeleteByCopyingPredecessor();
+            System.out.println("\033[32mSUCCESSFULLY: Completed testByDeleteCopying(), method passed all tests \033[0m");
+        } catch (NotEqualsException e) {
+            System.out.printf("\033[31mERROR: \033[0m Could not complete action test \"DELETE_BY_COPYING\" method failed with exception: %s%n", e);
+        }
     }
 
-    private static void testDeleteByMergeLeft() throws NotEqualsException {
+    private static void testDeleteByCopyingPredecessor() throws NotEqualsException {
         BinaryTree<Integer> tree = new BinaryTree<>();
 
-        Integer returnedValue = tree.deleteByMergingLeft(12);
+        Integer returnedValue = tree.deleteByCopyingPredecessor(12);
         assertNull(returnedValue);
 
         tree.add(10);
@@ -55,45 +67,135 @@ public class Main {
         String breadthFirst = tree.breadthFirst();
         assertEquals("10,5,20,3,8,15,30,7,9,25,45,32", breadthFirst);
 
-        returnedValue = tree.deleteByMergingLeft(10);
+        returnedValue = tree.deleteByCopyingPredecessor(10);
+        breadthFirst = tree.breadthFirst();
+        assertEquals("9,5,20,3,8,15,30,7,25,45,32", breadthFirst);
+
+
+    }
+
+    private static void testDeleteByMergePredecessor() throws NotEqualsException {
+        BinaryTree<Integer> tree = new BinaryTree<>();
+
+        Integer returnedValue = tree.deleteByMergingPredecessor(12);
+        assertNull(returnedValue);
+
+        tree.add(10);
+        tree.add(5);
+        tree.add(3);
+        tree.add(8);
+        tree.add(7);
+        tree.add(9);
+        tree.add(20);
+        tree.add(15);
+        tree.add(30);
+        tree.add(25);
+        tree.add(45);
+        tree.add(32);
+
+        String breadthFirst = tree.breadthFirst();
+        assertEquals("10,5,20,3,8,15,30,7,9,25,45,32", breadthFirst);
+
+        returnedValue = tree.deleteByMergingPredecessor(10);
         breadthFirst = tree.breadthFirst();
         assertEquals(10, returnedValue);
         assertEquals("5,3,8,7,9,20,15,30,25,45,32", breadthFirst);
 
-        returnedValue = tree.deleteByMergingLeft(9);
+        returnedValue = tree.deleteByMergingPredecessor(9);
         breadthFirst = tree.breadthFirst();
         assertEquals(9, returnedValue);
         assertEquals("5,3,8,7,20,15,30,25,45,32", breadthFirst);
 
-        tree.deleteByMergingLeft(45);
+        tree.deleteByMergingPredecessor(45);
         breadthFirst = tree.breadthFirst();
         assertEquals("5,3,8,7,20,15,30,25,32", breadthFirst);
 
-        returnedValue = tree.deleteByMergingLeft(45);
+        returnedValue = tree.deleteByMergingPredecessor(45);
         breadthFirst = tree.breadthFirst();
         assertNull(returnedValue);
         assertEquals("5,3,8,7,20,15,30,25,32", breadthFirst);
 
-        tree.deleteByMergingLeft(8);
+        tree.deleteByMergingPredecessor(8);
         breadthFirst = tree.breadthFirst();
         assertEquals("5,3,7,20,15,30,25,32", breadthFirst);
 
-        returnedValue = tree.deleteByMergingLeft(3);
+        returnedValue = tree.deleteByMergingPredecessor(3);
         breadthFirst = tree.breadthFirst();
         assertEquals(3, returnedValue);
         assertEquals("5,7,20,15,30,25,32", breadthFirst);
 
-        returnedValue = tree.deleteByMergingLeft(5);
+        returnedValue = tree.deleteByMergingPredecessor(5);
         breadthFirst = tree.breadthFirst();
         assertEquals(5, returnedValue);
         assertEquals("7,20,15,30,25,32", breadthFirst);
 
-        tree.deleteByMergingLeft(7);
-        tree.deleteByMergingLeft(20);
-        tree.deleteByMergingLeft(15);
-        tree.deleteByMergingLeft(30);
-        tree.deleteByMergingLeft(25);
-        tree.deleteByMergingLeft(32);
+        tree.deleteByMergingPredecessor(7);
+        tree.deleteByMergingPredecessor(20);
+        tree.deleteByMergingPredecessor(15);
+        tree.deleteByMergingPredecessor(30);
+        tree.deleteByMergingPredecessor(25);
+        tree.deleteByMergingPredecessor(32);
+
+        assertNull(tree.getRoot());
+    }
+
+    private static void testDeleteByMergingSuccessor() throws NotEqualsException {
+        BinaryTree<Integer> tree = new BinaryTree<>();
+
+        Integer returnedValue = tree.deleteByMergingPredecessor(12);
+        assertNull(returnedValue);
+
+        tree.add(10);
+        tree.add(5);
+        tree.add(3);
+        tree.add(8);
+        tree.add(7);
+        tree.add(9);
+        tree.add(20);
+        tree.add(15);
+        tree.add(30);
+        tree.add(25);
+        tree.add(45);
+        tree.add(32);
+
+        String breadthFirst = tree.breadthFirst();
+        assertEquals("10,5,20,3,8,15,30,7,9,25,45,32", breadthFirst);
+
+        returnedValue = tree.deleteByMergingSuccessor(10);
+        breadthFirst = tree.breadthFirst();
+        assertEquals("20,15,30,5,25,45,3,8,32,7,9", breadthFirst);
+        assertEquals(10, returnedValue);
+
+        returnedValue = tree.deleteByMergingSuccessor(30);
+        breadthFirst = tree.breadthFirst();
+        assertEquals("20,15,45,5,32,3,8,25,7,9", breadthFirst);
+        assertEquals(30, returnedValue);
+
+        returnedValue = tree.deleteByMergingSuccessor(8);
+        breadthFirst = tree.breadthFirst();
+        assertEquals("20,15,45,5,32,3,9,25,7", breadthFirst);
+        assertEquals(8, returnedValue);
+
+        tree.deleteByMergingSuccessor(45);
+        tree.deleteByMergingSuccessor(32);
+        tree.deleteByMergingSuccessor(25);
+        tree.deleteByMergingSuccessor(25);
+
+        breadthFirst = tree.breadthFirst();
+        assertEquals("20,15,5,3,9,7", breadthFirst);
+
+        tree.deleteByMergingSuccessor(20);
+        breadthFirst = tree.breadthFirst();
+        assertEquals("15,5,3,9,7", breadthFirst);
+
+        tree.deleteByMergingSuccessor(15);
+        tree.deleteByMergingSuccessor(5);
+        breadthFirst = tree.breadthFirst();
+        assertEquals("9,7,3", breadthFirst);
+
+        tree.deleteByMergingSuccessor(9);
+        tree.deleteByMergingSuccessor(7);
+        tree.deleteByMergingSuccessor(3);
 
         assertNull(tree.getRoot());
     }
