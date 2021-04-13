@@ -24,7 +24,7 @@ public class BinaryTree<T extends Comparable<? super T>> {
         return (left > right) ? left : right;
     }
 
-    public T search(T elem) {
+    public BinaryNode<T> search(T elem) {
 
         // Condition 1. root = null
         if (root != null) {
@@ -35,7 +35,7 @@ public class BinaryTree<T extends Comparable<? super T>> {
 
                 // Condition 2. element is found
                 if (tmp.key.equals(elem)) {
-                    return tmp.key;
+                    return tmp;
                 }
 
                 tmp = (tmp.key.compareTo(elem) < 0) ? tmp.right : tmp.left;
