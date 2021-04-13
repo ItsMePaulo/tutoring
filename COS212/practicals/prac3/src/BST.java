@@ -69,8 +69,8 @@ public class BST<T extends Comparable<? super T>> {
 
         BSTNode<T> newNode = new BSTNode<>(node.element);
 
-        newNode.right = mirror(node.left);
         newNode.left = mirror(node.right);
+        newNode.right = mirror(node.left);
 
         return newNode;
     }
