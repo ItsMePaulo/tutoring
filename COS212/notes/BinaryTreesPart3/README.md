@@ -55,7 +55,7 @@ class BinaryTree {
             }
 
             parent = tmp;
-            // if tmp element is smaller than element coming in, sel left else set right
+            // if tmp element is smaller than element coming in, set left else set right
             tmp = (tmp.key.compareTo(elem) < 0) ? tmp.right : tmp.left;
         }
 
