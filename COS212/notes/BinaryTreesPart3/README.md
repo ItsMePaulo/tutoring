@@ -123,7 +123,7 @@ right child and replace it with the deleted parent. We then move the opposite ch
 first child which replaced the parent.
 
 In the case of selecting the left child as the Node to replace the deleted parent, move the right sibling of the left
-child to the rightmost subtree of the left child.
+child to the rightmost subtree of the left child (the parent nodes *predecessor*).
 
 <img src="images/left_merge.png" alt="delete by merge choosing the left child">
 
@@ -131,7 +131,7 @@ child to the rightmost subtree of the left child.
 > the tree could have multiple child nodes at each of these points we are only concerned about the edges
 
 In the case of selecting the right child as the Node to replace the deleted parent, move the left sibling of the right
-child to the leftmost subtree of the right child.
+child to the leftmost subtree of the right child (the parent nodes *successor*).
 
 <img src="images/right_merge.png" alt="delete by merge choosing the right child">
 
