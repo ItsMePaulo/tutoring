@@ -192,6 +192,18 @@ void method(int i, int n) {
 
 ```
 
+2.3 Assume the following SkipList 
+
+<img src="../../notes/SkipLists/images/skip_list.png" alt="skip list">
+
+2.3.1 Assume Node `35` was deleted, indicate all affected Nodes, for each Node indicate at which level the Node has been 
+affected, if the Node affected was the first Node you may assume `Root` at level *x*. Please only identify the Nodes 
+that will be affected when removing Node `35`.
+
+2.3.2 Assume Node 22 was deleted, indicate all affected Nodes, for each Node indicate at which level the Node has been 
+affected, if the Node affected was the first Node you may assume `Root` at level *x*. Please only identify the Nodes 
+that will be affected when removing Node `22`
+
 
 ### Question 3: [Self Organinizing Lists](https://gitlab.com/Paul_Wood_96/tutoring/-/tree/master/COS212/notes/SelfOrganizingLists/README.md)
 
