@@ -198,8 +198,6 @@ void method(int i, int n) {
 For all questions that follow assume the following Circular List Class and List Node class
 
 ```java
-import java.util.List;
-
 class ListNode<T> {
 
     T key;
@@ -211,8 +209,8 @@ class ListNode<T> {
 }
 
 class CircularListSelfOrganizingList<T> {
-    
-    List<T> tail;
+
+    ListNode<T> tail;
     
     public void addToTail(T elem);
     public void deleteFromHead();
