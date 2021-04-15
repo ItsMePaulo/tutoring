@@ -371,7 +371,7 @@ class LinkedNode<T> {
 }
 ```
 
-5.3.1 Write down a recursive method that take in a LinkedNode and count the amount of elements in the List divisible by `4`. (3)
+5.3.1 Write down a recursive method that takes in a LinkedNode and count the amount of elements in the List divisible by `4`. (3)
 
 ```java
 
