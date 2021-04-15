@@ -6,7 +6,7 @@
 
 For each of the following right down the complexity of the algorithm in the form of BigO Notation
 
-1.1.
+1.1. (1)
 ```java
 int method(int i, int n) {
     if (i < n) {
@@ -26,7 +26,7 @@ int method(int i, int n) {
 
 ```
 
-1.2 
+1.2 (1)
 ```java
 int k = 0;
 for (int i = n; i > 0; i / 2) {
@@ -41,7 +41,7 @@ for (int i = n; i > 0; i / 2) {
 
 ```
 
-1.3 
+1.3 (1)
 ```java
 for (int i = 0; i < n; i++) {
     for(int j = 0; j < n; j++) {
@@ -59,7 +59,7 @@ for (int i = 0; i < n; i++) {
 
 ```
 
-1.4 
+1.4 (1)
 ```java
 for (int i = 0; i < n; i++) {
     for (int p = n; p > 0; p--) {
@@ -73,7 +73,7 @@ for (int i = 0; i < n; i++) {
 
 ````
 
-1.5
+1.5 (1)
 ```java
 int i = 0;
 while (i < n) {
@@ -94,7 +94,7 @@ while (i < n) {
 
 ```
 
-1.6
+1.6 (1)
 
 ```java
 int i = 0;
@@ -113,7 +113,7 @@ while (i < n) {
 
 ```
 
-1.7 
+1.7 (1)
 ```java
 int method(int n) {
     if (n < 0) {
@@ -128,7 +128,7 @@ int method(int n) {
 
 ```
 
-1.8 
+1.8 (1)
 ```java
 for (int i = 0; i < n; i++) {
     for (int j = 0; j <= i; j++) {
@@ -142,7 +142,7 @@ for (int i = 0; i < n; i++) {
 
 ```
 
-1.9
+1.9 (1)
 ```java
 int sum = 0;
 for (int a = 0; a < n; a++) {
@@ -160,7 +160,7 @@ for (int a = 0; a < n; a++) {
 
 
 ```
-1.10
+1.10 (1)
 ```java
 void method(int i, int n) {
     
@@ -180,13 +180,13 @@ void method(int i, int n) {
 
 ## Question 2: [Skip Lists](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/SkipLists/README.md)
 
-2.1 Assume a Skip List with a max height of 6, provide the *Array of Powers* for the Skip List.
+2.1 Assume a Skip List with a max height of 6, provide the *Array of Powers* for the Skip List. (4)
  
 ```text
 
 ```
 
-2.2 What is the max level of a Skip List if there are only 4 references in the Array of Powers in the 3rd level?  
+2.2 What is the max level of a Skip List if there are only 4 references in the Array of Powers in the 3rd level? (1) 
 
 ```text
 
@@ -198,7 +198,7 @@ void method(int i, int n) {
 
 2.3.1 Assume Node `35` was deleted, indicate all affected Nodes, for each Node indicate at which level the Node has been 
 affected, if the Node affected was the first Node you may assume `Root` at level *x*. Please only identify the Nodes 
-that will be affected when removing Node `35`.
+that will be affected when removing Node `35`. (2)
 
 ```text
 
@@ -206,7 +206,7 @@ that will be affected when removing Node `35`.
 
 2.3.2 Assume Node 22 was deleted, indicate all affected Nodes, for each Node indicate at which level the Node has been 
 affected, if the Node affected was the first Node you may assume `Root` at level *x*. Please only identify the Nodes 
-that will be affected when removing Node `22`
+that will be affected when removing Node `22`. (2)
 
 ```text
 
@@ -254,7 +254,7 @@ may not allow duplicates if any duplicate is added your method must output the f
 3.3 Assume the Self Organizing List makes use of the *Count* self organizing strategy, implement the access method. The access 
 method should take in an element to search for in the list, if the element is not found in the List the method should output 
 the following: "Invalid Key Exception". If the element is found in the List the counter for the key should be incremented, 
-and the list sorted.
+and the list sorted. (5)
 
 ```java
 
@@ -264,7 +264,7 @@ and the list sorted.
 
 > A -> B -> D -> M -> N -> F
 
-Give the final List after the Nodes have been visited in the following order 
+Give the final List after the Nodes have been visited in the following order. (2)
 
 > M, B, G, F, D, M
 
@@ -273,7 +273,7 @@ Give the final List after the Nodes have been visited in the following order
 ```
 
 3.5 Assume the same List in Question 3.4 was instead implemented as a **transpose** strategy, give the final List if 
-the elements where accessed in the same order as before.
+the elements where accessed in the same order as before. (2)
 
 ```text
 
@@ -305,14 +305,14 @@ class Stack<T> extends Queue<T> {
 ```
 
 4.1 Implement the `pop()` method for the stack, you may assume a working `isEmpty()` method exists on the 
-`Queue` class. 
+`Queue` class. (4)
 
 ```java
 
 ```
 
 4.2 Implement the `size()` method for the stack, you may also assume a working `isEmpty()` method exist on the 
-`Queue` class.
+`Queue` class. (3)
 
 ```java
 
@@ -321,7 +321,7 @@ class Stack<T> extends Queue<T> {
 ### Question 5: [Recursion](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/Recuriosn/README.md)
 
 5.1 Convert the following iterative method to a recursive function. This iterative method finds and returns the 
-first occurrence of an integer in a List
+first occurrence of an integer in a List. (3)
 
 ```java
 int findFirstOccurance(int[] array, int element) {
@@ -339,7 +339,7 @@ int findFirstOccurance(int[] array, int element) {
 ```
 
 5.2 Convert the following recursive function to an iterative function. The following function calculated the greatest 
-common denominator between two numbers 
+common denominator between two numbers. (3)
 
 ```java
 int findGreatestCommonDom(int x, int y) {
@@ -357,4 +357,28 @@ int findGreatestCommonDom(int x, int y) {
 
 ```
 
+5.3 
 
+Assume the following LinkedNode Class 
+
+```java
+class LinkedNode<T> {
+    
+    int key;
+    LinkedNode<T> next;
+    
+    // constructor ...
+}
+```
+
+5.3.1 Write down a recursive method that take in a LinkedNode and count the amount of elements in the List divisible by `4`. (3)
+
+```java
+
+```
+
+5.3.2 Is your method an example of `Tail Recursion` or `Non Tail Recursion`, explain your answer. (2)
+
+```text
+
+```
