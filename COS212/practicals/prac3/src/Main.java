@@ -65,27 +65,13 @@ public class Main {
 		tree.insert(10);
 		tree.insert(3);
 
-		searchElement(tree, 10); // search for 10
 
-		BST<Integer> clone = new BST<Integer>();
-		clone.root = tree.clone();
-		
-		System.out.println("\nTree before deletion: ");
-		printTree(tree); // print tree before deletion
+		tree.getSuccessor(14);
+		System.out.println( tree.getSuccessor(15).toString());;
 
-		deleteElement(tree, 8, "m");
 
-		printTree(tree); // print tree after delete by merge
 
-		deleteElement(clone, 8, "c");
 
-		printTree(clone); // print clone after delete by copy
-
-		System.out.println("Predecessor of 7: " + tree.getPredecessor(7));
-		System.out.println("Predecessor of 16: " + tree.getPredecessor(16));
-		System.out.println("Successor of 7: " + tree.getSuccessor(7));
-		System.out.println("Successor of 16: " + tree.getSuccessor(16));
-		
 
 		/* Expected Output:
 		 

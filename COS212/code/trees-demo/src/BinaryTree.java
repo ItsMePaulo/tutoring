@@ -47,33 +47,33 @@ public class BinaryTree<T extends Comparable<? super T>> {
 
     public void add(T elem) {
 
-        // Condition 1. root = null
+        // condition 1. tree is empty
         if (root == null) {
             root = new BinaryNode<>(elem);
-            return;
-        }
+        } else {
+            BinaryNode<T> tmp = root, parent = null;
 
-        BinaryNode<T> tmp = root, parent = null;
+            while (tmp != null) {
+                parent = tmp;
 
-        while (tmp != null) {
+                if (tmp.key.equals(elem)) {
+                    return;
+                }
 
-            // Condition 2. element already exists
-            if (tmp.key.equals(elem)) {
-                return;
+//                tmp = (elem.compareTo(tmp.key) < 0) ? tmp.left : tmp.right;
+                // these are equal
+                if (elem.compareTo(tmp.key) < 0) {
+                    tmp = tmp.left;
+                } else {
+                    tmp = tmp.right;
+                }
             }
 
-            parent = tmp;
-            // if tmp element is smaller than element coming in, sel left else set right
-            tmp = (tmp.key.compareTo(elem) < 0) ? tmp.right : tmp.left;
-        }
-
-        // Condition 3. add the new node either on the left or right
-        if (parent.key.compareTo(elem) < 0) {
-            // if parent is less than the element being added go right
-            parent.right = new BinaryNode<>(elem);
-        } else {
-            // if parent is greater than the element being added go left instead
-            parent.left = new BinaryNode<>(elem);
+            if (elem.compareTo(parent.key) < 0) {
+                parent.left = new BinaryNode<>(elem);
+            } else {
+                parent.right = new BinaryNode<>(elem);
+            }
         }
     }
 
@@ -99,7 +99,7 @@ public class BinaryTree<T extends Comparable<? super T>> {
                     tmp.right = new BinaryNode<>(elem);
                     return;
                 } else {
-                    // move to the left child
+                    // move to the right child
                     tmp = tmp.right;
                 }
             } else {
@@ -108,7 +108,7 @@ public class BinaryTree<T extends Comparable<? super T>> {
                     tmp.left = new BinaryNode<>(elem);
                     return;
                 } else {
-                    // move to the right child
+                    // move to the left child
                     tmp = tmp.left;
                 }
             }

@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 @SuppressWarnings("unchecked")
 public class BST<T extends Comparable<? super T>> {
 
@@ -150,7 +152,7 @@ public class BST<T extends Comparable<? super T>> {
 
         return true;
     }
-    
+
     // we will assume delete by copying the predecessor node
     public boolean deleteByCopy(T elem) {
         // condition 1. tree is empty
@@ -217,16 +219,52 @@ public class BST<T extends Comparable<? super T>> {
 
     public T getSuccessor(T element) {
         // Your code goes here
+        ArrayList<T> array = getInorderSuccessor(root, new ArrayList<>());
 
-        BSTNode<T> node = searchForNode(element);
+        boolean found = false;
 
-        if (node != null) {
-            BSTNode<T> succ = getSuccessor(node);
+        for (T item: array) {
+            if (item.equals(found)) {
+                found = true;
+            }
 
-            return (succ != null) ? succ.element : null;
+            if (found && item.compareTo(element) > 0) {
+                return item;
+            }
         }
 
         return null;
+    }
+
+    public ArrayList<T> getInorderSuccessor(
+            BSTNode<T> current,
+            ArrayList<T> list
+    ) {
+
+        if (current == null ) {
+            return list;
+        }
+
+        list = getInorderSuccessor(current.left, list);
+        // this point is us visiting the Node
+        list.add(current.element);
+        list = getInorderSuccessor(current.right, list);
+
+        return list;
+    }
+
+    public String properInOrder(BSTNode<T> node) {
+        String result = "";
+
+        if (node == null) {
+            return "";
+        }
+
+        result += properInOrder(node.left); // first visit left
+        result += node.element + ","; // then visit the node
+        result += properInOrder(node.right); // then visit the right
+
+        return result;
     }
 
 
