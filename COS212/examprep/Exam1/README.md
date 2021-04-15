@@ -338,8 +338,8 @@ int findFirstOccurance(int[] array, int element) {
 }
 ```
 
-5.2 Convert the following recursive function to an iterative function. The following function calculated the greatest 
-common denominator between two numbers. (3)
+5.2 Convert the following recursive function to an iterative function. The following function calculates the Greatest 
+Common Denominator between two numbers. (3)
 
 ```java
 int findGreatestCommonDom(int x, int y) {
