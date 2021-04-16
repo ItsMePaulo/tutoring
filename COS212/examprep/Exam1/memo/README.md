@@ -587,86 +587,78 @@ BSTNode<T> findLargest(BSTNode<T> node) {
     }
     
     return findLargest(node.right);
-
 }
 
 ```
 
-[comment]: <> (## Question 6.2 [Threads]&#40;https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/BinaryTreesPart2/Part2.2/README.md&#41;)
+## Question 6.2 [Threads](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/BinaryTreesPart2/Part2.2/README.md)
 
-[comment]: <> (#### For all questions that follow, assume the enhanced BSTNode class)
+#### For all questions that follow, assume the enhanced BSTNode class
 
-[comment]: <> (```java)
+```java
 
-[comment]: <> (class TNode<T extends Comparable<? super T>> {)
+class TNode<T extends Comparable<? super T>> {
     
-[comment]: <> (    T key;)
+    T key;
 
-[comment]: <> (    TNode<T> left, right;)
+    TNode<T> left, right;
+    boolean hasRightThread, hasLeftThread;
+}
 
-[comment]: <> (    boolean hasRightThread, hasLeftThread;)
+```
 
-[comment]: <> (})
+6.2.1 Integers are added into a *double-threaded* BST in the following order;
 
-[comment]: <> (```)
+> 7, 20, 12, 5, 35, 4, 9, 8, 10, 1
 
-[comment]: <> (6.2.1 Integers are added into a *double-threaded* BST in the following order;)
+a) What is the height of the Tree (2)
 
-[comment]: <> (> 7, 20, 12, 5, 35, 4, 9, 8, 10, 1)
+```text
 
-[comment]: <> (a&#41; What is the height of the Tree &#40;2&#41;)
+5
 
-[comment]: <> (```text)
+```
 
-[comment]: <> (5)
+b) How many *Left Threads* dose the resulting Tree have? (2)
 
-[comment]: <> (```)
+```text
 
-[comment]: <> (b&#41; How many *Left Threads* dose the resulting Tree have? &#40;2&#41;)
+4
 
-[comment]: <> (```text)
+```
 
-[comment]: <> (4)
+c) Node 7 is deleted by *Merging with its Successor*, how many right threads dose the resulting Tree have? (3)
 
-[comment]: <> (```)
+```text
 
-[comment]: <> (c&#41; Node 7 is deleted by *Merging with its Successor*, how many right threads dose the resulting Tree have? &#40;3&#41;)
+5
 
-[comment]: <> (```text)
+```
 
-[comment]: <> (5)
+d) Node 9 is deleted by *Copying its Predecessor*, please draw the final Tree, with the Threads, marks will be deducted
 
-[comment]: <> (```)
+for any invalid Threads. (3)
 
-[comment]: <> (d&#41; Node 9 is deleted by *Copying its Predecessor*, please draw the final Tree, with the Threads, marks will be deducted)
+```text
 
-[comment]: <> (for any invalid Threads. &#40;3&#41;)
+```
 
-[comment]: <> (```text)
+6.2.2 Write a method `getHeight(TNode<T> node)` which calculates the height of a sub-tree whose root is node. You may
 
-[comment]: <> (```)
+not use any additional libraries. (5)
 
-[comment]: <> (6.2.2 Write a method `etHeight&#40;TNode<T> node&#41;` which calculates the height of a sub-tree whose root is node. You may)
+```java
 
-[comment]: <> (not use any additional libraries. &#40;5&#41;)
-
-[comment]: <> (```java)
-
-[comment]: <> (int getHeight&#40;TNode<T> node&#41; {)
+int getHeight(TNode<T> node) {
     
-[comment]: <> (    if &#40;node == null&#41; {)
+    if (node == null) {
+        return 0;
+    }
 
-[comment]: <> (        return 0;)
+    int left = 1 + (!node.hasLeftThread) ? getHeight(node.left) : 0;
+    int right = 1 + (!node.hasRightThread) ? getHeight(node.right) : 0;
+    return (left > right) ? left : right;
+}
 
-[comment]: <> (    })
-
-[comment]: <> (    int left = 1 + &#40;!node.hasLeftThread&#41; ? getHeight&#40;node.left&#41; : 0;)
-
-[comment]: <> (    int right = 1 + &#40;!node.hasRightThread&#41; ? getHeight&#40;node.right&#41; : 0;)
-
-[comment]: <> (    return &#40;left > right&#41; ? left : right;)
-
-[comment]: <> (})
-
-[comment]: <> (```)
+```
 
