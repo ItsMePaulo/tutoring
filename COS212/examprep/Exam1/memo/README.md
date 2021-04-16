@@ -9,16 +9,16 @@ For each of the following right down the complexity of the algorithm in the form
 1.1.
 ```java
 int method(int i, int n) {
-    if (i < n) {
-        return 0;    
-    }
-    else if(i > n) {
+        if (i < n) {
+        return 0;
+        }
+        else if(i > n) {
         return 1;
-    }
-    else {
+        }
+        else {
         return method(i, n -1) * method(i, n - 2)
-    }
-}
+        }
+        }
 ```
 
 > ### O(1)
@@ -165,6 +165,7 @@ void method(int i, int n) {
 
 > ### O(n(log(n)))
 
+
 ## Question 2: [Skip Lists](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/SkipLists/README.md) + Sparse Tables
 
 2.1 Assume a Skip List with a max height of 6, provide the *Array of Powers* for the Skip List. (4)
@@ -181,24 +182,22 @@ void method(int i, int n) {
 2.2 What is the max level of a Skip List if there are only 4 references in the Array of Powers in the 3rd level? (1)
 
 ```text
-This skip list has a max height of 5. Level 3 should ideally hold 1/8 of the total number of elements in the skip List.
-Therefore we should multiply the number of values at that level by 8 to calculate the total number of Nodes in the List
+    This tree has a max height of 5. Level 3 should ideally hold 1/8 of the total number of elements in the skip List.
+    Therefore we should mutlipy the number of values at that level by 8 to calculate the total number of Nodes in the List
+    
 ```
 
 2.3 Assume the following SkipList
 
-<img src="../../../notes/SkipLists/images/skip_list.png" alt="skip list">
 
 2.3.1 Assume Node `35` was deleted, indicate all affected Nodes, for each Node indicate at which level the Node has been
 affected, if the Node affected was the first Node you may assume `Root` at level *x*. Please only identify the Nodes
 that will be affected when removing Node `35`. (2)
 
 ```text
-
 1) Node 33 at level 0
 2) Node 32 at level 1
 3) Node 22 at level 2
-
 ```
 
 2.3.2 Assume Node 22 was deleted, indicate all affected Nodes, for each Node indicate at which level the Node has been
@@ -206,18 +205,16 @@ affected, if the Node affected was the first Node you may assume `Root` at level
 that will be affected when removing Node `22`. (2)
 
 ```text
-
 1) Node 19 at level 0
 2) Node 17 at level 1
 3) Node 10 at level 2
 4) Root at level 3
-
 ```
 
 2.4 Assume the following Sparse Table. The top array represents Student Numbers while the secondary array represents
 class's. Provide the implementation for the expected Node Class for elements within the Sparse Table. (3)
 
-<img src="../images/sparse_table.png" alt="sparse table image" width="80%">
+<img src="../images/sparse_table.png" alt="sparse table image">
 
 ```java
 class SparseNode {
@@ -248,14 +245,14 @@ Give the final List after the Nodes have been visited in the following order. (2
 > M, B, G, F, D, M
 
 ```text
-
+M -> D -> F -> B -> A -> N -> G
 ```
 
 3.5 Assume the same List in Question 3.4 was instead implemented as a **transpose** strategy, give the final List if
 the elements where accessed in the same order as before. (2)
 
 ```text
-
+B -> A -> M -> D -> F -> N -> G
 ```
 
 3.6 Assume the Nodes in the first List where modified to now contain a counter variable the resulting List now looks as
@@ -268,10 +265,12 @@ Give the final List after the Nodes have been visited in the following order. (2
 > F, F, M, D, N, D, A, G
 
 ```text
-
+D/6  -> A/6 -> B/4 -> M/3 -> F/2 -> N/2 -> G
 ```
 
 ### Question 4: [Stacks and Queues](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/StacksAndQueus/README.md)
+
+For all questions that follow assume the following implementation of the `Stack` class implemented as a Queue
 
 ```java
 class Stack<T extends Comparable<? super T>> extends Queue<T> {
@@ -279,73 +278,170 @@ class Stack<T extends Comparable<? super T>> extends Queue<T> {
     Stack() {
         stack = new Queue<>();
     }
-
+    
     public void push(T elem) {
         // implementation left for you
     }
-
+    
     public T pop() {
         stack.dequeue();
     }
-
+    
     public int size() {
         // implementation left for you
     }
 }
 ```
 
-4.1 Implement the `pop()` method for the stack, you may assume a working `isEmpty()` method exists on the
+4.1 Implement the `push()` method for the stack, you may assume a working `isEmpty()` method exists on the
 `Queue` class. (4)
 
 ```java
-
+public void push(T elem) {
+    if (isEmpty()) {
+        return null;
+    }
+    
+    Stack<T> tmp = new Stack();
+    tmp.enqueue(elem);
+    
+    while(!stack.isEmpty()) {
+        tmp.enqueue(stack.dequeue())
+    }
+    
+    stack = tmp;
+}
 ```
 
 4.2 Implement the `size()` method for the stack, you may also assume a working `isEmpty()` method exist on the
 `Queue` class, you may not make use of any other methods on the Queue class besides the `isEmpty()` method. (3)
 
 ```java
+public int size() {
+    int i = 0;
+    Stack tmp = new Stack();
+    
+    while(stack.isNotEmpty()) {
+        tmp.push(tmp.pop());
+        i++;
+    }
+    
+    while(tmp.isNotEmpty()) {
+        stack.push(tmp.pop())
+    }
+    
+    return i;
+}
 
 ```
 
 ### Question 5: [Recursion](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/Recuriosn/README.md)
 
 5.1 Convert the following iterative method to a recursive method. This iterative method finds and returns the
-first occurrence of an integer in a List. (3)
+first occurrence of an integer in a List. The method returns -1 if the item was not found in the List (3)
 
-```java
-int findFirstOccurance(int[] array, int element) {
-    int index = 0;
+[comment]: <> (```java)
+
+[comment]: <> (int findFirstOccurance&#40;int[] array, int element&#41; {)
+
+[comment]: <> (    int index = 0;)
     
-    while (index < array.length()) {
-        if (array[index] == element) {
-            return index;
-        }
+[comment]: <> (    while &#40;index < array.length&#40;&#41;&#41; {)
+
+[comment]: <> (        if &#40;array[index] == element&#41; {)
+
+[comment]: <> (            return index;)
+
+[comment]: <> (        })
         
-        index++;
-    }
+[comment]: <> (        index++;)
+
+[comment]: <> (    })
     
-}
-```
+[comment]: <> (    return -1;)
+
+[comment]: <> (})
+
+[comment]: <> (```)
+
+[comment]: <> (```java)
+
+[comment]: <> (int findFirstOccurance&#40;int[] array, int element, int index&#41; {)
+
+[comment]: <> (    if &#40;index >= array.length&#40;&#41;&#41; {)
+
+[comment]: <> (        return -1;)
+
+[comment]: <> (    })
+    
+[comment]: <> (    if &#40;array[index] == element&#41; {)
+
+[comment]: <> (        return index;)
+
+[comment]: <> (    })
+    
+[comment]: <> (    return findFirstOccurance&#40;array, element, index + 1&#41;;)
+
+[comment]: <> (})
+
+[comment]: <> (```)
 
 5.2 Convert the following recursive function to an iterative function. The following function calculates the Greatest
 Common Denominator between two numbers. (3)
 
-```java
-int findGreatestCommonDom(int x, int y) {
-    
-    if (x == y) {
-        return x;
-    }
-    
-    if (x > y) {
-        return findGreatestCommonDom(x - y, y)
-    } else {
-        return findGreatestCommonDom(x, y - x)
-    }
-}
+[comment]: <> (```java)
 
-```
+[comment]: <> (int findGreatestCommonDom&#40;int x, int y&#41; {)
+    
+[comment]: <> (    if &#40;x == y&#41; {)
+
+[comment]: <> (        return x;)
+
+[comment]: <> (    })
+    
+[comment]: <> (    if &#40;x > y&#41; {)
+
+[comment]: <> (        return findGreatestCommonDom&#40;x - y, y&#41;)
+
+[comment]: <> (    } else {)
+
+[comment]: <> (        return findGreatestCommonDom&#40;x, y - x&#41;)
+
+[comment]: <> (    })
+
+[comment]: <> (})
+
+[comment]: <> (```)
+
+[comment]: <> (```java)
+
+[comment]: <> (int findGreatestCommonDom&#40;int x, int y&#41; {)
+    
+[comment]: <> (    while &#40;x != y&#41; {)
+        
+[comment]: <> (        int tmp = x;)
+        
+[comment]: <> (        if &#40;x > y&#41; {)
+
+[comment]: <> (            x = x - y;)
+
+[comment]: <> (            y = tmp;)
+
+[comment]: <> (        } else {)
+
+[comment]: <> (            x = y;)
+
+[comment]: <> (            y = y- tmp;)
+
+[comment]: <> (        })
+
+[comment]: <> (    })
+    
+[comment]: <> (    return x;)
+
+[comment]: <> (})
+
+[comment]: <> (```)
 
 5.3
 
@@ -363,138 +459,272 @@ class LinkedNode<T extends Comparable<? super T>> {
 
 5.3.1 Write down a recursive method called `findFours(LinkedNode<T> node)` that takes in a LinkedNode and counts the amount of elements in the List divisible by `4`. (3)
 
-```java
+[comment]: <> (```java)
 
-```
-
-5.3.2 Is your method an example of `Tail Recursion` or `Non Tail Recursion`, explain your answer. (2)
-
-```text
-
-```
-
-5.4 Assume the following sudo code for the N Queens Algorithm. Identify the base case of the algorithm (1)
-
-```kotlin
-fun placeQueen(row: Int) {
-    foreach col at a valid position
-            place queen at position
-            if (row < rows)
-                placeQueen(row + 1)
-            else
-                printBoard()
-
-    remove queen at position
-}   
-```
-
-```text
-
-```
-
-## Question 6.1 [Binary Trees](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/BinaryTreesPart1/README.md)
-
-
-6.1.1 What is the maximum number of nodes a Binary tree can have at level 7? (1)
-
-```text
-
-```
-
-6.1.2 What is the maximum number of Leaf Nodes a Binary Tree can have at level 9? (1)
-
-```text
-
-```
-
-6.1.3 What condition must be true for both your answers in 6.1 and 6.2 to be valid? (1)
-
-```text
-
-```
-
-#### For all questions that follow, assume the following BSTNode Class
-
-```java
-class BSTNode<T extends Comparable<? super T>> {
+[comment]: <> (int findFours&#40;LinkedNode<T> node&#41; {)
     
-    T key;
-    BSTNode<T> right, left;
+[comment]: <> (    if &#40;node == null&#41; {)
+
+[comment]: <> (        return 0;)
+
+[comment]: <> (    })
     
-    // constructor
-}
-```
+[comment]: <> (    return &#40;node.key % 4 == 0&#41; ? 1 + findFours&#40;node.next&#41; :  findFours&#40;node.next&#41;;)
 
-6.1.3 Provide the simplest implementation for a *recursive* function that will return the number of Nodes in the tree that
-have a *Right Child*. If a Nodes right Child has is not null you should consider the Node to be a valid accumulator. (3)
+[comment]: <> (})
 
-```java
+[comment]: <> (```)
+
+[comment]: <> (5.3.2 Is your method an example of `Tail Recursion` or `Non Tail Recursion`, explain your answer. &#40;2&#41;)
+
+[comment]: <> (```text)
+
+[comment]: <> (This is an example of non tail recursion because there is an additional operation happening in the case of key )
+
+[comment]: <> (being a multiple of 4. In said case an addition of 1 happens to the returned value of the function call.)
+
+[comment]: <> (```)
+
+[comment]: <> (5.4 Assume the following sudo code for the N Queens Algorithm. Identify the base case of the algorithm &#40;1&#41;)
+
+[comment]: <> (```kotlin)
+
+[comment]: <> (fun placeQueen&#40;row: Int&#41; {)
+
+[comment]: <> (    foreach col at a valid position)
+
+[comment]: <> (            place queen at position)
+
+[comment]: <> (            if &#40;row < rows&#41;)
+
+[comment]: <> (                placeQueen&#40;row + 1&#41;)
+
+[comment]: <> (            else)
+
+[comment]: <> (                printBoard&#40;&#41;)
+
+[comment]: <> (    remove queen at position)
+
+[comment]: <> (}   )
+
+[comment]: <> (```)
+
+[comment]: <> (```text)
+
+[comment]: <> ( row >= row)
+
+[comment]: <> (```)
+
+[comment]: <> (## Question 6.1 [Binary Trees]&#40;https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/BinaryTreesPart1/README.md&#41;)
 
 
-```
+[comment]: <> (6.1.1 What is the maximum number of nodes a Binary tree can have at level 7? &#40;1&#41;)
 
-6.1.4 Provide the simplest implementation for an *iterative* function that will return the number of Nodes in the tree that
-have a *Left Child*. If the Nodes left child is not null you should consider the Node to a valid accumulator. (3)
-
-```java
+[comment]: <> (> 2<sup> n + 1 </sup> - 1 = 255)
 
 
-```
+[comment]: <> (6.1.2 What is the maximum number of Leaf Nodes a Binary Tree can have at level 9? &#40;1&#41;)
 
-6.1.5 Provide an example of a *recursive* function that will return the largest element in a tree, your function
-should not make use of any unnecessary parameters. (2)
-
-```java
+[comment]: <> (> 2 <sup> n - 1 </sup> = 256)
 
 
-```
+[comment]: <> (6.1.3 What condition must be true for both your answers in 6.1 and 6.2 to be valid? &#40;1&#41;)
 
-## Question 6.2 [Threads](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/BinaryTreesPart2/Part2.2/README.md)
+[comment]: <> (```text)
 
-#### For all questions that follow, assume the enhanced BSTNode class
+[comment]: <> (The tree must be a complete tree, meaning all non-terminal nodes must have both children and all the leaf Nodes must be )
 
-```java
-class TNode<T extends Comparable<? super T>> {
+[comment]: <> (on the same level)
+
+[comment]: <> (```)
+
+[comment]: <> (#### For all questions that follow, assume the following BSTNode Class)
+
+[comment]: <> (```java)
+
+[comment]: <> (class BSTNode<T extends Comparable<? super T>> {)
     
-    T key;
-    TNode<T> left, right;
-    boolean hasRightThread, hasLeftThread;
-}
-```
+[comment]: <> (    T key;)
 
-6.2.1 Integers are added into a *double-threaded* BST in the following order;
+[comment]: <> (    BSTNode<T> right, left;)
+    
+[comment]: <> (    // constructor)
 
-> 7, 20, 12, 5, 35, 6, 9, 8, 10, 1
+[comment]: <> (})
 
-a) What is the height of the Tree (2)
+[comment]: <> (```)
 
-```text
+[comment]: <> (6.1.3 Provide the simplest implementation for a *recursive* function that will return the number of Nodes in the tree that)
 
-```
+[comment]: <> (have a *Right Child*. If a Nodes right Child has is not null you should consider the Node to be a valid accumulator. &#40;3&#41;)
 
-b) How many *Left Threads* dose the resulting Tree have? (2)
+[comment]: <> (```java)
 
-```text
+[comment]: <> (int findRightChildren&#40;BSTNode<T> node&#41; {)
 
-```
+[comment]: <> (    if &#40;node == null&#41; {)
 
-c) Node 7 is deleted by *Merging with its Successor*, how many right threads dose the resulting Tree have? (3)
+[comment]: <> (        return 0;)
 
-```text
+[comment]: <> (    })
+    
+[comment]: <> (    int result = findRightChildren&#40;node.left&#41;;)
 
-```
+[comment]: <> (    result += &#40;node.right != null&#41; ? 1 + findRightChildren&#40;node.right&#41; : 0;)
+    
+[comment]: <> (    return result;)
 
-d) Node 9 is deleted by *Copying its Predecessor*, please draw the final Tree, with the Threads, marks will be deducted
-for any invalid Threads. (3)
+[comment]: <> (})
 
-```text
+[comment]: <> (```)
 
-```
+[comment]: <> (6.1.4 Provide the simplest implementation for an *iterative* function that will return the number of Nodes in the tree that)
 
-6.2.2 Write a method `getHeight(TNode<T> node)` which calculates the height of a sub-tree whose root is node. You may
-not use any additional libraries. (5)
+[comment]: <> (have a *Left Child*. If the Nodes left child is not null you should consider the Node to a valid accumulator. &#40;3&#41;)
 
-```java
+[comment]: <> (```java)
 
-```
+[comment]: <> (int findLeftChildren&#40;BSTNode<T> node&#41; {)
+
+[comment]: <> (    if &#40;node == null&#41; {)
+
+[comment]: <> (        return 0;)
+
+[comment]: <> (    })
+    
+[comment]: <> (    int counter = 0;)
+
+[comment]: <> (    ArrayList<BSTNode<T>> queue = new ArrayList<>&#40;&#41;;)
+
+[comment]: <> (    queue.add&#40;node&#41;;)
+    
+[comment]: <> (    while &#40;!queue.isEmpty&#40;&#41;&#41; {)
+
+[comment]: <> (        BSTNode<T> tmp = queue.remove&#40;0&#41;;)
+        
+[comment]: <> (        if &#40;tmp.left != null&#41; {)
+
+[comment]: <> (            counter++;)
+
+[comment]: <> (            queue.add&#40;tmp.left&#41;;)
+
+[comment]: <> (        })
+
+[comment]: <> (        if &#40;tmp.right != null&#41; {)
+
+[comment]: <> (            queue.add&#40;tmp.right&#41;;)
+
+[comment]: <> (        })
+
+[comment]: <> (    })
+    
+[comment]: <> (    return counter;)
+
+[comment]: <> (})
+
+[comment]: <> (```)
+
+[comment]: <> (6.1.5 Provide an example of a *recursive* function that will return the largest element in a tree, your function)
+
+[comment]: <> (should not make use of any unnecessary parameters. &#40;2&#41;)
+
+[comment]: <> (```java)
+
+[comment]: <> (BSTNode<T> findLargest&#40;BSTNode<T> node&#41; {)
+    
+[comment]: <> (    if &#40;node == null&#41; {)
+
+[comment]: <> (        return null;)
+
+[comment]: <> (    })
+    
+[comment]: <> (    if &#40;node.right == null&#41; {)
+
+[comment]: <> (        return node;)
+
+[comment]: <> (    })
+    
+[comment]: <> (    return findLargest&#40;node.right&#41;;)
+
+[comment]: <> (})
+
+[comment]: <> (```)
+
+[comment]: <> (## Question 6.2 [Threads]&#40;https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/BinaryTreesPart2/Part2.2/README.md&#41;)
+
+[comment]: <> (#### For all questions that follow, assume the enhanced BSTNode class)
+
+[comment]: <> (```java)
+
+[comment]: <> (class TNode<T extends Comparable<? super T>> {)
+    
+[comment]: <> (    T key;)
+
+[comment]: <> (    TNode<T> left, right;)
+
+[comment]: <> (    boolean hasRightThread, hasLeftThread;)
+
+[comment]: <> (})
+
+[comment]: <> (```)
+
+[comment]: <> (6.2.1 Integers are added into a *double-threaded* BST in the following order;)
+
+[comment]: <> (> 7, 20, 12, 5, 35, 4, 9, 8, 10, 1)
+
+[comment]: <> (a&#41; What is the height of the Tree &#40;2&#41;)
+
+[comment]: <> (```text)
+
+[comment]: <> (5)
+
+[comment]: <> (```)
+
+[comment]: <> (b&#41; How many *Left Threads* dose the resulting Tree have? &#40;2&#41;)
+
+[comment]: <> (```text)
+
+[comment]: <> (4)
+
+[comment]: <> (```)
+
+[comment]: <> (c&#41; Node 7 is deleted by *Merging with its Successor*, how many right threads dose the resulting Tree have? &#40;3&#41;)
+
+[comment]: <> (```text)
+
+[comment]: <> (5)
+
+[comment]: <> (```)
+
+[comment]: <> (d&#41; Node 9 is deleted by *Copying its Predecessor*, please draw the final Tree, with the Threads, marks will be deducted)
+
+[comment]: <> (for any invalid Threads. &#40;3&#41;)
+
+[comment]: <> (```text)
+
+[comment]: <> (```)
+
+[comment]: <> (6.2.2 Write a method `etHeight&#40;TNode<T> node&#41;` which calculates the height of a sub-tree whose root is node. You may)
+
+[comment]: <> (not use any additional libraries. &#40;5&#41;)
+
+[comment]: <> (```java)
+
+[comment]: <> (int getHeight&#40;TNode<T> node&#41; {)
+    
+[comment]: <> (    if &#40;node == null&#41; {)
+
+[comment]: <> (        return 0;)
+
+[comment]: <> (    })
+
+[comment]: <> (    int left = 1 + &#40;!node.hasLeftThread&#41; ? getHeight&#40;node.left&#41; : 0;)
+
+[comment]: <> (    int right = 1 + &#40;!node.hasRightThread&#41; ? getHeight&#40;node.right&#41; : 0;)
+
+[comment]: <> (    return &#40;left > right&#41; ? left : right;)
+
+[comment]: <> (})
+
+[comment]: <> (```)
 
