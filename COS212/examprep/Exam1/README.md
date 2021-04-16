@@ -299,7 +299,7 @@ class Stack<T extends Comparable<? super T>> extends Queue<T> {
 ### Question 5: [Recursion](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/Recuriosn/README.md)
 
 5.1 Convert the following iterative method to a recursive method. This iterative method finds and returns the 
-first occurrence of an integer in a List. (3)
+first occurrence of an integer in a List. The method returns -1 if the item was not found in the List. (3)
 
 ```java
 int findFirstOccurance(int[] array, int element) {
@@ -313,6 +313,7 @@ int findFirstOccurance(int[] array, int element) {
         index++;
     }
     
+    return -1;
 }
 ```
 

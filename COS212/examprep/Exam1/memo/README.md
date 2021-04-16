@@ -414,7 +414,7 @@ class TNode<T extends Comparable<? super T>> {
 
 6.2.1 Integers are added into a *double-threaded* BST in the following order;
 
-> 7, 20, 12, 5, 35, 4, 9, 8, 10, 1
+> 7, 20, 12, 5, 35, 6, 9, 8, 10, 1
 
 a) What is the height of the Tree (2)
 
@@ -441,7 +441,7 @@ for any invalid Threads. (3)
 
 ```
 
-6.2.2 Write a method `etHeight(TNode<T> node)` which calculates the height of a sub-tree whose root is node. You may
+6.2.2 Write a method `getHeight(TNode<T> node)` which calculates the height of a sub-tree whose root is node. You may
 not use any additional libraries. (5)
 
 ```java
