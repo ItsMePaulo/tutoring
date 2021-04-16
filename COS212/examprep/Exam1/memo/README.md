@@ -265,7 +265,7 @@ Give the final List after the Nodes have been visited in the following order. (2
 > F, F, M, D, N, D, A, G
 
 ```text
-D/6  -> A/6 -> B/4 -> M/3 -> F/2 -> N/2 -> G
+D/6 -> A/6 -> B/4 -> M/3 -> F/2 -> N/2 -> G
 ```
 
 ### Question 4: [Stacks and Queues](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/StacksAndQueus/README.md)
@@ -296,62 +296,58 @@ class Stack<T extends Comparable<? super T>> extends Queue<T> {
 4.1 Implement the `push()` method for the stack, you may assume a working `isEmpty()` method exists on the
 `Queue` class. (4)
 
-[comment]: <> (```java)
+```java
 
-[comment]: <> (public void push&#40;T elem&#41; {)
+public void push(T elem) {
 
-[comment]: <> (    if &#40;isEmpty&#40;&#41;&#41; {)
-
-[comment]: <> (        return null;)
-
-[comment]: <> (    })
+    if (isEmpty()) {
+        stack.enqueue((stack.dequeue()));
+        return;
+    }
     
-[comment]: <> (    Stack<T> tmp = new Stack&#40;&#41;;)
+    Stack<T> tmp = new Stack();
 
-[comment]: <> (    tmp.enqueue&#40;elem&#41;;)
+    tmp.enqueue(elem);
     
-[comment]: <> (    while&#40;!stack.isEmpty&#40;&#41;&#41; {)
-
-[comment]: <> (        tmp.enqueue&#40;stack.dequeue&#40;&#41;&#41;)
-
-[comment]: <> (    })
+    while(!stack.isEmpty()) {
+        tmp.enqueue(stack.dequeue());
+    }
     
-[comment]: <> (    stack = tmp;)
+    stack = tmp;
 
-[comment]: <> (})
+}
 
-[comment]: <> (```)
+```
 
 4.2 Implement the `size()` method for the stack, you may also assume a working `isEmpty()` method exist on the
 `Queue` class, you may not make use of any other methods on the Queue class besides the `isEmpty()` method. (3)
 
-[comment]: <> (```java)
+```java
 
-[comment]: <> (public int size&#40;&#41; {)
+public int size() {
 
-[comment]: <> (    int i = 0;)
+    int i = 0;
 
-[comment]: <> (    Stack tmp = new Stack&#40;&#41;;)
+    Stack tmp = new Stack();
     
-[comment]: <> (    while&#40;stack.isNotEmpty&#40;&#41;&#41; {)
+    while(stack.isNotEmpty()) {
 
-[comment]: <> (        tmp.push&#40;tmp.pop&#40;&#41;&#41;;)
+        tmp.push(tmp.pop());
 
-[comment]: <> (        i++;)
+        i++;
 
-[comment]: <> (    })
+    }
     
-[comment]: <> (    while&#40;tmp.isNotEmpty&#40;&#41;&#41; {)
+    while(tmp.isNotEmpty()) {
 
-[comment]: <> (        stack.push&#40;tmp.pop&#40;&#41;&#41;)
+        stack.push(tmp.pop())
 
-[comment]: <> (    })
+    }
     
-[comment]: <> (    return i;)
+    return i;
+}
 
-[comment]: <> (})
-
-[comment]: <> (```)
+```
 
 ### Question 5: [Recursion](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/Recuriosn/README.md)
 
