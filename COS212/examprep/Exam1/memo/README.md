@@ -102,7 +102,7 @@ int method(int n) {
         return y;
     }
     
-    return method(n - 1) * (n - 1)
+    return method(n - 1) * method(n - 1)
 }
 ```
 
@@ -111,15 +111,28 @@ int method(int n) {
 1.8 (1)
 ```java
 int i = n, b = 0;
-while (i < n) {
-    for (int j = i - n; j < i; j++){
-        b *= j + i;
+    while (i > 0) {
+        for (int j = i - n; j < i; j++){
+            b *= j + i;
+        }
+        i--;
     }
-    i--;
-}
 ```
 
 > ###  O(n)<sup>2</sup>
+
+1.8.2 (1)
+```java
+int i = n, b = 0;
+    while (i > 0) {
+        for (int j = i - n; j < i; j++){
+            b *= j + i;
+        }
+        i--;
+    }
+```
+
+> ###  O(1)
 
 1.9
 ```java
@@ -157,13 +170,19 @@ void method(int i, int n) {
 2.1 Assume a Skip List with a max height of 6, provide the *Array of Powers* for the Skip List. (4)
 
 ```text
-
+    level 6 = [63]
+    level 5 = [61-62]
+    level 4 = [57-60]
+    level 3 = [49-56]
+    level 2 = [33-48]
+    level 1 = [1-32]
 ```
 
 2.2 What is the max level of a Skip List if there are only 4 references in the Array of Powers in the 3rd level? (1)
 
 ```text
-
+    This skip list has a max height of 5. Level 3 should ideally hold 1/8 of the total number of elements in the skip List.
+    Therefore we should mutlipy the number of values at that level by 8 to calculate the total number of Nodes in the List
 ```
 
 2.3 Assume the following SkipList
@@ -176,6 +195,10 @@ that will be affected when removing Node `35`. (2)
 
 ```text
 
+1) Node 33 at level 0
+2) Node 32 at level 1
+3) Node 22 at level 2
+
 ```
 
 2.3.2 Assume Node 22 was deleted, indicate all affected Nodes, for each Node indicate at which level the Node has been
@@ -183,6 +206,11 @@ affected, if the Node affected was the first Node you may assume `Root` at level
 that will be affected when removing Node `22`. (2)
 
 ```text
+
+1) Node 19 at level 0
+2) Node 17 at level 1
+3) Node 10 at level 2
+4) Root at level 3
 
 ```
 
@@ -192,7 +220,21 @@ class's. Provide the implementation for the expected Node Class for elements wit
 <img src="../images/sparse_table.png" alt="sparse table image" width="80%">
 
 ```java
-
+class SparseNode {
+    
+    int studentNumber;
+    int classNumber;
+    
+    SparseNode nextStudent, nextClass;
+    
+    SparseNode(int sn, int cn) {
+        studentNumber = sn;
+        classNumber = cn;
+        
+        nextStudent = null;
+        nextClass = null;
+    }
+}
 ```
 
 ### Question 3: [Self Organinizing Lists](https://gitlab.com/Paul_Wood_96/tutoring/-/tree/master/COS212/notes/SelfOrganizingLists/README.md)

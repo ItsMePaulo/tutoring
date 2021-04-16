@@ -120,7 +120,7 @@ int method(int n) {
         return y;
     }
     
-    return method(n - 1) * (n - 1)
+    return method(n - 1) * method(n - 1)
 }
 ```
 ```java
@@ -131,7 +131,7 @@ int method(int n) {
 1.8 (1)
 ```java
 int i = n, b = 0;
-while (i < n) {
+while (i > 0) {
     for (int j = i - n; j < i; j++){
         b *= j + i;
     }
@@ -170,7 +170,7 @@ void method(int i, int n) {
         return;
     }
     for ( ; i < n; i++) {
-        mehod(i, n / 2)
+        method(i, n / 2)
     }
 }
 ```
