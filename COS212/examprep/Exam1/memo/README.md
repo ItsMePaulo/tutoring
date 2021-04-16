@@ -442,7 +442,6 @@ class LinkedNode<T extends Comparable<? super T>> {
 5.3.1 Write down a recursive method called `findFours(LinkedNode<T> node)` that takes in a LinkedNode and counts the amount of elements in the List divisible by `4`. (3)
 
 ```java
-
 int findFours(LinkedNode<T> node) {
     
     if (node == null) {
@@ -467,7 +466,6 @@ being a multiple of 4. In said case an addition of 1 happens to the returned val
 5.4 Assume the following sudo code for the N Queens Algorithm. Identify the base case of the algorithm (1)
 
 ```kotlin
-
 fun placeQueen(row: Int) {
 
     foreach col at a valid position
@@ -484,8 +482,7 @@ fun placeQueen(row: Int) {
 ```
 
 ```text
-
- row >= row
+ row >= rows
 
 ```
 
