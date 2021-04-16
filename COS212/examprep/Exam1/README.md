@@ -130,10 +130,12 @@ int method(int n) {
 
 1.8 (1)
 ```java
-for (int i = 0; i < n; i++) {
-    for (int j = 0; j <= i; j++) {
-        sum += j;
+int i = n, b = 0;
+while (i < n) {
+    for (int j = i - n; j < i; j++){
+        b *= j + i;
     }
+    i--;
 }
 ```
 
@@ -178,7 +180,7 @@ void method(int i, int n) {
 
 ```
 
-## Question 2: [Skip Lists](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/SkipLists/README.md)
+## Question 2: [Skip Lists](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/SkipLists/README.md) + Sparse Tables
 
 2.1 Assume a Skip List with a max height of 6, provide the *Array of Powers* for the Skip List. (4)
  
@@ -212,53 +214,16 @@ that will be affected when removing Node `22`. (2)
 
 ```
 
+2.4 Assume the following Sparse Table. The top array represents Student Numbers while the secondary array represents 
+class's. Provide the implementation for the expected Node Class for elements within the Sparse Table. (3)
+
+<img src="images/sparse_table.png" alt="sparse table image">
+
+```java
+
+```
+
 ### Question 3: [Self Organinizing Lists](https://gitlab.com/Paul_Wood_96/tutoring/-/tree/master/COS212/notes/SelfOrganizingLists/README.md)
-
-For all questions that follow assume the following Circular List Class and List Node class
-
-```java
-class ListNode<T> {
-
-    T key;
-    int counter = 0;
-
-    List<T> next;
-    
-    // constructor ...
-}
-
-class CircularListSelfOrganizingList<T> {
-
-    ListNode<T> tail;
-    
-    public void addToTail(T elem);
-    public void deleteFromHead();
-    public void access(T elem);
-}
-
-```
-
-3.1 Implement the `addToTail()` method you may assume you have a working implementation of the *isEmpty()* method. The list 
-may not allow duplicates if any duplicate is added your method must output the following: "Invalid Duplicate Key Exception". (4)
-
-```java
-
-```
-
-3.2 Implement the `deleteFromHead()` method you may assume you a working implementation of the *isEmpty()* method. (3)
-
-```java
-
-```
-
-3.3 Assume the Self Organizing List makes use of the *Count* self organizing strategy, implement the access method. The access 
-method should take in an element to search for in the list, if the element is not found in the List the method should output 
-the following: "Invalid Key Exception". If the element is found in the List the counter for the key should be incremented, 
-and the list sorted. (5)
-
-```java
-
-```
 
 3.4 Assume you have a working implementation of the **move-to-front** strategy, being applied to the following List:
 
@@ -273,7 +238,20 @@ Give the final List after the Nodes have been visited in the following order. (2
 ```
 
 3.5 Assume the same List in Question 3.4 was instead implemented as a **transpose** strategy, give the final List if 
-the elements where accessed in the same order as before. (2)
+the elements where accessed in the same order as before. You must use the initial List from question 3.4 (2)
+
+```text
+
+```
+
+3.6 Assume the Nodes in the first List where modified to now contain a counter variable the resulting List now looks as 
+follows 
+
+> A/5 -> B/4 -> D/4 -> M/2 -> N/1 -> F/0
+
+Give the final List after the Nodes have been visited in the following order. (2)
+
+> F, F, M, D, N, D, A, G
 
 ```text
 
@@ -284,7 +262,7 @@ the elements where accessed in the same order as before. (2)
 For all questions that follow assume the following implementation of the `Stack` class implemented as a Queue
 
 ```java
-class Stack<T> extends Queue<T> {
+class Stack<T extends Comparable<? super T>> extends Queue<T> {
 
     Stack() {
         stack = new Queue<>();
@@ -312,7 +290,7 @@ class Stack<T> extends Queue<T> {
 ```
 
 4.2 Implement the `size()` method for the stack, you may also assume a working `isEmpty()` method exist on the 
-`Queue` class. (3)
+`Queue` class, you may not make use of any other methods on the Queue class besides the `isEmpty()` method. (3)
 
 ```java
 
@@ -320,7 +298,7 @@ class Stack<T> extends Queue<T> {
 
 ### Question 5: [Recursion](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/Recuriosn/README.md)
 
-5.1 Convert the following iterative method to a recursive function. This iterative method finds and returns the 
+5.1 Convert the following iterative method to a recursive method. This iterative method finds and returns the 
 first occurrence of an integer in a List. (3)
 
 ```java
@@ -336,6 +314,10 @@ int findFirstOccurance(int[] array, int element) {
     }
     
 }
+```
+
+```java
+
 ```
 
 5.2 Convert the following recursive function to an iterative function. The following function calculates the Greatest 
@@ -357,12 +339,16 @@ int findGreatestCommonDom(int x, int y) {
 
 ```
 
+```java
+
+```
+
 5.3 
 
 Assume the following LinkedNode Class 
 
 ```java
-class LinkedNode<T> {
+class LinkedNode<T extends Comparable<? super T>> {
     
     int key;
     LinkedNode<T> next;
@@ -371,7 +357,7 @@ class LinkedNode<T> {
 }
 ```
 
-5.3.1 Write down a recursive method that takes in a LinkedNode and count the amount of elements in the List divisible by `4`. (3)
+5.3.1 Write down a recursive method called `findFours(LinkedNode<T> node)` that takes in a LinkedNode and counts the amount of elements in the List divisible by `4`. (3)
 
 ```java
 
@@ -380,5 +366,130 @@ class LinkedNode<T> {
 5.3.2 Is your method an example of `Tail Recursion` or `Non Tail Recursion`, explain your answer. (2)
 
 ```text
+
+```
+
+5.4 Assume the following sudo code for the N Queens Algorithm. Identify the base case of the algorithm (1)
+
+```kotlin
+fun placeQueen(row: Int) {
+    foreach col at a valid position
+            place queen at position
+            if (row < rows)
+                placeQueen(row + 1)
+            else
+                printBoard()
+
+    remove queen at position
+}   
+```
+
+```text
+
+```
+
+## Question 6.1 [Binary Trees](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/BinaryTreesPart1/README.md) 
+
+
+6.1.1 What is the maximum number of nodes a Binary tree can have at level 7? (1)
+
+```text
+
+```
+
+6.1.2 What is the maximum number of Leaf Nodes a Binary Tree can have at level 9? (1)
+
+```text
+
+```
+
+6.1.3 What condition must be true for both your answers in 6.1 and 6.2 to be valid? (1)
+
+```text
+
+```
+
+#### For all questions that follow, assume the following BSTNode Class
+
+```java
+class BSTNode<T extends Comparable<? super T>> {
+    
+    T key;
+    BSTNode<T> right, left;
+    
+    // constructor
+}
+```
+
+6.1.3 Provide the simplest implementation for a *recursive* function that will return the number of Nodes in the tree that
+have a *Right Child*. If a Nodes right Child has is not null you should consider the Node to be a valid accumulator. (3)
+
+```java
+
+
+```
+
+6.1.4 Provide the simplest implementation for an *iterative* function that will return the number of Nodes in the tree that 
+have a *Left Child*. If the Nodes left child is not null you should consider the Node to a valid accumulator. (3)
+
+```java
+
+
+```
+
+6.1.5 Provide an example of a *recursive* function that will return the largest element in a tree, your function
+should not make use of any unnecessary parameters. (2)
+
+```java
+
+
+```
+
+## Question 6.2 [Threads](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/BinaryTreesPart2/Part2.2/README.md)
+
+#### For all questions that follow, assume the enhanced BSTNode class 
+
+```java
+class TNode<T extends Comparable<? super T>> {
+    
+    T key;
+    TNode<T> left, right;
+    boolean hasRightThread, hasLeftThread;
+}
+```
+
+6.2.1 Integers are added into a *double-threaded* BST in the following order;
+
+> 7, 20, 12, 5, 35, 4, 9, 8, 10, 1
+
+a) What is the height of the Tree (2)
+
+```text
+
+```
+
+b) How many *Left Threads* dose the resulting Tree have? (2)
+
+```text
+
+```
+
+c) Node 7 is deleted by *Merging with its Successor*, how many right threads dose the resulting Tree have? (3)
+
+```text
+
+```
+
+d) Node 9 is deleted by *Copying its Predecessor*, please draw the final Tree, with the Threads, marks will be deducted 
+for any invalid Threads. (3)
+
+```text
+
+```
+
+6.2.2 Write a method `etHeight(TNode<T> node)` which calculates the height of a sub-tree whose root is node. You may 
+not use any additional libraries. (5)
+
+```java
 
 ```
