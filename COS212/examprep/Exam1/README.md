@@ -421,7 +421,7 @@ class BSTNode<T extends Comparable<? super T>> {
 }
 ```
 
-6.1.3 Provide the simplest implementation for a *recursive* function that will return the number of Nodes in the tree that
+6.1.4 Provide the simplest implementation for a *recursive* function that will return the number of Nodes in the tree that
 have a *Right Child*. If a Nodes right Child has is not null you should consider the Node to be a valid accumulator. (3)
 
 ```java
@@ -429,7 +429,7 @@ have a *Right Child*. If a Nodes right Child has is not null you should consider
 
 ```
 
-6.1.4 Provide the simplest implementation for an *iterative* function that will return the number of Nodes in the tree that 
+6.1.5 Provide the simplest implementation for an *iterative* function that will return the number of Nodes in the tree that 
 have a *Left Child*. If the Nodes left child is not null you should consider the Node to a valid accumulator. (3)
 
 ```java
@@ -437,7 +437,7 @@ have a *Left Child*. If the Nodes left child is not null you should consider the
 
 ```
 
-6.1.5 Provide an example of a *recursive* function that will return the largest element in a tree, your function
+6.1.6 Provide an example of a *recursive* function that will return the largest element in a tree, your function
 should not make use of any unnecessary parameters. (2)
 
 ```java
