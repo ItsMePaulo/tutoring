@@ -622,15 +622,13 @@ a) What is the height of the Tree (2)
 b) How many *Left Threads* dose the resulting Tree have? (2)
 
 ```text
-
-4
+3
 
 ```
 
 c) Node 7 is deleted by *Merging with its Successor*, how many right threads dose the resulting Tree have? (3)
 
 ```text
-
 6
 
 ```
