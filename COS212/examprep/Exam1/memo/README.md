@@ -273,23 +273,21 @@ Give the final List after the Nodes have been visited in the following order. (2
 
 ### Question 4: [Stacks and Queues](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/StacksAndQueus/README.md)
 
-For all questions that follow assume the following implementation of the `Stack` class implemented as a Queue
-
 ```java
 class Stack<T extends Comparable<? super T>> extends Queue<T> {
 
     Stack() {
         stack = new Queue<>();
     }
-    
+
     public void push(T elem) {
-        stack.enqueu();
-    }
-    
-    public T pop() {
         // implementation left for you
     }
-    
+
+    public T pop() {
+        stack.dequeue();
+    }
+
     public int size() {
         // implementation left for you
     }
