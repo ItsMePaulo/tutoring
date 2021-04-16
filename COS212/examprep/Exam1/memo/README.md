@@ -301,7 +301,7 @@ class Stack<T extends Comparable<? super T>> extends Queue<T> {
 public void push(T elem) {
 
     if (isEmpty()) {
-        stack.enqueue((stack.dequeue()));
+        stack.enqueue(elem);
         return;
     }
     
