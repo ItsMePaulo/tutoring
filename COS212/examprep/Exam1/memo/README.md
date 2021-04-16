@@ -330,18 +330,15 @@ public int size() {
 
     Stack tmp = new Stack();
     
-    while(stack.isNotEmpty()) {
-
+    while(!stack.isEmpty()) {
         tmp.push(tmp.pop());
 
         i++;
 
     }
     
-    while(tmp.isNotEmpty()) {
-
+    while(!tmp.isEmpty()) {
         stack.push(tmp.pop())
-
     }
     
     return i;
