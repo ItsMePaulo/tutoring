@@ -244,16 +244,20 @@ Give the final List after the Nodes have been visited in the following order. (2
 
 > M, B, G, F, D, M
 
-```text
-M -> D -> F -> B -> A -> N -> G
-```
+[comment]: <> (```text)
+
+[comment]: <> (M -> D -> F -> B -> A -> N -> G)
+
+[comment]: <> (```)
 
 3.5 Assume the same List in Question 3.4 was instead implemented as a **transpose** strategy, give the final List if
 the elements where accessed in the same order as before. (2)
 
-```text
-B -> A -> M -> D -> F -> N -> G
-```
+[comment]: <> (```text)
+
+[comment]: <> (B -> A -> M -> D -> F -> N -> G)
+
+[comment]: <> (```)
 
 3.6 Assume the Nodes in the first List where modified to now contain a counter variable the resulting List now looks as
 follows
@@ -264,74 +268,104 @@ Give the final List after the Nodes have been visited in the following order. (2
 
 > F, F, M, D, N, D, A, G
 
-```text
-D/6  -> A/6 -> B/4 -> M/3 -> F/2 -> N/2 -> G
-```
+[comment]: <> (```text)
+
+[comment]: <> (D/6  -> A/6 -> B/4 -> M/3 -> F/2 -> N/2 -> G)
+
+[comment]: <> (```)
 
 ### Question 4: [Stacks and Queues](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/StacksAndQueus/README.md)
 
 For all questions that follow assume the following implementation of the `Stack` class implemented as a Queue
 
-```java
-class Stack<T extends Comparable<? super T>> extends Queue<T> {
+[comment]: <> (```java)
 
-    Stack() {
-        stack = new Queue<>();
-    }
+[comment]: <> (class Stack<T extends Comparable<? super T>> extends Queue<T> {)
+
+[comment]: <> (    Stack&#40;&#41; {)
+
+[comment]: <> (        stack = new Queue<>&#40;&#41;;)
+
+[comment]: <> (    })
     
-    public void push(T elem) {
-        // implementation left for you
-    }
+[comment]: <> (    public void push&#40;T elem&#41; {)
+
+[comment]: <> (        // implementation left for you)
+
+[comment]: <> (    })
     
-    public T pop() {
-        stack.dequeue();
-    }
+[comment]: <> (    public T pop&#40;&#41; {)
+
+[comment]: <> (        stack.dequeue&#40;&#41;;)
+
+[comment]: <> (    })
     
-    public int size() {
-        // implementation left for you
-    }
-}
+[comment]: <> (    public int size&#40;&#41; {)
+
+[comment]: <> (        // implementation left for you)
+
+[comment]: <> (    })
+
+[comment]: <> (})
 ```
 
 4.1 Implement the `push()` method for the stack, you may assume a working `isEmpty()` method exists on the
 `Queue` class. (4)
 
-```java
-public void push(T elem) {
-    if (isEmpty()) {
-        return null;
-    }
+[comment]: <> (```java)
+
+[comment]: <> (public void push&#40;T elem&#41; {)
+
+[comment]: <> (    if &#40;isEmpty&#40;&#41;&#41; {)
+
+[comment]: <> (        return null;)
+
+[comment]: <> (    })
     
-    Stack<T> tmp = new Stack();
-    tmp.enqueue(elem);
+[comment]: <> (    Stack<T> tmp = new Stack&#40;&#41;;)
+
+[comment]: <> (    tmp.enqueue&#40;elem&#41;;)
     
-    while(!stack.isEmpty()) {
-        tmp.enqueue(stack.dequeue())
-    }
+[comment]: <> (    while&#40;!stack.isEmpty&#40;&#41;&#41; {)
+
+[comment]: <> (        tmp.enqueue&#40;stack.dequeue&#40;&#41;&#41;)
+
+[comment]: <> (    })
     
-    stack = tmp;
-}
-```
+[comment]: <> (    stack = tmp;)
+
+[comment]: <> (})
+
+[comment]: <> (```)
 
 4.2 Implement the `size()` method for the stack, you may also assume a working `isEmpty()` method exist on the
 `Queue` class, you may not make use of any other methods on the Queue class besides the `isEmpty()` method. (3)
 
-```java
-public int size() {
-    int i = 0;
-    Stack tmp = new Stack();
+[comment]: <> (```java)
+
+[comment]: <> (public int size&#40;&#41; {)
+
+[comment]: <> (    int i = 0;)
+
+[comment]: <> (    Stack tmp = new Stack&#40;&#41;;)
     
-    while(stack.isNotEmpty()) {
-        tmp.push(tmp.pop());
-        i++;
-    }
+[comment]: <> (    while&#40;stack.isNotEmpty&#40;&#41;&#41; {)
+
+[comment]: <> (        tmp.push&#40;tmp.pop&#40;&#41;&#41;;)
+
+[comment]: <> (        i++;)
+
+[comment]: <> (    })
     
-    while(tmp.isNotEmpty()) {
-        stack.push(tmp.pop())
-    }
+[comment]: <> (    while&#40;tmp.isNotEmpty&#40;&#41;&#41; {)
+
+[comment]: <> (        stack.push&#40;tmp.pop&#40;&#41;&#41;)
+
+[comment]: <> (    })
     
-    return i;
-}
+[comment]: <> (    return i;)
+
+[comment]: <> (})
 
 ```
 
