@@ -272,37 +272,26 @@ D/6  -> A/6 -> B/4 -> M/3 -> F/2 -> N/2 -> G
 
 For all questions that follow assume the following implementation of the `Stack` class implemented as a Queue
 
-[comment]: <> (```java)
+```java
+class Stack<T extends Comparable<? super T>> extends Queue<T> {
 
-[comment]: <> (class Stack<T extends Comparable<? super T>> extends Queue<T> {)
-
-[comment]: <> (    Stack&#40;&#41; {)
-
-[comment]: <> (        stack = new Queue<>&#40;&#41;;)
-
-[comment]: <> (    })
+    Stack() {
+        stack = new Queue<>();
+    }
     
-[comment]: <> (    public void push&#40;T elem&#41; {)
-
-[comment]: <> (        // implementation left for you)
-
-[comment]: <> (    })
+    public void push(T elem) {
+        // implementation left for you
+    }
     
-[comment]: <> (    public T pop&#40;&#41; {)
-
-[comment]: <> (        stack.dequeue&#40;&#41;;)
-
-[comment]: <> (    })
+    public T pop() {
+        stack.dequeue();
+    }
     
-[comment]: <> (    public int size&#40;&#41; {)
-
-[comment]: <> (        // implementation left for you)
-
-[comment]: <> (    })
-
-[comment]: <> (})
-
-[comment]: <> (```)
+    public int size() {
+        // implementation left for you
+    }
+}
+```
 
 4.1 Implement the `push()` method for the stack, you may assume a working `isEmpty()` method exists on the
 `Queue` class. (4)
@@ -362,7 +351,7 @@ For all questions that follow assume the following implementation of the `Stack`
 
 [comment]: <> (})
 
-```
+[comment]: <> (```)
 
 ### Question 5: [Recursion](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/Recuriosn/README.md)
 
