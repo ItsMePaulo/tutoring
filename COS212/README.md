@@ -41,7 +41,7 @@ They can follow this link to see how to download and set up the IDE for Windows 
 |2. [Skip Lists](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/SkipLists/README.md)| 7. [Binary Trees pt2: Tree Traversal](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/BinaryTreesPart2/README.md) |
 |3. [Self Organinizing Lists](https://gitlab.com/Paul_Wood_96/tutoring/-/tree/master/COS212/notes/SelfOrganizingLists/README.md) | 8. [Binary Trees pt2.2: Threads](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/BinaryTreesPart2/Part2.2/README.md)  |
 |4. [Stacks and Queues](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/StacksAndQueus/README.md) | 9. [Binary Trees pt3: Tree Operations](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/BinaryTreesPart3/README.md) |
-| 5. [Recursion](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/Recuriosn/README.md) ||
+| 5. [Recursion](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/Recuriosn/README.md) | 10. [Exam 1: Prep](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/examprep/Exam1/README.md) |
 
 
 # Code Base 
