@@ -631,7 +631,7 @@ c) Node 7 is deleted by *Merging with its Successor*, how many right threads dos
 
 ```text
 
-5
+6
 
 ```
 
