@@ -196,7 +196,7 @@ that will be affected when removing Node `35`. (2)
 
 ```text
 1) Node 33 at level 0
-2) Node 32 at level 1
+2) Node 31 at level 1
 3) Node 22 at level 2
 ```
 
@@ -334,7 +334,6 @@ public int size() {
         tmp.push(tmp.pop());
 
         i++;
-
     }
     
     while(!tmp.isEmpty()) {
@@ -351,108 +350,80 @@ public int size() {
 5.1 Convert the following iterative method to a recursive method. This iterative method finds and returns the
 first occurrence of an integer in a List. The method returns -1 if the item was not found in the List (3)
 
-[comment]: <> (```java)
+```java
 
-[comment]: <> (int findFirstOccurance&#40;int[] array, int element&#41; {)
+int findFirstOccurance(int[] array, int element) {
 
-[comment]: <> (    int index = 0;)
-    
-[comment]: <> (    while &#40;index < array.length&#40;&#41;&#41; {)
-
-[comment]: <> (        if &#40;array[index] == element&#41; {)
-
-[comment]: <> (            return index;)
-
-[comment]: <> (        })
+    int index = 0;
+    while (index < array.length()) {
+        if (array[index] == element) {
+            return index;
+        }
         
-[comment]: <> (        index++;)
-
-[comment]: <> (    })
+        index++;
+    }
     
-[comment]: <> (    return -1;)
+    return -1;
 
-[comment]: <> (})
+}
 
-[comment]: <> (```)
+```
 
-[comment]: <> (```java)
+```java
 
-[comment]: <> (int findFirstOccurance&#40;int[] array, int element, int index&#41; {)
-
-[comment]: <> (    if &#40;index >= array.length&#40;&#41;&#41; {)
-
-[comment]: <> (        return -1;)
-
-[comment]: <> (    })
+int findFirstOccurance(int[] array, int element, int index) {
+    if (index >= array.length()) {
+        return -1;
+    }
     
-[comment]: <> (    if &#40;array[index] == element&#41; {)
-
-[comment]: <> (        return index;)
-
-[comment]: <> (    })
+    if (array[index] == element) {
+        return index;
+    }
     
-[comment]: <> (    return findFirstOccurance&#40;array, element, index + 1&#41;;)
+    return findFirstOccurance(array, element, index + 1);
+}
 
-[comment]: <> (})
-
-[comment]: <> (```)
+```
 
 5.2 Convert the following recursive function to an iterative function. The following function calculates the Greatest
 Common Denominator between two numbers. (3)
 
-[comment]: <> (```java)
+```java
 
-[comment]: <> (int findGreatestCommonDom&#40;int x, int y&#41; {)
+int findGreatestCommonDom(int x, int y) {
     
-[comment]: <> (    if &#40;x == y&#41; {)
-
-[comment]: <> (        return x;)
-
-[comment]: <> (    })
+    if (x == y) {
+        return x;
+    }
     
-[comment]: <> (    if &#40;x > y&#41; {)
+    if (x > y) {
+        return findGreatestCommonDom(x - y, y)
+    } else {
+        return findGreatestCommonDom(x, y - x)
+    }
 
-[comment]: <> (        return findGreatestCommonDom&#40;x - y, y&#41;)
+}
 
-[comment]: <> (    } else {)
+```
 
-[comment]: <> (        return findGreatestCommonDom&#40;x, y - x&#41;)
+```java
 
-[comment]: <> (    })
-
-[comment]: <> (})
-
-[comment]: <> (```)
-
-[comment]: <> (```java)
-
-[comment]: <> (int findGreatestCommonDom&#40;int x, int y&#41; {)
+int findGreatestCommonDom(int x, int y) {
+    while (x != y) {
+        int tmp = x;
+        if (x > y) {
+            x = x - y;
+            y = tmp;
+        } else {
+            x = y;
+            y = y- tmp;
+        }
+    }
     
-[comment]: <> (    while &#40;x != y&#41; {)
-        
-[comment]: <> (        int tmp = x;)
-        
-[comment]: <> (        if &#40;x > y&#41; {)
+    return x;
+}
 
-[comment]: <> (            x = x - y;)
-
-[comment]: <> (            y = tmp;)
-
-[comment]: <> (        } else {)
-
-[comment]: <> (            x = y;)
-
-[comment]: <> (            y = y- tmp;)
-
-[comment]: <> (        })
-
-[comment]: <> (    })
-    
-[comment]: <> (    return x;)
-
-[comment]: <> (})
-
-[comment]: <> (```)
+```
 
 5.3
 
@@ -470,61 +441,53 @@ class LinkedNode<T extends Comparable<? super T>> {
 
 5.3.1 Write down a recursive method called `findFours(LinkedNode<T> node)` that takes in a LinkedNode and counts the amount of elements in the List divisible by `4`. (3)
 
-[comment]: <> (```java)
+```java
 
-[comment]: <> (int findFours&#40;LinkedNode<T> node&#41; {)
+int findFours(LinkedNode<T> node) {
     
-[comment]: <> (    if &#40;node == null&#41; {)
-
-[comment]: <> (        return 0;)
-
-[comment]: <> (    })
+    if (node == null) {
+        return 0;
+    }
     
-[comment]: <> (    return &#40;node.key % 4 == 0&#41; ? 1 + findFours&#40;node.next&#41; :  findFours&#40;node.next&#41;;)
+    return (node.key % 4 == 0) ? 1 + findFours(node.next) :  findFours(node.next);
 
-[comment]: <> (})
+}
 
-[comment]: <> (```)
+```
 
-[comment]: <> (5.3.2 Is your method an example of `Tail Recursion` or `Non Tail Recursion`, explain your answer. &#40;2&#41;)
+5.3.2 Is your method an example of `Tail Recursion` or `Non Tail Recursion`, explain your answer. (2)
 
-[comment]: <> (```text)
+```text
 
-[comment]: <> (This is an example of non tail recursion because there is an additional operation happening in the case of key )
+This is an example of non tail recursion because there is an additional operation happening in the case of key 
+being a multiple of 4. In said case an addition of 1 happens to the returned value of the function call.
 
-[comment]: <> (being a multiple of 4. In said case an addition of 1 happens to the returned value of the function call.)
+```
 
-[comment]: <> (```)
+5.4 Assume the following sudo code for the N Queens Algorithm. Identify the base case of the algorithm (1)
 
-[comment]: <> (5.4 Assume the following sudo code for the N Queens Algorithm. Identify the base case of the algorithm &#40;1&#41;)
+```kotlin
 
-[comment]: <> (```kotlin)
+fun placeQueen(row: Int) {
 
-[comment]: <> (fun placeQueen&#40;row: Int&#41; {)
+    foreach col at a valid position
+            place queen at position
+            if (row < rows)
+                placeQueen(row + 1)
+            else
+                printBoard()
 
-[comment]: <> (    foreach col at a valid position)
+    remove queen at position
 
-[comment]: <> (            place queen at position)
+}   
 
-[comment]: <> (            if &#40;row < rows&#41;)
+```
 
-[comment]: <> (                placeQueen&#40;row + 1&#41;)
+```text
 
-[comment]: <> (            else)
+ row >= row
 
-[comment]: <> (                printBoard&#40;&#41;)
-
-[comment]: <> (    remove queen at position)
-
-[comment]: <> (}   )
-
-[comment]: <> (```)
-
-[comment]: <> (```text)
-
-[comment]: <> ( row >= row)
-
-[comment]: <> (```)
+```
 
 [comment]: <> (## Question 6.1 [Binary Trees]&#40;https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/BinaryTreesPart1/README.md&#41;)
 
