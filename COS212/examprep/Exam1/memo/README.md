@@ -244,20 +244,16 @@ Give the final List after the Nodes have been visited in the following order. (2
 
 > M, B, G, F, D, M
 
-[comment]: <> (```text)
-
-[comment]: <> (M -> D -> F -> B -> A -> N -> G)
-
-[comment]: <> (```)
+```text
+M -> D -> F -> B -> A -> N -> G
+```
 
 3.5 Assume the same List in Question 3.4 was instead implemented as a **transpose** strategy, give the final List if
 the elements where accessed in the same order as before. (2)
 
-[comment]: <> (```text)
-
-[comment]: <> (B -> A -> M -> D -> F -> N -> G)
-
-[comment]: <> (```)
+```text
+B -> A -> M -> D -> F -> N -> G
+```
 
 3.6 Assume the Nodes in the first List where modified to now contain a counter variable the resulting List now looks as
 follows
@@ -268,11 +264,9 @@ Give the final List after the Nodes have been visited in the following order. (2
 
 > F, F, M, D, N, D, A, G
 
-[comment]: <> (```text)
-
-[comment]: <> (D/6  -> A/6 -> B/4 -> M/3 -> F/2 -> N/2 -> G)
-
-[comment]: <> (```)
+```text
+D/6  -> A/6 -> B/4 -> M/3 -> F/2 -> N/2 -> G
+```
 
 ### Question 4: [Stacks and Queues](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/StacksAndQueus/README.md)
 
@@ -307,7 +301,8 @@ For all questions that follow assume the following implementation of the `Stack`
 [comment]: <> (    })
 
 [comment]: <> (})
-```
+
+[comment]: <> (```)
 
 4.1 Implement the `push()` method for the stack, you may assume a working `isEmpty()` method exists on the
 `Queue` class. (4)
