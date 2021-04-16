@@ -21,6 +21,7 @@ int method(int i, int n) {
 }
 ```
 
+> ### O(1)
 
 1.2
 ```java
@@ -32,6 +33,7 @@ for (int i = n; i > 1; i / 2) {
 }
 ```
 
+> ### O(log(n))
 
 1.3
 ```java
@@ -46,6 +48,7 @@ for (int i = 0; i < n; i++) {
 }
 ```
 
+> ### O(n)<sup>3</sup>
 
 1.4
 ```java
@@ -56,6 +59,7 @@ for (int i = 0; i < n; i++) {
 }
 ```
 
+> ### O(n)<sup>2</sup>
 
 1.5
 ```java
@@ -73,6 +77,7 @@ while (i < n) {
 }
 ```
 
+> ### O(n)
 
 1.6
 
@@ -88,6 +93,7 @@ while (i < n) {
 }
 ```
 
+> ### O(log(n))
 
 1.7
 ```java
@@ -100,6 +106,7 @@ int method(int n) {
 }
 ```
 
+> ### (O)<sup>n</sup>
 
 1.8 (1)
 ```java
@@ -112,6 +119,7 @@ while (i < n) {
 }
 ```
 
+> ###  O(n)<sup>2</sup>
 
 1.9
 ```java
@@ -127,6 +135,7 @@ for (int a = 0; a < n; a++) {
 }
 ```
 
+> ### O(1)
 
 1.10
 ```java
@@ -141,6 +150,7 @@ void method(int i, int n) {
 }
 ```
 
+> ### O(n(log(n)))
 
 ## Question 2: [Skip Lists](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/SkipLists/README.md) + Sparse Tables
 
@@ -179,7 +189,7 @@ that will be affected when removing Node `22`. (2)
 2.4 Assume the following Sparse Table. The top array represents Student Numbers while the secondary array represents
 class's. Provide the implementation for the expected Node Class for elements within the Sparse Table. (3)
 
-<img src="../images/sparse_table.png" alt="sparse table image">
+<img src="../images/sparse_table.png" alt="sparse table image" width="80%">
 
 ```java
 

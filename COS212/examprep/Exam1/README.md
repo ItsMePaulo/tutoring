@@ -217,7 +217,7 @@ that will be affected when removing Node `22`. (2)
 2.4 Assume the following Sparse Table. The top array represents Student Numbers while the secondary array represents 
 class's. Provide the implementation for the expected Node Class for elements within the Sparse Table. (3)
 
-<img src="images/sparse_table.png" alt="sparse table image">
+<img src="images/sparse_table.png" alt="sparse table image" width="60%">
 
 ```java
 
