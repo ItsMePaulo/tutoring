@@ -259,7 +259,6 @@ Give the final List after the Nodes have been visited in the following order. (2
 
 ### Question 4: [Stacks and Queues](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/StacksAndQueus/README.md)
 
-For all questions that follow assume the following implementation of the `Stack` class implemented as a Queue
 
 ```java
 class Stack<T extends Comparable<? super T>> extends Queue<T> {
@@ -269,11 +268,11 @@ class Stack<T extends Comparable<? super T>> extends Queue<T> {
     }
     
     public void push(T elem) {
-        stack.enqueu();
+        // implementation left for you
     }
     
     public T pop() {
-        // implementation left for you
+        stack.dequeue();
     }
     
     public int size() {
@@ -282,7 +281,7 @@ class Stack<T extends Comparable<? super T>> extends Queue<T> {
 }
 ```
 
-4.1 Implement the `pop()` method for the stack, you may assume a working `isEmpty()` method exists on the 
+4.1 Implement the `push()` method for the stack, you may assume a working `isEmpty()` method exists on the
 `Queue` class. (4)
 
 ```java

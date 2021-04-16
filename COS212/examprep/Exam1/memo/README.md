@@ -181,8 +181,8 @@ void method(int i, int n) {
 2.2 What is the max level of a Skip List if there are only 4 references in the Array of Powers in the 3rd level? (1)
 
 ```text
-    This skip list has a max height of 5. Level 3 should ideally hold 1/8 of the total number of elements in the skip List.
-    Therefore we should mutlipy the number of values at that level by 8 to calculate the total number of Nodes in the List
+This skip list has a max height of 5. Level 3 should ideally hold 1/8 of the total number of elements in the skip List.
+Therefore we should multiply the number of values at that level by 8 to calculate the total number of Nodes in the List
 ```
 
 2.3 Assume the following SkipList
