@@ -410,13 +410,10 @@ int findGreatestCommonDom(int x, int y) {
 
 int findGreatestCommonDom(int x, int y) {
     while (x != y) {
-        int tmp = x;
         if (x > y) {
             x = x - y;
-            y = tmp;
         } else {
-            x = y;
-            y = y- tmp;
+            y = y - x;
         }
     }
     
@@ -486,140 +483,114 @@ fun placeQueen(row: Int) {
 
 ```
 
-[comment]: <> (## Question 6.1 [Binary Trees]&#40;https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/BinaryTreesPart1/README.md&#41;)
+## Question 6.1 [Binary Trees](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/BinaryTreesPart1/README.md)
 
 
-[comment]: <> (6.1.1 What is the maximum number of nodes a Binary tree can have at level 7? &#40;1&#41;)
+6.1.1 What is the maximum number of nodes a Binary tree can have at level 7? (1)
 
-[comment]: <> (> 2<sup> n + 1 </sup> - 1 = 255)
-
-
-[comment]: <> (6.1.2 What is the maximum number of Leaf Nodes a Binary Tree can have at level 9? &#40;1&#41;)
-
-[comment]: <> (> 2 <sup> n - 1 </sup> = 256)
+> 2<sup> n + 1 </sup> - 1 = 255
 
 
-[comment]: <> (6.1.3 What condition must be true for both your answers in 6.1 and 6.2 to be valid? &#40;1&#41;)
+6.1.2 What is the maximum number of Leaf Nodes a Binary Tree can have at level 9? (1)
 
-[comment]: <> (```text)
+> 2 <sup> n - 1 </sup> = 256
 
-[comment]: <> (The tree must be a complete tree, meaning all non-terminal nodes must have both children and all the leaf Nodes must be )
 
-[comment]: <> (on the same level)
+6.1.3 What condition must be true for both your answers in 6.1 and 6.2 to be valid? (1)
 
-[comment]: <> (```)
+```text
+The tree must be a complete tree, meaning all non-terminal nodes must have both children and all the leaf Nodes must be 
+on the same level
+```
 
-[comment]: <> (#### For all questions that follow, assume the following BSTNode Class)
+#### For all questions that follow, assume the following BSTNode Class
 
-[comment]: <> (```java)
+```java
 
-[comment]: <> (class BSTNode<T extends Comparable<? super T>> {)
+class BSTNode<T extends Comparable<? super T>> {
     
-[comment]: <> (    T key;)
+    T key;
+    BSTNode<T> right, left;
+    // constructor
 
-[comment]: <> (    BSTNode<T> right, left;)
+}
+
+```
+
+6.1.4 Provide the simplest implementation for a *recursive* function that will return the number of Nodes in the tree that
+have a *Right Child*. If a Nodes right Child has is not null you should consider the Node to be a valid accumulator. (3)
+
+```java
+
+int findRightChildren(BSTNode<T> node) {
+
+    if (node == null) {
+        return 0;
+    }
     
-[comment]: <> (    // constructor)
+    int result = findRightChildren(node.left);
+    result += (node.right != null) ? 1 + findRightChildren(node.right) : 0;
+    return result;
 
-[comment]: <> (})
+}
 
-[comment]: <> (```)
+```
 
-[comment]: <> (6.1.3 Provide the simplest implementation for a *recursive* function that will return the number of Nodes in the tree that)
+6.1.5 Provide the simplest implementation for an *iterative* function that will return the number of Nodes in the tree that
+have a *Left Child*. If the Nodes left child is not null you should consider the Node to a valid accumulator. (3)
 
-[comment]: <> (have a *Right Child*. If a Nodes right Child has is not null you should consider the Node to be a valid accumulator. &#40;3&#41;)
+```java
 
-[comment]: <> (```java)
+int findLeftChildren(BSTNode<T> node) {
 
-[comment]: <> (int findRightChildren&#40;BSTNode<T> node&#41; {)
-
-[comment]: <> (    if &#40;node == null&#41; {)
-
-[comment]: <> (        return 0;)
-
-[comment]: <> (    })
+    if (node == null) {
+        return 0;
+    }
     
-[comment]: <> (    int result = findRightChildren&#40;node.left&#41;;)
+    int counter = 0;
+    ArrayList<BSTNode<T>> queue = new ArrayList<>();
 
-[comment]: <> (    result += &#40;node.right != null&#41; ? 1 + findRightChildren&#40;node.right&#41; : 0;)
-    
-[comment]: <> (    return result;)
-
-[comment]: <> (})
-
-[comment]: <> (```)
-
-[comment]: <> (6.1.4 Provide the simplest implementation for an *iterative* function that will return the number of Nodes in the tree that)
-
-[comment]: <> (have a *Left Child*. If the Nodes left child is not null you should consider the Node to a valid accumulator. &#40;3&#41;)
-
-[comment]: <> (```java)
-
-[comment]: <> (int findLeftChildren&#40;BSTNode<T> node&#41; {)
-
-[comment]: <> (    if &#40;node == null&#41; {)
-
-[comment]: <> (        return 0;)
-
-[comment]: <> (    })
-    
-[comment]: <> (    int counter = 0;)
-
-[comment]: <> (    ArrayList<BSTNode<T>> queue = new ArrayList<>&#40;&#41;;)
-
-[comment]: <> (    queue.add&#40;node&#41;;)
-    
-[comment]: <> (    while &#40;!queue.isEmpty&#40;&#41;&#41; {)
-
-[comment]: <> (        BSTNode<T> tmp = queue.remove&#40;0&#41;;)
+    queue.add(node);
+    while (!queue.isEmpty()) {
         
-[comment]: <> (        if &#40;tmp.left != null&#41; {)
-
-[comment]: <> (            counter++;)
-
-[comment]: <> (            queue.add&#40;tmp.left&#41;;)
-
-[comment]: <> (        })
-
-[comment]: <> (        if &#40;tmp.right != null&#41; {)
-
-[comment]: <> (            queue.add&#40;tmp.right&#41;;)
-
-[comment]: <> (        })
-
-[comment]: <> (    })
+        BSTNode<T> tmp = queue.remove(0);
+        if (tmp.left != null) {
+            counter++;
+            queue.add(tmp.left);
+        }
+        
+        if (tmp.right != null) {
+            queue.add(tmp.right);
+        }
+    }
     
-[comment]: <> (    return counter;)
+    return counter;
 
-[comment]: <> (})
+}
 
-[comment]: <> (```)
+```
 
-[comment]: <> (6.1.5 Provide an example of a *recursive* function that will return the largest element in a tree, your function)
+6.1.6 Provide an example of a *recursive* function that will return the largest element in a tree, your function
 
-[comment]: <> (should not make use of any unnecessary parameters. &#40;2&#41;)
+should not make use of any unnecessary parameters. (2)
 
-[comment]: <> (```java)
+```java
 
-[comment]: <> (BSTNode<T> findLargest&#40;BSTNode<T> node&#41; {)
+BSTNode<T> findLargest(BSTNode<T> node) {
     
-[comment]: <> (    if &#40;node == null&#41; {)
-
-[comment]: <> (        return null;)
-
-[comment]: <> (    })
+    if (node == null) {
+        return null;
+    }
     
-[comment]: <> (    if &#40;node.right == null&#41; {)
-
-[comment]: <> (        return node;)
-
-[comment]: <> (    })
+    if (node.right == null) {
+        return node;
+    }
     
-[comment]: <> (    return findLargest&#40;node.right&#41;;)
+    return findLargest(node.right);
 
-[comment]: <> (})
+}
 
-[comment]: <> (```)
+```
 
 [comment]: <> (## Question 6.2 [Threads]&#40;https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/BinaryTreesPart2/Part2.2/README.md&#41;)
 
