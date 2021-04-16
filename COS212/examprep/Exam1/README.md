@@ -225,7 +225,7 @@ class's. Provide the implementation for the expected Node Class for elements wit
 
 ### Question 3: [Self Organinizing Lists](https://gitlab.com/Paul_Wood_96/tutoring/-/tree/master/COS212/notes/SelfOrganizingLists/README.md)
 
-3.4 Assume you have a working implementation of the **move-to-front** strategy, being applied to the following List:
+3.1 Assume you have a working implementation of the **move-to-front** strategy, being applied to the following List:
 
 > A -> B -> D -> M -> N -> F
 
@@ -237,14 +237,14 @@ Give the final List after the Nodes have been visited in the following order. (2
 
 ```
 
-3.5 Assume the same List in Question 3.4 was instead implemented as a **transpose** strategy, give the final List if 
+3.2 Assume the same List in Question 3.4 was instead implemented as a **transpose** strategy, give the final List if 
 the elements where accessed in the same order as before. You must use the initial List from question 3.4 (2)
 
 ```text
 
 ```
 
-3.6 Assume the Nodes in the first List where modified to now contain a counter variable the resulting List now looks as 
+3.3 Assume the Nodes in the first List where modified to now contain a counter variable the resulting List now looks as 
 follows 
 
 > A/5 -> B/4 -> D/4 -> M/2 -> N/1 -> F/0
@@ -391,7 +391,7 @@ fun placeQueen(row: Int) {
 ## Question 6.1 [Binary Trees](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/BinaryTreesPart1/README.md) 
 
 
-6.1.1 What is the maximum number of nodes a Binary tree can have at level 7? (1)
+6.1.1 What is the maximum number of nodes a Binary tree can have at ~~level~~ a height of 7? (1)
 
 ```text
 
