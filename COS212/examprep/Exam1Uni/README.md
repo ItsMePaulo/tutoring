@@ -31,8 +31,8 @@ public void delete(T el, SLLNode<T> node) {
             head = head.next;
         } else {
             // it is impossible to delete this item from the list: DO Nothing 
-            // CCONDITION: node sent in to be delete on external function call is in the middle of the list and 
-            // equal to the item we wish to delete
+            // CCONDITION: node sent in to be deleted from external function call is in the middle of the list 
+            // and equal to the item we wish to delete
         }
         
         return; // no need to make a recursive function
