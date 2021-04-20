@@ -1,16 +1,6 @@
 ### Question 1
 
-Consider the following Recursive Function
-
-```java
-public static int doSomething(int val1, int val2) {
-    if (val2 <= 0) {
-        return val2;
-    } else {
-        return val2 + doSomething(val1, val2 - val1);
-    }
-}
-```
+<img src="images/question_1.png" alt="question 1">
 
 ### Answer
 
@@ -18,43 +8,16 @@ public static int doSomething(int val1, int val2) {
 
 ### Question 2
 
-SLL implementation 
+<img src="images/question_2.png" alt="question 2">
 
-```java
-public class SLLNode<T> {
-    
-    public T info;
-    public SLLNode<T> next;
-    
-    public SLLNode(T el, SLLNode<T> n) {
-        info = el;
-        next = n;
-    }
-}
+### Answer:
 
-public class SLL<T> {
-    
-    public SLLNode<T> head;
-    public SLL() {
-        head = null;
-    }
-    
-    // additional functions
-}
-```
-Assume that methods are provided to **ADD** values to a SLL. Implement a recursive function to delete a specific element in 
-the SLL, given a node from which point on the value to be deleted might occur (it is posssiblt the value may be in the 
-list but may not occur from this point, in which case nothing should be deleted). **YOUR FUNCTION MUST MAKE USE OF THE 
-FOLLOWING SIGNATURE:**
+**YOUR FUNCTION MUST MAKE USE OF THE FOLLOWING SIGNATURE:**
 
 ```java
 public void delete(T el, SLLNode<T> node)
 ```
 
-Implement the **delete** method in a recursive fashion. You must use correct Java syntax, and your method must be recursive.
-You may only use methods defined within SLL and SLL classes that are explicitly provided. You may not define any other than delete 
-
-### Answer:
 ```java
 public void delete(T el, SLLNode<T> node) {
     
