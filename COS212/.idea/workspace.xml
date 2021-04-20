@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="830b7081-027f-4cdb-93f6-2c1d4f6266c7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/examprep/Exam1/images/thread_tree.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examprep/Exam1Uni/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examprep/Exam1Uni/images/question_10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examprep/Exam1Uni/images/question_12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examprep/Exam1Uni/images/question_6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examprep/Exam1Uni/images/question_7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examprep/Exam1Uni/images/question_8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examprep/Exam1Uni/images/question_9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examprep/Exam1Uni/images/threaded_tree.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examprep/Exam1/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/examprep/Exam1/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examprep/Exam1/memo/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/examprep/Exam1/memo/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,23 +42,26 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/examprep/Exam1/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/examprep/Exam1Uni/images" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/examprep/Exam1Uni/images" />
       <recent name="$PROJECT_DIR$/examprep/Exam1/images" />
       <recent name="$PROJECT_DIR$/notes/SkipLists/images" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -72,7 +80,8 @@
       <workItem from="1616674124636" duration="70000" />
       <workItem from="1618516658168" duration="9665000" />
       <workItem from="1618556421118" duration="7000" />
-      <workItem from="1618571638508" duration="27008000" />
+      <workItem from="1618571638508" duration="28315000" />
+      <workItem from="1618848286996" duration="10091000" />
     </task>
     <task id="LOCAL-00001" summary="Adds lesson 2">
       <created>1616589010929</created>
@@ -284,7 +293,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618603970760</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Add thread tree">
+      <created>1618607162331</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1618607162331</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -314,6 +330,7 @@
     <MESSAGE value="Spelling" />
     <MESSAGE value="Add question 5" />
     <MESSAGE value="Add question 6" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add question 6" />
+    <MESSAGE value="Add thread tree" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add thread tree" />
   </component>
 </project>
