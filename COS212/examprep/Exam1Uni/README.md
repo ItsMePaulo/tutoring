@@ -72,13 +72,13 @@ public void delete(T el, SLLNode<T> node) {
             // equal to the item we wish to delete
         }
         
-        return; // no need to make a recursive funtion
+        return; // no need to make a recursive function
     }
     
     if (node.next != null && node.next.info.equals(el)) {
         node.next = node.next.next;
     } else {
-        delet(el, node.next);
+        delete(el, node.next);
     }
 }
 ```
