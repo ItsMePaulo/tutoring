@@ -184,12 +184,12 @@ Therefore I would answer:
 
 ### Answer 
 
-> 2<sup>n</sup> - 1 = total Nodes in a binary tree (where n = height)<br />
-> In a Complete tree all non-terminal nodes will have both children, we can reduce height by 1 to get all 
-> non-terminal nodes in the tree <br />
-> All non-terminal nodes will have a left and right child, therefore we divide by 2 to find all nodes that have a
-> left child, dividing by 2 => subtracting a power
-> 
+2<sup>n</sup> - 1 = total Nodes in a binary tree (where n = height)<br />
+In a Complete tree all non-terminal nodes will have both children, we can reduce height by 1 to get all 
+non-terminal nodes. <br />
+All non-terminal nodes will have a left and right child, therefore we divide by 2 to find all nodes that have a
+left child, dividing by 2 => subtracting a power
+
 > (2 <sup> 17 </sup> - 1) = 131071
 
 <img src="images/question_8.png" alt="question 8">
@@ -201,9 +201,10 @@ Therefore I would answer:
 <img src="images/question_9.png" alt="question 9">
 
 ### Answer 
+**Motivation for not an array**: Most customers are not going to go to every restaurant, therefore it is likely
+that the data will be sparse
+
 > b. sparse table, because it is quicker to grow the number of rows and columns <br />
-> **Motivation for not an array**: Most customers are not going to go to every restaurant, therefore it is likely 
-> that the data will be sparse
 
 <img src="images/question_10.png" alt="question 10">
 
@@ -250,11 +251,33 @@ public Node deleteOddLeaves(Node n) {
 <img src="images/question_12.png" alt="question 12">
 
 ### Answer
+ **Motivation for not a Sparse table**, it is likely that every coordinate indicated in the question is
+ going to need an associated value for each longitude and latitude value therefore, our data is not
+ sparse.
 
-> a. A two-dimensional array because a sparse table would take up too much data in memory <br /> 
-> **Motivation for not a Sparse table**, it is likely that every coordinate indicated in the question is 
-> gonging to need an associated value for each longitude and latitude value therefore our data is not 
-> sparse, and the use of a sparse table would result in more expensive memory costs for each node to that of a 
-> simple 2D array
+> a. A two-dimensional array because a sparse table would take up too much data in memory <br />
 
+<img src="images/question_13.png" alt="question 13">
+
+### Answer 
+
+> b
+
+<img src="images/question_14.png" alt="question 14">
+
+### Answer 
+
+**deleted by COPYING with SUCCESSOR**
+
+> 6
+
+<img src="images/question_15.png" alt="question 15">
+
+**deleted by MERGING with PREDECESSOR**
+
+### Answer 
+
+<img src="images/question_15_answer.png" alt="question 15 answer" width="40%">
+
+> 7
 
