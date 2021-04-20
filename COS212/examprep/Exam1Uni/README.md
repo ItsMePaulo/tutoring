@@ -187,8 +187,9 @@ Therefore I would answer:
 2<sup>n</sup> - 1 = total Nodes in a binary tree (where n = height)<br />
 In a Complete tree all non-terminal nodes will have both children, we can reduce height by 1 to get all 
 non-terminal nodes. <br />
-All non-terminal nodes will have a left and right child, therefore we divide by 2 to find all nodes that have a
-left child, dividing by 2 => subtracting a power
+All non-terminal nodes will have a left and right child, therefore we can divide by 2 to find all left children
+
+> dividing by 2 => subtracting a power
 
 > (2 <sup> 17 </sup> - 1) = 131071
 
@@ -280,4 +281,30 @@ public Node deleteOddLeaves(Node n) {
 <img src="images/question_15_answer.png" alt="question 15 answer" width="40%">
 
 > 7
+
+<img src="images/question_16.png" alt="question 16">
+
+### Answer 
+
+> d. High likelihood
+
+<img src="images/question_17.png" alt="question 17">
+
+### Answer
+> for (m = i -2; m <= i; m++) // I hope you noticed this
+
+> d. O(n<sup>3</sup>)
+
+
+### I am missing question 18
+
+<img src="images/question_19.png" alt="question 19">
+
+> d. O(2<sup>n</sup>)
+
+### I am missing question 20
+
+<img src="images/question_21.png" alt="question 21">
+
+> b. O(n)
 
