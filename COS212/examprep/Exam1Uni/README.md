@@ -58,33 +58,11 @@ Assume the following tree was implemented as a double threading, how many **LEFT
 
 ### Question 4
 
-Implement a recursive function that prints out every value **stored at on odd INDEX** in an array after a certain index,
-followed by a space and a full stop. Your implementation should have the following signature:
-
-`public static void printOddElements(int index, int[] arr)`
-
-For example, if the following statements are executed:
-
-`int[] myArr = {1,2,3,4,5};` <br />
-`printOddElements(0, myArr);` <br />
-
-the printout begins at index 0 in myArr (the value 1), the output should be: 
-
-`1 3 5 .`
-
-if the following statements are executed:
-
-`int[] myArr = {1,2,3,4,5};` <br />
-`printOddElements(1, myArr);` <br />
-
-The printout begins at index 1 (the value 2), and the output should be:
-
-`3 5 .`
-
-You must use correct java syntax, and your solution must be recursive, you may not define any other methods other than 
-`printOddElements`.
+<img src="images/question_4.png" alt="question 4">
 
 ### Answer
+
+> Implement a recursive function that prints out every value **stored at on odd INDEX**
 
 ```java
 // you had to realise the question was asking to print values at on odd index not odd values, indices in this question also
@@ -111,16 +89,8 @@ public static void printOddElements(int index, int[] arr) {
 ```
 
 ### Question 5
-A self-organising list stores objects representing customers of a large supply company. When an item is ordered 
-the clients details must be looked up in the list. Almost all clients place a large number of separate orders in  
-a batch, and then do not place orders for several weeks. The Computer has limited memory. Select the most appropriate 
-self-organizing list to use
 
-1. Count 
-2. Move To Front 
-3. Transpose 
-4. Ordered List
-
+<img src="images/question_5.png" alt="question 5">
 
 ### Motivation & Answer 
 The computer has limited memory so Count method would not be suitable as it adds memory, to store count variables.
@@ -137,15 +107,19 @@ closer the front, and it may not even get there by the time the batch finishes
 Therefore I would answer: 
 > 2: Move to Front
 
+### Question 6
+
 <img src="images/question_6.png" alt="question 6">
 
 ### Answer 
 
 > d
 
+### Question 7
+
 <img src="images/question_7.png" alt="question 7">
 
-### Answer 
+### Motivation & Answer 
 
 2<sup>n</sup> - 1 = total Nodes in a binary tree (where n = height)<br />
 In a Complete tree all non-terminal nodes will have both children, we can reduce height by 1 to get all 
@@ -156,19 +130,25 @@ All non-terminal nodes will have a left and right child, therefore we can divide
 
 > (2 <sup> 17 </sup> - 1) = 131071
 
+### Question 8
+
 <img src="images/question_8.png" alt="question 8">
 
 ### Answer
 
 > 1 -> 4 -> 6 -> 8 -> 7 -> 9 -> 5 -> 3 -> 13 -> 14 -> 12 -> 50 -> 24 -> 15 -> 11
 
+### Question 9
+
 <img src="images/question_9.png" alt="question 9">
 
-### Answer 
+### Motivation & Answer 
 **Motivation for not an array**: Most customers are not going to go to every restaurant, therefore it is likely
 that the data will be sparse
 
 > b. sparse table, because it is quicker to grow the number of rows and columns <br />
+
+### Question 10
 
 <img src="images/question_10.png" alt="question 10">
 
@@ -203,14 +183,20 @@ public Node deleteOddLeaves(Node n) {
         }
     }
     
-    (n.left != null) ? deleteOddLeaves(n.left) : n;
-    (n.right != null) ? deleteOddLeaves(n.right) : n;
+    if (n.left != null) {
+        deleteOddLeaves(n.left);
+    }
+    if (n.right != null) {
+        deleteOddLeaves(n.right);
+    }
     
     return n // for some reason;
 }
 ```
 
 ### I am missing a question 11
+
+### Question 12
 
 <img src="images/question_12.png" alt="question 12">
 
@@ -221,12 +207,14 @@ public Node deleteOddLeaves(Node n) {
 
 > a. A two-dimensional array because a sparse table would take up too much data in memory <br />
 
+### Question 13
 <img src="images/question_13.png" alt="question 13">
 
 ### Answer 
 
 > b
 
+### Question 14
 <img src="images/question_14.png" alt="question 14">
 
 ### Answer 
@@ -234,6 +222,8 @@ public Node deleteOddLeaves(Node n) {
 **deleted by COPYING with SUCCESSOR**
 
 > 6
+
+### Question 15
 
 <img src="images/question_15.png" alt="question 15">
 
@@ -245,11 +235,15 @@ public Node deleteOddLeaves(Node n) {
 
 > 7
 
+### Question 16
+
 <img src="images/question_16.png" alt="question 16">
 
 ### Answer 
 
 > d. High likelihood
+
+### Question 17
 
 <img src="images/question_17.png" alt="question 17">
 
@@ -261,6 +255,8 @@ public Node deleteOddLeaves(Node n) {
 
 ### I am missing question 18
 
+### Question 19
+
 <img src="images/question_19.png" alt="question 19">
 
 ### Answer
@@ -268,15 +264,21 @@ public Node deleteOddLeaves(Node n) {
 
 ### I am missing question 20
 
+### Question 21
+
 <img src="images/question_21.png" alt="question 21">
 
 ### Answer
 > b. O(n)
 
+### Question 22
+
 <img src="images/question_22.png" alt="question 22">
 
 ### Answer
 > b.
+
+### Question 23
 
 <img src="images/question_23.png" alt="question 23">
 
