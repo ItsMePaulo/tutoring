@@ -128,7 +128,7 @@ All non-terminal nodes will have a left and right child, therefore we can divide
 
 > dividing by 2 => subtracting a power
 
-> (2 <sup> 17 </sup> - 1) = 131071
+> (2 <sup> 19 - 2 </sup> - 1) = 131071
 
 ### Question 8
 
@@ -146,7 +146,7 @@ All non-terminal nodes will have a left and right child, therefore we can divide
 **Motivation for not an array**: Most customers are not going to go to every restaurant, therefore it is likely
 that the data will be sparse
 
-> b. sparse table, because it is quicker to grow the number of rows and columns <br />
+> a. A sparse table, because it is more efficient to locate a value at a specific row and column
 
 ### Question 10
 
@@ -167,7 +167,7 @@ public Node deleteOddLeaves(Node n) {
     
     // Preorder traversal visit the node first
     // check if the nodes left and right child are leaf nodes
-    if (n.left != null && && n.left.left == null && n.left.right == null) {
+    if (n.left != null && n.left.left == null && n.left.right == null) {
         // left child is a leaf node 
         if (n.left.data % 2 != 0) { // left is an odd leaf node
             // I could have added this to the outer if but this is just so many conditions
@@ -201,7 +201,7 @@ public Node deleteOddLeaves(Node n) {
 <img src="images/question_12.png" alt="question 12">
 
 ### Answer
- **Motivation for not a Sparse table**, it is likely that every coordinate indicated in the question is
+ **Motivation for NOT a Sparse table**, it is likely that every coordinate indicated in the question is
  going to need an associated value for each longitude and latitude value therefore, our data is not
  sparse.
 
