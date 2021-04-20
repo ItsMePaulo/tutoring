@@ -300,11 +300,22 @@ public Node deleteOddLeaves(Node n) {
 
 <img src="images/question_19.png" alt="question 19">
 
+### Answer
 > d. O(2<sup>n</sup>)
 
 ### I am missing question 20
 
 <img src="images/question_21.png" alt="question 21">
 
+### Answer
 > b. O(n)
 
+<img src="images/question_22.png" alt="question 22">
+
+### Answer
+> b.
+
+<img src="images/question_23.png" alt="question 23">
+
+### Answer
+> d.
