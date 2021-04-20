@@ -83,7 +83,7 @@ public static void printOddElements(int index, int[] arr) {
     }
     
     // make sure you printed the characters at odd index before the recursive call, if after the elements 
-    // would have been printed in repeat order starting with the full stop
+    // would have been printed in reverse order starting with the full stop
     printOddElements(index + 1, arr);
 }
 ```
