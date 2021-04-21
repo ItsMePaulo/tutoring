@@ -121,14 +121,16 @@ Therefore I would answer:
 
 ### Motivation & Answer 
 
-2<sup>n</sup> - 1 = total Nodes in a binary tree (where n = height)<br />
-In a Complete tree all non-terminal nodes will have both children, we can reduce height by 1 to get all 
-non-terminal nodes. <br />
-All non-terminal nodes will have a left and right child, therefore we can divide by 2 to find all left children
+> 2<sup>n</sup> - 1 = total Nodes in a binary tree (where n = height)<br />
 
+You could just take all the nodes and divide by 2 since every node is either a left or right child, 
+when we divide by 2 we can just subtract a power
 > dividing by 2 => subtracting a power
 
-> (2 <sup> 19 - 2 </sup> - 1) = 131071
+Or we could just count all the non-terminal nodes as all of those Nodes will have a left child, to count the 
+non-terminal nodes just remove 1 from the height of the tree 
+
+> (2 <sup> 19 - 1 </sup> - 1) = 262143
 
 ### Question 8
 
