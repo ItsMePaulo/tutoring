@@ -62,7 +62,7 @@ Assume the following tree was implemented as a double threading, how many **LEFT
 
 ### Answer
 
-> Implement a recursive function that prints out every value **stored at on odd INDEX**
+> Implement a recursive function that prints out every value **stored at an odd INDEX**
 
 ```java
 // you had to realise the question was asking to print values at on odd index not odd values, indices in this question also
@@ -192,11 +192,33 @@ public Node deleteOddLeaves(Node n) {
         deleteOddLeaves(n.right);
     }
     
-    return n // for some reason;
+    return n; // for some reason
 }
 ```
 
-### I am missing a question 11
+### Question 11
+
+<img src="images/question_11.png" alt="question 11">
+
+```java
+
+public int sumNonTerm(Node n) {
+    
+    if (n == null) {
+        return 0;
+    }
+    
+    int result = sumNonTerm(n.left);
+    result += sumNonTerm(n.right);
+    
+    if (n.left == null && n.right == null) {
+        // leaf node 
+        return 0;
+    }
+    
+    return n.data;
+}
+```
 
 ### Question 12
 
