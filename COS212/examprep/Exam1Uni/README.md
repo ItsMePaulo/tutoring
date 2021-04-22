@@ -213,10 +213,10 @@ public int sumNonTerm(Node n) {
     
     if (n.left == null && n.right == null) {
         // leaf node 
-        return 0;
+        return result;
     }
     
-    return n.data;
+    return result + n.data;
 }
 ```
 
