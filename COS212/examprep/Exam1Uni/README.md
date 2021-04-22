@@ -30,9 +30,9 @@ public void delete(T el, SLLNode<T> node) {
         if (node == head) {
             head = head.next;
         } else {
-            // it is impossible to delete this item from the list: DO Nothing 
-            // CCONDITION: node sent in to be deleted from external function call is in the middle of the list 
-            // and equal to the item we wish to delete
+            // technically we are not going backwards and we are eventually going to delete the node at the given 
+            // index, we just are going to have to find the pred of the node in the middle of the list
+            delete(el, head)
         }
         
         return; // no need to make a recursive function
