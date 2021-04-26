@@ -92,7 +92,6 @@ class BinaryTree {
         return (left > right) ? left : right;
     }
 }
-
 ```
 
 ## Delete
