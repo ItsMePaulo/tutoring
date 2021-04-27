@@ -24,8 +24,8 @@ problem is known as ***Splaying***
 ## Splay Trees
 
 Splaying is a more strategic series of rotations, specifically `pair` rotations, a rotation with a parent and
-grandparent. The rotations depend on of the links between `child-and-parent` and `parent-and-grandparent`. If we are
-going to consider the relationship between 3 nodes there are 3 cases in which we must define.
+grandparent. The rotations consider the relationships between `child-and-parent` and `parent-and-grandparent`. If we are
+going to consider the relationship between 3 nodes, there are 3 cases which we must consider.
 
 1. Child nodes immediate parent is root, therefore only a single rotation is possible
 
