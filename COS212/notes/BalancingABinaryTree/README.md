@@ -119,13 +119,37 @@ branch and calculate the difference in height at each node, if the height of the
 the tree is unbalanced at that node. The following trees are all examples of AVL trees the numbers in each node
 represent the *balance factors* of each node.
 
+<img src="images/balancing_factors.png" alt="balancing factors">
+
 ### Balancing and Unbalanced subtree
 
-If we encounter an unbalanced tree, we need to rotate the child node of the unbalanced node around the parent, we pick
-the greater of the two children as the node we rotate around the parent. For example:
+If we encounter an unbalanced tree, we rotate the first unbalanced node from the bottom of the tree up (from the leaf
+nodes), with the child node with the greater of the two heights. For example:
 
-We only need to do one rotation when inserting, this is because the rotation will change the balance factor of the tree
-back to its previous state.
+<img src="images/unbalanced_example.png" alt="unbalanced example tree" width="40%">
+
+In this tree 3 Nodes have balanced factors greater than 1 or less than -1 (15, 20, 10), but we pick the lowest Node 15
+and rotate it with the child with the greatest height 19.
+
+<img src="images/unbalanced_balanced_example.png" alt="balancing the unbalanced example ">
+
+We only need to do *one* rotation when inserting, this is because the rotation will change the balance factor of the
+tree back to its previous state.
+
+There is unfortunately a pretty big exception to this rule, lets say we were looking to balance the following tree
+
+<img src="images/balancing_exception.png" alt="a double rotation exception">
+
+Not really that different to the first case, the only major difference now is that the child node has a left child, and
+we are going to perform a left rotation. **NB! the same exception would happen if we were performing a right rotation
+with a child node that has a right child**. The problem comes in when we try and balance the tree
+
+<img src="images/balancing_exception_bad_example.png" alt="balancing exceptions does not balance tree after rotation">
+
+Because, the parent needs to adopt the left child the tree will not balance itself after the rotation. In such a case we
+actually first need to rotate 16 around 17 and then 16 around 17. We need to do a double rotation.
+
+<img src="images/balancing_exception_solution.png" alt="balancing exception solution">
 
 Deleting from an AVL tree works in much the same way, AVL trees favor deletion by copying as it is less likely to
 unbalance the tree. When the delete operations is called either the `predecessor` or `successor` will be used to replace
