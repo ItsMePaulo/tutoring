@@ -79,7 +79,7 @@ Rotations happen on every second node, the number of rotations we do at each ite
 by the following sudo code.
 
 > n = numberOfNode <br />
-> m = 2<sup>⌊ Lg(n + 1) ⌋ </sup> - 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (⌊ => means floor)  // **step  1**: get m <br />
+> m = 2<sup>⌊ Lg(n + 1) ⌋ </sup> - 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  // (⌊ => means floor) **step  1**: get m <br />
 > make n - m rotations // **step 2** <br />
 > while (m > 1) <br />
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m = m/2 <br />
