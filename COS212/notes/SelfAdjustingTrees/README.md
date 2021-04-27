@@ -40,10 +40,10 @@ going to consider the relationship between 3 nodes, there are 3 cases which we m
 
 3. If Child is the left child Parent, then Parent is the **right** (opposite) child to Grandparent `OR` if Child is the
    right child to Parent, then Parent is the **left** (opposite) child to Grandparent.
+   
+<img src="images/case_3.png" alt="case 3" width="40%">
 
 > This is called a ***HETEROGENEOUS*** configuration (HETERO means different)
-
-<img src="images/case_3.png" alt="case 3" width="40%">
 
 ### Case 1:
 
