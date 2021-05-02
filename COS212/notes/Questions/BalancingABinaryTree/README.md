@@ -132,7 +132,7 @@ iv.
 ### Question 3
 
 Assume the keys 1-15 where added into an AVL tree in ascending order, draw the tree out after you have added a unique
-set of 3 keys, therefore drawing the tree 5 times (draw the key after adding 3, after adding 6, after adding 9...)
+set of 3 keys, therefore drawing the tree 5 times (draw the tree after adding 3, after adding 6, after adding 9...)
 
 ```text
 
