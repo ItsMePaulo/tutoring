@@ -4,18 +4,20 @@
 
 ### Question 1.
 
-The DSW algorithm is being applied a tree of 35 Nodes, how many leaf nodes with the resulting tree have once it is
+1.1) The DSW algorithm is being applied a tree of 35 Nodes, how many leaf nodes with the resulting tree have once it is
 balanced?
 
  ```text
 
 ```
 
+1.2) How many rotations will happen on the first rotation of the backbone?
+
+```text
+
+```
+
 ### Question 2.
-
-How many rotations will happen on the first rotation on the backbone?
-
-### Question 3.
 
 For all questions that follow assume the following Binary Tree
 
@@ -36,34 +38,38 @@ fun createBackbone() {
 }
 ```
 
-3.1) Draw the resulting tree when `tmp` will be set to the node with the value
+2.1) Draw the resulting tree when `tmp` will be set to the node with the value
 `2` for the first time.
 
 ```text
 
 ```
 
-3.2) How many times will the `tmp` value be set to 15 when applying the `createBackbone` algorithm?
+2.2) How many times will the `tmp` value be set to 15 when applying the `createBackbone` algorithm?
 
 ```text
 
 ```
 
-3.3) Draw the resulting tree when `tmp` will be set to node with the value 20 for the second time.
+2.3) Draw the resulting tree when `tmp` will be set to node with the value 20 for the second time.
 
 ```text
 
 ```
 
-3.4) Draw the backbone for the tree
+2.4) Draw the backbone for the tree
 
 ```text
 
 ```
 
-3.5) Now that you have the backbone perform the second step of the DSW algorithm, the rotations that balance the tree.
+2.5) Now that you have the backbone perform the second step of the DSW algorithm, the rotations that balance the tree.
 For each iteration or set of rotations show your work by drawing the resulting tree after you have applied the correct
 rotations.
+
+```text
+
+```
 
 ## AVL Trees
 
