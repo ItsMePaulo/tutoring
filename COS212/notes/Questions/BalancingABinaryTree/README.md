@@ -4,7 +4,7 @@
 
 ### Question 1.
 
-1.1) The DSW algorithm is being applied a tree of 35 Nodes, how many leaf nodes with the resulting tree have once it is
+1.1) The DSW algorithm is being applied a tree of 35 Nodes, how many leaf nodes will the resulting tree have once it is
 balanced?
 
  ```text
