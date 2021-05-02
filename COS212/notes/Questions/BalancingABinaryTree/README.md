@@ -21,7 +21,7 @@ balanced?
 
 For all questions that follow assume the following Binary Tree
 
-<img src="images/dsw_tree.png" alt="dsw tree question">
+<img src="images/dsw_tree.png" alt="dsw tree question" width="70%">
 
 When performing the DSW algorithm, we first deconstruct the tree into a backbone using the following algorithm. Read all
 question to follow before constructing the backbone
@@ -78,7 +78,7 @@ rotations.
 For each of the following questions assume the following AVL Tree, for each question assume any modifications you make
 to the tree will be applied to the next question.
 
-<img src="images/tree.png" alt="AVl tree example">
+<img src="images/tree.png" alt="AVl tree example" width="70%">
 
 1.1) Examine the AVL tree closely, what was most likely the last operation that modified the tree and why?
 
@@ -143,7 +143,7 @@ set of 3 keys, therefore drawing the tree 5 times (draw the key after adding 3, 
 For each question assume the following Splay Tree, for each question assume any modifications you make to the tree will
 be applied to the next question.
 
-<img src="images/tree.png" alt="tree used for Splaying">
+<img src="images/tree.png" alt="tree used for Splaying" width="70%">
 
 Assume the following Cases which you will need to use to answer the questions that follow:
 
