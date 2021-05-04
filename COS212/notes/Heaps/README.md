@@ -34,7 +34,7 @@ the binary tree example, therefore `d` will be set to 2.
 > `(index, key)`
 > [(0, 1), (1, 2), (2, 3), (3, 4), (4, 5), (5, 6), (6, 7), (7, 8), (8, 9)]
 
-Find the second child of 1:
+Find the `second` child of `1`:
 
 ```text
 ch = (k * d) + n
@@ -42,7 +42,7 @@ ch = (0 * 2) + 2
 ch = 2 (this is the index hence value is 3)
 ``` 
 
-Find the first child of 4
+Find the `first` child of `4`:
 
 ```text
 ch = (k * d) + n 
@@ -52,12 +52,12 @@ ch = (7 this is the index hence the value is 8)
 
 The formula hold if we increase the number of children a node can have, ie imagine a ternary tree
 
-Find the third child of 2
+Find the `third` child of `2`
 
 ```text
 ch = (k * d) + n 
 ch = (1 * 3) + 3
-ch = (6 this is the index hence the value is 7
+ch = (6 this is the index hence the value is 7)
 ```
 
 To find the parent given the child's index we can use the following formula:
@@ -70,7 +70,7 @@ where:
 * `ch` is the index of the child
 * `d` is the number of children each parent in the heap is allowed to have
 
-Find the parent of 3 in a binary heap
+Find the `parent` of `3` in a binary heap
 
 ```text
 k = (ch - 1) /d -- floored
@@ -78,7 +78,7 @@ k = (2 - 1) / 2 -- floored
 k = 0 
 ``` 
 
-Find the parent of 6 in a ternary heap
+Find the `parent` of `6` in a ternary heap
 
 ```text
 k = (ch - 1) /d -- floored
@@ -102,13 +102,13 @@ In a max heap every parent element must be `greater than or equal` to all of its
 difference between heaps and Binary Search Trees is that heaps can store duplicates, therefore parents can be equal to
 their descendants
 
-<img src="images/max_heap.png" alt="max heap">
+<img src="images/max_heap.png" alt="max heap" width="70%">
 
 ### Min Heap
 
 In a min heap every parent element must be smaller than all of it's descendants
 
-<img src="images/min_heap.png" alt="min heap"> 
+<img src="images/min_heap.png" alt="min heap" width="70%"> 
 
 ## Inserting and Deleting
 
