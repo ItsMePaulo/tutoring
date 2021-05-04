@@ -227,9 +227,9 @@ class BinaryTree {
         // otherwise it means we are swapping with root
         if (grandparent != null) {
             if (parent.element.compareTo(grandparent.element) < 0) {
-                grandparent.right = child;
-            } else {
                 grandparent.left = child;
+            } else {
+                grandparent.right = child;
             }
         } else {
             root = child;
@@ -265,9 +265,9 @@ class BinaryTree {
         // otherwise it means we are swapping with root
         if (grandparent != null) {
             if (parent.element.compareTo(grandparent.element) < 0) {
-                grandparent.right = child;
-            } else {
                 grandparent.left = child;
+            } else {
+                grandparent.right = child;
             }
         } else {
             root = child;
