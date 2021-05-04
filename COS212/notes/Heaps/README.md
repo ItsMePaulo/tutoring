@@ -122,7 +122,7 @@ correct position. The benefit of using a heap is that we have a guarantee comple
 item in the data structure.
 
 <img src="images/insert_90.png" alt="insert 90 shows an example of moving all the way to root"> <br />
-<img src="images/insert_23.png" alt="insert 23 shows an example of not moving at all" width="40%">
+<img src="images/insert_23.png" alt="insert 23 shows an example of not moving at all" width="70%">
 
 ### Deleting
 
