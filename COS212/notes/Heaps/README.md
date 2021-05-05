@@ -155,7 +155,21 @@ to calculate the index of the last non leaf non use the following formula
 
 > i = [n/2-1], n being the array size
 
-Assume the following example an array `[2,8,6,1,10,15,3,12,11]`
+Assume the following example an array:
+
+> [2,8,6,1,10,15,3,12,11]
+
+```text
+i = (n/2-1)
+i = (9/2 - 1)
+i = 3
+```
+
+<img src="images/floyds_algorithm.png" alt="floyd algorithm">
+
+After completing the algorithm the array and heap should look like this
+
+<img src="images/floyds_final.png" alt="floyds final solution" width="40%">
 
 ## Treaps
 
@@ -174,8 +188,14 @@ priority is then compared to their parent, if the parents' priority is higher th
 happens, however if the node being added has a higher priority we rotate the child with the parent. We continue this
 process possibly rotating the node inserted with its initial grandparent until the priorities of the Treap are valid.
 
+<img src="images/treap.png" alt="treaps" width="40%">
+
 > **NB!** In a heap we just **SWAPPED** a child with a parent, in a Treap we need to **ROTATE** a child around its parent,
 > this is because Heaps are array and Treap are trees.
+
+Example add the key five to a Treap, and assign it's priority a random value of 27
+
+<img src="images/treap_add.png" alt="adds and item to a traep">
 
 ### Removing from a Treap
 
@@ -185,3 +205,5 @@ the items from the tree. <br />
 When, however, we encounter a node that has both children, we first determine the child with the highest priority and
 then rotate that child with the parent to be deleted. We continue this process until the Node is either a leaf node or a
 node with only one child and were the deletion operation would be simple.
+
+<img src="images/treap_delete.png" alt="removes an item from a treap" width="80%">
