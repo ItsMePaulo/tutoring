@@ -11,11 +11,11 @@ In fact instead of just "more than 2" children M-Way trees stores what almost re
 However, the nodes do not hold one array but two. In your notes the Nodes of an M-Way tree will usually be drawn like
 this;
 
-<img src="images/regular_node.png" alt="regular node">
+<img src="images/regular_node.png" alt="regular node" width="40%">
 
 But what is actually happening beneath the scenes is more like this;
 
-<img src="images/actual_node.png" alt="actual node">
+<img src="images/actual_node.png" alt="actual node" width="40%">
 
 Each Node has two arrays, the first array (top) is an array of `keys`, the keys array stores the values of the node,
 furthermore the keys must be written in ascending order. This array just holds the data of the Node much like in a
