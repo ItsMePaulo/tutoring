@@ -170,6 +170,8 @@ When deleting from a leaf there are 2 Secondary conditions:
 When deleting an item from the leaf and the item does not key array does not underflow all that happens is the item is
 removed, and we move all the other item in the array up by one.
 
+<img src="images/simple_delete.png" alt="simple delete">
+
 You can make use of the following sudo code:
 
 ```kotlin
