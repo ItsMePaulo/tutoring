@@ -25,6 +25,8 @@ The Second array (bottom) holds references to other Nodes, this is synonymous to
 descendent node at reference index will be lesser than the key at index in the parent key array, and all descendants at
 reference index + 1 will be greater than the keys at index of the parent key array.
 
+<img src="images/node_conditions.png" alt="node conditions" width="80%">
+
 ## Max degree
 
 The number of references (the size of the child array) is known as the *max degree* of a B-Tree. The number of keys (the

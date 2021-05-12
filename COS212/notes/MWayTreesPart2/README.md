@@ -8,16 +8,22 @@ inserting nodes not from the root down, but from the bottom up.
 
 Binary Trees would insert from root down, to leaf Nodes
 
+<img src="images/tree_growth.png" alt="tree growth" width="40%">
+
 Whereas all insertions in an M-Way Tree start from the leaf Nodes and work their way up the tree.
 
-Assume we start with a single Node, we insert elements into the Nodes child array as they come in, foreach new element
-add the element into the `child array` in `ascending` order.
+<img src="images/m_way_tree_growth.png" alt="m way tree growth" width="40%">
+
+We always add element on the leaf level, and if the node oveflows we split the node into two and move elements up within
+the M-Way tree. Assume we start with a single Node, we insert elements into the Nodes child array as they come in,
+foreach new element add the element into the `child array` in `ascending` order.
 
 ### Inserting elements into the Array in Order
 
 A lazy approach would be to insert the element in the back of the array and then call a sorting algorithm on the array,
 an alternative (eager) approach would be to instead insert the items in order from the start. If you which to perform an
 inorder insertion. To do this you can make use of the following sudo code
+
 
 ```kotlin
 fun <T> insert(node: BTreeNode, element: T) {
@@ -49,12 +55,16 @@ fun <T> insert(node: BTreeNode, element: T) {
 }
 ```
 
+<img src="images/insert_b_tree.png" alt="insert single node" width="80%">
+
 ### What happens when we Overflow?
 
 The above code works very well if and only if the number of elements in the array is **NOT** greater than the size of
 the children's Array. If true we could run into an `INDEX_OUT_OF_BOUNDS` exception or worse the code could finish
 executing without adding the element at all, and at no point write out any warning as to why the element was not added (
 In programming this is called a silent error and is really bad).
+
+<img src="images/insert_overflow.png" alt="insert overflow" width="80%">
 
 ### Solution
 
