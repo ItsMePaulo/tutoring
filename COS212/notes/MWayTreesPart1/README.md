@@ -73,7 +73,7 @@ fun searchBTree(item: T): Boolean {
 
         tmp = root
         while (tmp != null) {
-            for (0 .. tmp.keys) {
+            for (i in 0 .. tmp.keys) {
                 if (tmp[i] == item) {
                     return true
                 } else if (tmp[i] > item && !tmp.isLeaf) {
