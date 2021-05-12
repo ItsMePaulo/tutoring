@@ -12,7 +12,7 @@ Binary Trees would insert from root down, to leaf Nodes
 
 Whereas all insertions in an M-Way Tree start from the leaf Nodes and work their way up the tree.
 
-<img src="images/m_way_tree_growth.png" alt="m way tree growth" width="40%">
+<img src="images/m_way_tree_growth.png" alt="m way tree growth" width="60%">
 
 We always add element on the leaf level, and if the node oveflows we split the node into two and move elements up within
 the M-Way tree. Assume we start with a single Node, we insert elements into the Nodes child array as they come in,
@@ -135,10 +135,11 @@ be adjusted as well.
 ### Splitting on Root
 
 The second case of Splitting is Splitting the root Node. Every time you split the root Node, the height of the tree
-grows, but this splitting is quite different. You follow the same process as before with root, you order the child array
-with n+1 elements, split by middle element and create a new node. You must then ensure that the two new Nodes reference
-arrays are correct, in that they must each contain only 1 + number of keys in the child array and the reference arrays
-must be valid. When we overflow on root we must create 2 new Nodes and we must update the new root as well
+grows by 1. You follow the same process as before with the root node, you order the key array with n + 1 elements, split
+by middle element and create a new node. This new Node becomes the new Root and only has the single middle element you
+split the array with. You then create another new node which will contain the right half of the previously overflowing
+Node. Once you have the two new Siblings you will have to update each of their children arrays to make sure that they
+are valid, in that each immediate child to Roots children arrays contain 1 + the number of keys in the elements array.
 
 <img src="images/insert_root_overflow.png" alt="overflow on root node" width="80%">
 
