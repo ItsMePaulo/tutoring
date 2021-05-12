@@ -24,7 +24,6 @@ A lazy approach would be to insert the element in the back of the array and then
 an alternative (eager) approach would be to instead insert the items in order from the start. If you which to perform an
 inorder insertion. To do this you can make use of the following sudo code
 
-
 ```kotlin
 fun <T> insert(node: BTreeNode, element: T) {
 
@@ -120,6 +119,8 @@ fun <T> insert(node: BTreeNode, element: T) {
 Node Splitting is what happens when a Nodes child array overflows, in this case we take one Node and make it two. There
 are 2 types of Node overflow, the first is a regular overflow of a Leaf Node or Non-Leaf Node.
 
+<img src="images/overflow_solution.png" alt="overflow flow solution">
+
 ### Splitting non Root Node
 
 In this case the element is added to the child array the array must be ordered in a new array of child array size plus
@@ -129,6 +130,8 @@ element key are then places in two Nodes, (you already had one you will need to 
 half of the elements in that Node). The new Node is then placed in the parents reference array and that array must then
 be adjusted as well.
 
+<img src="images/insert_non_root_overflow.png" alt="overflow on non root node">
+
 ### Splitting on Root
 
 The second case of Splitting is Splitting the root Node. Every time you split the root Node, the height of the tree
@@ -137,7 +140,9 @@ with n+1 elements, split by middle element and create a new node. You must then 
 arrays are correct, in that they must each contain only 1 + number of keys in the child array and the reference arrays
 must be valid. When we overflow on root we must create 2 new Nodes and we must update the new root as well
 
-In total inserting had the following few conditions you should make sure you are looking out for
+<img src="images/insert_root_overflow.png" alt="overflow on root node" width="80%">
+
+> **NB!!** In total inserting had the following few conditions you should make sure you are looking out for
 
 1. Insert happened on a leaf node and no overflow occurred
 2. Insert happened on a leaf node and overflow did occur
@@ -155,7 +160,7 @@ There are 2 Primary cases
 
 ### Deleting a Leaf Node
 
-When deleting from a leaf there are 2 conditions:
+When deleting from a leaf there are 2 Secondary conditions:
 
 1. The leaf remains at least half full
 2. The leaf underflow's
@@ -217,6 +222,15 @@ parent divider key and move it down to into the leftmost position in the underfl
 
 When borrowing from the right sibling take the leftmost key and move it up to the parent divider key, then move that
 parent divider key and place it at the rightmost position in the underflowing Node
+
+### No Help from a Sibling
+
+In the event that neither the Left nor Right sibling has any spare Nodes you can borrow, merge with you Left Node. In
+the event that you can not merge with you immediate left Node (you do not have a left sibling merge with your right
+Sibling). <br />
+When you merge with a sibling Node you combine the key arrays of the two sibling Nodes, **WITH** the `parent key` that
+divides the two keys as well, this means you will be removing an item from the parent Node as well, so be sure to check
+if the parent underflows as well.
 
 ## Deleting Non Leaf Nodes
 
