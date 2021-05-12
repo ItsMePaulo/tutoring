@@ -142,7 +142,7 @@ must be valid. When we overflow on root we must create 2 new Nodes and we must u
 
 <img src="images/insert_root_overflow.png" alt="overflow on root node" width="80%">
 
-> **NB!!** In total inserting had the following few conditions you should make sure you are looking out for
+> **NB!!** In summary inserting has the following few conditions you should make sure you are looking out for
 
 1. Insert happened on a leaf node and no overflow occurred
 2. Insert happened on a leaf node and overflow did occur
@@ -192,7 +192,7 @@ fun <T> removeFromLeaf(element: T, node: BTreeNode) {
 
     node.children = tmpArray
 
-    if (node.children[i] == null) {
+    if (node.children[underflowIndex] == null) {
         mergeNodes()
     }
 }
@@ -218,10 +218,20 @@ and then check right sibling but make sure to read the question to know which ru
 When borrowing from the left sibling take the rightmost key and move it up to the parent divider key, then move the
 parent divider key and move it down to into the leftmost position in the underflowing Node.
 
+<img src="images/borrowing_from_left.png" alt="Borrowing from your left sibling" width="80%">
+
 #### Borrowing from the Right Sibling
 
 When borrowing from the right sibling take the leftmost key and move it up to the parent divider key, then move that
 parent divider key and place it at the rightmost position in the underflowing Node
+
+<img src="images/borrowing_from_right.png" alt="borrowing from right sibling">
+
+#### There are 2 Edge cases to consider
+
+The Leftmost child node will not have a left Sibling, and the Rightmost node will not have a right sibling. In each case
+we must deffer to only using one sibling as a reference this means we will also need to add the condition has a Left or
+Right Sibling.
 
 ### No Help from a Sibling
 
@@ -252,18 +262,23 @@ successor of the element (make use of the leftmost node).
 
 ## Deletion Summary
 
-In Summary deleting an element from an M-Way tree has the following conditions which you should look out for
+> In Summary deleting an element from an M-Way tree has the following conditions which you should look out for
 
 1. Deleting from a Leaf Node
     1. When deleting a Leaf the Node does not underflow
     2. When deleting a Leaf the Node does underflow
-        1. When the Node underflows, left sibling has a spare element
-        2. When the Node underflows, right sibling has a spare element
-        3. Neither left nor right sibling has a spare element
+        1. When the Node underflows, Left sibling has a spare element
+            * Has a Left Sibling
+        2. When the Node underflows, Right sibling has a spare element
+            * Has a Right Sibling
+        3. Neither Left nor Right sibling has a spare element
+            * Merge left if has Left sibling
+            * Merge right if you do not have a Left sibling
 2. Deleting from a Non Leaf Node
     1. Using delete by Predecessor
     2. Using delete by Successor
 
 ## Helpful Link
 
-You can make use of the following [online visualizer]() to build an M-Way tree from scratch and see how it is generated.
+You can make use of the following [online visualizer](https://www.cs.usfca.edu/~galles/visualization/BTree.html) to
+build an M-Way tree from scratch and see how it is generated.
