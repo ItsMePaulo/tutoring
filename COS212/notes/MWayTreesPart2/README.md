@@ -159,7 +159,7 @@ There are 2 Primary cases
 1. Deleting from a Leaf Node
 2. Deleting from a non Leaf Node
 
-### Deleting a Leaf Node
+### 1. Deleting a Leaf Node
 
 When deleting from a leaf there are 2 Secondary conditions:
 
@@ -221,7 +221,7 @@ and then check right sibling but make sure to read the question to know which ru
 When borrowing from the left sibling take the rightmost key and move it up to the parent divider key, then move the
 parent divider key and move it down to into the leftmost position in the underflowing Node.
 
-<img src="images/borrowing_from_left.png" alt="Borrowing from your left sibling" width="80%">
+<img src="images/borrowing_from_left.png" alt="Borrowing from your left sibling">
 
 #### Borrowing from the Right Sibling
 
@@ -238,14 +238,37 @@ Right Sibling.
 
 ### No Help from a Sibling
 
-In the event that neither the Left nor Right sibling has any spare Nodes you can borrow, merge with you Left Node. In
+In the event that neither the Left nor Right sibling has any spare elements you can borrow, merge with the Left Node. In
 the event that you can not merge with you immediate left Node (you do not have a left sibling merge with your right
-Sibling). <br />
+sibling). <br />
 When you merge with a sibling Node you combine the key arrays of the two sibling Nodes, **WITH** the `parent key` that
 divides the two keys as well, this means you will be removing an item from the parent Node as well, so be sure to check
 if the parent underflows as well.
 
-## Deleting Non Leaf Nodes
+#### Merge with the Left Sibling
+
+In the default event merging with Left sibling you can follow these steps.
+
+<img src="images/merge_left.png" alt="merge with left node">
+
+#### Merging with the Right Sibling
+
+When you cannot merge with the Left sibling, merge with the right
+
+<img src="images/merge_right.png" alt="merge with right node">
+
+#### Picking the Node to merge into
+
+You can save yourself a lot of time by picking the correct node to merge with when merging with siblings. If you pick
+the node that has the lowest value of the elements then you do NOT need to worry about shifting values in the array
+which will make your code much simpler. The Sibling with the lowest value will always be the left Sibling of the two
+nodes, in both Left and right Merges.
+
+
+> NB!! A nice check to make sure you Merged and Split correctly, Merging will always Fill a Node once complete,
+> Splitting will always make two Nodes that have a 50% capacity
+
+### 2. Deleting Non Leaf Nodes
 
 Deleting non leaf nodes would be quite an illogical operation, keys and references would need to be rebalanced, and the
 whole tree restructured. We can circumnavigate such a scenario by ensuring that we instead only delete on leaf nodes.
