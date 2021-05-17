@@ -69,17 +69,18 @@ The above steps can be written out in the following sudo code
 
 ```kotlin
 fun searchBTree(item: T): Boolean {
-    if (tree isNotEmpty ()) {
+    if (tree.isNotEmpty()) {
 
         tmp = root
         while (tmp != null) {
             for (i in 0 .. tmp.keys) {
-                if (tmp[i] == item) {
+                if (tmp.keys[i] == item) {
                     return true
                 }  
                 
                 if (tmp.keys[i] > item && !tmp.isLeaf) {
                     tmp = tmp.children[i]
+                    i = 0
                 } else if (tmp.keys[i] > item && tmp.isLeaf) {
                     return false
                 }

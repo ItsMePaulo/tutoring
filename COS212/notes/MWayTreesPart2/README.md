@@ -27,29 +27,29 @@ inorder insertion. To do this you can make use of the following sudo code
 ```kotlin
 fun <T> insert(node: BTreeNode, element: T) {
 
-    val tmpArray = new element [node.children.length - 1]
+    val tmpArray = new element [node.keys.length - 1]
 
-    for (i in 0..node.children.length) {
+    for (i in 0..node.keys.length) {
 
-        if (node.children[i] == null) {
+        if (node.keys[i] == null) {
             tmpArray[i] = element
 
-            node.children = tmpArray
+            node.keys = tmpArray
             return
         }
 
-        if (node[i] > element) {
+        if (node.keys[i] > element) {
             // we need to shift all the values from this point up by 1 after we add the new value in tmp
             tmpArray[i] = element
-            while (node.children[i] != null) {
-                tmpArray[i + 1] = node.children[i++]
+            while (node.keys[i] != null) {
+                tmpArray[i + 1] = node.keys[i++]
             } // there is a slight problem with this code you'll see it now
 
-            node.children = tmpArray
+            node.keys = tmpArray
             return
         }
 
-        tmpArray[i] = node.children[i]
+        tmpArray[i] = node.keys[i]
     }
 }
 ```
@@ -79,29 +79,29 @@ overflows, we can tell when the child array would have overflown if the last val
 ```kotlin
 fun <T> insert(node: BTreeNode, element: T) {
 
-    val tmpArray = new element [node.children.length] // tmp is 1 size bigger
+    val tmpArray = new element [node.keys.length] // tmp is 1 size bigger
 
-    for (i in 0..node.children.length) {
+    for (i in 0..node.keys.length) {
 
-        if (node.children[i] == null) {
+        if (node.keys[i] == null) {
             tmpArray[i] = element
 
             // don't set child array yet
             break // break instead of returning now
         }
 
-        if (node[i] > element) {
+        if (node.keys[i] > element) {
 
             tmpArray[i] = element
-            while (node.children[i] != null) {
-                tmpArray[i + 1] = node.children[i++]
+            while (node.keys[i] != null) {
+                tmpArray[i + 1] = node.keys[i++]
             }
 
             // don't set child array yet
             break // break instead of returning now
         }
 
-        tmpArray[i] = node.children[i]
+        tmpArray[i] = node.keys[i]
     }
 
     // check to see if you should split the node
@@ -178,24 +178,24 @@ You can make use of the following sudo code:
 ```kotlin
 fun <T> removeFromLeaf(element: T, node: BTreeNode) {
 
-    val underflowIndex = node.children.length / 2
-    val tmpArray = new T [node.children.length]
+    val underflowIndex = node.keys.length / 2
+    val tmpArray = new T [node.keys.length]
 
-    for (i in 0..node.childre.length) {
+    for (i in 0..node.keys.length) {
 
-        if (node.children[i] != null && node.children[i] == element) {
-            while (i + 1 < node.children.length && node.children[i + 1] != null) {
-                tmpArray[i] = node.children[++i] // this ++i updates i before it is used in the assignment
+        if (node.keys[i] != null && node.keys[i] == element) {
+            while (i + 1 < node.keys.length && node.keys[i + 1] != null) {
+                tmpArray[i] = node.keys[++i] // this ++i updates i before it is used in the assignment
             }
             break
         }
 
-        tmpArray[i] = node.children[i]
+        tmpArray[i] = node.keys[i]
     }
 
-    node.children = tmpArray
+    node.keys = tmpArray
 
-    if (node.children[underflowIndex] == null) {
+    if (node.keys[underflowIndex] == null) {
         mergeNodes()
     }
 }
