@@ -25,7 +25,7 @@ public class MinMaxDHeap<T> {
 			 The Node object has to be initialised with the given data/key values.
 		   Refer to the assignment spec for insertion algorithm details. */
 
-        int levelToInsert = fetchLevel(0, 1);
+        int levelToInsert = fetchLevel(heap.length, 0, 1);
 
         if (levelToInsert % 2 == 0) {
             System.out.println("Even level should do a min heap insert");
@@ -37,12 +37,12 @@ public class MinMaxDHeap<T> {
         heap[heap.length - 1] = new Node<>(data, key);
     }
 
-    private int fetchLevel(int level, int levelRange) {
-        if (heap.length < levelRange) {
+    private int fetchLevel(int index, int level, int levelRange) {
+        if (index < levelRange) {
             return level;
         }
 
-        return fetchLevel(++level, levelRange + pow(d, level));
+        return fetchLevel(index, ++level, levelRange + pow(d, level));
     }
 
     private int pow(int base, int power) {
@@ -56,7 +56,7 @@ public class MinMaxDHeap<T> {
     /* Read-only access */
     public T peekMin() {
         /* Return the data of the min priority Node. Min-max heap should not be modified by this function. */
-        return heap[0].getData();
+        return (heap[0] != null) ? heap[0].getData() : null;
     }
 
     public T peekMax() {
