@@ -29,11 +29,11 @@ The benefit of having all the Nodes on a single level is for InOrder traversal i
 If a node is a non leaf node then all children values from index 1 onwards will hold a copy of the divider parent, like
 so;
 
-<img src="images/parents_with_children.png" alt="node with parents and children">
+<img src="images/parents_with_children.png" alt="node with parents and children" width="60%">
 
 But if a leaf has a grandparent, then the parents parent also get repeated on the leaf level.
 
-<img src="images/grandparent_and_leaf_nodes.png" alt="node with grandparents and children">
+<img src="images/grandparent_and_leaf_nodes.png" alt="node with grandparents and children" width="60%">
 
 ## Splitting
 
