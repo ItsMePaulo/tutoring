@@ -49,7 +49,7 @@ rSize = 7
 
 So now when we insert 1-8 we get the following:
 
-Now both children are now 60% full.
+Now both children are 60% full.
 
 ## Delaying Splitting
 
@@ -114,5 +114,5 @@ min = (3(2 * 7 - 1/ 3)) + 2 = 13
 
 ## Deleting
 
-Deleting works largely the same except for merging, when we perform delete by merging we merge with both the left and
-right sibling like so
+Deleting works largely the same except for merging, when we encounter a scenarion when we are required to perform delete
+by merging we merge in both a left and right sibling, like so.
