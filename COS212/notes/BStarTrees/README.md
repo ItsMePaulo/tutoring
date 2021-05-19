@@ -8,6 +8,8 @@ when the block of data being loaded in is only half full.
 
 Imagine inserting 1 to 8 into a BTree of order 5, what would your result be?
 
+<img src="images/half_tree.png" alt="tree that will never fill" width="60%">
+
 In this scenario the middle child will never become full (assuming only whole numbers), because the keys already fill
 out the range between its two parent dividers. This means whenever we load this node from memory we are only loading in
 half of what we could be.
@@ -22,6 +24,8 @@ The second condition is that we must delay Node creation as long as we can.
 
 If we maintain the condition that Nodes must be at least 2/3rds full we very quickly encounter a small problem. Assume
 we were to insert 1-5 into a B* Tree of order 5, our resulting split would look like this.
+
+<img src="images/inefficient_insert.png" alt="split root">
 
 This leaves us with a problem, both of these children are only 50% full. To fix this `we will increase the size of root`
 
@@ -49,6 +53,8 @@ rSize = 7
 
 So now when we insert 1-8 we get the following:
 
+<img src="images/efficient_insert.png" alt="efficient insert" width="60%">
+
 Now both children are 60% full.
 
 ## Delaying Splitting
@@ -60,16 +66,20 @@ split all new nodes will be 60% full.
 We follow a similar approach that we used when deleting in regular B trees, where before we checked if a sibling node
 could borrow us one of their elements, we now look if one of our siblings can take one of our elements.
 
-### Taking Left
+### Send Left
 
 Same as before we insert into a Node that would have 1 element more than the available keys and make sure that array was
 ordered, then we pass the leftmost element to the parent and move the parent to the rightmost position of the left
 sibling array.
 
-### Taking Right
+<img src="images/take_left.png" alt="send left">
+
+### Send Right
 
 As before, insert into an ordered array of one size larger, take the rightmost element and push it to parent and move
 the parent down and place it at the leftmost position of the right sibling.
+
+<img src="images/take_right.png" alt="send right">
 
 ### Siblings can't take Anymore
 
@@ -84,6 +94,8 @@ can use the following steps.
 > 2ndParent = 2*1st + 1
 
 If we do that with the following B* tree this is what we get.
+
+<img src="images/splitting_invalid.png" alt="splitting invalid">
 
 The problem is the final Node, it is not 2/3rd full. This is because not all orders of m will be valid orders of a B*
 tree
@@ -116,3 +128,5 @@ min = (3(2 * 7 - 1/ 3)) + 2 = 13
 
 Deleting works largely the same except for merging, when we encounter a scenarion when we are required to perform delete
 by merging we merge in both a left and right sibling, like so.
+
+<img src="images/deleting.png" alt="width">
