@@ -4,6 +4,8 @@ B Trees and B* Trees are really efficient but both are poor at one thing;
 
 ## Inorder Traversal
 
+<img src="images/inorder_trees.png" alt="inorder traversal">
+
 To traverse through a M-Way tree inorder we would end up needing to visit a parent node m-1 times before visiting all of
 its children once. This becomes tedious, and thus we need to modify our BTree so that we can access the Tree in order
 without revisiting parent nodes over and over again.
@@ -18,18 +20,28 @@ When every leaf node references the next node, we end up creating two ways to lo
 first method is to load in nodes by `sequence`, in this case we iteratively search through the leaf node level to find
 nodes in the tree. The second method is to search by `index` this is to search using a standard tree search
 implementation. <br />
-The benefit of having all the Nodes on a single level is the InOrder traversal
+The benefit of having all the Nodes on a single level is for InOrder traversal in a simple non-recursive manner
+
+<img src="images/next_fields.png" alt="next fields">
 
 ## How Nodes with Parents Look
 
 If a node is a non leaf node then all children values from index 1 onwards will hold a copy of the divider parent, like
 so;
 
+<img src="images/parents_with_children.png" alt="node with parents and children">
+
+But if a leaf has a grandparent, then the parents parent also get repeated on the leaf level.
+
+<img src="images/grandparent_and_leaf_nodes.png" alt="node with grandparents and children">
+
 ## Splitting
 
 Splitting works in a standard way to BTrees, except one of the two Nodes needs to take in a copy of the parent divider
 element. Usually it is the right node that takes the parent divider, this is because it is easier to place the parent at
 a standard index 0, than a dynamic index of 50%. This would look like this
+
+<img src="images/insert.png" alt="insert">
 
 ## Deleting
 
@@ -38,6 +50,8 @@ Nodes. If an element is deleted from a position in a Non-Leaf Node then we can s
 Node level and leave its reference in the Non-Leaf position. This is because when the Node underflow's or overflows, the
 algorithm would overwrite the element in the Node with the correct value anyway. But for now leave the parent element as
 it is not causing any harm.
+
+<img src="images/delete.png">
 
 ## Is the Element Still In the Tree
 
