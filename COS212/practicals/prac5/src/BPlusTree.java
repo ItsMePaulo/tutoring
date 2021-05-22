@@ -39,47 +39,6 @@ public class BPlusTree {
         insert(element, tmp);
     }
 
-    /**
-     * fun <T> insert(node: BTreeNode, element: T) {
-     * <p>
-     * val tmpArray = new element [node.keys.length] // tmp is 1 size bigger
-     * <p>
-     * for (i in 0..node.keys.length) {
-     * <p>
-     * if (node.keys[i] == null) {
-     * tmpArray[i] = element
-     * <p>
-     * // don't set child array yet
-     * break // break instead of returning now
-     * }
-     * <p>
-     * if (node.keys[i] > element) {
-     * <p>
-     * tmpArray[i] = element
-     * while (node.keys[i] != null) {
-     * tmpArray[i + 1] = node.keys[i++]
-     * }
-     * <p>
-     * // don't set child array yet
-     * break // break instead of returning now
-     * }
-     * <p>
-     * tmpArray[i] = node.keys[i]
-     * }
-     * <p>
-     * // check to see if you should split the node
-     * if (tmpArray[tmpArray.length - 1] != null) {
-     * splitNode(tmpArray, node)
-     * } else {
-     * // copy tmpArray into child array
-     * ...
-     * }
-     * }
-     *
-     * @param element
-     * @param node
-     */
-
     private BPlusNode insert(int element, BPlusNode node) {
 
         int[] tmpArray = new int[order];
@@ -137,7 +96,7 @@ public class BPlusTree {
             BPlusNode[] newChildrenAtCurrentLevel = generateBranchesArrayWithNewNode(node, newRightNode);
             BPlusNode newRightParent = insert(tmpArray[newDividerIndex], node.parent);
 
-            // if true this means our parent split to split the branchesArray between the two new parents
+            // if true this means our parent split and we need to split the branchesArray between the two new parents
             if (newRightParent != null) {
                 divideChildrenBetweenParents(newChildrenAtCurrentLevel, node.parent, newRightParent);
             } else {
@@ -160,7 +119,6 @@ public class BPlusTree {
     }
 
 
-
     // Copies the filled child array to the single parent and makes sure the newly created node
     // has the correctly set parent
     private void assignChildArrayToParent(BPlusNode parent, BPlusNode[] children) {
@@ -180,7 +138,7 @@ public class BPlusTree {
                 tmpArray[i++] = node;
                 tmpArray[i++] = newRightNode;
 
-                while ( i < order && parentBranches[i] != null) {
+                while (i < order && parentBranches[i] != null) {
                     tmpArray[i + 1] = parentBranches[i++];
                 }
 
