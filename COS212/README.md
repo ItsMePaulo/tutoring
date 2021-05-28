@@ -53,7 +53,8 @@ experience, They can follow this link to see how to download and set up the IDE 
 # Practicals
 
 1. [prac1](https://gitlab.com/Paul_Wood_96/tutoring/-/tree/master/COS212/practicals/prac1)
-1. [prac2](https://gitlab.com/Paul_Wood_96/tutoring/-/tree/master/COS212/practicals/prac2/src)
-1. [prac3](https://gitlab.com/Paul_Wood_96/tutoring/-/tree/master/COS212/practicals/prac3/src)
-1. [prac4]()
-1. [prac5]()
+2. [prac2](https://gitlab.com/Paul_Wood_96/tutoring/-/tree/master/COS212/practicals/prac2/src)
+3. [prac3](https://gitlab.com/Paul_Wood_96/tutoring/-/tree/master/COS212/practicals/prac3/src)
+4. [prac4]()
+5. [prac5]()
+6. [prac6](https://gitlab.com/Paul_Wood_96/tutoring/-/tree/master/COS212/practicals/prac6/src)
