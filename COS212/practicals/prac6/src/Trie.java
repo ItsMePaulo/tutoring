@@ -146,10 +146,20 @@ public class Trie {
 	public void printKeyList() {
 
 		// Your code goes here
-
+		printKeys(root);
 	}
 
 	
 	//Helper functions
+	void printKeys(Node n) {
 
+		for (int index = 0; index <= letters.length; index++) {
+			if (n.ptrs[index] != null && n.ptrs[index].isLeaf) {
+				System.out.print(n.ptrs[index].key + " ");
+			}
+			else if (n.ptrs[index] != null) {
+				printKeys(n.ptrs[index]);
+			}
+		}
+	}
 }
