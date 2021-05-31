@@ -62,6 +62,6 @@ Set up a table with each node, as a counter starting at 0, set up a root and a n
 
 Go through the edges, when you encounter an edge between `(u)(v)` set the `Root` to `u` as both u and v are originating
 from the same origin, the swap there next fields. Keep doing this until you encounter vertices that have the same root.
-If vertices with the same root are encounter a cycle is detected.
+If vertices with the same root are encounter, a cycle has been detected.
 
 
