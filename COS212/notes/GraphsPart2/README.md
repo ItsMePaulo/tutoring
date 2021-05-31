@@ -51,7 +51,7 @@ import java.util.*
 fun dijsktra(start: Vertex) {
 
     foreach(v in vertices) {
-        v.dist = Math.INFINITY;
+        v.dist = INFINITY;
     }
 
     start.prev = null;
@@ -68,7 +68,7 @@ fun dijsktra(start: Vertex) {
 
         for (neighbor: Vertext in curr.nighbors) { // you will have to traverse the edges to get the neighbors here
             val dist = curr + curr.edgeBetweenThemWeght
-            
+
             if (dist < neighbor.dist) {
                 neighbor.dist = dist
                 neighbor.prev = curr // to make a path
@@ -82,7 +82,101 @@ fun dijsktra(start: Vertex) {
 
 Dijsktra does now work well with negative numbers. Example
 
+## Bellman-Fords Algorithm
 
-## Bellman-Fords Algorithm 
+Instead of looking at all the Vertices look at all the Edges. Here is the sudo code:
 
-Instead of looking at all the Vertices look at all the Edges.
+```kotlin
+
+fun ford() {
+    forech(vertex in Graph) {
+        v.dist = INFINITY
+    }
+
+    start.dist = 0
+    while (there is an edge(v, u) such that u . dist > v . dist +length(v, u))
+    {
+        u.dist = v.dist + length(v, u)
+    }
+}
+```
+
+While there is at least **one** edge that reduces the dist of a Vertices, loop through all the edges in the Graph
+updating all the Vertices you can. Ends only when you loop through all the edges, and you update no vertices.
+
+## Dijsktra's fix
+
+The Bellman-Ford algorithm works but look how many times we loop through the edges, this can be quite an expensive
+operation. Surely it would be beneficial to try and fix Dijsktra's algorithm so that we can improve efficiency.
+
+We can, instead of just removing vertices once they have been visited, add them to a Queue **IF** the dist value has
+been updated.
+
+```kotlin
+fun dijsktrasFix() {
+
+    val toBeChecked: Queue
+    foreach(v in Graph) { // Initialization
+        v.dist = INFINITY         // Unknown distance
+        v.prev = null             // Previous node in shortest path
+    }
+
+    start.dist = 0
+    toBeChecked.add(start);
+    while (!toBeChecked.empty()) {
+
+        curr = toBeChecked.removeVertex()
+        foreach(v of curr.edges) {  // even the visited ones 
+
+            newDist = curr.dist + length(curr, v)
+
+            if (newDist < v.dist) {
+                v.dist = newDist;
+                v.prev = curr;
+
+                if (!toBeChecked.contains(v)) {
+                    toBeChecked.add(v);
+                }
+            }
+        }
+    }
+}
+```
+
+This algorithm has two fixes,
+
+1. Vertices can be looked at again by possibly being added to the queue multiple times
+2. It is no longer necessary to use a priority queue and pick your closest neighbor
+
+## All to All
+
+The above 3 algorithms will help you find the shortest path from A-B, but the All to All finds the shortest path between
+all vertices in the Graph. Luckily it is not too complex. It is not likely to come up in an exam question but has been
+coming up in your pracs over the past few years, so it is worth understanding.
+
+The algorithm is also named Floyd–Warshall, a tribute to its creators.
+
+The algorithm works with a |V| x |V| matrix, where |V| is the number of vertices in the Graph. Once you have defined
+your Matrix there are 3 initial steps we need to follow.
+
+1. Set all distances to Infinity
+2. Mark the diagonals as 0 (where [v]=[v])
+3. Add the weights of every edge at the appropriate position in the Matrix
+
+Once the initial set up is done you can use the following algorithm
+
+```kotlin
+fun allToAll() {
+    for (val i in 0..V) {
+        for (val j in 0..V) {
+            for (val k in 0..V) {
+
+                if (weight[j][k] > weight[j][i] + weight[i][k]) {
+                    weight[j][k] = weight[j][i] + weight[i][k] // this is on your matrix
+                }
+
+            }
+        }
+    }
+}
+```
