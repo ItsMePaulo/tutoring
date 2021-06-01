@@ -10,7 +10,7 @@ fashion is Mapping data. Imagine we wanted to map out a city, and map out specif
 landmark to another, to do this we should represent each landmark as a Node and its distance from each other landmark as
 well. If we do this we get something like this;
 
-<img src="images/graph.png" alt="city graph">
+<img src="images/graph.png" alt="city graph" width="70%">
 
 Notice how the data has no hierarchy, no *"Root"* or clear starting point, the data is just laid out all jumbled waiting
 for us to use it. This is a Graph, and it is a very useful data-structure, used in algorithms like Google Maps, Social
@@ -25,36 +25,36 @@ More on Edges and vertices in a bit, first lets look at some Graph examples.
 
 ## Different Graphs
 
-1. Simple graph
+### 1. Simple graph
     * just represents a bunch of edges and the vertices and their relationships. Important to note that edge (i , j) is
       equal to edge (j , i)
 
-<img src="images/simple_graph.png" alt="simple graph" width="80%">
+<img src="images/simple_graph.png" alt="simple graph" width="60%">
 
-2. Directed graph
+### 2. Directed graph
     * One where each edge has only one direction thus if we can go `from i to j` we cannot go back `from j to i`
 
-<img src="images/directed_graph.png" alt="directed graph" width="80%">
+<img src="images/directed_graph.png" alt="directed graph" width="60%">
 
-3. Multi-directed graph
+### 3. Multi-directed graph
     * Multiple edges from one node the another can exist. Thus one may travel back and forth
 
-<img src="images/multi_directed_graphs.png" alt="multi-directed graph" width="80%">
+<img src="images/multi_directed_graphs.png" alt="multi-directed graph" width="60%">
 
-4. Pseudograph
+### 4. Pseudograph
     * Vertices may reference themselves.
 
-<img src="images/psuedograph.png" alt="psuedograph graph" width="80%">
+<img src="images/psuedograph.png" alt="psuedograph graph" width="60%">
 
-5. Complete graphs
+### 5. Complete graphs
     * Every vertex references every other vertex.
 
-<img src="images/complete_graph.png" alt="complete graph" width="80%">
+<img src="images/complete_graph.png" alt="complete graph" width="40%">
 
-6. Weighted graph
+### 6. Weighted graph
     * Graph where the edges have weights
 
-<img src="images/weighted_graph.png" alt="weighted graph" width="80%">
+<img src="images/weighted_graph.png" alt="weighted graph" width="60%">
 
 The weighted graph is important, **edges** between **vertices** have a value, this is unique to Graphs we have not seen
 this pattern in Trees before. Before, in Trees, we only imagined the connectors between Nodes but now those connectors
@@ -124,7 +124,7 @@ class Graph {
     }
 
     private void traverseVertex(Vertex v, int counter) {
-        if (v.counter == -1) {
+        if (v.counter != -1) { // already been visited
             return;
         }
 
