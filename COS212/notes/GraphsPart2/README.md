@@ -78,7 +78,7 @@ fun dijsktra(start: Vertex) {
 }
 ````
 
-<img src="images/graph_1.png" alt="graph 1" width="60%">
+<img src="images/graph_1.png" alt="graph 1" width="80%">
 
 ### There was a flaw in my Approach (yes I like Overwatch)
 
@@ -104,6 +104,8 @@ fun ford() {
     }
 }
 ```
+
+<img src="images/bellmend_ford.png" alt="bellman ford" width="80%"> 
 
 While there is at least **one** edge that reduces the dist of a Vertices, loop through all the edges in the Graph
 updating all the Vertices you can. Ends only when you loop through all the edges, and you update no vertices.
@@ -151,6 +153,8 @@ This algorithm has two fixes,
 
 1. Vertices can be looked at again by possibly being added to the queue multiple times
 2. It is no longer necessary to use a priority queue and pick your closest neighbor
+
+<img src="images/queue_dij.png" alt="dijkstra queue" width="80%"> 
 
 ## All to All
 
