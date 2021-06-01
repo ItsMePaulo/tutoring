@@ -11,6 +11,8 @@ There are 3 algorithms we can use to Detect Cycles
 We can use the all to all algorithm from before to detect cycles, to do this we need to leave out step 2, of the initial
 set up.
 
+<img src="images/all_to_all_excluding_2.png" alt="all to all excluding step 2" width="30%">
+
 Step 2 set the diagonal values to 0, that was because the diagonals represented the distances from Vertex A to Vertex A,
 naturally this distance can be assumed as 0, because why would it ever cost more or less to visit a position you are
 already on. But a non-Infinite figure in the All to All Matrix represents a path from 1 Vertex to another, therefore if
@@ -19,6 +21,8 @@ overwrite this value so instead we leave the diagonals as INFINITY for now.
 
 If any of the diagonals update after we perform the algorithm, then we can have determined a cycle exists between these
 vertices. Diagonals with the same value are likely part of the same cycle.
+
+<img src="images/all_to_all_diagonals.png" alt="all to all diagonals" width="30%">
 
 ## DPT First Search
 
@@ -64,4 +68,5 @@ Go through the edges, when you encounter an edge between `(u)(v)` set the `Root`
 from the same origin, the swap there next fields. Keep doing this until you encounter vertices that have the same root.
 If vertices with the same root are encounter, a cycle has been detected.
 
+<img src="images/union.png" alt="union">
 
