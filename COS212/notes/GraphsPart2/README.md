@@ -173,7 +173,7 @@ your Matrix there are 3 initial steps we need to follow.
 
 2. Mark the diagonals as 0 (where [v]=[v])
 
-<img src="images/all_to_all_matrix_2.png" alt="all to all matrix step 2" width=20%">
+<img src="images/all_to_all_matrix_2.png" alt="all to all matrix step 2" width="20%">
 
 3. Add the weights of every edge at the appropriate position in the Matrix
 
