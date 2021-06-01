@@ -169,15 +169,15 @@ your Matrix there are 3 initial steps we need to follow.
 
 1. Set all distances to Infinity
 
-<img src="images/all_to_all_matrix_1.png" alt="all to all matrix step 1">   
+<img src="images/all_to_all_matrix_1.png" alt="all to all matrix step 1" width="40%">   
 
 2. Mark the diagonals as 0 (where [v]=[v])
 
-<img src="images/all_to_all_matrix_2.png" alt="all to all matrix step 2">
+<img src="images/all_to_all_matrix_2.png" alt="all to all matrix step 2" width="40%">
 
 3. Add the weights of every edge at the appropriate position in the Matrix
 
-<img src="images/all_to_all_matrix_3.png" alt="all to all matrix step 3">
+<img src="images/all_to_all_matrix_3.png" alt="all to all matrix step 3" width="40%">
 
 Once the initial set up is done you can use the following algorithm
 
