@@ -10,6 +10,8 @@ fashion is Mapping data. Imagine we wanted to map out a city, and map out specif
 landmark to another, to do this we should represent each landmark as a Node and its distance from each other landmark as
 well. If we do this we get something like this;
 
+<img src="images/graph.png" alt="city graph">
+
 Notice how the data has no hierarchy, no *"Root"* or clear starting point, the data is just laid out all jumbled waiting
 for us to use it. This is a Graph, and it is a very useful data-structure, used in algorithms like Google Maps, Social
 Media (map out relationships), and also many AI algorithms.
