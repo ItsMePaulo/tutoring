@@ -11,13 +11,17 @@ There are 3 algorithms we can use to Detect Cycles
 We can use the all to all algorithm from before to detect cycles, to do this we need to leave out step 2, of the initial
 set up.
 
-<img src="images/all_to_all_excluding_2.png" alt="all to all excluding step 2" width="30%">
+<img src="images/cyclic_graph.png" alt="cyclic graph" width="80%">
+
 
 Step 2 set the diagonal values to 0, that was because the diagonals represented the distances from Vertex A to Vertex A,
 naturally this distance can be assumed as 0, because why would it ever cost more or less to visit a position you are
 already on. But a non-Infinite figure in the All to All Matrix represents a path from 1 Vertex to another, therefore if
 we can set a diagonal value, we can detect a cycle. But if the diagonals are always set to 0, we will never be able to
 overwrite this value so instead we leave the diagonals as INFINITY for now.
+
+<img src="images/all_to_all_excluding_2.png" alt="all to all excluding step 2" width="30%">
+
 
 If any of the diagonals update after we perform the algorithm, then we can have determined a cycle exists between these
 vertices. Diagonals with the same value are likely part of the same cycle.
