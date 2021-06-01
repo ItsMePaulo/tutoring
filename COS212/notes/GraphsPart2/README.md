@@ -105,7 +105,7 @@ fun ford() {
 }
 ```
 
-<img src="images/bellmend_ford.png" alt="bellman ford" width="80%"> 
+<img src="images/bellmend_ford.png" alt="bellman ford"> 
 
 While there is at least **one** edge that reduces the dist of a Vertices, loop through all the edges in the Graph
 updating all the Vertices you can. Ends only when you loop through all the edges, and you update no vertices.
