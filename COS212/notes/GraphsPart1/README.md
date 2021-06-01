@@ -27,25 +27,32 @@ More on Edges and vertices in a bit, first lets look at some Graph examples.
     * just represents a bunch of edges and the vertices and their relationships. Important to note that edge (i , j) is
       equal to edge (j , i)
 
+<img src="images/simple_graph.png" alt="simple graph" width="80%">
 
 2. Directed graph
     * One where each edge has only one direction thus if we can go `from i to j` we cannot go back `from j to i`
 
+<img src="images/directed_graph.png" alt="directed graph" width="80%">
 
 3. Multi-directed graph
     * Multiple edges from one node the another can exist. Thus one may travel back and forth
 
+<img src="images/multi_directed_graphs.png" alt="multi-directed graph" width="80%">
 
 4. Pseudograph
     * Vertices may reference themselves.
 
+<img src="images/psuedograph.png" alt="psuedograph graph" width="80%">
 
 5. Complete graphs
     * Every vertex references every other vertex.
 
+<img src="images/complete_graph.png" alt="complete graph" width="80%">
 
 6. Weighted graph
     * Graph where the edges have weights
+
+<img src="images/weighted_graph.png" alt="weighted graph" width="80%">
 
 The weighted graph is important, **edges** between **vertices** have a value, this is unique to Graphs we have not seen
 this pattern in Trees before. Before, in Trees, we only imagined the connectors between Nodes but now those connectors
@@ -128,8 +135,14 @@ class Graph {
 }
 ```
 
+<img src="images/traversal_graph.png" alt="weighted graph" width="80%">
+
+### Applying the depth first traversal on this graph starting at X, assuming graph is multi-directional
+
+> X|0 -> A|1 -> D|2 -> B|3 -> C|4
+
 You can also use a Queue and visit each Vertex in a *Breadth* First manner instead of a *Depth* first manner, the above
 algorithms is using a Depth First approach. The order in which vertices are visited will differ when using a depth first
-search vs a Breadth first search. In a Breadth first search add all the vertices neighbors to a queue and then pop
-them off one by one and assign them the counter **IF** they don't already have a counter.
+search vs a Breadth first search. In a Breadth first search add all the vertices neighbors to a queue and then pop them
+off one by one and assign them the counter **IF** they don't already have a counter.
 

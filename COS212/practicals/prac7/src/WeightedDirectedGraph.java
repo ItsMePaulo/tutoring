@@ -18,5 +18,8 @@ public class WeightedDirectedGraph {
 
 	public List<Vertex> getShortestPath(Vertex sourceVertex, Vertex targetVertex) {
 		// your code goes here
+
+		int size = sourceVertex.getAdjacenciesList().size();
+
 	}
 }
