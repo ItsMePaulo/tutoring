@@ -26,13 +26,12 @@ More on Edges and vertices in a bit, first lets look at some Graph examples.
 ## Different Graphs
 
 ### 1. Simple graph
-    * just represents a bunch of edges and the vertices and their relationships. Important to note that edge (i , j) is
-      equal to edge (j , i)
+    * just represents a bunch of edges and the vertices and their relationships. 
 
 <img src="images/simple_graph.png" alt="simple graph" width="60%">
 
 ### 2. Directed graph
-    * One where each edge has only one direction thus if we can go `from i to j` we cannot go back `from j to i`
+    * One where each edge has only one direction thus if we can go `from A to B` we cannot go back `from B to A`
 
 <img src="images/directed_graph.png" alt="directed graph" width="60%">
 

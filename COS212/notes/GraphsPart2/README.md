@@ -164,6 +164,8 @@ coming up in your pracs over the past few years, so it is worth understanding.
 
 The algorithm is also named Floyd–Warshall, a tribute to its creators.
 
+<img src="images/all_to_all_graph.png" alt="all to all graph" width="80%">
+
 The algorithm works with a |V| x |V| matrix, where |V| is the number of vertices in the Graph. Once you have defined
 your Matrix there are 3 initial steps we need to follow.
 
