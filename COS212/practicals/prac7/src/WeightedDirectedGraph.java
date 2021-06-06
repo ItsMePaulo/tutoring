@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class WeightedDirectedGraph {
@@ -19,7 +18,24 @@ public class WeightedDirectedGraph {
 	public List<Vertex> getShortestPath(Vertex sourceVertex, Vertex targetVertex) {
 		// your code goes here
 
+
 		int size = sourceVertex.getAdjacenciesList().size();
 
+		sourceVertex.getDistance()
+
+		for (Vertex neighbour: getNeighbors(sourceVertex.getAdjacenciesList())) {
+			neighbour.getDistance()
+		}
+
+	}
+	
+	private List<Vertex> getNeighbors(List<Edge> adjList) {
+		ArrayList<Vertex> neighbours = new ArrayList<>();
+
+		for (Edge edge: adjList) {
+			neighbours.add(edge.getEndVertex());
+		}
+
+		return neighbours;
 	}
 }

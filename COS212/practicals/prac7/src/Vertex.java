@@ -35,6 +35,9 @@ public class Vertex implements Comparable<Vertex> {
 	}
 
 	public double getDistance() {
+
+		return this.distance;
+
 		return distance;
 	}
 
