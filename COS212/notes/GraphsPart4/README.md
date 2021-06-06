@@ -65,7 +65,7 @@ fun findArtPoints(v) {
 }
 ```
 
-<img src="images" alt="graph connectivity">
+<img src="images/graph_connectivity.png" alt="graph connectivity">
 
 ## Strongly connected Points
 
