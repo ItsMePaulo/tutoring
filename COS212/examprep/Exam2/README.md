@@ -141,7 +141,9 @@ passing right.
 
 ## Question 6: Tries
 
-The following keys must be stored in a trie: bad bat bar bard bargain int in gain
+The following keys must be stored in a trie:
+
+> **bad  bat  bar  bard  bargain  int  in  gain**
 
 6.1) If the keys are stored in a fixed array with an end of word character at the beginning, what array size should be
 used for the given set of strings.
