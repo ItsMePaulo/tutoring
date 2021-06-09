@@ -119,7 +119,7 @@ Assume the following table and fill in the index of the second child for a node 
 4.1) Assuming a B-Tree of height 9 and order 5, what are the minimum number of keys that should be contained on level 5.
 
 ```text
-54
+54(Nodes) * 2 = 108 
 ```
 
 4.2) Why is it suggested, to use an odd number as the M value in an M-Way tree
