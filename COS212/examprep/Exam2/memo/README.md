@@ -114,77 +114,57 @@ Assume the following table and fill in the index of the second child for a node 
 | 4  | 43 | 174 |
 | 8  | 57 | 458 |
 
-[comment]: <> (## Question 4: [B-Trees]&#40;https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/MWayTreesPart1/README.md&#41;)
+## Question 4: [B-Trees](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/MWayTreesPart1/README.md)
 
-[comment]: <> (4.1&#41; Assuming a B-Tree of height 9 and order 5, what are the minimum number of keys that should be contained on level 5.)
+4.1) Assuming a B-Tree of height 9 and order 5, what are the minimum number of keys that should be contained on level 5.
 
-[comment]: <> (```text)
+```text
+54
+```
 
-[comment]: <> (54)
+4.2) Why is it suggested, to use an odd number as the M value in an M-Way tree
 
-[comment]: <> (```)
+```text
+When performing a split we divide the keys array by two to get a dividing index, odd m values will provide a 
+index that has an equal left and right sized array, even values will be skewed to some degree and not ensure that 
+nodes are 50% full after the split operation
+```
+4.3) Are B Trees immune to the order in which values are inserted into the data structure? Motivate your answer
 
-[comment]: <> (4.2&#41; Why is it suggested, to use an odd number as the M value in an M-Way tree)
+```text
+No B trees are not immune to inorder traversal, as nodes will remain half full. If nodes are continuously inserted in 
+ascending order the tree will become skewed to the right with nodes on the left side of the tree maintaining a 50% 
+capacity and no more
+```
 
-[comment]: <> (```text)
+4.4) What is the maximum height of a B-Tree of an order = 7 and 400 keys?
 
-[comment]: <> (When performing a split we divide the keys array by two to get a dividing index, odd m values will provide a )
+```text
+5 
+minimum value of nodes at level:
 
-[comment]: <> (index that has an equal left and right sized array, even values will be skewed to some degree and not ensure that )
+1=1 +
+2=2 +
+3=8 +
+4=32 +
+5=128
 
-[comment]: <> (nodes are 50% full after the split operation)
+6= 512 != 
+```
 
-[comment]: <> (```)
+For all Questions tha follow assume the following B-Tree, when performing a delete operation on a non-leaf key perform
+the deletion by copying direct predecessor, when borrowing from a neighbour first look to your right neighbour before
+looking to your left, and when merging merge with the right neighbor if not possible chose the left.
 
-[comment]: <> (4.3&#41; Are B Trees immune to the order in which values are inserted into the data structure? Motivate your answer)
+<img src="../images/m-way-tree.png" alt="b tree">
 
-[comment]: <> (```text)
+4.5.1) Delete the key 72, draw the final tree after you have performed the operation.
 
-[comment]: <> (No B trees are not immune to inorder traversal, as nodes will remain half full. If nodes are continuously inserted in )
+<img src="images/b_tree_answer.png" alt="delete 72">
 
-[comment]: <> (ascending order the tree will become skewed to the right with nodes on the left side of the tree maintaining a 50% )
+4.5.2) Delete the key 87, draw the final tree after you have performed the operation
 
-[comment]: <> (capacity and no more)
-
-[comment]: <> (```)
-
-[comment]: <> (4.4&#41; What is the maximum height of a B-Tree of an order = 7 and 400 keys?)
-
-[comment]: <> (```text)
-
-[comment]: <> (5 )
-
-[comment]: <> (minimum value of nodes at level:)
-
-[comment]: <> (1=1 +)
-
-[comment]: <> (2=2 +)
-
-[comment]: <> (3=8 +)
-
-[comment]: <> (4=32 +)
-
-[comment]: <> (5=128)
-
-[comment]: <> (6= 512 != )
-
-[comment]: <> (```)
-
-[comment]: <> (For all Questions tha follow assume the following B-Tree, when performing a delete operation on a non-leaf key perform)
-
-[comment]: <> (the deletion by copying direct predecessor, when borrowing from a neighbour first look to your right neighbour before)
-
-[comment]: <> (looking to your left, and when merging merge with the right neighbor if not possible chose the left.)
-
-[comment]: <> (<img src="../images/m-way-tree.png" alt="b tree">)
-
-[comment]: <> (4.5.1&#41; Delete the key 72, draw the final tree after you have performed the operation.)
-
-[comment]: <> (<img src="images/b_tree_answer.png" alt="delete 72">)
-
-[comment]: <> (4.5.2&#41; Delete the key 87, draw the final tree after you have performed the operation)
-
-[comment]: <> (<img src="images/delete_87.png" alt="delete 87">)
+<img src="images/delete_87.png" alt="delete 87">
 
 [comment]: <> (## Question 5: [B+]&#40;https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/B+Trees/README.md&#41; & [B*]&#40;https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/BStarTrees/README.md&#41;)
 
