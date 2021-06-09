@@ -394,26 +394,27 @@ For all question that follow, assume the following array
 
 [comment]: <> (   the vertices)
 
-[comment]: <> (   | Vertex | Dist | Pred |)
+   | Vertex | Dist | Pred |
+   | --- | --- | --- |
+   | A | 0 | null |
+   | B | 3 | M |
+   | C | 12 | J |
+   | E | 20 | N |
+   | F | 6 | B |
+   | J | 2 | A |
+   | M | 8 | Z |
+   | N | 14 | F |
+   | X | 21 | N |
+   | Z | 3 | A |
 
-[comment]: <> (   | --- | --- | --- |)
+    1.1 How many times will the vertex B be inserted into the Queue
+        
+    ```text
+            2
+    ```
 
-[comment]: <> (   | A | | |)
+   1.2 How many times will the value X be inserted into the Queue
 
-[comment]: <> (   | B | 4 | A |)
-
-[comment]: <> (   | C | | |)
-
-[comment]: <> (   | E | | |)
-
-[comment]: <> (   | F | | |)
-
-[comment]: <> (   | J | 2 | A |)
-
-[comment]: <> (   | M | | |)
-
-[comment]: <> (   | N | | |)
-
-[comment]: <> (   | X | | |)
-
-[comment]: <> (   | Z | 3 | A |)
+   ```text
+        2
+   ```
