@@ -33,7 +33,6 @@ backbone?
 1.3.1) What rotations need to be performed if the value 8 was inserted into the Tree
 
 ```text
-
 8 needs to perform a left rotation around 7, and then 8 needs to perform a second right rotation around 12
 ```
 
