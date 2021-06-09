@@ -53,7 +53,7 @@ For all questions that follow assume the tree
 
     *
 
-2.2) Using the original tree before your answer in 2.1 show the final tree if instead value 34 was accessed using a half
+2.2) Using the original tree before your answer in 2.1 show the final tree if instead value 34 was accessed using a semi
 splay
 
     *
