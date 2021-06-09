@@ -20,7 +20,7 @@ backbone?
 
 1.2.1) Show the backbone of the tree after applying the DSW algorithm
 
-<img src="images/dsw_backbone.png" width="20%" alt="dsw backbone">
+<img src="images/dsw_backbone.png" width="50%" alt="dsw backbone">
 
 1.2.2) Perform the rotations needed to balance the Tree on the backbone from `1.2.1.`
 
