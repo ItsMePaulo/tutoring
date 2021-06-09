@@ -1,38 +1,30 @@
-[comment]: <> (<div align="center"><h1> COS 212 Semester Test 2: MEMO</h1></div>)
+<div align="center"><h1> COS 212 Semester Test 2: MEMO</h1></div>
+<div align="center"><h4> Tree Balancing; Self Organising Trees; Heaps; B-Trees; B+ & B* Trees; Graphs </h4></div>
 
-[comment]: <> (<div align="center"><h4> Tree Balancing; Self Organising Trees; Heaps; B-Trees; B+ & B* Trees; Graphs </h4></div>)
+## Question 1: [Tree Balancing](https://gitlab.com/Paul_Wood_96/tutoring/-/tree/master/COS212/notes/BalancingABinaryTree)
 
-[comment]: <> (## Question 1: [Tree Balancing]&#40;https://gitlab.com/Paul_Wood_96/tutoring/-/tree/master/COS212/notes/BalancingABinaryTree&#41;)
+1.1) The DSW algorithm is being applied a tree of 35 Nodes, How many rotations will happen on the first rotation of the
+backbone?
 
-[comment]: <> (1.1&#41; The DSW algorithm is being applied a tree of 35 Nodes, How many rotations will happen on the first rotation of the)
+> m = 2<sup>⌊ Lg(n + 1) ⌋ </sup> - 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // (⌊ => means floor) **step  1**: get m <br />
+> m = s<sup>5</sup> - 1 <br />
+> m = 31
+>
+> make n - m rotations at first step <br />
+> r = 35 - 31 <br />
+> r = 4
 
-[comment]: <> (backbone?)
+1.2) For all questions that follow assume the following Binary Tree
 
-[comment]: <> (> m = 2<sup>⌊ Lg&#40;n + 1&#41; ⌋ </sup> - 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // &#40;⌊ => means floor&#41; **step  1**: get m <br />)
+<img src="../images/binary_trees.png" alt="binary tree" width="60%">
 
-[comment]: <> (> m = s<sup>5</sup> - 1 <br />)
+1.2.1) Show the backbone of the tree after applying the DSW algorithm
 
-[comment]: <> (> m = 31)
+<img src="images/dsw_backbone.png" width="20%" alt="dsw backbone">
 
-[comment]: <> (>)
+1.2.2) Perform the rotations needed to balance the Tree on the backbone from `1.2.1.`
 
-[comment]: <> (> make n - m rotations at first step <br />)
-
-[comment]: <> (> r = 35 - 31 <br />)
-
-[comment]: <> (> r = 4)
-
-[comment]: <> (1.2&#41; For all questions that follow assume the following Binary Tree)
-
-[comment]: <> (<img src="../images/binary_trees.png" alt="binary tree" width="60%">)
-
-[comment]: <> (1.2.1&#41; Show the backbone of the tree after applying the DSW algorithm)
-
-[comment]: <> (<img src="images/dsw_backbone.png" width="20%" alt="dsw backbone">)
-
-[comment]: <> (1.2.2&#41; Perform the rotations needed to balance the Tree on the backbone from `1.2.1.`)
-
-[comment]: <> (<img src="images/dsw_answer.png" width="80%" alt="dsw answer">)
+<img src="images/dsw_answer.png" width="80%" alt="dsw answer">
 
 
 [comment]: <> (1.3&#41; For all questions that follow assume the following AVL Tree)
@@ -141,3 +133,75 @@
 [comment]: <> (| 4  | 43 | 174 |)
 
 [comment]: <> (| 8  | 57 | 458 |)
+
+[comment]: <> (## Question 4: [B-Trees]&#40;https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/MWayTreesPart1/README.md&#41;)
+
+[comment]: <> (4.1&#41; Assuming a B-Tree of height 9 and order 5, what are the minimum number of keys that should be contained on level 5.)
+
+[comment]: <> (```text)
+
+[comment]: <> (54)
+
+[comment]: <> (```)
+
+[comment]: <> (4.2&#41; Why is it suggested, to use an odd number as the M value in an M-Way tree)
+
+[comment]: <> (```text)
+
+[comment]: <> (When performing a split we divide the keys array by two to get a dividing index, odd m values will provide a )
+
+[comment]: <> (index that has an equal left and right sized array, even values will be skewed to some degree and not ensure that )
+
+[comment]: <> (nodes are 50% full after the split operation)
+
+[comment]: <> (```)
+
+[comment]: <> (4.3&#41; Are B Trees immune to the order in which values are inserted into the data structure? Motivate your answer)
+
+[comment]: <> (```text)
+
+[comment]: <> (No B trees are not immune to inorder traversal, as nodes will remain half full. If nodes are continuously inserted in )
+
+[comment]: <> (ascending order the tree will become skewed to the right with nodes on the left side of the tree maintaining a 50% )
+
+[comment]: <> (capacity and no more)
+
+[comment]: <> (```)
+
+[comment]: <> (4.4&#41; What is the maximum height of a B-Tree of an order = 7 and 400 keys?)
+
+[comment]: <> (```text)
+
+[comment]: <> (5 )
+
+[comment]: <> (minimum value of nodes at level:)
+
+[comment]: <> (1=1 +)
+
+[comment]: <> (2=2 +)
+
+[comment]: <> (3=8 +)
+
+[comment]: <> (4=32 +)
+
+[comment]: <> (5=128)
+
+[comment]: <> (6= 512 != )
+
+[comment]: <> (```)
+
+[comment]: <> (For all Questions tha follow assume the following B-Tree, when performing a delete operation on a non-leaf key perform)
+
+[comment]: <> (the deletion by copying direct predecessor, when borrowing from a neighbour first look to your right neighbour before)
+
+[comment]: <> (looking to your left, and when merging merge with the right neighbor if not possible chose the left.)
+
+[comment]: <> (<img src="../images/m-way-tree.png" alt="b tree">)
+
+[comment]: <> (4.5.1&#41; Delete the key 72, draw the final tree after you have performed the operation.)
+
+[comment]: <> (    *)
+
+[comment]: <> (4.5.2&#41; Delete the key 87, draw the final tree after you have performed the operation)
+
+[comment]: <> (    *)
