@@ -98,27 +98,21 @@ For all question that follow, assume the following array
 
 <img src="images/insert_heap.png" alt="delete heap">
 
-[comment]: <> (3.1.3&#41; Perform 3 deletions to your min heap as it stands, show the final min heap after the 3 deletions)
+3.1.3) Perform 3 deletions to your min heap as it stands, show the final min heap after the 3 deletions
 
-[comment]: <> (<img src="images/delete_heap.png" alt="delete heap">)
+<img src="images/delete_heap.png" alt="delete heap">
 
-[comment]: <> (3.2&#41; A d-heap is a heap which can have up to *d* children per node, the more children the lower the height of the)
+3.2) A d-heap is a heap which can have up to *d* children per node, the more children the lower the height of the
+heap. <br />
 
-[comment]: <> (heap. <br />)
+Assume the following table and fill in the index of the second child for a node at the specified index
 
-[comment]: <> (Assume the following table and fill in the index of the second child for a node at the specified index)
-
-[comment]: <> (| d | index of parent | index parents second child |)
-
-[comment]: <> (| --- | --- | --- |)
-
-[comment]: <> (| 5  | 33 | 167 |)
-
-[comment]: <> (| 3  | 12 | 38 |)
-
-[comment]: <> (| 4  | 43 | 174 |)
-
-[comment]: <> (| 8  | 57 | 458 |)
+| d | index of parent | index parents second child |
+| --- | --- | --- |
+| 5  | 33 | 167 |
+| 3  | 12 | 38 |
+| 4  | 43 | 174 |
+| 8  | 57 | 458 |
 
 [comment]: <> (## Question 4: [B-Trees]&#40;https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/MWayTreesPart1/README.md&#41;)
 
@@ -394,27 +388,42 @@ For all question that follow, assume the following array
 
 [comment]: <> (   the vertices)
 
-   | Vertex | Dist | Pred |
-   | --- | --- | --- |
-   | A | 0 | null |
-   | B | 3 | M |
-   | C | 12 | J |
-   | E | 20 | N |
-   | F | 6 | B |
-   | J | 2 | A |
-   | M | 8 | Z |
-   | N | 14 | F |
-   | X | 21 | N |
-   | Z | 3 | A |
+[comment]: <> (   | Vertex | Dist | Pred |)
 
-    1.1 How many times will the vertex B be inserted into the Queue
-        
-    ```text
-            2
-    ```
+[comment]: <> (   | --- | --- | --- |)
 
-   1.2 How many times will the value X be inserted into the Queue
+[comment]: <> (   | A | 0 | null |)
 
-   ```text
-        2
-   ```
+[comment]: <> (   | B | 3 | M |)
+
+[comment]: <> (   | C | 12 | J |)
+
+[comment]: <> (   | E | 20 | N |)
+
+[comment]: <> (   | F | 6 | B |)
+
+[comment]: <> (   | J | 2 | A |)
+
+[comment]: <> (   | M | 8 | Z |)
+
+[comment]: <> (   | N | 14 | F |)
+
+[comment]: <> (   | X | 21 | N |)
+
+[comment]: <> (   | Z | 3 | A |)
+
+[comment]: <> (1.1 How many times will the vertex B be inserted into the Queue)
+            
+[comment]: <> (```text)
+
+[comment]: <> (    2)
+
+[comment]: <> (```)
+
+[comment]: <> (1.2 How many times will the value X be inserted into the Queue)
+
+[comment]: <> (```text)
+
+[comment]: <> (    2)
+
+[comment]: <> (```)
