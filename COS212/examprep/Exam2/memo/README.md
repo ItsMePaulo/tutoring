@@ -54,21 +54,20 @@ by substituting the letters in place of the roman numerals. Rotate (i) about (ii
 ```
 
 
-[comment]: <> (## Question 2: [Self Adjusting Trees]&#40;https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/SelfAdjustingTrees/README.md&#41;)
+## Question 2: [Self Adjusting Trees](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/SelfAdjustingTrees/README.md)
 
-[comment]: <> (For all questions that follow assume the tree)
+For all questions that follow assume the tree
 
-[comment]: <> (<img src="images/splay_tree.png" alt="splay tree">)
+<img src="../images/splay_tree.png" alt="splay tree">
 
-[comment]: <> (2.1&#41; Show the final tree after the value 7 was accessed using a full Splay)
+2.1) Show the final tree after the value 7 was accessed using a full Splay
 
-[comment]: <> (<img src="images/full_splay.png" alt="full splay answer">)
+<img src="images/full_splay.png" alt="full splay answer">
 
-[comment]: <> (2.2&#41; Using the original tree before your answer in 2.1 show the final tree if instead value 34 was accessed using a half)
+2.2) Using the original tree before your answer in 2.1 show the final tree if instead value 34 was accessed using a half
+splay
 
-[comment]: <> (splay)
-
-[comment]: <> (<img src="images/half_splay.png" alt="half splay">)
+<img src="images/half_splay.png" alt="half splay">
 
 
 [comment]: <> (## Question 3: [Heaps]&#40;https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/Heaps/README.md&#41;)
@@ -241,3 +240,20 @@ by substituting the letters in place of the roman numerals. Rotate (i) about (ii
 [comment]: <> (128)
 
 [comment]: <> (```)
+
+[comment]: <> (For all the questions that follow assume the following B* Tree, when a Node overflows assume you should pass left before)
+
+[comment]: <> (passing right.)
+
+[comment]: <> (<img src="../images/b*_tree.png" alt="b* tree">)
+
+[comment]: <> (5.5.1&#41; Insert the key 3 and, draw the final tree)
+
+[comment]: <> (<img src="images/insert_3_b*.png" alt="insert 3 in B*">)
+
+[comment]: <> (5.5.2&#41; Insert the key 4 and, draw the final tree)
+
+[comment]: <> (    *)
+
+
+

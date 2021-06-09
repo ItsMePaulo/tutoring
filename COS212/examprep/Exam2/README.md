@@ -145,7 +145,11 @@ passing right.
 
 <img src="images/b*_tree.png" alt="b* tree">
 
-5.5) Insert the key 3 and, draw the final tree
+5.5.1) Insert the key 3 and, draw the final tree
+
+    *
+
+5.5.2) Insert the key 4 and, draw the final tree
 
     *
 
