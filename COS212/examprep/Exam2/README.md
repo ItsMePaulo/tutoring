@@ -26,10 +26,14 @@ backbone?
 
 1.3.1) What rotations need to be performed if the value 8 was inserted into the Tree
 
+    *
+
 1.3.2) Show the final tree after the rotations have been performed
 
+    *       
+
 1.4) A Node with the key F has two children with keys C and K. Node K has two children with the keys Z and I . Node C
-has one child with the key A. Node C is deleted from the tree. Rebalanced the tree by completing the following sentence
+has one child with the key A. Node I has one child with the key H. Node C is deleted from the tree. Rebalanced the tree by completing the following sentence
 by substituting the letters in place of the roman numerals. Rotate (i) about (ii) and then rotate (iii) about (iv)
 
 ```text
