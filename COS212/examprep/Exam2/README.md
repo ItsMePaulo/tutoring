@@ -16,7 +16,7 @@ backbone?
 
     *
 
-1.2.2) Perform the rotations needed to balance the Tree on the backbone from `1.3.2.`
+1.2.2) Perform the rotations needed to balance the Tree on the backbone from `1.2.1.`
 
     *
 
@@ -88,7 +88,7 @@ Assume the following table and fill in the index of the second child for a node 
 
 ## Question 4: [B-Trees](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/MWayTreesPart1/README.md)
 
-4.1) Assuming a B-Tree of height 9 what are the minimum number of keys that should be contained on level 5.
+4.1) Assuming a B-Tree of height 9 and order 5, what are the minimum number of keys that should be contained on level 5.
 
     *
 
@@ -100,7 +100,7 @@ Assume the following table and fill in the index of the second child for a node 
 
     *
 
-4.4) What is the maximum height of a B-Tree of an order M of 5 and 400 keys?
+4.4) What is the maximum height of a B-Tree of an order = 7 and 400 keys?
 
     *
 
@@ -149,7 +149,9 @@ passing right.
 
 The following keys must be stored in a trie:
 
-> **bad  bat  bar  bard  bargain  int  in  gain**
+```text
+ bad  bat  bar  bard  bargain  int  in  gain
+```
 
 6.1) If the keys are stored in a fixed array with an end of word character at the beginning, what array size should be
 used for the given set of strings.
@@ -170,7 +172,7 @@ used for the given set of strings.
 
 For all questions that follow assume the following Graph
 
-<img src="images/graph_1.png" alt="graph 1" width="60%">
+<img src="images/graph_1.png" alt="graph 1" width="80%">
 
 7.1) Give the order in which vertices will be visited if you apply the breadth first algorithm
 
@@ -186,7 +188,7 @@ class Vertex() {
 }
 ```
 
-7.2.1) Update the vertex class so that you are able to perform the *all-to-all* shortest path* algorithm, only add the
+7.2.1) Update the vertex class so that you are able to perform the *all-to-all* shortest path algorithm, only add the
 necessary field/fields needed if you add any unnecessary fields negative marking will be applied.
 
     *
@@ -196,19 +198,23 @@ fields from your answer in `7.2.1.`
 
     *
 
-7.3) How many articulation points does a complete Binary Tree of height 18 have?
+7.3.1) Define the term articulation point?
+
+    *
+
+7.3.1) How many articulation points does a complete Binary Tree of height 18 have?
 
     *
 
 7.4) For all questions that follow assume the following Graph
 
-<img src="images/graph_2.png" alt="graph2" width="60%">
+<img src="images/graph_2.png" alt="graph2" width="80%">
 
 1. Perform Dijkstra Fixed algorithm on the graph above and fill in all the values for the pred and dist fields for all
    the vertices
 
    | Vertex | Dist | Pred |
-   | --- | --- | --- |
+      | --- | --- | --- |
    | A | | |
    | B | | |
    | C | | |
@@ -234,7 +240,7 @@ fields from your answer in `7.2.1.`
 2. Perform the Strong DFS algorithm on the Graph and right out the value for num & pred for all the Nodes in the Graph
 
    | Vertex | Num | Pred |
-   | --- | --- | --- |
+      | --- | --- | --- |
    | A | | |
    | B | | |
    | C | | |
@@ -245,7 +251,6 @@ fields from your answer in `7.2.1.`
    | N | | |
    | X | | |
    | Z | | |
-
 
 2.1 How many Strongly connected vertices will the algorithm find?
 
