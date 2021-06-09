@@ -65,7 +65,7 @@ For all question that follow, assume the following array
 > [14, 2, 13, 7, 4, 5, 16, 22, 2, 12, 8]
 
 
-3.1.1) Using Floyd's "heapifying" algorithm convert the above array to a binary **min-heap**
+3.1.1) Using Fords "heapifying" algorithm convert the above array to a binary **min-heap**
 
     *
 
@@ -210,7 +210,7 @@ fields from your answer in `7.2.1.`
 
     *
 
-7.3.1) How many articulation points does a complete Binary Tree of height 18 have?
+7.3.2) How many articulation points does a complete Binary Tree of height 18 have?
 
     *
 

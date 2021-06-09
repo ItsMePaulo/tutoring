@@ -41,8 +41,9 @@ backbone?
 <img src="images/avl_answer.png" alt="avl answer" width="60%">
 
 1.4) A Node with the key F has two children with keys C and K. Node K has two children with the keys Z and I . Node C
-has one child with the key A. Node I has one child with the key H. Node C is deleted from the tree. Rebalanced the tree by completing the following sentence
-by substituting the letters in place of the roman numerals. Rotate (i) about (ii) and then rotate (iii) about (iv)
+has one child with the key A. Node I has one child with the key H. Node C is deleted from the tree. Rebalanced the tree
+by completing the following sentence by substituting the letters in place of the roman numerals. Rotate (i) about (ii)
+and then rotate (iii) about (iv)
 
 <img src="images/rotation_answers.png" alt="rotation answers">
 
@@ -52,7 +53,6 @@ by substituting the letters in place of the roman numerals. Rotate (i) about (ii
     iii. I
     iv. F
 ```
-
 
 ## Question 2: [Self Adjusting Trees](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/SelfAdjustingTrees/README.md)
 
@@ -70,38 +70,33 @@ splay
 <img src="images/half_splay.png" alt="half splay">
 
 
-[comment]: <> (## Question 3: [Heaps]&#40;https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/Heaps/README.md&#41;)
+## Question 3: [Heaps](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/Heaps/README.md)
 
-[comment]: <> (For all question that follow, assume the following array)
+For all question that follow, assume the following array
 
-[comment]: <> (> [14, 2, 13, 7, 4, 5, 16, 22, 2, 12, 8])
+> [14, 2, 13, 7, 4, 5, 16, 22, 2, 12, 8]
 
 
-[comment]: <> (3.1.1&#41; Using Floyd's "heapifying" algorithm convert the above array to a binary **min-heap**)
+3.1.1) Using Floyd's "heapifying" algorithm convert the above array to a binary **min-heap**
 
-[comment]: <> (```text)
+```text
+[14, 2, 13, 7, |4|, 5, 16, 22, 2, 12, 8]
+[14, 2, 13, |2|, 4, 5, 16, 22, 7, 12, 8]
+[14, 2, |5|, 2, 4, 13, 16, 22, 7, 12, 8]
+[14, |2|, 5, 2, 4, 13, 16, 22, 7, 12, 8]
+[|2|, 2, 5, 7, 4, 13, 16, 22, 14, 12, 8]
 
-[comment]: <> ([14, 2, 13, 7, |4|, 5, 16, 22, 2, 12, 8])
+[2, 2, 5, 7, 4, 13, 16, 22, 14, 12, 8]
 
-[comment]: <> ([14, 2, 13, |2|, 4, 5, 16, 22, 7, 12, 8])
+```
 
-[comment]: <> ([14, 2, |5|, 2, 4, 13, 16, 22, 7, 12, 8])
+<img src="images/floyds_heap.png" alt="floyds heap" width="60%">
 
-[comment]: <> ([14, |2|, 5, 2, 4, 13, 16, 22, 7, 12, 8])
+3.1.2) Insert the following in order into your min heap, show the final min heap after all inserts have been completed
 
-[comment]: <> ([|2|, 2, 5, 7, 4, 13, 16, 22, 14, 12, 8])
+> 3, 1, 10, 3
 
-[comment]: <> ([2, 2, 5, 7, 4, 13, 16, 22, 14, 12, 8])
-
-[comment]: <> (```)
-
-[comment]: <> (<img src="images/floyds_heap.png" alt="floyds heap" width="60%">)
-
-[comment]: <> (3.1.2&#41; Insert the following in order into your min heap, show the final min heap after all inserts have been completed)
-
-[comment]: <> (> 3, 1, 10, 3)
-
-[comment]: <> (<img src="images/insert_heap.png" alt="delete heap">)
+<img src="images/insert_heap.png" alt="delete heap">
 
 [comment]: <> (3.1.3&#41; Perform 3 deletions to your min heap as it stands, show the final min heap after the 3 deletions)
 
@@ -113,7 +108,7 @@ splay
 
 [comment]: <> (Assume the following table and fill in the index of the second child for a node at the specified index)
 
-[comment]: <> (| d | index of parent | index parents second child | )
+[comment]: <> (| d | index of parent | index parents second child |)
 
 [comment]: <> (| --- | --- | --- |)
 
@@ -253,7 +248,172 @@ splay
 
 [comment]: <> (5.5.2&#41; Insert the key 4 and, draw the final tree)
 
-[comment]: <> (    *)
+[comment]: <> (<img src="images/insert_4_array.png" alt="insert 4 array">)
 
+[comment]: <> (```text)
 
+[comment]: <> (&#40;2 * 8 - 1&#41; / 3&#41; => index of first parent : x)
 
+[comment]: <> (2 * x + 1 => index of second parent )
+
+[comment]: <> (```)
+
+[comment]: <> (<img src="images/insert_4_b*.png" alt="insert 4 in B*"> )
+
+[comment]: <> (## Question 6: Tries)
+
+[comment]: <> (The following keys must be stored in a trie:)
+
+[comment]: <> (```text)
+
+[comment]: <> ( bad  bat  bar  bard  bargain  int  in  gain)
+
+[comment]: <> (```)
+
+[comment]: <> (6.1&#41; If the keys are stored in a fixed array with an end of word character at the beginning, what array size should be)
+
+[comment]: <> (used for the given set of strings.)
+
+[comment]: <> (```text)
+
+[comment]: <> (9)
+
+[comment]: <> (```)
+
+[comment]: <> (6.2&#41; What is the height of the resulting trie?)
+
+[comment]: <> (```text)
+
+[comment]: <> (5)
+
+[comment]: <> (```)
+
+[comment]: <> (6.3&#41; What is the height of the trie if it was constructed as a Tergo?)
+
+[comment]: <> (```text)
+
+[comment]: <> (6)
+
+[comment]: <> (```)
+
+[comment]: <> (## Question 7: [Graphs]&#40;https://gitlab.com/Paul_Wood_96/tutoring/-/tree/master/COS212/notes/GraphsPart1&#41;)
+
+[comment]: <> (*IMPORTANT*: Whenever there is a choice among vertices in a graph to be processed next, choose them alphabetically)
+
+[comment]: <> (For all questions that follow assume the following Graph)
+
+[comment]: <> (<img src="../images/graph_1.png" alt="graph 1" width="80%">)
+
+[comment]: <> (7.1&#41; Give the order in which vertices will be visited if you apply the breadth first algorithm)
+
+[comment]: <> (```text)
+
+[comment]: <> (    A -> B -> J -> Z -> M -> C -> F -> N -> X -> E)
+
+[comment]: <> (```)
+
+[comment]: <> (For all remaining questions assume the following Vertex class)
+
+[comment]: <> (```java)
+
+[comment]: <> (class Vertex&#40;&#41; {)
+
+[comment]: <> (    int key;)
+
+[comment]: <> (    List<Edges> edges;)
+
+[comment]: <> (})
+
+[comment]: <> (```)
+
+[comment]: <> (7.2.1&#41; Update the vertex class so that you are able to perform the *all-to-all* shortest path algorithm, only add the)
+
+[comment]: <> (necessary field/fields needed if you add any unnecessary fields negative marking will be applied.)
+
+[comment]: <> (```java)
+
+[comment]: <> (class Vertex&#40;&#41; {)
+
+[comment]: <> (    int key;)
+
+[comment]: <> (    List<Edges> edges;)
+
+[comment]: <> (    int dist;)
+
+[comment]: <> (})
+
+[comment]: <> (```)
+
+[comment]: <> (7.2.2&#41; Update the vertex class so that you can perform the strongly connected algorithm, do not include any unecessary)
+
+[comment]: <> (fields from your answer in `7.2.1.`)
+
+[comment]: <> (```java)
+
+[comment]: <> (class Vertex&#40;&#41; {)
+
+[comment]: <> (    int key;)
+
+[comment]: <> (    List<Edges> edges;)
+
+[comment]: <> (    int num;)
+
+[comment]: <> (    int pred;)
+
+[comment]: <> (    Vertex parent;)
+
+[comment]: <> (})
+
+[comment]: <> (```)
+
+[comment]: <> (7.3.1&#41; Define the term articulation point?)
+
+[comment]: <> (```text)
+
+[comment]: <> (An articulation point is any vertex within a graph which must be included in a path to another vertex or subgraph, )
+
+[comment]: <> (if the vertex in that path is to be removed there would be no way of accessing the remaining vertex or subgraph.)
+
+[comment]: <> (```)
+
+[comment]: <> (7.3.2&#41; How many articulation points does a complete Binary Tree of height 18 have?)
+
+[comment]: <> (The only points in the tree that are not articulation points are the leaf nodes so we need the number of nodes - the)
+
+[comment]: <> (leaf level)
+
+[comment]: <> (> 2<sup>18 - 1</sup> - 1)
+
+[comment]: <> (> 131071)
+
+[comment]: <> (7.4&#41; For all questions that follow assume the following Graph)
+
+[comment]: <> (<img src="../images/graph_2.png" alt="graph2" width="80%">)
+
+[comment]: <> (1. Perform Dijkstra Fixed algorithm on the graph above and fill in all the values for the pred and dist fields for all)
+
+[comment]: <> (   the vertices)
+
+[comment]: <> (   | Vertex | Dist | Pred |)
+
+[comment]: <> (   | --- | --- | --- |)
+
+[comment]: <> (   | A | | |)
+
+[comment]: <> (   | B | 4 | A |)
+
+[comment]: <> (   | C | | |)
+
+[comment]: <> (   | E | | |)
+
+[comment]: <> (   | F | | |)
+
+[comment]: <> (   | J | 2 | A |)
+
+[comment]: <> (   | M | | |)
+
+[comment]: <> (   | N | | |)
+
+[comment]: <> (   | X | | |)
+
+[comment]: <> (   | Z | 3 | A |)
