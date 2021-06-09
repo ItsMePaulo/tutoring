@@ -26,40 +26,31 @@ backbone?
 
 <img src="images/dsw_answer.png" width="80%" alt="dsw answer">
 
+1.3) For all questions that follow assume the following AVL Tree
 
-[comment]: <> (1.3&#41; For all questions that follow assume the following AVL Tree)
+<img src="../images/avl_tree.png" alt="avl trees">
 
-[comment]: <> (<img src="images/avl_tree.png" alt="avl trees">)
+1.3.1) What rotations need to be performed if the value 8 was inserted into the Tree
 
-[comment]: <> (1.3.1&#41; What rotations need to be performed if the value 8 was inserted into the Tree)
+```text
 
-[comment]: <> (```text)
+8 needs to perform a left rotation around 7, and then 8 needs to perform a second right rotation around 12
+```
 
-[comment]: <> (8 needs to perform a left rotation around 7, and then 8 needs to perform a second right rotation around 12)
+1.3.2) Show the final tree after the rotations have been performed
 
-[comment]: <> (```)
+<img src="images/avl_answer.png" alt="avl answer" width="60%">
 
-[comment]: <> (1.3.2&#41; Show the final tree after the rotations have been performed)
+1.4) A Node with the key F has two children with keys C and K. Node K has two children with the keys Z and I . Node C
+has one child with the key A. Node I has one child with the key H. Node C is deleted from the tree. Rebalanced the tree by completing the following sentence
+by substituting the letters in place of the roman numerals. Rotate (i) about (ii) and then rotate (iii) about (iv)
 
-[comment]: <> (<img src="images/avl_answer.png" alt="avl answer" width="60%">)
-
-[comment]: <> (1.4&#41; A Node with the key F has two children with keys C and K. Node K has two children with the keys Z and I . Node C)
-
-[comment]: <> (has one child with the key A. Node I has one child with the key H. Node C is deleted from the tree. Rebalanced the tree by completing the following sentence)
-
-[comment]: <> (by substituting the letters in place of the roman numerals. Rotate &#40;i&#41; about &#40;ii&#41; and then rotate &#40;iii&#41; about &#40;iv&#41;)
-
-[comment]: <> (```text)
-
-[comment]: <> (    i. I)
-
-[comment]: <> (    ii. K)
-
-[comment]: <> (    iii. I)
-
-[comment]: <> (    iv. F)
-
-[comment]: <> (```)
+```text
+    i. I
+    ii. K
+    iii. I
+    iv. F
+```
 
 
 [comment]: <> (## Question 2: [Self Adjusting Trees]&#40;https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/SelfAdjustingTrees/README.md&#41;)
@@ -200,8 +191,52 @@ backbone?
 
 [comment]: <> (4.5.1&#41; Delete the key 72, draw the final tree after you have performed the operation.)
 
-[comment]: <> (    *)
+[comment]: <> (<img src="images/b_tree_answer.png" alt="delete 72">)
 
 [comment]: <> (4.5.2&#41; Delete the key 87, draw the final tree after you have performed the operation)
 
-[comment]: <> (    *)
+[comment]: <> (<img src="images/delete_87.png" alt="delete 87">)
+
+[comment]: <> (## Question 5: [B+]&#40;https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/B+Trees/README.md&#41; & [B*]&#40;https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/BStarTrees/README.md&#41;)
+
+[comment]: <> (5.1&#41; Name 2 advantages of a B+ Tree over a regular B Tree)
+
+[comment]: <> (```text)
+
+[comment]: <> (1. Inorder Traversal )
+
+[comment]: <> (2. Sequential searching where each node is accessible on the last level)
+
+[comment]: <> (```)
+
+[comment]: <> (5.2&#41; Name 2 disadvantages of a B* Tree over a regular B Tree)
+
+[comment]: <> (```text)
+
+[comment]: <> (1. More complex algorithms for node overflowing requires extra complexity )
+
+[comment]: <> (2. Not all values of M are valid)
+
+[comment]: <> (```)
+
+[comment]: <> (5.3&#41; Is 8 a valid order M for a B*Tree? Show your proof.)
+
+[comment]: <> (```text)
+
+[comment]: <> (max = &#40;2&#40;8-1&#41;&#41; + 1 = 14)
+
+[comment]: <> (min = &#40;3&#40;2 * 8 - 1&#41; / 3&#41; + 2 = 17)
+
+[comment]: <> (Therefore 8 is not a valid order M for a B* Tree as there are not enough values given to fill 3 minumum nodes )
+
+[comment]: <> (when two nodes at max capacity split)
+
+[comment]: <> (```)
+
+[comment]: <> (5.4&#41; What is the minimum number of keys of an order M of 6 B* Tree at level 5)
+
+[comment]: <> (```text)
+
+[comment]: <> (128)
+
+[comment]: <> (```)
