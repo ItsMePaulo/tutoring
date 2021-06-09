@@ -45,6 +45,8 @@ backbone?
 has one child with the key A. Node I has one child with the key H. Node C is deleted from the tree. Rebalanced the tree by completing the following sentence
 by substituting the letters in place of the roman numerals. Rotate (i) about (ii) and then rotate (iii) about (iv)
 
+<img src="images/rotation_answers.png" alt="rotation answers">
+
 ```text
     i. I
     ii. K
