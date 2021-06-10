@@ -343,7 +343,7 @@ not articulation points are the leaf nodes so we need the number of nodes - the 
 2. Perform the Strong DFS algorithm on the Graph and right out the value for num & pred for all the Nodes in the Graph
 
    | Vertex | Num | Pred |
-            | --- | --- | --- |
+   | --- | --- | --- |
    | A | 1 | 1 |
    | B | 2 | 2 |
    | C | 10 | 10 |
