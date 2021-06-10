@@ -358,5 +358,5 @@ not articulation points are the leaf nodes so we need the number of nodes - the 
 2.1 How many Strongly connected vertices will the algorithm find?
 
    ```text
-5
+6
    ```
