@@ -212,7 +212,7 @@ passing right.
 <img src="images/insert_4_array.png" alt="insert 4 array">
 
 ```text
-(2 * 8 - 1) / 3) => index of first parent : x
+(2 * 7 - 1) / 3) => index of first parent : x
 2 * x + 1 => index of second parent 
 ```
 
