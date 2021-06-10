@@ -69,7 +69,6 @@ splay
 
 <img src="images/half_splay.png" alt="half splay">
 
-
 ## Question 3: [Heaps](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/Heaps/README.md)
 
 For all question that follow, assume the following array
@@ -129,6 +128,7 @@ When performing a split we divide the keys array by two to get a dividing index,
 index that has an equal left and right sized array, even values will be skewed to some degree and not ensure that 
 nodes are 50% full after the split operation
 ```
+
 4.3) Are B Trees immune to the order in which values are inserted into the data structure? Motivate your answer
 
 ```text
@@ -140,16 +140,16 @@ capacity and no more
 4.4) What is the maximum height of a B-Tree of an order = 7 and 400 keys?
 
 ```text
-5 
-minimum value of nodes at level:
+ minimum value of nodes at level:
 
-1=1 +
-2=2 +
-3=8 +
-4=32 +
-5=128
+minimum Nodes @ level 1: 1 Nodes => can store 1 < 400
+minimum Nodes @ level 2: 2 Nodes => (1 + 2(3)) = 7 < 400 
+minimum Nodes @ level 3: 8 Nodes => (7 + 8(3)) = 31 < 400
+minimum Nodes @ level 4: 32 Nodes => (31 + 32(3)) = 127 < 400
+minimum Nodes @ level 5: 128 Nodes => (127 + 128(3)) = 512 > 400
 
-6= 512 != 
+
+We cannot have a level 5, therefore the maximum height we can go is 4
 ```
 
 For all Questions tha follow assume the following B-Tree, when performing a delete operation on a non-leaf key perform
@@ -166,244 +166,197 @@ looking to your left, and when merging merge with the right neighbor if not poss
 
 <img src="images/delete_87.png" alt="delete 87">
 
-[comment]: <> (## Question 5: [B+]&#40;https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/B+Trees/README.md&#41; & [B*]&#40;https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/BStarTrees/README.md&#41;)
+## Question 5: [B+](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/B+Trees/README.md) & [B*](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/BStarTrees/README.md)
 
-[comment]: <> (5.1&#41; Name 2 advantages of a B+ Tree over a regular B Tree)
+5.1) Name 2 advantages of a B+ Tree over a regular B Tree
 
-[comment]: <> (```text)
+```text
+1. Inorder Traversal 
+2. Sequential searching where each node is accessible on the last level
+```
 
-[comment]: <> (1. Inorder Traversal )
+5.2) Name 2 disadvantages of a B* Tree over a regular B Tree
 
-[comment]: <> (2. Sequential searching where each node is accessible on the last level)
+```text
+1. More complex algorithms for node overflowing requires extra complexity 
+2. Not all values of M are valid
+```
 
-[comment]: <> (```)
+5.3) Is 8 a valid order M for a B*Tree? Show your proof.
 
-[comment]: <> (5.2&#41; Name 2 disadvantages of a B* Tree over a regular B Tree)
+```text
+max = (2(8-1)) + 1 = 14
+min = (3(2 * 8 - 1) / 3) + 2 = 17
 
-[comment]: <> (```text)
+Therefore 8 is not a valid order M for a B* Tree as there are not enough values given to fill 3 minumum nodes 
+when two nodes at max capacity split
+```
 
-[comment]: <> (1. More complex algorithms for node overflowing requires extra complexity )
+5.4) What is the minimum number of keys of an order M = 6 B* Tree at level 5
 
-[comment]: <> (2. Not all values of M are valid)
+```text
+128 (Nodes) *  3 = 384
+```
 
-[comment]: <> (```)
+For all the questions that follow assume the following B* Tree, when a Node overflows assume you should pass left before
+passing right.
 
-[comment]: <> (5.3&#41; Is 8 a valid order M for a B*Tree? Show your proof.)
+<img src="../images/b*_tree.png" alt="b* tree">
 
-[comment]: <> (```text)
+5.5.1) Insert the key 3 and, draw the final tree
 
-[comment]: <> (max = &#40;2&#40;8-1&#41;&#41; + 1 = 14)
+<img src="images/insert_3_b*.png" alt="insert 3 in B*">
 
-[comment]: <> (min = &#40;3&#40;2 * 8 - 1&#41; / 3&#41; + 2 = 17)
+5.5.2) Insert the key 4 and, draw the final tree
 
-[comment]: <> (Therefore 8 is not a valid order M for a B* Tree as there are not enough values given to fill 3 minumum nodes )
+<img src="images/insert_4_array.png" alt="insert 4 array">
 
-[comment]: <> (when two nodes at max capacity split)
+```text
+(2 * 8 - 1) / 3) => index of first parent : x
+2 * x + 1 => index of second parent 
+```
 
-[comment]: <> (```)
+<img src="images/insert_4_b*.png" alt="insert 4 in B*"> 
 
-[comment]: <> (5.4&#41; What is the minimum number of keys of an order M of 6 B* Tree at level 5)
+## Question 6: Tries
 
-[comment]: <> (```text)
+The following keys must be stored in a trie:
 
-[comment]: <> (128)
+```text
+ bad  bat  bar  bard  bargain  int  in  gain
+```
 
-[comment]: <> (```)
+6.1) If the keys are stored in a fixed array with an end of word character at the beginning, what array size should be
+used for the given set of strings.
 
-[comment]: <> (For all the questions that follow assume the following B* Tree, when a Node overflows assume you should pass left before)
+```text
+9
+```
 
-[comment]: <> (passing right.)
+6.2) What is the height of the resulting trie?
 
-[comment]: <> (<img src="../images/b*_tree.png" alt="b* tree">)
+```text
+5
+```
 
-[comment]: <> (5.5.1&#41; Insert the key 3 and, draw the final tree)
+6.3) What is the height of the trie if it was constructed as a Tergo?
 
-[comment]: <> (<img src="images/insert_3_b*.png" alt="insert 3 in B*">)
+```text
+6
+```
 
-[comment]: <> (5.5.2&#41; Insert the key 4 and, draw the final tree)
+## Question 7: [Graphs](https://gitlab.com/Paul_Wood_96/tutoring/-/tree/master/COS212/notes/GraphsPart1)
 
-[comment]: <> (<img src="images/insert_4_array.png" alt="insert 4 array">)
+*IMPORTANT*: Whenever there is a choice among vertices in a graph to be processed next, choose them alphabetically For
+all questions that follow assume the following Graph
 
-[comment]: <> (```text)
+<img src="../images/graph_1.png" alt="graph 1" width="80%">
 
-[comment]: <> (&#40;2 * 8 - 1&#41; / 3&#41; => index of first parent : x)
+7.1) Give the order in which vertices will be visited if you apply the breadth first algorithm
 
-[comment]: <> (2 * x + 1 => index of second parent )
+```text
+    A -> B -> J -> Z -> M -> C -> F -> N -> X -> E
+```
 
-[comment]: <> (```)
+For all remaining questions assume the following Vertex class
 
-[comment]: <> (<img src="images/insert_4_b*.png" alt="insert 4 in B*"> )
+```java
+class Vertex() {
+    int key;
+    List<Edges> edges;
+}
+```
 
-[comment]: <> (## Question 6: Tries)
+7.2.1) Update the vertex class so that you are able to perform the *all-to-all* shortest path algorithm, only add the
+necessary field/fields needed if you add any unnecessary fields negative marking will be applied.
 
-[comment]: <> (The following keys must be stored in a trie:)
+```java
+class Vertex() {
+    int key;
+    List<Edges> edges;
 
-[comment]: <> (```text)
+    int dist;
+}
 
-[comment]: <> ( bad  bat  bar  bard  bargain  int  in  gain)
+```
 
-[comment]: <> (```)
+7.2.2) Update the vertex class so that you can perform the strongly connected algorithm, do not include any unecessary
+fields from your answer in `7.2.1.`
 
-[comment]: <> (6.1&#41; If the keys are stored in a fixed array with an end of word character at the beginning, what array size should be)
+```java
+class Vertex() {
 
-[comment]: <> (used for the given set of strings.)
+    int key;
+    List<Edges> edges;
+    int num;
+    int pred;
 
-[comment]: <> (```text)
+    Vertex parent;
+}
+```
 
-[comment]: <> (9)
+7.3.1) Define the term articulation point?
 
-[comment]: <> (```)
+```text
+An articulation point is any vertex within a graph which must be included in a path to another vertex or subgraph, 
+if the vertex in that path is to be removed there would be no way of accessing the later vertex or subgraph.
+```
 
-[comment]: <> (6.2&#41; What is the height of the resulting trie?)
+7.3.2) How many articulation points does a complete Binary Tree of height 18 have? The only points in the tree that are
+not articulation points are the leaf nodes so we need the number of nodes - the leaf level
 
-[comment]: <> (```text)
+> 2<sup>18 - 1</sup> - 1
+> 131071
 
-[comment]: <> (5)
+7.4) For all questions that follow assume the following Graph
 
-[comment]: <> (```)
+<img src="../images/graph_2.png" alt="graph2" width="80%">
 
-[comment]: <> (6.3&#41; What is the height of the trie if it was constructed as a Tergo?)
+1. Perform Dijkstra Fixed algorithm on the graph above and fill in all the values for the pred and dist fields for all
+   the vertices
 
-[comment]: <> (```text)
+   | Vertex | Dist | Pred |
+      | --- | --- | --- |
+   | A | 0 | null |
+   | B | 3 | M |
+   | C | 12 | J |
+   | E | 20 | N |
+   | F | 6 | B |
+   | J | 2 | A |
+   | M | 8 | Z |
+   | N | 14 | F |
+   | X | 21 | N |
+   | Z | 3 | A |
 
-[comment]: <> (6)
+1.1 How many times will the vertex B be inserted into the Queue
 
-[comment]: <> (```)
+```text
+    2
+```
 
-[comment]: <> (## Question 7: [Graphs]&#40;https://gitlab.com/Paul_Wood_96/tutoring/-/tree/master/COS212/notes/GraphsPart1&#41;)
+1.2 How many times will the value X be inserted into the Queue
 
-[comment]: <> (*IMPORTANT*: Whenever there is a choice among vertices in a graph to be processed next, choose them alphabetically)
+```text
+    2
+```
 
-[comment]: <> (For all questions that follow assume the following Graph)
+2. Perform the Strong DFS algorithm on the Graph and right out the value for num & pred for all the Nodes in the Graph
 
-[comment]: <> (<img src="../images/graph_1.png" alt="graph 1" width="80%">)
+   | Vertex | Num | Pred |
+            | --- | --- | --- |
+   | A | 1 | 1 |
+   | B | 2 | 2 |
+   | C | 10 | 10 |
+   | E | 5 | 5 |
+   | F | 3 | 2 |
+   | J | 9 | 9 |
+   | M | 7 | 2 |
+   | N | 4 | 2 |
+   | X | 6 | 2 |
+   | Z | 8 | 7 |
 
-[comment]: <> (7.1&#41; Give the order in which vertices will be visited if you apply the breadth first algorithm)
+2.1 How many Strongly connected vertices will the algorithm find?
 
-[comment]: <> (```text)
-
-[comment]: <> (    A -> B -> J -> Z -> M -> C -> F -> N -> X -> E)
-
-[comment]: <> (```)
-
-[comment]: <> (For all remaining questions assume the following Vertex class)
-
-[comment]: <> (```java)
-
-[comment]: <> (class Vertex&#40;&#41; {)
-
-[comment]: <> (    int key;)
-
-[comment]: <> (    List<Edges> edges;)
-
-[comment]: <> (})
-
-[comment]: <> (```)
-
-[comment]: <> (7.2.1&#41; Update the vertex class so that you are able to perform the *all-to-all* shortest path algorithm, only add the)
-
-[comment]: <> (necessary field/fields needed if you add any unnecessary fields negative marking will be applied.)
-
-[comment]: <> (```java)
-
-[comment]: <> (class Vertex&#40;&#41; {)
-
-[comment]: <> (    int key;)
-
-[comment]: <> (    List<Edges> edges;)
-
-[comment]: <> (    int dist;)
-
-[comment]: <> (})
-
-[comment]: <> (```)
-
-[comment]: <> (7.2.2&#41; Update the vertex class so that you can perform the strongly connected algorithm, do not include any unecessary)
-
-[comment]: <> (fields from your answer in `7.2.1.`)
-
-[comment]: <> (```java)
-
-[comment]: <> (class Vertex&#40;&#41; {)
-
-[comment]: <> (    int key;)
-
-[comment]: <> (    List<Edges> edges;)
-
-[comment]: <> (    int num;)
-
-[comment]: <> (    int pred;)
-
-[comment]: <> (    Vertex parent;)
-
-[comment]: <> (})
-
-[comment]: <> (```)
-
-[comment]: <> (7.3.1&#41; Define the term articulation point?)
-
-[comment]: <> (```text)
-
-[comment]: <> (An articulation point is any vertex within a graph which must be included in a path to another vertex or subgraph, )
-
-[comment]: <> (if the vertex in that path is to be removed there would be no way of accessing the remaining vertex or subgraph.)
-
-[comment]: <> (```)
-
-[comment]: <> (7.3.2&#41; How many articulation points does a complete Binary Tree of height 18 have?)
-
-[comment]: <> (The only points in the tree that are not articulation points are the leaf nodes so we need the number of nodes - the)
-
-[comment]: <> (leaf level)
-
-[comment]: <> (> 2<sup>18 - 1</sup> - 1)
-
-[comment]: <> (> 131071)
-
-[comment]: <> (7.4&#41; For all questions that follow assume the following Graph)
-
-[comment]: <> (<img src="../images/graph_2.png" alt="graph2" width="80%">)
-
-[comment]: <> (1. Perform Dijkstra Fixed algorithm on the graph above and fill in all the values for the pred and dist fields for all)
-
-[comment]: <> (   the vertices)
-
-[comment]: <> (   | Vertex | Dist | Pred |)
-
-[comment]: <> (   | --- | --- | --- |)
-
-[comment]: <> (   | A | 0 | null |)
-
-[comment]: <> (   | B | 3 | M |)
-
-[comment]: <> (   | C | 12 | J |)
-
-[comment]: <> (   | E | 20 | N |)
-
-[comment]: <> (   | F | 6 | B |)
-
-[comment]: <> (   | J | 2 | A |)
-
-[comment]: <> (   | M | 8 | Z |)
-
-[comment]: <> (   | N | 14 | F |)
-
-[comment]: <> (   | X | 21 | N |)
-
-[comment]: <> (   | Z | 3 | A |)
-
-[comment]: <> (1.1 How many times will the vertex B be inserted into the Queue)
-            
-[comment]: <> (```text)
-
-[comment]: <> (    2)
-
-[comment]: <> (```)
-
-[comment]: <> (1.2 How many times will the value X be inserted into the Queue)
-
-[comment]: <> (```text)
-
-[comment]: <> (    2)
-
-[comment]: <> (```)
+   ```text
+5
+   ```
