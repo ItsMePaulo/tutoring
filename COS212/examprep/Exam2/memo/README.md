@@ -305,7 +305,7 @@ if the vertex in that path is to be removed there would be no way of accessing t
 7.3.2) How many articulation points does a complete Binary Tree of height 18 have? The only points in the tree that are
 not articulation points are the leaf nodes so we need the number of nodes - the leaf level
 
-> 2<sup>18 - 1</sup> - 1
+> 2<sup>18 - 1</sup> - 1 <br />
 > 131071
 
 7.4) For all questions that follow assume the following Graph
