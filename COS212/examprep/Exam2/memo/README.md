@@ -185,7 +185,7 @@ looking to your left, and when merging merge with the right neighbor if not poss
 5.3) Is 8 a valid order M for a B*Tree? Show your proof.
 
 ```text
-max = (2(8-1)) + 1 = 14
+max = (2(8-1)) + 1 = 15
 min = (3(2 * 8 - 1) / 3) + 2 = 17
 
 Therefore 8 is not a valid order M for a B* Tree as there are not enough values given to fill 3 minumum nodes 
