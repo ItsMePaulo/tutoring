@@ -308,3 +308,60 @@ successor of the element (make use of the leftmost node).
 
 You can make use of the following [online visualizer](https://www.cs.usfca.edu/~galles/visualization/BTree.html) to
 build an M-Way tree from scratch and see how it is generated.
+
+## Finding the Minimum Number of Nodes and Keys at any Level
+
+If we imagine a tree which only had just the right amount of keys needed to reach a certain level, then can we calculate
+how many keys that Tree would have at each of those levels.
+
+Yes, first we take into account the minimum number of keys each node can have.
+
+> *NB!!* But we need to remember the one exception to this rule. Root can have 1 key
+
+That means when we look for any minimum value, level 2 of the tree will always have 2 Nodes, regardless of order.
+
+<img src="images/min_mway_tree.png" alt="min mway tree">
+
+To find the minimum number of Nodes at any level we can use this formula
+
+> *L* = *K* + 1 <br />
+> *N* =( 2(*L*) <sup>lvl -2</sup> )
+
+
+**Where**
+
+> *K* = the minimum amount of keys a Node can have = (m / 2) <br />
+> *L* = *K* + 1 and represents the amount of children each non-root Node will have (if it has *K* keys) <br />
+> *N* = number of Nodes <br />
+> We say (L)<sup>lvl -2</sup> because we do not count the first two levels
+
+### Example:
+
+Find the minimum number of *Nodes* for an order M = 7 tree at level 6
+
+> *L* = *K* + 1 <br />
+> *L* = (m/2) + 1 <br />
+> *L* = 3 + 1
+
+> *N* = (2 (*L*)<sup>lvl -2</sup> ) <br />
+> *N* =  (2 (4) <sup>4</sup> ) <br />
+> *N* = 2 (256) <br />
+> *N* = 512
+
+### To Calculate the minimum number of keys at that Level
+
+We can modify the formula a bit to calculate the keys at the last level
+
+> *Ki* = *K* (*N*) 
+
+**Where**
+
+> *Ki* = is the minimum number of keys at that level <br />
+> *K* = the minimum amount of keys a Node can have = (m / 2) <br />
+> *N* = number of Nodes at that level
+
+### Continuing the first Example
+
+> *Ki* = *K* (*N*) <br />
+> *Ki* = 3 (512) <br />
+> *Ki* = 1036
