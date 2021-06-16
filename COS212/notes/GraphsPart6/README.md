@@ -62,3 +62,11 @@ But sometimes the algorithms will both determine the same solution.
 <img src="images/brelaz_solution.png" alt="brelaz solution">
 
 This is not always the case.
+
+I want you to perform both algorithms on the following Graph, when their is a choice of a tie chose the next
+alphabetical.
+
+<img src="images/different_coloring.png" alt="different coloring">
+
+
+With the link: https://docs.google.com/drawings/d/10tkOYTiCwzDEh2WIihdsY7p38OPwCaciQkrBmPQoiYo/edit
