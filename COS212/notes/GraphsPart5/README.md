@@ -1,65 +1,92 @@
-<div align="center"><h1> Graphs Part5: Graph Coloring </h1></div>
+<div align="center"><h1> Graphs Part5: Spanning Trees </h1></div>
 
-## Graph Coloring
+We have now discussed the shortest path from A to B, but what about a scenario that is trying to find the shortest path
+for visiting all vertices **EXACTLY ONCE**. What is the shortest possible path we can take to visit each Vertex without
+revisiting the same Vertex twice.
 
-Is an attempt to color vertices in a graph with the condition that no two adjacent (connected by an edge) vertices can
-have the same color, in the most efficient way (using the least possible colors)
+Such a scenario lead to algorithms responsible for Spanning Trees. Spanning Trees look like regular Trees in that they
+have a single root and many children, the difference is Spanning Trees have a variable number of children at each Node.
 
-### Scenario
+There are two Algorithms which we can use to find the shortest path to visit each vertex exactly once
 
-Imagine trying to generate a timetable, if you had a graph in which each vertex represented a subject/module and each
-edge represented the number of students enrolled in both courses, then you would want to efficiently find a time when
-students can attend both classes that do not overlap. In our use case the "time" is going to be represented as a color.
+1. Kruskal algorithm
+2. Dijkstra algorithm
 
-There are 2 algorithms we will look at
+## Kruskal
 
-1. Sequential
-2. Brelaz
+Kruskal's algorithm is the one we will look at first and is known to be the more eager of the two. We say it is eager
+because it requires some operation to be applied on the graphs edges before we look at the algorithm. However, the
+actual algorithms itself is really quite simple.
 
-## Sequential Coloring
+ ```kotlin
+val vertices: List<Vertex>
 
-Very simple start by organizing your vertices into a `Priority Queue`, the sorting value of the queue is the
-vertices ***"highest degree"***.
+fun kruskal() {
 
-### Highest Degree
+    val edges = edges.sort(edge.weight) // sort the edges in ascending order
 
-The number of edges going both in and out of the Vertex, when we need a Priority queue a good implementation would
-always be a heap and in our case we need a max heap because we are going to be popping the vertex with the highest
-number of edges.
+    // add the two vertices connected by the first edge to the spanningTree
+    val spanningTree: MutableList<Vertex> = mutableListof(
+        edges[0].from,
+        edges[0].to
+    )
 
-<img src="images/sequential_graph_coloring.png" alt="sequential graph coloring">
+    val i = 1
 
-We then create an array of colors, the indices of the colors is very important, as we will be looking for the lowest
-*valid index* in the color array to assign to each vertex.
+    // if false all vertices have been added to spanning tree (all have been visited)
+    while (spanningTree.lenght != vertices.length - 1) {
 
-<img src="images/color_array.png" alt="color array">
+        if (edges[i] not cause cycle) { // does not cause a cycle
+            spanningTree.add(vertices in edges not already in spanningTree)
+        }
 
-### A Valid Index
+        i++
+    }
+}
 
-In the sequential graph coloring algorithm we will `pop()` vertices from the priority queue, we will then pick the
-LOWEST color in the color array that is NOT already assigned to the neighbours of the vertex (both incoming and outgoing
-neighbours).
+```
 
-## Brelaz
+First sort the edges by weight, and then loop through the sorted edge list and add an edge to the spanning tree if
+adding the vertex does not cause a cycle
 
-The Brelaz algorithm works similarly to the Sequential algorithm when it comes to picking a color to assign to a graph
-but it does not make use of a Priority Queue.
+<img src="images/graph.png" alt="graph for spanning tree">
 
-Instead, it works by assigning two new values to each vertex, a *Saturation number*, and a *Uncolored Neighbors number*.
-The Saturation number will initially be set to 0. The number of uncolored neighbors should be set to the number of
-neighbors to each vertex.
+## Dijkstra algorithm
 
-## Picking the Next Vertex
+Dijkstra algorithm is funny, and lazy. In this algorithm we don't bother sorting all the edges, Instead we just loop
+through all the edges. Therefore, in Kruskal the complexity comes from sorting the list, in Dijkstra the complexity
+comes from what comes next.
 
-The algorithm will always try and pick by **SATURATION NUMBER** first, if a tie exists it will pick by number of
-uncolored neighbors. When a vertex is selected we assign the vertex a color and then update all of its neighbors, each
-neighbors `number of uncolored neighbors` will go down by 1, and the number `saturation number` will go up by 1. In
-essence, you could say the "saturation number is number of colored neighbors".
+Dijkstra's algorithm will attempt to add each edge to the spanning tree, however when a cycle is detected it will remove
+the edge with the biggest weight in that cycle
 
-<img src="images/brelaz_graph.png" alt="brelaz graph">
+ ```kotlin
+val vertices: List<Vertex>
 
-But sometimes the algorithms will both determine the same solution.
+fun kruskal() {
 
-<img src="images/brelaz_solution.png" alt="brelaz solution">
+    val edges: List<Edge> // unsorted list of edges
+    val spanningTree: MutableList<Vertex>
 
-This is not always the case.
+    for (edge in edges) {
+
+        if (edge creates a cycle) {
+
+            val cycle = findCycle(spaningTree, edge) // make the cycle 
+            cycle.remove(edge with largestWeight) // remove the edge with the biggest weight in the cycle
+
+        } else {
+            // if no cycle add the vertices to the spanning tree
+            spanningTree.add(vertices in edges not in spanningTree)
+        }
+    }
+}
+
+// returns a list of all the edges in a cycle
+private fun findCycle(spanningTree, edge) {
+    ...
+}
+
+```
+
+<img src="images/graph.png" alt="graph for spanning tree">
