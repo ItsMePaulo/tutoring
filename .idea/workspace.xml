@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="88966258-2634-4be4-8dfe-a46ec0d9b9c5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/COS212/practicals/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/COS212/practicals/prac2/src/ListNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/COS212/practicals/prac2/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/COS212/practicals/prac2/src/MoveToFrontOrganisingList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/COS212/practicals/prac2/src/OrganisingList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/COS212/practicals/prac2/src/TransposeOrganisingList.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1itzzUqLM6vX6P9gP4jprBbRtDZ" />
+  <component name="ProjectViewState">
+    <option name="foldersAlwaysOnTop" value="false" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/COS212/notes" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Intellij/images" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="88966258-2634-4be4-8dfe-a46ec0d9b9c5" name="Default Changelist" comment="" />
+      <created>1602741938957</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1602741938957</updated>
+      <workItem from="1602741940458" duration="565000" />
+      <workItem from="1602840857646" duration="676000" />
+      <workItem from="1602865875224" duration="653000" />
+      <workItem from="1603444294127" duration="32000" />
+      <workItem from="1615534588970" duration="141000" />
+      <workItem from="1615534734286" duration="29000" />
+      <workItem from="1615534913066" duration="80000" />
+      <workItem from="1615535011829" duration="459000" />
+      <workItem from="1615710901951" duration="6000" />
+      <workItem from="1615813926388" duration="506000" />
+      <workItem from="1616160854298" duration="701000" />
+      <workItem from="1616163696601" duration="1398000" />
+      <workItem from="1616519234177" duration="11000" />
+      <workItem from="1617728769093" duration="177000" />
+    </task>
+    <task id="LOCAL-00001" summary="Add linked lists">
+      <created>1602742456425</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1602742456425</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add templates code">
+      <created>1602840931670</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1602840931670</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Update COS110 README">
+      <created>1615542818237</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1615542818237</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Update COS212 README">
+      <created>1615546771057</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1615546771057</updated>
+    </task>
+    <task id="LOCAL-00005" summary="add code directory">
+      <created>1616164959291</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1616164959291</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add linked lists" />
+    <MESSAGE value="Add templates code" />
+    <MESSAGE value="Update COS110 README" />
+    <MESSAGE value="Update COS212 README" />
+    <MESSAGE value="add code directory" />
+    <option name="LAST_COMMIT_MESSAGE" value="add code directory" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="737" y="300" width="424" height="521" key="FileChooserDialogImpl" timestamp="1617728924081">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="737" y="300" width="424" height="521" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1617728924081" />
+  </component>
+</project>
