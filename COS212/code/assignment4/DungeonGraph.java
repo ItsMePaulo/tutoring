@@ -142,33 +142,10 @@ public class DungeonGraph {
         int index = 0;
 
         // teleport(2,2) = (1,2),(10,8),(2,1),(3,2),(2,3)
-
-        // left
-        for (Edge edge : vertex.getNonTeleportedEdges()) {
-            if (edge.to.coords.col < vertex.coords.col) {
-                tmpArray[index++] = edge.to;
-                break;
-            }
-        }
-        // top
-        for (Edge edge : vertex.getNonTeleportedEdges()) {
-            if (edge.to.coords.row < vertex.coords.row) {
-                tmpArray[index++] = edge.to;
-                break;
-            }
-        }
-        // right
-        for (Edge edge : vertex.getNonTeleportedEdges()) {
-            if (edge.to.coords.col > vertex.coords.col) {
-                tmpArray[index++] = edge.to;
-                break;
-            }
-        }
-        // bottom
-        for (Edge edge : vertex.getNonTeleportedEdges()) {
-            if (edge.to.coords.row > vertex.coords.row) {
-                tmpArray[index] = edge.to;
-                break;
+        for (EdgeDirection ed : EdgeDirection.values()) {
+            Vertex v = ed.getDirectionalNeighbour(vertex.getNonTeleportedEdges(), vertex);
+            if (v != null) {
+                tmpArray[index++] = v;
             }
         }
 
@@ -262,32 +239,6 @@ public class DungeonGraph {
      */
     public Vertex[] getShortestPath() {
 
-        /**
-         * 3 shortest calls (call shortest function)
-         *
-         * 1.) shortest entrance to key
-         *      *) call getDoor() & getKey()
-         *      *) these are the parameters
-         *      *) first array store doorToKey
-         *      *) check if empty array if true return empty array
-         *
-         * 2.) shortest key treasure
-         *      *) call getKey() & getTreasure()
-         *      *) store this second array keyToTreasure
-         *      *) check if empty array if true return empty array
-         *
-         * 3.) shortest treasure to entrance
-         *      *) call getTreasure() & getEntrance
-         *      *) store these in 3rd array treasureToEntrance
-         *
-         *
-         * combine all arrays into 1 in order
-         *
-         * doorToKey use array to push
-         * loop through the others 1 by 1 and then call push
-         *
-         *  return doorToKey
-         */
         Vertex[] doorToKey = getShortestPath(getDoor().coords, getKey().coords);
         Vertex[] keyToTreasure = getShortestPath(getKey().coords, getTreasure().coords);
         Vertex[] treasureToEntrance = getShortestPath(getTreasure().coords, getDoor().coords);
@@ -345,15 +296,15 @@ public class DungeonGraph {
     }
 
     private String buildStringPath(Vertex[] shortestPath) {
-        String direction = "";
+        StringBuilder direction = new StringBuilder();
 
         for (int i = 0; i < shortestPath.length - 1; i++) {
             String endChar = (i == shortestPath.length - 2) ? "." : ", ";
-            direction += getDirection(shortestPath[i], shortestPath[i + 1]) + endChar;
+            direction.append(getDirection(shortestPath[i], shortestPath[i + 1])).append(endChar);
         }
 
 
-        return direction;
+        return direction.toString();
     }
 
     /**
