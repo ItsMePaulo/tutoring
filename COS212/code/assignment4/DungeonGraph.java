@@ -32,6 +32,8 @@ public class DungeonGraph {
      */
     public void createGraph(String filename) {
 
+        clear();
+
         File file = new File(filename);
         String line;
 
@@ -40,21 +42,24 @@ public class DungeonGraph {
 
             int rowNumber = 0;
             while ((line = br.readLine()) != null) {
-                graphLength = line.length();
+                line = line.replace(" ", "");
+                if (line.length() != 0) {
+                    graphLength = line.length();
 
-                for (int i = 0; i < line.length(); i++) {
-                    Character ch = line.charAt(i);
+                    for (int i = 0; i < line.length(); i++) {
+                        Character ch = line.charAt(i);
 
-                    // its a valid character
-                    VertexType type = VertexType.getType(ch);
-                    if (type != VertexType.WALL) {
-                        Vertex newVertex = new Vertex(type, new Coordinates(rowNumber, i));
+                        // its a valid character
+                        VertexType type = VertexType.getType(ch);
+                        if (type != VertexType.WALL) {
+                            Vertex newVertex = new Vertex(type, new Coordinates(rowNumber, i));
 
-                        vertices = HelperClass.copyInsert(vertices, newVertex);
+                            vertices = HelperClass.push(vertices, newVertex);
+                        }
                     }
-                }
 
-                rowNumber++;
+                    rowNumber++;
+                }
             }
 
             graphHeight = rowNumber;
@@ -87,13 +92,42 @@ public class DungeonGraph {
      * For each vertex, output its coordinates (comma-separated).
      */
     public String toString() {
-        // TODO: Your code here...
+        for (Vertex v : vertices) {
+            v.counter = -1;
+        }
 
-        Vertex[] adjVert = getAdjacentVertices(vertices[1]);
+        StringBuilder dfsSearch = new StringBuilder();
 
-        System.out.println(adjVert);
+        dfsSearch = new StringBuilder(dfsSearch.append(traverseVertex(getDoor(), 0)));
 
-        return "";
+        Vertex unvisited = stillUnvisited();
+        while (unvisited != null) {
+            dfsSearch.append(traverseVertex(unvisited, findMaxCounter() + 1));
+            unvisited = stillUnvisited();
+        }
+
+        return dfsSearch.substring(0, dfsSearch.length() - 1);
+    }
+
+    private int findMaxCounter() {
+        int max = -1;
+        for (Vertex v : vertices) {
+            if (v.counter > max) {
+                max = v.counter;
+            }
+        }
+
+        return max;
+    }
+
+    private Vertex stillUnvisited() {
+        for (Vertex v : vertices) {
+            if (v.counter == -1) {
+                return v;
+            }
+        }
+
+        return null;
     }
 
     /**
@@ -104,32 +138,34 @@ public class DungeonGraph {
      */
     public Vertex[] getAdjacentVertices(Vertex vertex) {
 
-        Vertex[] tmpArray = new Vertex[vertex.edges.length];
+        Vertex[] tmpArray = new Vertex[vertex.getNonTeleportedEdges().length];
         int index = 0;
 
+        // teleport(2,2) = (1,2),(10,8),(2,1),(3,2),(2,3)
+
         // left
-        for (Edge edge: vertex.edges) {
+        for (Edge edge : vertex.getNonTeleportedEdges()) {
             if (edge.to.coords.col < vertex.coords.col) {
                 tmpArray[index++] = edge.to;
                 break;
             }
         }
         // top
-        for (Edge edge: vertex.edges) {
+        for (Edge edge : vertex.getNonTeleportedEdges()) {
             if (edge.to.coords.row < vertex.coords.row) {
                 tmpArray[index++] = edge.to;
                 break;
             }
         }
         // right
-        for (Edge edge: vertex.edges) {
+        for (Edge edge : vertex.getNonTeleportedEdges()) {
             if (edge.to.coords.col > vertex.coords.col) {
                 tmpArray[index++] = edge.to;
                 break;
             }
         }
         // bottom
-        for (Edge edge: vertex.edges) {
+        for (Edge edge : vertex.getNonTeleportedEdges()) {
             if (edge.to.coords.row > vertex.coords.row) {
                 tmpArray[index] = edge.to;
                 break;
@@ -139,28 +175,26 @@ public class DungeonGraph {
         return tmpArray; // Stub line, you can safely remove when required
     }
 
+
     /**
      * Return the vertex corresponding to the dungeon entrance.
      */
     public Vertex getDoor() {
-        // TODO: Your code here...
-        return null; // Stub line, you can safely remove when required
+        return getVertexType(VertexType.ENTRANCE);
     }
 
     /**
      * Return the vertex corresponding to the key tile.
      */
     public Vertex getKey() {
-        // TODO: Your code here...
-        return null; // Stub line, you can safely remove when required
+        return getVertexType(VertexType.KEY); // correct
     }
 
     /**
      * Return the vertex corresponding to the treasure tile.
      */
     public Vertex getTreasure() {
-        // TODO: Your code here...
-        return null; // Stub line, you can safely remove when required
+        return getVertexType(VertexType.TREASURE); // correct
     }
 
     /**
@@ -175,8 +209,49 @@ public class DungeonGraph {
      * and the end vertex must be included. If no path exists, return an empty array.
      */
     public Vertex[] getShortestPath(Coordinates start, Coordinates end) {
-        // TODO: Your code here...
-        return null; // Stub line, you can safely remove when required
+
+        Vertex[] toBeChecked = new Vertex[0];
+
+        for (Vertex v : vertices) {
+            v.dist = Integer.MAX_VALUE;
+            v.prev = null;
+        }
+
+        Vertex current = getVertex(start.row, start.col);
+
+        if (current == null) {
+            return toBeChecked;
+        }
+
+        current.dist = 0;
+        current.prev = null;
+
+        toBeChecked = HelperClass.push(toBeChecked, current);
+
+        while (toBeChecked.length != 0) {
+
+            current = toBeChecked[0];
+            toBeChecked = HelperClass.pop(toBeChecked);
+
+            for (Vertex neighbour : getNeighboursWithTeleportedEdge(current)) {
+
+                int totalDist = current.dist + getDistBetween(current, neighbour);
+
+                if (totalDist < neighbour.dist) {
+                    neighbour.dist = totalDist;
+                    neighbour.prev = current;
+
+                    toBeChecked = HelperClass.pushIfNotFound(toBeChecked, neighbour);
+                }
+            }
+        }
+
+        Vertex endVertex = getVertex(end.row, end.col);
+        if (endVertex != null && endVertex.prev != null) {
+            return buildPath(endVertex);
+        }
+
+        return toBeChecked; // empty array
     }
 
     /**
@@ -186,8 +261,48 @@ public class DungeonGraph {
      * If there is no path, return an empty array.
      */
     public Vertex[] getShortestPath() {
-        // TODO: Your code here...
-        return null; // Stub line, you can safely remove when required
+
+        /**
+         * 3 shortest calls (call shortest function)
+         *
+         * 1.) shortest entrance to key
+         *      *) call getDoor() & getKey()
+         *      *) these are the parameters
+         *      *) first array store doorToKey
+         *      *) check if empty array if true return empty array
+         *
+         * 2.) shortest key treasure
+         *      *) call getKey() & getTreasure()
+         *      *) store this second array keyToTreasure
+         *      *) check if empty array if true return empty array
+         *
+         * 3.) shortest treasure to entrance
+         *      *) call getTreasure() & getEntrance
+         *      *) store these in 3rd array treasureToEntrance
+         *
+         *
+         * combine all arrays into 1 in order
+         *
+         * doorToKey use array to push
+         * loop through the others 1 by 1 and then call push
+         *
+         *  return doorToKey
+         */
+        Vertex[] doorToKey = getShortestPath(getDoor().coords, getKey().coords);
+        Vertex[] keyToTreasure = getShortestPath(getKey().coords, getTreasure().coords);
+        Vertex[] treasureToEntrance = getShortestPath(getTreasure().coords, getDoor().coords);
+
+        if (doorToKey.length == 0 || keyToTreasure.length == 0)
+            return new Vertex[0];
+        else {
+            for (int i = 1; i < keyToTreasure.length; i++) {
+                doorToKey = HelperClass.push(doorToKey, keyToTreasure[i]);
+            }
+            for (int i = 1; i < treasureToEntrance.length; i++) {
+                doorToKey = HelperClass.push(doorToKey, treasureToEntrance[i]);
+            }
+        }
+        return doorToKey; // Stub line, you can safely remove when required
     }
 
 
@@ -197,8 +312,12 @@ public class DungeonGraph {
      * If no path exists, return null.
      */
     public Integer getShortestPathLength(Coordinates start, Coordinates end) {
-        // TODO: Your code here...
-        return null; // Stub line, you can safely remove when required
+
+        Vertex[] pathForLength = getShortestPath(start, end);
+
+        return (pathForLength.length != 0)
+                ? pathForLength[pathForLength.length - 1].dist : null;
+
     }
 
 
@@ -209,10 +328,10 @@ public class DungeonGraph {
      * Left-up-right-down movement preference applies.
      */
     public String getShortestPathString(Coordinates start, Coordinates end) {
-        // TODO: Your code here...
-        return null; // Stub line, you can safely remove when required
-    }
+        Vertex[] shortestPath = getShortestPath(start, end);
 
+        return buildStringPath(shortestPath);
+    }
 
     /**
      * This method has the same functionality as getShortestPathString(Coordinates start, Coordinates end),
@@ -220,8 +339,21 @@ public class DungeonGraph {
      * to key to treasure and back to the entrance.
      */
     public String getShortestPathString() {
-        // TODO: Your code here...
-        return null; // Stub line, you can safely remove when required
+        Vertex[] shortestPath = getShortestPath();
+
+        return buildStringPath(shortestPath);
+    }
+
+    private String buildStringPath(Vertex[] shortestPath) {
+        String direction = "";
+
+        for (int i = 0; i < shortestPath.length - 1; i++) {
+            String endChar = (i == shortestPath.length - 2) ? "." : ", ";
+            direction += getDirection(shortestPath[i], shortestPath[i + 1]) + endChar;
+        }
+
+
+        return direction;
     }
 
     /**
@@ -241,12 +373,36 @@ public class DungeonGraph {
      * =============================================
      */
 
-    public void printVertices() {
-        for (Vertex v : vertices) {
-            System.out.print(v.type + ": " + v.coords.row + " " + v.coords.col);
+    private Vertex[] getNeighboursWithTeleportedEdge(Vertex current) {
+        Vertex[] directNeighbours = getAdjacentVertices(current);
 
-            System.out.println();
+        if (current.type.equals(VertexType.TELEPORT)) {
+            return HelperClass.push(directNeighbours, current.getTeleportedNeighbour());
         }
+
+        return directNeighbours;
+    }
+
+    private Vertex[] buildPath(Vertex vertex) {
+        if (vertex != null) {
+
+            Vertex[] va = buildPath(vertex.prev); // add our vertex to what this line returns
+
+            return HelperClass.push(va, vertex);
+        } else {
+            // if vertex being passed in is null return new vertex array [0]
+            return new Vertex[0];
+        }
+    }
+
+    private Vertex getVertexType(VertexType vt) {
+        for (Vertex v : vertices) {
+            if (v.type == vt) {
+                return v;
+            }
+        }
+
+        return null;
     }
 
     private void setEdges() {
@@ -266,6 +422,16 @@ public class DungeonGraph {
             // right neighbour
             if (v.coords.col + 1 < graphLength && getVertex(v.coords.row, v.coords.col + 1) != null) {
                 v.addNeighbour(getVertex(v.coords.row, v.coords.col + 1));
+            }
+
+            // connect teleports
+            if (v.type == VertexType.TELEPORT) {
+                for (int i = 0; i < vertices.length; i++) {
+                    if (vertices[i].type == VertexType.TELEPORT && !v.equals(vertices[i])) {
+                        v.addNeighbour(vertices[i]);
+                        break;
+                    }
+                }
             }
         }
     }

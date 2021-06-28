@@ -18,6 +18,8 @@ public class Vertex {
         type = vt;
         coords = coordinates;
 
+        counter = 0;
+
         edges = new Edge[0];
     }
 
@@ -28,7 +30,7 @@ public class Vertex {
                 new Edge(this, newNeighbour, 2) : new Edge(this, newNeighbour, 1);
 
 
-        edges = HelperClass.copyInsert(edges, newEdge);
+        edges = HelperClass.push(edges, newEdge);
     }
 
     public Vertex[] getNeighbours() {
@@ -40,4 +42,39 @@ public class Vertex {
 
         return tmpArray;
     }
+
+    public Edge[] getNonTeleportedEdges() {
+        if (type.equals(VertexType.TELEPORT)) {
+            Edge[] tmpArray = new Edge[edges.length - 1];
+            int counter = 0;
+
+            for (Edge ed : edges) {
+                if (!ed.to.type.equals(VertexType.TELEPORT)) {
+                    tmpArray[counter++] = ed;
+                }
+            }
+
+            return tmpArray;
+        } else
+            return edges;
+    }
+
+    // there will be a teleport edge to this vertex
+    public Vertex getTeleportedNeighbour() {
+        for (Edge ed : edges) {
+            if (ed.to.type.equals(VertexType.TELEPORT)) {
+                return ed.to;
+            }
+        }
+
+        // impossible to reach
+        return null;
+    }
+
+    @Override
+    public String toString() {
+        return this.type.name();
+    }
+
+
 }

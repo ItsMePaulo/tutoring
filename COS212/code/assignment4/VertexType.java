@@ -1,5 +1,7 @@
 public enum VertexType {
-    ENTRANCE('E'), BLANK('.'), KEY('K'), TREASURE('T'), TRAP('X'), WALL('#');
+    ENTRANCE('E'), BLANK('.'), KEY('K'),
+    TREASURE('T'), TRAP('X'), TELEPORT('!'),
+    WALL('#');
 
     private Character symbol;
 
@@ -10,7 +12,7 @@ public enum VertexType {
     static boolean isValidCharacter(Character c) {
         boolean isValid = false;
 
-        for (VertexType type: VertexType.values()) {
+        for (VertexType type : VertexType.values()) {
             if (c == type.symbol) {
                 isValid = true;
             }
@@ -21,7 +23,7 @@ public enum VertexType {
 
     static VertexType getType(Character c) {
 
-        for (VertexType type: VertexType.values()) {
+        for (VertexType type : VertexType.values()) {
             if (c == type.symbol) {
                 return type;
             }
