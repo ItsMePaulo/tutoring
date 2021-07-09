@@ -177,9 +177,9 @@ You will need a count array with the index of the largest value in the array
 
 And then we sort by finding the value at our count array from the value being stored in the data array.
 
-<img src="images/count_sort.png" alt="count sort">
+<img src="images/count_sort.png" alt="count sort" width="80%">
 
-## How to Spot these Algorithms
+# How to Spot these Algorithms
 
 In your exam they are going to give you questions with arrays and then the array after an iteration of a certain sorting
 algorithm having been performed on the array. Your task will be to determine which sorting algorithm was used to make
