@@ -33,7 +33,7 @@ As I said we will use an offset for each value so to keep reference to that offs
 table for yourselves. The letters in the offset table should be inserted inorder, and the values can be next to them as
 a reference if it helps, but initially the offset value of each letter should be set to 0.
 
-<img src="images/offset_table.png" alt="offset table" width="50%">
+<img src="images/offset_table.png" alt="offset table" width="30%">
 
 ## Step 3: Start Hashing
 
