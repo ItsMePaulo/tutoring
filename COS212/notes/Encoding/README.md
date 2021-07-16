@@ -7,6 +7,8 @@ Encoding is finding the smallest number of bits to represent the same data, whic
 Obviously the 1's and 0's right. Both rows depict the same data, but the second row is using far fewer bits. This is
 what we will try to achieve with encoding algorithms.
 
+## Practical Data with more than 2 Options
+
 Imagine we had a set of weather data which suggested:
 
 <img src="images/probability.png" alt="weather probability">
