@@ -44,8 +44,9 @@ to do that.
 fun findNext(pattern: String) {
 
     val next[0] = -1 // next[0] is always -1
-    val i = j = 0
-
+    val i = 0
+    val j = -1
+    
     while (i ≤ |T|-|P|) {
         // when we start finding a match, we start updating  
         while (j == -1 or (j < | P | and word[i] == pattern[j])) {
