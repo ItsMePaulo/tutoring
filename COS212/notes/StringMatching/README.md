@@ -65,7 +65,9 @@ So let's apply this findNext() algorithm to this string and pattern
 
 We get the following
 
-![img.png](img.png)
+![img.png](images/result.png)
 
 Now we can use this next array in the first algorithm and see how by making use of the sub patterns we can skip ahead to
 a certain point, so as not using brute fore
+
+![img.png](images/algorithm.png)
