@@ -23,9 +23,9 @@ fun knuthMorrisPratt(pattern: String, word: String) {
             if (j == | pattern |) { // successful match!
                 return match at i - | pattern |;
             }
-
-            j = next[j]
         }
+        
+        j = next[j]
     }
 
     // i does not backtrack
