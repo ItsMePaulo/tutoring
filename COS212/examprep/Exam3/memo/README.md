@@ -6,18 +6,16 @@
 For all questions that follow assume the following Graph. During traversal if at any point you must make a choice of
 where to move next chose the next vertex alphabetically.
 
-![img.png](images/spanning_tree.png)
+![img.png](../images/spanning_tree.png)
 
 1.1) Using Kruskal's eager Algorithm identify the list of edges that will be part of the spanning tree. Only identify
 the list of edges that will be part of the resulting spanning tree in the format AB, AC, AD in the case of edges between
 AB, AC and AD being a part of the spanning tree.
 
-```text
+![img.png](../images/spanning_tree_answer.png)
 
-```
-
-1.2) For the following statements indicate whether the provided statement is true or false, provide a reason for your
-answer:
+1.2) For each of the following statements indicate whether the provided statement is true or false, provide a reason for
+your answer:
 
 1.2.1)
 
@@ -26,10 +24,22 @@ Dijkstra's Spanning Tree Algorithm will never look at every edge within the grap
 
 ```
 
+```text
+FALSE: Dijkstra's algorithm is lazy (does not sort the edges before traversal) and will look at every edge within the graph and ensure to remove the greatest edge in a cycle once 
+it is detected.
+```
+
 1.2.2)
 
 ```text
 Kruskal Algorithm has the potential to look at every edge within the graph
+```
+
+```text
+TRUE: The stopping condition for Kruskal algorithm is; when the number of edges added in the spanning tree is 
+equal to 1 less than the number of vertices in the graph. This is not a condition that will always result in fewer 
+iterations than edges. A scenario in which the greatest value edge is the only path to a Vertex will result in 
+a situation where every edge will being visited when applying Kruskals algorithm. 
 ```
 
 1.2.3)
@@ -38,29 +48,37 @@ Kruskal Algorithm has the potential to look at every edge within the graph
 In Dijkstra's algorithm complexity is added in determining the lowest values in cycles
 ```
 
+```text
+TRUE: When detecting a cycle within the spanning tree, the edges which make up that cycle will have to be sorted 
+in order to remove the largest weighted edge and keep the lowest weighted edges. Sorting algorithms can add 
+complexity to the algorithm. 
+```
+
 #### For All questions to Follow
 
 Assume the following Graph, if at any point you must make a choice of which vertex to select, chose the next vertex
 alphabetically.
 
-![img.png](images/topological_sort.png)
+![img.png](../images/topological_sort.png)
 
 1.3) Apply the topological sorting algorithm on the graph below, provide the order for each vertex in the graph.
 
 | Vertex | TS |
 | --- | --- |
-| A |  |
-| B |  |
-| C |  |
-| D |  |
-| E |  |
-| F |  |
-| G |  |
-| H |  |
-| J |  |
-| P |  |
-| X |  |
-| Z |  |
+| A |  4 |
+| B | 9 |
+| C | 5 |
+| D | 8 |
+| E | 12 |
+| F | 7 |
+| G | 10 |
+| H | 1 |
+| J | 3 |
+| P | 6 |
+| X | 11 |
+| Z | 2 |
+
+![img.png](../images/topological_sort_answer.png)
 
 ## Question 2: [Graph Coloring](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/GraphsPart6/README.md)
 
@@ -212,18 +230,18 @@ the correct response
 |  |  |
 | --- | ---|
 | 0 | i |
-| 1 | ii |
-| 2 | iii |
-| 3 | iv |
-| 4 | v |
-| 5 | vi |
+| 0 | ii |
+| 0 | iii |
+| 0 | iv |
+| 0 | v |
+| 0 | vi |
 
 4.2.2) Give the offset values for each letter used after applying Cichelli's algorithm
 
 ## Question 5: [Encoding](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/Encoding/README.md)
 
 5.1) Assume the following string needed to be encoded in a way that would best make use of memory, while still being
-able to be decoded.
+able to decoded.
 
 > Sassy Susy sells seashells
 
@@ -239,19 +257,15 @@ able to be decoded.
 
 ```
 
-5.2.1) Assume the following records were kept, which tracked the recorded percentages of rain fall in each month of a
+5.2.1) Assume the following records were kept which tracked the recorded percentages of rain fall in each month of a
 given year. You may assume that no rain fell in months that are not recorded. You are required to encode this data using
-Huffman encoding please provide the Huffman tree once you have finished applying the algorithm
+Huffman encoding please provide the Huffman tree once you have finished encoding each of the specified months
 
 |January | February | June | September |October | November | December |
 | --- | --- | --- | --- | --- | --- | --- |
 | 0.17 | 0.12 | 0.02 | 0.25 | 0.11 | 0.11 | 0.22 |
 
-```text
-
-```
-
-5.2.2) Please fill in the Huffman encoded values for each month in the table below
+5.2.2) Please fill in the Huffman encoding values for each month in the table below
 
 |January | February | June | September |October | November | December |
 | --- | --- | --- | --- | --- | --- | --- |
