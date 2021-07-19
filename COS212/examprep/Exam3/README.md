@@ -22,10 +22,16 @@ Dijkstra's Spanning Tree Algorithm will never look at every edge within the grap
 ```
 
 1.2.2)
-> Kruskal Algorithm has the potential to look at every edge within the graph
+
+```text
+Kruskal Algorithm has the potential to look at every edge within the graph
+```
 
 1.2.3)
-> In Dijkstra's algorithm complexity is added in determining the lowest values in cycles
+
+```text
+In Dijkstra's algorithm complexity is added in determining the lowest values in cycles
+```
 
 #### For All questions to Follow
 
@@ -82,36 +88,51 @@ should explore the elements going from the back of the list first.
 
 ```kotlin
 
+fun insertSort(array: Int[], index: Int) {
+
+}
+
 ```
 
 3.2) For each of the following stamens select the statement that is correct
 
-1.
-    1. Only Radix sort has the potential to have a complexity of `O(n)`
-    2. Only Count sort has the potential to have a complexity of `O(n)`
-    3. Neither Radix sort nor Count sort has the potential to have a complexity of `O(n)`
-    4. Both Radix sort and Count sort have the potential to have a complexity of `O(n)`
+.1)
 
+```text
+
+    i. Only Radix sort has the potential to have a complexity of `O(n)`
+    ii. Only Count sort has the potential to have a complexity of `O(n)`
+    iii. Neither Radix sort nor Count sort has the potential to have a complexity of `O(n)`
+    iv. Both Radix sort and Count sort have the potential to have a complexity of `O(n)`
+```
 
 2. When sorting identical elements, which of the following algorithms will **NOT** guarantee that the identical elements
    order in the list will remain unchanged after the algorithm has been applied.
-    1. Selection sort & Insertion sort
-    2. Heap sort and Count sort
-    3. Merge sort and Radix sort
-    4. Comb sort and Shell sort
 
+```text
+    i. Selection sort & Insertion sort
+    ii. Heap sort and Count sort
+    iii. Merge sort and Radix sort
+    iv. Comb sort and Shell sort
+```
 
 3. If swap operations are expensive which of the following algorithms is the least efficient on average?
-    1. Shell sort
-    2. Count sort
-    3. Selection sort
-    4. Quick sort
+
+```text
+    i. Shell sort
+    ii. Count sort
+    iii. Selection sort
+    iv. Quick sort
+```    
 
 4. Which of the following algorithms is the most efficient for sorting a list that is in order
-    1. Insertion sort
-    2. Radix sort
-    3. Count sort
-    4. Quick sort
+
+```text
+    i. Insertion sort
+    ii. Radix sort
+    iii. Count sort
+    iv. Quick sort
+```    
 
 #### For each of the following
 
@@ -121,27 +142,39 @@ Please specify the algorithm that was used to result in the following output.
 
 .1 ![img.png](images/merge_sort.png)
 
->
+```text
+
+```
 
 .2 ![img.png](images/heap_sort.png)
 
->
+```text
+
+```
 
 .3 ![img.png](images/shell_sort.png)
 
->
+```text
+
+```
 
 4. ![img.png](images/radix_sort.png)
 
->
+```text
+
+```
 
 5. ![img.png](images/bubble_sort.png)
 
->
+```text
+
+```
 
 6. ![img.png](images/selection.png)
 
->
+```text
+
+```
 
 ## Question 4: [Hashing](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/Hashing/README.md)
 
@@ -248,7 +281,7 @@ to the Encoded String after the letter `f` has been placed in the huffman tree.
 
 ## Question 6: [String Matching](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/StringMatching/README.md)
 
-Assume you were applying the Knuth-Morris-Pratt algorithm for the pattern cacctaca
+Assume you were applying the Knuth-Morris-Pratt algorithm for the pattern `cacctaca`
 
 fill in the values below for the next array
 
