@@ -1,7 +1,7 @@
 <div align="center"><h1> COS 212 Exam 1 </h1></div>
 <div align="center"><h4> Spanning Tree & Topological Sort; Graph Coloring </h4></div>
 
-## Question 1: [Spanning Trees](https://gitlab.com/Paul_Wood_96/tutoring/-/tree/master/COS212/notes/GraphsPart5)
+## Question 1: [Spanning Trees](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/GraphsPart5/README.md)
 
 For all questions that follow assume the following Graph. During traversal if at any point you must make a choice of
 where to move next chose the next vertex alphabetically.
@@ -264,12 +264,12 @@ be known beforehand. Assume the following string
 
 > abeebac
 
-Please apply the adaptive huffman to the input string above but please read all questions first before moving on from
+Please apply the adaptive huffman to the input string above **NB** please read all questions first before moving on from
 this point, you may assume the following alphabet node
 
 ![img.png](images/alphabet_node.png)
 
-5.3.1) Provide the encoded text for the String after the 4 input chapter has been added
+5.3.1) Provide the encoded text for the String after the 4<sup>th</sup> input chapter has been added
 
 ```text
 
