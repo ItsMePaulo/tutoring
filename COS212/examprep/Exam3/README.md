@@ -6,10 +6,15 @@
 For all questions that follow assume the following Graph. During traversal if at any point you must make a choice of
 where to move next chose the next vertex alphabetically.
 
-![](images/spanning_tree.png)
+![img.png](images/spanning_tree.png)
 
 1.1) Using Kruskal's eager Algorithm identify the list of edges that will be part of the spanning tree. Only identify
-the list of edges that will be part of the resulting spanning tree.
+the list of edges that will be part of the resulting spanning tree in the format AB, AC, AD in the case of edges between
+AB, AC and AD being a part of the spanning tree.
+
+```text
+
+```
 
 1.2) For the following statements indicate whether the provided statement is true or false, provide a reason for your
 answer:
@@ -42,10 +47,11 @@ alphabetically.
 
 1.3) Apply the topological sorting algorithm on the graph below, provide the order for each vertex in the graph.
 
-| Vertex | Order |
+| Vertex | TS |
 | --- | --- |
 | A |  |
 | B |  |
+| C |  |
 | D |  |
 | E |  |
 | F |  |
