@@ -185,15 +185,15 @@ Assume the following data:
 Assume that Coalesced Hashing with a cellar was being applied to the data above using the following Hash function:
 `H(K) = 2k % 7 + 3`.
 
-4.1) Insert the following table where each row indicates the fields value and coalesced pointer. Insert the data and
+4.1.1) Insert the following table where each row indicates the fields value and coalesced pointer. Insert the data and
 indicate the pointer values for each collision you encounter, in the case of multiple collision you should make use of
 Quadratic Probing. The cellar starts at index 8
 
 <img src="images/hashing.png" alt="hashing" width="20%">
 
-4.2) Assume the element 8 was deleted, describe the steps needed to perform this operation
+4.1.2) Assume the element 8 was deleted, describe the steps needed to perform this operation
 
-4.3) Assume element 27 was deleted, show the table after this operation has been performed
+4.1.3) Assume element 27 was deleted, show the table after this operation has been performed
 
 ## Question 4.2: [Hashing Cichelli’s](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/Cichellis/README.md)
 
@@ -222,7 +222,7 @@ able to decoded.
 
 > Sassy Susy sells seashells
 
-.1) Which encoding algorithm would be best suited to encode the string and why?
+.1) Which encoding algorithm would be best suited to encode this string and why?
 
 ```text
 
