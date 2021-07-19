@@ -190,9 +190,9 @@ Assume the following data:
 Assume that Coalesced Hashing with a cellar was being applied to the data above using the following Hash function:
 `H(K) = 2k % 7 + 3`.
 
-4.1.1) Insert the following table where each row indicates the fields value and coalesced pointer. Insert the data and
+4.1.1) Assume the following table where each row indicates the fields value and coalesced pointer. Insert the data and
 indicate the pointer values for each collision you encounter, in the case of multiple collision you should make use of
-Quadratic Probing. The cellar starts at index 8
+Linear Probing. The cellar starts at index 8
 
 <img src="images/hashing.png" alt="hashing" width="20%">
 
