@@ -105,7 +105,6 @@ fun insertSort(array: Int[], index: Int) {
 .1)
 
 ```text
-
     i. Only Radix sort has the potential to have a complexity of `O(n)`
     ii. Only Count sort has the potential to have a complexity of `O(n)`
     iii. Neither Radix sort nor Count sort has the potential to have a complexity of `O(n)`
@@ -213,11 +212,11 @@ the correct response
 |  |  |
 | --- | ---|
 | 0 | i |
-| 0 | ii |
-| 0 | iii |
-| 0 | iv |
-| 0 | v |
-| 0 | vi |
+| 1 | ii |
+| 2 | iii |
+| 3 | iv |
+| 4 | v |
+| 5 | vi |
 
 4.2.2) Give the offset values for each letter used after applying Cichelli's algorithm
 
