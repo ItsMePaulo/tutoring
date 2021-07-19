@@ -58,11 +58,17 @@ But how do we know when to stop incrementing one value and start incrementing an
 which is the highest number of increments we can perform on a letter before we need to start incrementing the other
 letter in the word. Usually this value is quite simple, the number of words / 2 or table size divided by 2.
 
-## Your Example 
+## BackTracing
+
+When we encounter a scenario in which we have reached the max value for a single letter, we must backtrace. When we
+backtrace, we revert the algorithm back to the word we added just before the current word value. We try and insert the
+immediate parent word in a new position within the table, if we can place the new parent at a different position there
+is a possibility the previously overflowing word will find a correct position.
+
+## Your Example
 
 Perform Cichelli's algorithm on the following words
 
 > Calliope Clio Erato Euterpe Melpomene Polyhymnia Terpsichore Thalia Urania
 
 <img src="images/test.png" alt="test">
-

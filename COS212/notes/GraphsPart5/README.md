@@ -63,7 +63,7 @@ the edge with the biggest weight in that cycle
  ```kotlin
 val vertices: List<Vertex>
 
-fun kruskal() {
+fun dijkstra() {
 
     val edges: List<Edge> // unsorted list of edges
     val spanningTree: MutableList<Vertex>

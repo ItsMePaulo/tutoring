@@ -24,7 +24,7 @@ fun knuthMorrisPratt(pattern: String, word: String) {
                 return match at i - | pattern |;
             }
         }
-        
+
         j = next[j]
     }
 
@@ -46,10 +46,10 @@ fun findNext(pattern: String) {
     val next[0] = -1 // next[0] is always -1
     val i = 0
     val j = -1
-    
-    while (i ≤ |T|-|P|) {
+
+    while (i ≤ |P|) {
         // when we start finding a match, we start updating  
-        while (j == -1 or (j < | P | and word[i] == pattern[j])) {
+        while (j == -1 || (i < |P| && word[i] == pattern[j])) {
             i++
             j++
             next[i] = j
