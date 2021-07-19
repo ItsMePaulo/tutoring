@@ -15,7 +15,11 @@ the list of edges that will be part of the resulting spanning tree.
 answer:
 
 1.2.1)
-> Dijkstra's Spanning Tree Algorithm will never look at every edge within the graph before terminating.
+
+```text
+Dijkstra's Spanning Tree Algorithm will never look at every edge within the graph before terminating.
+
+```
 
 1.2.2)
 > Kruskal Algorithm has the potential to look at every edge within the graph
