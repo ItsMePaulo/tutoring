@@ -78,39 +78,27 @@ alphabetically.
 
 ![img.png](../images/topological_sort_answer.png)
 
-[comment]: <> (## Question 2: [Graph Coloring]&#40;https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/GraphsPart6/README.md&#41;)
+## Question 2: [Graph Coloring](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/GraphsPart6/README.md)
 
-[comment]: <> (For all questions that follow assume the following Graph and color table, and answer the questions that follow.)
+For all questions that follow assume the following Graph and color table, and answer the questions that follow.
+![img.png](../images/graph_coloring.png)
 
-[comment]: <> (![img.png]&#40;../images/graph_coloring.png&#41;)
+2.1) Assuming the Brelaz coloring algorithm was applied to the graph, indicate the selected color for each vertex after
+having applied the coloring algorithm. Use the color index provided in the image.
 
-[comment]: <> (2.1&#41; Assuming the Brelaz coloring algorithm was applied to the graph, indicate the selected color for each vertex after)
+| Vertex | Color |
+| --- | --- |
+| A |   |
+| B |   |
+| C |   |
+| D |   |
+| E |   |
+| F |   |
+| G |   |
+| H |   |
 
-[comment]: <> (having applied the coloring algorithm. Use the color index provided in the image.)
-
-[comment]: <> (| Vertex | Color |)
-
-[comment]: <> (| --- | --- |)
-
-[comment]: <> (| A |   |)
-
-[comment]: <> (| B |   |)
-
-[comment]: <> (| C |   |)
-
-[comment]: <> (| D |   |)
-
-[comment]: <> (| E |   |)
-
-[comment]: <> (| F |   |)
-
-[comment]: <> (| G |   |)
-
-[comment]: <> (| H |   |)
-
-[comment]: <> (<img src="../images/graph_coloring_part_1.png" alt="graph_coloring_one" width="50%"> )
-
-[comment]: <> (<img src="../images/graph_coloring_part_2.png" alt="graph_coloring_two" width="50%"> )
+<img src="../images/graph_coloring_part_1.png" alt="graph_coloring_one" width="50%">
+<img src="../images/graph_coloring_part_2.png" alt="graph_coloring_two" width="50%"> 
 
 [comment]: <> (## Question 3: [Sorting]&#40;https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/Sorting/README.md&#41;)
 
