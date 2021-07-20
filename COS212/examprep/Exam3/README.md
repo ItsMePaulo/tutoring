@@ -94,9 +94,9 @@ should explore the elements going from the back of the list first.
 
 ```java
 
-public int[] insert(int[] unsortedArray, int index) {
-    
-}
+public int[]insert(int[]unsortedArray,int index){
+
+        }
 
 
 ```
@@ -186,7 +186,9 @@ Please specify the algorithm that was used to result in the following output.
 
 Assume the following data:
 
-> 122    14    16    17    5     8     35    27    13    3
+```text
+122    14    16    17    5     8     35    27    13    3
+``` 
 
 Assume that Coalesced Hashing with a cellar was being applied to the data above using the following Hash function:
 `H(K) = 2k % 7 + 3`.
@@ -196,6 +198,7 @@ indicate the pointer values for each collision you encounter, in the case of mul
 Linear Probing. The cellar starts at index 8
 
 <img src="images/hashing.png" alt="hashing" width="20%">
+
 
 4.1.2) Assume the element 8 was deleted, describe the steps needed to perform this operation
 
@@ -282,8 +285,8 @@ this point, you may assume the following alphabet node
 
 ```
 
-5.3.2) If you were to add the letter `f` to the encoded string after all the values had been added, what would you add
-to the Encoded String after the letter `f` has been placed in the huffman tree.
+5.3.2) If the letter `f` is to be added to the input string what would be added to the encoded string after you have
+added the letter `f` to the Huffman tree.
 
 ```text
 

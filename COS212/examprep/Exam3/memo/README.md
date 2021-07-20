@@ -113,10 +113,45 @@ each index.
 Implement a recursive implementation of the insertion sort outer loop which will created a sorted. Your implementation
 should explore the elements going from the back of the list first.
 
-```kotlin
+```java
+public class Sorting {
 
-fun insertSort(array: Int[], index: Int) {
+    public int[] insert(int[] unsortedArray, int index) {
 
+        int[] sortedArray;
+
+        // base case, return the sorted array with the last element
+        if (index == unsortedArray.length - 1) {
+            sortedArray = new int[unsortedArray.length];
+            sortedArray[index] = unsortedArray[index];
+            return sortedArray;
+        }
+
+        int[] partiallySortedArray = insert(unsortedArray, index + 1); // holds the sorted list from the last iteration
+        sortedArray = new int[unsortedArray.length]; // empty list
+
+        int newValue = unsortedArray[index]; // the new value we want to add in at this recursive call
+        int lastIndex = partiallySortedArray.length - 1;
+        boolean added = false;
+
+
+        // loop through partially sorted array which starts at one index higher than current index
+        for (int i = index + 1; i <= lastIndex; ) {
+
+            if (!added && newValue < partiallySortedArray[i]) {
+                sortedArray[index++] = newValue;
+                added = true;
+            } else {
+                sortedArray[index++] = partiallySortedArray[i++];
+            }
+        }
+
+        if (!added) {
+            sortedArray[lastIndex] = newValue;
+        }
+
+        return sortedArray;
+    }
 }
 
 ```
@@ -132,6 +167,10 @@ fun insertSort(array: Int[], index: Int) {
     iv. Both Radix sort and Count sort have the potential to have a complexity of `O(n)`
 ```
 
+```text
+iv
+```
+
 2. When sorting identical elements, which of the following algorithms will **NOT** guarantee that the identical elements
    order in the list will remain unchanged after the algorithm has been applied.
 
@@ -142,6 +181,10 @@ fun insertSort(array: Int[], index: Int) {
     iv. Comb sort and Shell sort
 ```
 
+```text
+ii
+```
+
 3. If swap operations are expensive which of the following algorithms is the least efficient on average?
 
 ```text
@@ -149,7 +192,11 @@ fun insertSort(array: Int[], index: Int) {
     ii. Count sort
     iii. Selection sort
     iv. Quick sort
-```    
+```
+
+```text
+i
+```
 
 4. Which of the following algorithms is the most efficient for sorting a list that is in order
 
@@ -160,53 +207,59 @@ fun insertSort(array: Int[], index: Int) {
     iv. Quick sort
 ```    
 
+```text
+i
+```
+
 #### For each of the following
 
 Please specify the algorithm that was used to result in the following output.
 
 3.3)
 
-.1 ![img.png](images/merge_sort.png)
+.1 ![img.png](../images/merge_sort.png)
 
 ```text
-
+merge sort
 ```
 
-.2 ![img.png](images/heap_sort.png)
+.2 ![img.png](../images/heap_sort.png)
 
 ```text
-
+heap sort
 ```
 
-.3 ![img.png](images/shell_sort.png)
+.3 ![img.png](../images/shell_sort.png)
 
 ```text
-
+shell sort
 ```
 
-4. ![img.png](images/radix_sort.png)
+4. ![img.png](../images/radix_sort.png)
 
 ```text
-
+radix sort
 ```
 
-5. ![img.png](images/bubble_sort.png)
+5. ![img.png](../images/bubble_sort.png)
 
 ```text
-
+bubble sort
 ```
 
-6. ![img.png](images/selection.png)
+6. ![img.png](../images/selection.png)
 
 ```text
-
+selection sort
 ```
 
 ## Question 4: [Hashing](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/Hashing/README.md)
 
 Assume the following data:
 
-> 122 14 16 17 5 8 35 27 13
+```text
+122    14    16    17    5     8     35    27    13    3
+``` 
 
 Assume that Coalesced Hashing with a cellar was being applied to the data above using the following Hash function:
 `H(K) = 2k % 7 + 3`.
@@ -215,11 +268,21 @@ Assume that Coalesced Hashing with a cellar was being applied to the data above 
 indicate the pointer values for each collision you encounter, in the case of multiple collision you should make use of
 Linear Probing. The cellar starts at index 8
 
-<img src="images/hashing.png" alt="hashing" width="20%">
+<img src="../images/hashing_answer.png" alt="hashing answer" width="30%">
 
 4.1.2) Assume the element 8 was deleted, describe the steps needed to perform this operation
 
-4.1.3) Assume element 27 was deleted, show the table after this operation has been performed
+```text
+The element 8 would be deleted and no further action would be needed
+```
+
+4.1.3) Assume element 35 was deleted, show the table after this operation has been performed
+
+```text
+We can remove the element 35 from the table data and leave its Coalesced pointer, to the 
+next element in the list, for the time being we can mark the data as removed but handle its deletion 
+in the case of another new collision. 
+```
 
 ## Question 4.2: [Hashing Cichelli’s](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/Cichellis/README.md)
 
@@ -230,16 +293,30 @@ Given the following words, in no particular order.
 4.2.1) Perform Cichelli's algorithm to perfectly hash the following words into a table. for each greek letter indicate
 the correct response
 
+![img.png](../images/cichillis_first_steps.png)
+
 |  |  |
 | --- | ---|
-| 0 | i |
-| 1 | ii |
-| 2 | iii |
-| 3 | iv |
-| 4 | v |
+| 0 | January |
+| 1 | February |
+| 2 | April |
+| 3 | May |
+| 4 | July |
 | 5 | vi |
 
+[img.png](../images/cichillis_result.png)
+
 4.2.2) Give the offset values for each letter used after applying Cichelli's algorithm
+
+| Letter | Offset |
+| --- | ---|
+| y | 0 |
+| J | 0 |
+| M | 0 |
+| F | 0 |
+| A | 1 |
+| L | 3 |
+| E | 1 |
 
 ## Question 5: [Encoding](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/Encoding/README.md)
 
@@ -251,13 +328,15 @@ able to be decoded.
 .1) Which encoding algorithm would be best suited to encode this string and why?
 
 ```text
-
+Adaptive huffman, because you do not know the frequency of each character before hand. The adaptive, 
+huffman could dynamically map the encoded strings as it counts the frequency of each character encountered.
 ```
 
 .2) Name a few disadvantages of Adaptive Huffman over regular Huffman
 
 ```text
-
+* More complex decoding algorithms 
+* You have to store the Huffman Tree as well, whereas regular Huffman could be calculated on each iteration. 
 ```
 
 5.2.1) Assume the following records were kept, which tracked the recorded percentages of rain fall in each month of a
@@ -268,15 +347,13 @@ Huffman encoding please provide the Huffman tree once you have finished applying
 | --- | --- | --- | --- | --- | --- | --- |
 | 0.17 | 0.12 | 0.02 | 0.25 | 0.11 | 0.11 | 0.22 |
 
-```text
-
-```
+![img.png](../images/huffman_answer.png)
 
 5.2.2) Please fill in the Huffman encoded values for each month in the table below
 
 |January | February | June | September |October | November | December |
 | --- | --- | --- | --- | --- | --- | --- |
-| | | | | | | |
+| 110 | 010 | 1111 | 10 | 011 | 110 | 00 |
 
 5.3)
 
@@ -292,21 +369,27 @@ this point, you may assume the following alphabet node
 
 5.3.1) Provide the encoded text for the String after the 4<sup>th</sup> input chapter has been added
 
-```text
+![img.png](../images/adaptive_huffman_part1.png)
 
+```text
+10011000110101
 ```
 
 5.3.2) What is the encoded value for the letter b after it has been inserted the second time
 
-```text
+![img.png](../images/adaptive_huffman_part_2.png)
 
+```text
+11
 ```
 
 5.3.2) If you were to add the letter `f` to the encoded string after all the values had been added, what would you add
 to the Encoded String after the letter `f` has been placed in the huffman tree.
 
-```text
+![img.png](../images/adaptave_huffman_part_3.png)
 
+```text
+110010
 ```
 
 ## Question 6: [String Matching](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/StringMatching/README.md)
@@ -318,4 +401,4 @@ fill in the values below for the next array
 |Ptt: | c | a | c | c | t | a | c | a |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | j | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
-| next | | | | | | |
+| next | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 
