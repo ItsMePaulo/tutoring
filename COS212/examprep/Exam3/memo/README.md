@@ -52,45 +52,31 @@ in order to remove the largest weighted edge and keep the lowest weighted edges.
 complexity to the algorithm. 
 ```
 
-[comment]: <> (#### For All questions to Follow)
+#### For All questions to Follow
 
-[comment]: <> (Assume the following Graph, if at any point you must make a choice of which vertex to select, chose the next vertex)
+Assume the following Graph, if at any point you must make a choice of which vertex to select, chose the next vertex
+alphabetically.
 
-[comment]: <> (alphabetically.)
+![img.png](../images/topological_sort.png)
 
-[comment]: <> (![img.png]&#40;../images/topological_sort.png&#41;)
+1.3) Apply the topological sorting algorithm on the graph below, provide the order for each vertex in the graph.
 
-[comment]: <> (1.3&#41; Apply the topological sorting algorithm on the graph below, provide the order for each vertex in the graph.)
+| Vertex | TS |
+| --- | --- |
+| A |  4 |
+| B | 9 |
+| C | 5 |
+| D | 8 |
+| E | 12 |
+| F | 7 |
+| G | 10 |
+| H | 1 |
+| J | 3 |
+| P | 6 |
+| X | 11 |
+| Z | 2 |
 
-[comment]: <> (| Vertex | TS |)
-
-[comment]: <> (| --- | --- |)
-
-[comment]: <> (| A |  4 |)
-
-[comment]: <> (| B | 9 |)
-
-[comment]: <> (| C | 5 |)
-
-[comment]: <> (| D | 8 |)
-
-[comment]: <> (| E | 12 |)
-
-[comment]: <> (| F | 7 |)
-
-[comment]: <> (| G | 10 |)
-
-[comment]: <> (| H | 1 |)
-
-[comment]: <> (| J | 3 |)
-
-[comment]: <> (| P | 6 |)
-
-[comment]: <> (| X | 11 |)
-
-[comment]: <> (| Z | 2 |)
-
-[comment]: <> (![img.png]&#40;../images/topological_sort_answer.png&#41;)
+![img.png](../images/topological_sort_answer.png)
 
 [comment]: <> (## Question 2: [Graph Coloring]&#40;https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/GraphsPart6/README.md&#41;)
 
