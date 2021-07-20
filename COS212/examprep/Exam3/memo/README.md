@@ -1,409 +1,321 @@
-[comment]: <> (<div align="center"><h1> COS 212 Exam 1 </h1></div>)
+<div align="center"><h1> COS 212 Exam 1 </h1></div>
+<div align="center"><h4> Spanning Tree & Topological Sort; Graph Coloring </h4></div>
 
-[comment]: <> (<div align="center"><h4> Spanning Tree & Topological Sort; Graph Coloring </h4></div>)
+## Question 1: [Spanning Trees](https://gitlab.com/Paul_Wood_96/tutoring/-/tree/master/COS212/notes/GraphsPart5)
 
-[comment]: <> (## Question 1: [Spanning Trees]&#40;https://gitlab.com/Paul_Wood_96/tutoring/-/tree/master/COS212/notes/GraphsPart5&#41;)
+For all questions that follow assume the following Graph. During traversal if at any point you must make a choice of
+where to move next chose the next vertex alphabetically.
 
-[comment]: <> (For all questions that follow assume the following Graph. During traversal if at any point you must make a choice of)
+![img.png](../images/spanning_tree.png)
 
-[comment]: <> (where to move next chose the next vertex alphabetically.)
+1.1) Using Kruskal's eager Algorithm identify the list of edges that will be part of the spanning tree. Only identify
+the list of edges that will be part of the resulting spanning tree in the format AB, AC, AD in the case of edges between
+AB, AC and AD being a part of the spanning tree.
 
-[comment]: <> (![img.png]&#40;../images/spanning_tree.png&#41;)
+![img.png](../images/spanning_tree_answer.png)
 
-[comment]: <> (1.1&#41; Using Kruskal's eager Algorithm identify the list of edges that will be part of the spanning tree. Only identify)
+1.2) For each of the following statements indicate whether the provided statement is true or false, provide a reason for
+your answer:
 
-[comment]: <> (the list of edges that will be part of the resulting spanning tree in the format AB, AC, AD in the case of edges between)
+1.2.1)
 
-[comment]: <> (AB, AC and AD being a part of the spanning tree.)
+```text
+Dijkstra's Spanning Tree Algorithm will never look at every edge within the graph before terminating.
 
-[comment]: <> (![img.png]&#40;../images/spanning_tree_answer.png&#41;)
+```
 
-[comment]: <> (1.2&#41; For each of the following statements indicate whether the provided statement is true or false, provide a reason for)
+```text
+FALSE: Dijkstra's algorithm is lazy (does not sort the edges before traversal) and will look at every edge within the graph and ensure to remove the greatest edge in a cycle once 
+it is detected.
+```
 
-[comment]: <> (your answer:)
+1.2.2)
 
-[comment]: <> (1.2.1&#41;)
+```text
+Kruskal Algorithm has the potential to look at every edge within the graph
+```
 
-[comment]: <> (```text)
+```text
+TRUE: The stopping condition for Kruskal algorithm is; when the number of edges added in the spanning tree is 
+equal to 1 less than the number of vertices in the graph. This is not a condition that will always result in fewer 
+iterations than edges. A scenario in which the greatest value edge is the only path to a Vertex will result in 
+a situation where every edge will being visited when applying Kruskals algorithm. 
+```
 
-[comment]: <> (Dijkstra's Spanning Tree Algorithm will never look at every edge within the graph before terminating.)
+1.2.3)
 
-[comment]: <> (```)
+```text
+In Dijkstra's algorithm complexity is added in determining the lowest values in cycles
+```
 
-[comment]: <> (```text)
+```text
+TRUE: When detecting a cycle within the spanning tree, the edges which make up that cycle will have to be sorted 
+in order to remove the largest weighted edge and keep the lowest weighted edges. Sorting algorithms can add 
+complexity to the algorithm. 
+```
 
-[comment]: <> (FALSE: Dijkstra's algorithm is lazy &#40;does not sort the edges before traversal&#41; and will look at every edge within the graph and ensure to remove the greatest edge in a cycle once )
+#### For All questions to Follow
 
-[comment]: <> (it is detected.)
+Assume the following Graph, if at any point you must make a choice of which vertex to select, chose the next vertex
+alphabetically.
 
-[comment]: <> (```)
+![img.png](../images/topological_sort.png)
 
-[comment]: <> (1.2.2&#41;)
+1.3) Apply the topological sorting algorithm on the graph below, provide the order for each vertex in the graph.
 
-[comment]: <> (```text)
+| Vertex | TS |
+| --- | --- |
+| A |  4 |
+| B | 9 |
+| C | 5 |
+| D | 8 |
+| E | 12 |
+| F | 7 |
+| G | 10 |
+| H | 1 |
+| J | 3 |
+| P | 6 |
+| X | 11 |
+| Z | 2 |
 
-[comment]: <> (Kruskal Algorithm has the potential to look at every edge within the graph)
+![img.png](../images/topological_sort_answer.png)
 
-[comment]: <> (```)
+## Question 2: [Graph Coloring](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/GraphsPart6/README.md)
 
-[comment]: <> (```text)
+For all questions that follow assume the following Graph and color table, and answer the questions that follow.
 
-[comment]: <> (TRUE: The stopping condition for Kruskal algorithm is; when the number of edges added in the spanning tree is )
+![img.png](../images/graph_coloring.png)
 
-[comment]: <> (equal to 1 less than the number of vertices in the graph. This is not a condition that will always result in fewer )
+2.1) Assuming the Brelaz coloring algorithm was applied to the graph, indicate the selected color for each vertex after
+having applied the coloring algorithm. Use the color index provided in the image.
 
-[comment]: <> (iterations than edges. A scenario in which the greatest value edge is the only path to a Vertex will result in )
+| Vertex | Color |
+| --- | --- |
+| A |   |
+| B |   |
+| C |   |
+| D |   |
+| E |   |
+| F |   |
+| G |   |
+| H |   |
 
-[comment]: <> (a situation where every edge will being visited when applying Kruskals algorithm. )
+<img src="../images/graph_coloring_part_1.png" alt="graph_coloring_one"> 
+<img src="../images/graph_coloring_part_2.png" alt="graph_coloring_two"> 
 
-[comment]: <> (```)
+## Question 3: [Sorting](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/Sorting/README.md)
 
-[comment]: <> (1.2.3&#41;)
+3.1) Insertion sort works by intuitively sorting a list, placing elements in order at each iteration. The algorithm is
+made up using a combination of an inner and outer loop. The outer loop iterates through the elements in the list from
+left to right, the inner loop sorts the array up until the counter of the outer loop selecting the element to place at
+each index.
 
-[comment]: <> (```text)
+Implement a recursive implementation of the insertion sort outer loop which will created a sorted. Your implementation
+should explore the elements going from the back of the list first.
 
-[comment]: <> (In Dijkstra's algorithm complexity is added in determining the lowest values in cycles)
+```kotlin
 
-[comment]: <> (```)
+fun insertSort(array: Int[], index: Int) {
 
-[comment]: <> (```text)
+}
 
-[comment]: <> (TRUE: When detecting a cycle within the spanning tree, the edges which make up that cycle will have to be sorted )
+```
 
-[comment]: <> (in order to remove the largest weighted edge and keep the lowest weighted edges. Sorting algorithms can add )
+3.2) For each of the following stamens select the statement that is correct
 
-[comment]: <> (complexity to the algorithm. )
+.1)
 
-[comment]: <> (```)
+```text
+    i. Only Radix sort has the potential to have a complexity of `O(n)`
+    ii. Only Count sort has the potential to have a complexity of `O(n)`
+    iii. Neither Radix sort nor Count sort has the potential to have a complexity of `O(n)`
+    iv. Both Radix sort and Count sort have the potential to have a complexity of `O(n)`
+```
 
-[comment]: <> (#### For All questions to Follow)
+2. When sorting identical elements, which of the following algorithms will **NOT** guarantee that the identical elements
+   order in the list will remain unchanged after the algorithm has been applied.
 
-[comment]: <> (Assume the following Graph, if at any point you must make a choice of which vertex to select, chose the next vertex)
+```text
+    i. Selection sort & Insertion sort
+    ii. Heap sort and Count sort
+    iii. Merge sort and Radix sort
+    iv. Comb sort and Shell sort
+```
 
-[comment]: <> (alphabetically.)
+3. If swap operations are expensive which of the following algorithms is the least efficient on average?
 
-[comment]: <> (![img.png]&#40;../images/topological_sort.png&#41;)
+```text
+    i. Shell sort
+    ii. Count sort
+    iii. Selection sort
+    iv. Quick sort
+```    
 
-[comment]: <> (1.3&#41; Apply the topological sorting algorithm on the graph below, provide the order for each vertex in the graph.)
+4. Which of the following algorithms is the most efficient for sorting a list that is in order
 
-[comment]: <> (| Vertex | TS |)
+```text
+    i. Insertion sort
+    ii. Radix sort
+    iii. Count sort
+    iv. Quick sort
+```    
 
-[comment]: <> (| --- | --- |)
+#### For each of the following
 
-[comment]: <> (| A |  4 |)
+Please specify the algorithm that was used to result in the following output.
 
-[comment]: <> (| B | 9 |)
+3.3)
 
-[comment]: <> (| C | 5 |)
+.1 ![img.png](images/merge_sort.png)
 
-[comment]: <> (| D | 8 |)
+```text
 
-[comment]: <> (| E | 12 |)
+```
 
-[comment]: <> (| F | 7 |)
+.2 ![img.png](images/heap_sort.png)
 
-[comment]: <> (| G | 10 |)
+```text
 
-[comment]: <> (| H | 1 |)
+```
 
-[comment]: <> (| J | 3 |)
+.3 ![img.png](images/shell_sort.png)
 
-[comment]: <> (| P | 6 |)
+```text
 
-[comment]: <> (| X | 11 |)
+```
 
-[comment]: <> (| Z | 2 |)
+4. ![img.png](images/radix_sort.png)
 
-[comment]: <> (![img.png]&#40;../images/topological_sort_answer.png&#41;)
+```text
 
-[comment]: <> (## Question 2: [Graph Coloring]&#40;https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/GraphsPart6/README.md&#41;)
+```
 
-[comment]: <> (For all questions that follow assume the following Graph and color table, and answer the questions that follow.)
+5. ![img.png](images/bubble_sort.png)
 
-[comment]: <> (![img.png]&#40;images/graph_coloring.png&#41;)
+```text
 
-[comment]: <> (2.1&#41; Assuming the Brelaz coloring algorithm was applied to the graph, indicate the selected color for each vertex after)
+```
 
-[comment]: <> (having applied the coloring algorithm. Use the color index provided in the image.)
+6. ![img.png](images/selection.png)
 
-[comment]: <> (| Vertex | Color |)
+```text
 
-[comment]: <> (| --- | --- |)
+```
 
-[comment]: <> (| A |   |)
+## Question 4: [Hashing](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/Hashing/README.md)
 
-[comment]: <> (| B |   |)
+Assume the following data:
 
-[comment]: <> (| C |   |)
+> 122 14 16 17 5 8 35 27 13
 
-[comment]: <> (| D |   |)
+Assume that Coalesced Hashing with a cellar was being applied to the data above using the following Hash function:
+`H(K) = 2k % 7 + 3`.
 
-[comment]: <> (| E |   |)
+4.1.1) Assume the following table where each row indicates the fields value and coalesced pointer. Insert the data and
+indicate the pointer values for each collision you encounter, in the case of multiple collision you should make use of
+Linear Probing. The cellar starts at index 8
 
-[comment]: <> (| F |   |)
+<img src="images/hashing.png" alt="hashing" width="20%">
 
-[comment]: <> (| G |   |)
+4.1.2) Assume the element 8 was deleted, describe the steps needed to perform this operation
 
-[comment]: <> (| H |   |)
+4.1.3) Assume element 27 was deleted, show the table after this operation has been performed
 
-[comment]: <> (## Question 3: [Sorting]&#40;https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/Sorting/README.md&#41;)
+## Question 4.2: [Hashing Cichelli’s](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/Cichellis/README.md)
 
-[comment]: <> (3.1&#41; Insertion sort works by intuitively sorting a list, placing elements in order at each iteration. The algorithm is)
+Given the following words, in no particular order.
 
-[comment]: <> (made up using a combination of an inner and outer loop. The outer loop iterates through the elements in the list from)
+> January February March April May June July
 
-[comment]: <> (left to right, the inner loop sorts the array up until the counter of the outer loop selecting the element to place at)
+4.2.1) Perform Cichelli's algorithm to perfectly hash the following words into a table. for each greek letter indicate
+the correct response
 
-[comment]: <> (each index.)
+|  |  |
+| --- | ---|
+| 0 | i |
+| 1 | ii |
+| 2 | iii |
+| 3 | iv |
+| 4 | v |
+| 5 | vi |
 
-[comment]: <> (Implement a recursive implementation of the insertion sort outer loop which will created a sorted. Your implementation)
+4.2.2) Give the offset values for each letter used after applying Cichelli's algorithm
 
-[comment]: <> (should explore the elements going from the back of the list first.)
+## Question 5: [Encoding](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/Encoding/README.md)
 
-[comment]: <> (```kotlin)
+5.1) Assume the following string needed to be encoded in a way that would best make use of memory, while still being
+able to be decoded.
 
-[comment]: <> (fun insertSort&#40;array: Int[], index: Int&#41; {)
+> Sassy Susy sells seashells
 
-[comment]: <> (})
+.1) Which encoding algorithm would be best suited to encode this string and why?
 
-[comment]: <> (```)
+```text
 
-[comment]: <> (3.2&#41; For each of the following stamens select the statement that is correct)
+```
 
-[comment]: <> (.1&#41;)
+.2) Name a few disadvantages of Adaptive Huffman over regular Huffman
 
-[comment]: <> (```text)
+```text
 
-[comment]: <> (    i. Only Radix sort has the potential to have a complexity of `O&#40;n&#41;`)
+```
 
-[comment]: <> (    ii. Only Count sort has the potential to have a complexity of `O&#40;n&#41;`)
+5.2.1) Assume the following records were kept, which tracked the recorded percentages of rain fall in each month of a
+given year. You may assume that no rain fell in months that are not recorded. You are required to encode this data using
+Huffman encoding please provide the Huffman tree once you have finished applying the algorithm
 
-[comment]: <> (    iii. Neither Radix sort nor Count sort has the potential to have a complexity of `O&#40;n&#41;`)
+|January | February | June | September |October | November | December |
+| --- | --- | --- | --- | --- | --- | --- |
+| 0.17 | 0.12 | 0.02 | 0.25 | 0.11 | 0.11 | 0.22 |
 
-[comment]: <> (    iv. Both Radix sort and Count sort have the potential to have a complexity of `O&#40;n&#41;`)
+```text
 
-[comment]: <> (```)
+```
 
-[comment]: <> (2. When sorting identical elements, which of the following algorithms will **NOT** guarantee that the identical elements)
+5.2.2) Please fill in the Huffman encoded values for each month in the table below
 
-[comment]: <> (   order in the list will remain unchanged after the algorithm has been applied.)
+|January | February | June | September |October | November | December |
+| --- | --- | --- | --- | --- | --- | --- |
+| | | | | | | |
 
-[comment]: <> (```text)
+5.3)
 
-[comment]: <> (    i. Selection sort & Insertion sort)
+The adaptive huffman is an extension to the regular Huffman tree which does not require the probability of each value to
+be known beforehand. Assume the following string
 
-[comment]: <> (    ii. Heap sort and Count sort)
+> abeebac
 
-[comment]: <> (    iii. Merge sort and Radix sort)
+Please apply the adaptive huffman to the input string above **NB** please read all questions first before moving on from
+this point, you may assume the following alphabet node
 
-[comment]: <> (    iv. Comb sort and Shell sort)
+![img.png](images/alphabet_node.png)
 
-[comment]: <> (```)
+5.3.1) Provide the encoded text for the String after the 4<sup>th</sup> input chapter has been added
 
-[comment]: <> (3. If swap operations are expensive which of the following algorithms is the least efficient on average?)
+```text
 
-[comment]: <> (```text)
+```
 
-[comment]: <> (    i. Shell sort)
+5.3.2) What is the encoded value for the letter b after it has been inserted the second time
 
-[comment]: <> (    ii. Count sort)
+```text
 
-[comment]: <> (    iii. Selection sort)
+```
 
-[comment]: <> (    iv. Quick sort)
+5.3.2) If you were to add the letter `f` to the encoded string after all the values had been added, what would you add
+to the Encoded String after the letter `f` has been placed in the huffman tree.
 
-[comment]: <> (```    )
+```text
 
-[comment]: <> (4. Which of the following algorithms is the most efficient for sorting a list that is in order)
+```
 
-[comment]: <> (```text)
+## Question 6: [String Matching](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/StringMatching/README.md)
 
-[comment]: <> (    i. Insertion sort)
+Assume you were applying the Knuth-Morris-Pratt algorithm for the pattern `cacctaca`
 
-[comment]: <> (    ii. Radix sort)
+fill in the values below for the next array
 
-[comment]: <> (    iii. Count sort)
-
-[comment]: <> (    iv. Quick sort)
-
-[comment]: <> (```    )
-
-[comment]: <> (#### For each of the following)
-
-[comment]: <> (Please specify the algorithm that was used to result in the following output.)
-
-[comment]: <> (3.3&#41;)
-
-[comment]: <> (.1 ![img.png]&#40;images/merge_sort.png&#41;)
-
-[comment]: <> (```text)
-
-[comment]: <> (```)
-
-[comment]: <> (.2 ![img.png]&#40;images/heap_sort.png&#41;)
-
-[comment]: <> (```text)
-
-[comment]: <> (```)
-
-[comment]: <> (.3 ![img.png]&#40;images/shell_sort.png&#41;)
-
-[comment]: <> (```text)
-
-[comment]: <> (```)
-
-[comment]: <> (4. ![img.png]&#40;images/radix_sort.png&#41;)
-
-[comment]: <> (```text)
-
-[comment]: <> (```)
-
-[comment]: <> (5. ![img.png]&#40;images/bubble_sort.png&#41;)
-
-[comment]: <> (```text)
-
-[comment]: <> (```)
-
-[comment]: <> (6. ![img.png]&#40;images/selection.png&#41;)
-
-[comment]: <> (```text)
-
-[comment]: <> (```)
-
-[comment]: <> (## Question 4: [Hashing]&#40;https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/Hashing/README.md&#41;)
-
-[comment]: <> (Assume the following data:)
-
-[comment]: <> (> 122 14 16 17 5 8 35 27 13)
-
-[comment]: <> (Assume that Coalesced Hashing with a cellar was being applied to the data above using the following Hash function:)
-
-[comment]: <> (`H&#40;K&#41; = 2k % 7 + 3`.)
-
-[comment]: <> (4.1.1&#41; Insert the following table where each row indicates the fields value and coalesced pointer. Insert the data and)
-
-[comment]: <> (indicate the pointer values for each collision you encounter, in the case of multiple collision you should make use of)
-
-[comment]: <> (Quadratic Probing. The cellar starts at index 8)
-
-[comment]: <> (<img src="images/hashing.png" alt="hashing" width="20%">)
-
-[comment]: <> (4.1.2&#41; Assume the element 8 was deleted, describe the steps needed to perform this operation)
-
-[comment]: <> (4.1.3&#41; Assume element 27 was deleted, show the table after this operation has been performed)
-
-[comment]: <> (## Question 4.2: [Hashing Cichelli’s]&#40;https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/Cichellis/README.md&#41;)
-
-[comment]: <> (Given the following words, in no particular order.)
-
-[comment]: <> (> January February March April May June July)
-
-[comment]: <> (4.2.1&#41; Perform Cichelli's algorithm to perfectly hash the following words into a table. for each greek letter indicate)
-
-[comment]: <> (the correct response)
-
-[comment]: <> (|  |  |)
-
-[comment]: <> (| --- | ---|)
-
-[comment]: <> (| 0 | i |)
-
-[comment]: <> (| 0 | ii |)
-
-[comment]: <> (| 0 | iii |)
-
-[comment]: <> (| 0 | iv |)
-
-[comment]: <> (| 0 | v |)
-
-[comment]: <> (| 0 | vi |)
-
-[comment]: <> (4.2.2&#41; Give the offset values for each letter used after applying Cichelli's algorithm)
-
-[comment]: <> (## Question 5: [Encoding]&#40;https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/Encoding/README.md&#41;)
-
-[comment]: <> (5.1&#41; Assume the following string needed to be encoded in a way that would best make use of memory, while still being)
-
-[comment]: <> (able to decoded.)
-
-[comment]: <> (> Sassy Susy sells seashells)
-
-[comment]: <> (.1&#41; Which encoding algorithm would be best suited to encode this string and why?)
-
-[comment]: <> (```text)
-
-[comment]: <> (```)
-
-[comment]: <> (.2&#41; Name a few disadvantages of Adaptive Huffman over regular Huffman)
-
-[comment]: <> (```text)
-
-[comment]: <> (```)
-
-[comment]: <> (5.2.1&#41; Assume the following records were kept which tracked the recorded percentages of rain fall in each month of a)
-
-[comment]: <> (given year. You may assume that no rain fell in months that are not recorded. You are required to encode this data using)
-
-[comment]: <> (Huffman encoding please provide the Huffman tree once you have finished encoding each of the specified months)
-
-[comment]: <> (|January | February | June | September |October | November | December |)
-
-[comment]: <> (| --- | --- | --- | --- | --- | --- | --- |)
-
-[comment]: <> (| 0.17 | 0.12 | 0.02 | 0.25 | 0.11 | 0.11 | 0.22 |)
-
-[comment]: <> (5.2.2&#41; Please fill in the Huffman encoding values for each month in the table below)
-
-[comment]: <> (|January | February | June | September |October | November | December |)
-
-[comment]: <> (| --- | --- | --- | --- | --- | --- | --- |)
-
-[comment]: <> (| | | | | | | |)
-
-[comment]: <> (5.3&#41;)
-
-[comment]: <> (The adaptive huffman is an extension to the regular Huffman tree which does not require the probability of each value to)
-
-[comment]: <> (be known beforehand. Assume the following string)
-
-[comment]: <> (> abeebac)
-
-[comment]: <> (Please apply the adaptive huffman to the input string above but please read all questions first before moving on from)
-
-[comment]: <> (this point, you may assume the following alphabet node)
-
-[comment]: <> (![img.png]&#40;images/alphabet_node.png&#41;)
-
-[comment]: <> (5.3.1&#41; Provide the encoded text for the String after the 4 input chapter has been added)
-
-[comment]: <> (```text)
-
-[comment]: <> (```)
-
-[comment]: <> (5.3.2&#41; What is the encoded value for the letter b after it has been inserted the second time)
-
-[comment]: <> (```text)
-
-[comment]: <> (```)
-
-[comment]: <> (5.3.2&#41; If you were to add the letter `f` to the encoded string after all the values had been added, what would you add)
-
-[comment]: <> (to the Encoded String after the letter `f` has been placed in the huffman tree.)
-
-[comment]: <> (```text)
-
-[comment]: <> (```)
-
-[comment]: <> (## Question 6: [String Matching]&#40;https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/StringMatching/README.md&#41;)
-
-[comment]: <> (Assume you were applying the Knuth-Morris-Pratt algorithm for the pattern `cacctaca`)
-
-[comment]: <> (fill in the values below for the next array)
-
-[comment]: <> (|Ptt: | c | a | c | c | t | a | c | a |)
-
-[comment]: <> (| --- | --- | --- | --- | --- | --- | --- | --- | --- |)
-
-[comment]: <> (| j | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 |)
-
-[comment]: <> (| next | | | | | | |)
+|Ptt: | c | a | c | c | t | a | c | a |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| j | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+| next | | | | | | |
