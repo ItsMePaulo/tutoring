@@ -100,220 +100,158 @@ having applied the coloring algorithm. Use the color index provided in the image
 <img src="../images/graph_coloring_part_1.png" alt="graph_coloring_one" width="50%">
 <img src="../images/graph_coloring_part_2.png" alt="graph_coloring_two" width="50%"> 
 
-[comment]: <> (## Question 3: [Sorting]&#40;https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/Sorting/README.md&#41;)
+## Question 3: [Sorting](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/Sorting/README.md)
 
-[comment]: <> (3.1&#41; Insertion sort works by intuitively sorting a list, placing elements in order at each iteration. The algorithm is)
+3.1) Insertion sort works by intuitively sorting a list, placing elements in order at each iteration. The algorithm is
+made up using a combination of an inner and outer loop. The outer loop iterates through the elements in the list from
+left to right, the inner loop sorts the array up until the counter of the outer loop selecting the element to place at
+each index.
 
-[comment]: <> (made up using a combination of an inner and outer loop. The outer loop iterates through the elements in the list from)
+Implement a recursive implementation of the insertion sort outer loop which will created a sorted. Your implementation
+should explore the elements going from the back of the list first.
 
-[comment]: <> (left to right, the inner loop sorts the array up until the counter of the outer loop selecting the element to place at)
+```java
 
-[comment]: <> (each index.)
+public class Sorting {
 
-[comment]: <> (Implement a recursive implementation of the insertion sort outer loop which will created a sorted. Your implementation)
+    public int[] insert(int[] unsortedArray, int index) {
 
-[comment]: <> (should explore the elements going from the back of the list first.)
+        int[] sortedArray;
 
-[comment]: <> (```java)
+        // base case, return the sorted array with the last element
+        if (index == unsortedArray.length - 1) {
+            sortedArray = new int[unsortedArray.length];
+            sortedArray[index] = unsortedArray[index];
+            return sortedArray;
+        }
 
-[comment]: <> (public class Sorting {)
+        // recursive call
+        int[] partiallySortedArray = insert(unsortedArray, index + 1); // holds the sorted list from the last iteration
+        sortedArray = new int[unsortedArray.length]; // empty list
 
-[comment]: <> (    public int[] insert&#40;int[] unsortedArray, int index&#41; {)
+        int newValue = unsortedArray[index]; // the new value we want to add in at this recursive call
+        int lastIndex = partiallySortedArray.length - 1;
+        boolean added = false;
 
-[comment]: <> (        int[] sortedArray;)
 
-[comment]: <> (        // base case, return the sorted array with the last element)
+        // loop through partially sorted array which starts at one index higher than current index
 
-[comment]: <> (        if &#40;index == unsortedArray.length - 1&#41; {)
+        for (int i = index + 1; i <= lastIndex; ) {
 
-[comment]: <> (            sortedArray = new int[unsortedArray.length];)
+            if (!added && newValue < partiallySortedArray[i]) {
+                sortedArray[index++] = newValue;
+                added = true;
+            } else {
+                sortedArray[index++] = partiallySortedArray[i++];
+            }
+        }
 
-[comment]: <> (            sortedArray[index] = unsortedArray[index];)
+        if (!added) {
+            sortedArray[lastIndex] = newValue;
+        }
 
-[comment]: <> (            return sortedArray;)
+        return sortedArray;
+    }
+}
 
-[comment]: <> (        })
+```
 
-[comment]: <> (        int[] partiallySortedArray = insert&#40;unsortedArray, index + 1&#41;; // holds the sorted list from the last iteration)
+3.2) For each of the following stamens select the statement that is correct
 
-[comment]: <> (        sortedArray = new int[unsortedArray.length]; // empty list)
+.1)
 
-[comment]: <> (        int newValue = unsortedArray[index]; // the new value we want to add in at this recursive call)
+```text
+    i. Only Radix sort has the potential to have a complexity of `O(n)`
+    ii. Only Count sort has the potential to have a complexity of `O(n)`
+    iii. Neither Radix sort nor Count sort has the potential to have a complexity of `O(n)`
+    iv. Both Radix sort and Count sort have the potential to have a complexity of `O(n)`
+```
 
-[comment]: <> (        int lastIndex = partiallySortedArray.length - 1;)
+```text
+iv
+```
 
-[comment]: <> (        boolean added = false;)
+2. When sorting identical elements, which of the following algorithms will **NOT** guarantee that the identical elements
+   order in the list will remain unchanged after the algorithm has been applied.
 
+```text
+    i. Selection sort & Insertion sort
+    ii. Heap sort and Count sort
+    iii. Merge sort and Radix sort
+    iv. Comb sort and Shell sort
+```
 
-[comment]: <> (        // loop through partially sorted array which starts at one index higher than current index)
+```text
+ii
+```
 
-[comment]: <> (        for &#40;int i = index + 1; i <= lastIndex; &#41; {)
+3. If swap operations are expensive which of the following algorithms is the least efficient on average?
 
-[comment]: <> (            if &#40;!added && newValue < partiallySortedArray[i]&#41; {)
+```text
+    i. Shell sort
+    ii. Count sort
+    iii. Selection sort
+    iv. Quick sort
+```
 
-[comment]: <> (                sortedArray[index++] = newValue;)
+```text
+i
+```
 
-[comment]: <> (                added = true;)
+4. Which of the following algorithms is the most efficient for sorting a list that is in order
 
-[comment]: <> (            } else {)
+```text
+    i. Insertion sort
+    ii. Radix sort
+    iii. Count sort
+    iv. Quick sort
+```    
 
-[comment]: <> (                sortedArray[index++] = partiallySortedArray[i++];)
+```text
+i
+```
 
-[comment]: <> (            })
+#### For each of the following
 
-[comment]: <> (        })
+Please specify the algorithm that was used to result in the following output.
 
-[comment]: <> (        if &#40;!added&#41; {)
+3.3)
 
-[comment]: <> (            sortedArray[lastIndex] = newValue;)
+.1 ![img.png](../images/merge_sort.png)
 
-[comment]: <> (        })
+```text
+merge sort
+```
 
-[comment]: <> (        return sortedArray;)
+.2 ![img.png](../images/heap_sort.png)
 
-[comment]: <> (    })
+```text
+heap sort
+```
 
-[comment]: <> (})
+.3 ![img.png](../images/shell_sort.png)
 
-[comment]: <> (```)
+```text
+shell sort
+```
 
-[comment]: <> (3.2&#41; For each of the following stamens select the statement that is correct)
+4. ![img.png](../images/radix_sort.png)
 
-[comment]: <> (.1&#41;)
+```text
+radix sort
+```
 
-[comment]: <> (```text)
+5. ![img.png](../images/bubble_sort.png)
 
-[comment]: <> (    i. Only Radix sort has the potential to have a complexity of `O&#40;n&#41;`)
+```text
+bubble sort
+```
 
-[comment]: <> (    ii. Only Count sort has the potential to have a complexity of `O&#40;n&#41;`)
+6. ![img.png](../images/selection.png)
 
-[comment]: <> (    iii. Neither Radix sort nor Count sort has the potential to have a complexity of `O&#40;n&#41;`)
-
-[comment]: <> (    iv. Both Radix sort and Count sort have the potential to have a complexity of `O&#40;n&#41;`)
-
-[comment]: <> (```)
-
-[comment]: <> (```text)
-
-[comment]: <> (iv)
-
-[comment]: <> (```)
-
-[comment]: <> (2. When sorting identical elements, which of the following algorithms will **NOT** guarantee that the identical elements)
-
-[comment]: <> (   order in the list will remain unchanged after the algorithm has been applied.)
-
-[comment]: <> (```text)
-
-[comment]: <> (    i. Selection sort & Insertion sort)
-
-[comment]: <> (    ii. Heap sort and Count sort)
-
-[comment]: <> (    iii. Merge sort and Radix sort)
-
-[comment]: <> (    iv. Comb sort and Shell sort)
-
-[comment]: <> (```)
-
-[comment]: <> (```text)
-
-[comment]: <> (ii)
-
-[comment]: <> (```)
-
-[comment]: <> (3. If swap operations are expensive which of the following algorithms is the least efficient on average?)
-
-[comment]: <> (```text)
-
-[comment]: <> (    i. Shell sort)
-
-[comment]: <> (    ii. Count sort)
-
-[comment]: <> (    iii. Selection sort)
-
-[comment]: <> (    iv. Quick sort)
-
-[comment]: <> (```)
-
-[comment]: <> (```text)
-
-[comment]: <> (i)
-
-[comment]: <> (```)
-
-[comment]: <> (4. Which of the following algorithms is the most efficient for sorting a list that is in order)
-
-[comment]: <> (```text)
-
-[comment]: <> (    i. Insertion sort)
-
-[comment]: <> (    ii. Radix sort)
-
-[comment]: <> (    iii. Count sort)
-
-[comment]: <> (    iv. Quick sort)
-
-[comment]: <> (```    )
-
-[comment]: <> (```text)
-
-[comment]: <> (i)
-
-[comment]: <> (```)
-
-[comment]: <> (#### For each of the following)
-
-[comment]: <> (Please specify the algorithm that was used to result in the following output.)
-
-[comment]: <> (3.3&#41;)
-
-[comment]: <> (.1 ![img.png]&#40;../images/merge_sort.png&#41;)
-
-[comment]: <> (```text)
-
-[comment]: <> (merge sort)
-
-[comment]: <> (```)
-
-[comment]: <> (.2 ![img.png]&#40;../images/heap_sort.png&#41;)
-
-[comment]: <> (```text)
-
-[comment]: <> (heap sort)
-
-[comment]: <> (```)
-
-[comment]: <> (.3 ![img.png]&#40;../images/shell_sort.png&#41;)
-
-[comment]: <> (```text)
-
-[comment]: <> (shell sort)
-
-[comment]: <> (```)
-
-[comment]: <> (4. ![img.png]&#40;../images/radix_sort.png&#41;)
-
-[comment]: <> (```text)
-
-[comment]: <> (radix sort)
-
-[comment]: <> (```)
-
-[comment]: <> (5. ![img.png]&#40;../images/bubble_sort.png&#41;)
-
-[comment]: <> (```text)
-
-[comment]: <> (bubble sort)
-
-[comment]: <> (```)
-
-[comment]: <> (6. ![img.png]&#40;../images/selection.png&#41;)
-
-[comment]: <> (```text)
-
-[comment]: <> (selection sort)
-
-[comment]: <> (```)
+```text
+selection sort
+```
 
 [comment]: <> (## Question 4: [Hashing]&#40;https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/Hashing/README.md&#41;)
 
