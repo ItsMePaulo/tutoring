@@ -100,8 +100,8 @@ having applied the coloring algorithm. Use the color index provided in the image
 | G |   |
 | H |   |
 
-<img src="../images/graph_coloring_part_1.png" alt="graph_coloring_one"> 
-<img src="../images/graph_coloring_part_2.png" alt="graph_coloring_two"> 
+<img src="../images/graph_coloring_part_1.png" alt="graph_coloring_one" width="50%"> 
+<img src="../images/graph_coloring_part_2.png" alt="graph_coloring_two" width="50%"> 
 
 ## Question 3: [Sorting](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/Sorting/README.md)
 
