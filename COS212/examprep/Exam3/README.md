@@ -92,11 +92,12 @@ each index.
 Implement a recursive implementation of the insertion sort outer loop which will created a sorted. Your implementation
 should explore the elements going from the back of the list first.
 
-```kotlin
+```java
 
-fun insertSort(array: Int[], index: Int) {
-
+public int[] insert(int[] unsortedArray, int index) {
+    
 }
+
 
 ```
 
@@ -185,7 +186,7 @@ Please specify the algorithm that was used to result in the following output.
 
 Assume the following data:
 
-> 122 14 16 17 5 8 35 27 13
+> 122    14    16    17    5     8     35    27    13    3
 
 Assume that Coalesced Hashing with a cellar was being applied to the data above using the following Hash function:
 `H(K) = 2k % 7 + 3`.
