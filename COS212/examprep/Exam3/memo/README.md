@@ -1,80 +1,56 @@
-[comment]: <> (<div align="center"><h1> COS 212 Exam 1 </h1></div>)
+<div align="center"><h1> COS 212 Exam 1 </h1></div>
+<div align="center"><h4> Spanning Tree & Topological Sort; Graph Coloring </h4></div>
 
-[comment]: <> (<div align="center"><h4> Spanning Tree & Topological Sort; Graph Coloring </h4></div>)
+## Question 1: [Spanning Trees](https://gitlab.com/Paul_Wood_96/tutoring/-/tree/master/COS212/notes/GraphsPart5)
 
-[comment]: <> (## Question 1: [Spanning Trees]&#40;https://gitlab.com/Paul_Wood_96/tutoring/-/tree/master/COS212/notes/GraphsPart5&#41;)
+For all questions that follow assume the following Graph. During traversal if at any point you must make a choice of
+where to move next chose the next vertex alphabetically.
 
-[comment]: <> (For all questions that follow assume the following Graph. During traversal if at any point you must make a choice of)
+![img.png](../images/spanning_tree.png)
 
-[comment]: <> (where to move next chose the next vertex alphabetically.)
+1.1) Using Kruskal's eager Algorithm identify the list of edges that will be part of the spanning tree. Only identify
+the list of edges that will be part of the resulting spanning tree in the format AB, AC, AD in the case of edges between
+AB, AC and AD being a part of the spanning tree.
 
-[comment]: <> (![img.png]&#40;../images/spanning_tree.png&#41;)
+![img.png](../images/spanning_tree_answer.png)
 
-[comment]: <> (1.1&#41; Using Kruskal's eager Algorithm identify the list of edges that will be part of the spanning tree. Only identify)
+1.2) For each of the following statements indicate whether the provided statement is true or false, provide a reason for
+your answer:
+1.2.1)
 
-[comment]: <> (the list of edges that will be part of the resulting spanning tree in the format AB, AC, AD in the case of edges between)
+```text
+Dijkstra's Spanning Tree Algorithm will never look at every edge within the graph before terminating.
+```
 
-[comment]: <> (AB, AC and AD being a part of the spanning tree.)
+```text
+FALSE: Dijkstra's algorithm is lazy (does not sort the edges before traversal) and will look at every edge within the 
+graph and ensure to remove the greatest edge in a cycle once it is detected.
+```
 
-[comment]: <> (![img.png]&#40;../images/spanning_tree_answer.png&#41;)
+1.2.2)
 
-[comment]: <> (1.2&#41; For each of the following statements indicate whether the provided statement is true or false, provide a reason for)
+```text
+Kruskal Algorithm has the potential to look at every edge within the graph
+```
 
-[comment]: <> (your answer:)
+```text
+TRUE: The stopping condition for Kruskal algorithm is; when the number of edges added in the spanning tree is 
+equal to 1 less than the number of vertices in the graph. This is not a condition that will always result in fewer 
+iterations than edges. A scenario in which the greatest value edge is the only path to a Vertex will result in 
+a situation where every edge will being visited when applying Kruskals algorithm. 
+```
 
-[comment]: <> (1.2.1&#41;)
+1.2.3)
 
-[comment]: <> (```text)
+```text
+In Dijkstra's algorithm complexity is added in determining the lowest values in cycles
+```
 
-[comment]: <> (Dijkstra's Spanning Tree Algorithm will never look at every edge within the graph before terminating.)
-
-[comment]: <> (```)
-
-[comment]: <> (```text)
-
-[comment]: <> (FALSE: Dijkstra's algorithm is lazy &#40;does not sort the edges before traversal&#41; and will look at every edge within the graph and ensure to remove the greatest edge in a cycle once )
-
-[comment]: <> (it is detected.)
-
-[comment]: <> (```)
-
-[comment]: <> (1.2.2&#41;)
-
-[comment]: <> (```text)
-
-[comment]: <> (Kruskal Algorithm has the potential to look at every edge within the graph)
-
-[comment]: <> (```)
-
-[comment]: <> (```text)
-
-[comment]: <> (TRUE: The stopping condition for Kruskal algorithm is; when the number of edges added in the spanning tree is )
-
-[comment]: <> (equal to 1 less than the number of vertices in the graph. This is not a condition that will always result in fewer )
-
-[comment]: <> (iterations than edges. A scenario in which the greatest value edge is the only path to a Vertex will result in )
-
-[comment]: <> (a situation where every edge will being visited when applying Kruskals algorithm. )
-
-[comment]: <> (```)
-
-[comment]: <> (1.2.3&#41;)
-
-[comment]: <> (```text)
-
-[comment]: <> (In Dijkstra's algorithm complexity is added in determining the lowest values in cycles)
-
-[comment]: <> (```)
-
-[comment]: <> (```text)
-
-[comment]: <> (TRUE: When detecting a cycle within the spanning tree, the edges which make up that cycle will have to be sorted )
-
-[comment]: <> (in order to remove the largest weighted edge and keep the lowest weighted edges. Sorting algorithms can add )
-
-[comment]: <> (complexity to the algorithm. )
-
-[comment]: <> (```)
+```text
+TRUE: When detecting a cycle within the spanning tree, the edges which make up that cycle will have to be sorted 
+in order to remove the largest weighted edge and keep the lowest weighted edges. Sorting algorithms can add 
+complexity to the algorithm. 
+```
 
 [comment]: <> (#### For All questions to Follow)
 
