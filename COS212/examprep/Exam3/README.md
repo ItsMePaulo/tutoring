@@ -221,6 +221,7 @@ the correct response
 | 3 | iv |
 | 4 | v |
 | 5 | vi |
+| 6 | vii |
 
 4.2.2) Give the offset values for each letter used after applying Cichelli's algorithm
 
