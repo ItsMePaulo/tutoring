@@ -394,10 +394,10 @@ this point, you may assume the following alphabet node
 
 to the Encoded String after the letter `f` has been placed in the huffman tree.
 
-![img.png](../images/adaptave_huffman_part_3.png)
+![img.png](../images/adaptive_huffman_part_3.png)
 
 ```text
-110010
+00010
 ```
 
 ## Question 6: [String Matching](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/StringMatching/README.md)
