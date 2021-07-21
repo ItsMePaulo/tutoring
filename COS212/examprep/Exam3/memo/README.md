@@ -253,204 +253,158 @@ bubble sort
 selection sort
 ```
 
-[comment]: <> (## Question 4: [Hashing]&#40;https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/Hashing/README.md&#41;)
+## Question 4: [Hashing](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/Hashing/README.md)
 
-[comment]: <> (Assume the following data:)
+Assume the following data:
 
-[comment]: <> (```text)
+```text
+122    14    16    17    5     8     35    27    13    3
+``` 
 
-[comment]: <> (122    14    16    17    5     8     35    27    13    3)
+Assume that Coalesced Hashing with a cellar was being applied to the data above using the following Hash function:
+`H(K) = 2k % 7 + 3`.
 
-[comment]: <> (``` )
+4.1.1) Assume the following table where each row indicates the fields value and coalesced pointer. Insert the data and
+indicate the pointer values for each collision you encounter, in the case of multiple collision you should make use of
+Linear Probing. The cellar starts at index 8
 
-[comment]: <> (Assume that Coalesced Hashing with a cellar was being applied to the data above using the following Hash function:)
+<img src="../images/hashing_answer.png" alt="hashing answer" width="30%">
+4.1.2) Assume the element 8 was deleted, describe the steps needed to perform this operation
 
-[comment]: <> (`H&#40;K&#41; = 2k % 7 + 3`.)
+```text
+The element 8 would be deleted and no further action would be needed
+```
 
-[comment]: <> (4.1.1&#41; Assume the following table where each row indicates the fields value and coalesced pointer. Insert the data and)
+4.1.3) Assume element 35 was deleted, show the table after this operation has been performed
 
-[comment]: <> (indicate the pointer values for each collision you encounter, in the case of multiple collision you should make use of)
+```text
 
-[comment]: <> (Linear Probing. The cellar starts at index 8)
+We can remove the element 35 from the table data and leave its Coalesced pointer, to the 
 
-[comment]: <> (<img src="../images/hashing_answer.png" alt="hashing answer" width="30%">)
+next element in the list, for the time being we can mark the data as removed but handle its deletion 
 
-[comment]: <> (4.1.2&#41; Assume the element 8 was deleted, describe the steps needed to perform this operation)
+in the case of another new collision. 
 
-[comment]: <> (```text)
+```
 
-[comment]: <> (The element 8 would be deleted and no further action would be needed)
+## Question 4.2: [Hashing Cichelli’s](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/Cichellis/README.md)
 
-[comment]: <> (```)
+Given the following words, in no particular order.
 
-[comment]: <> (4.1.3&#41; Assume element 35 was deleted, show the table after this operation has been performed)
+> January February March April May June July
 
-[comment]: <> (```text)
+4.2.1) Perform Cichelli's algorithm to perfectly hash the following words into a table. for each greek letter indicate
 
-[comment]: <> (We can remove the element 35 from the table data and leave its Coalesced pointer, to the )
+the correct response
 
-[comment]: <> (next element in the list, for the time being we can mark the data as removed but handle its deletion )
+![img.png](../images/cichillis_first_steps.png)
 
-[comment]: <> (in the case of another new collision. )
+|  |  |
+| --- | ---|
+| 0 | January |
+| 1 | February |
+| 2 | April |
+| 3 | May |
+| 4 | July |
+| 5 | March |
 
-[comment]: <> (```)
+![img.png](../images/cichillis_result.png)
 
-[comment]: <> (## Question 4.2: [Hashing Cichelli’s]&#40;https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/Cichellis/README.md&#41;)
+4.2.2) Give the offset values for each letter used after applying Cichelli's algorithm
 
-[comment]: <> (Given the following words, in no particular order.)
+| Letter | Offset |
+| --- | ---|
+| y | 0 |
+| J | 0 |
+| M | 0 |
+| F | 0 |
+| A | 1 |
+| L | 3 |
+| E | 1 |
 
-[comment]: <> (> January February March April May June July)
+## Question 5: [Encoding](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/Encoding/README.md)
 
-[comment]: <> (4.2.1&#41; Perform Cichelli's algorithm to perfectly hash the following words into a table. for each greek letter indicate)
+5.1) Assume the following string needed to be encoded in a way that would best make use of memory, while still being
+able to be decoded.
 
-[comment]: <> (the correct response)
+> Sassy Susy sells seashells
 
-[comment]: <> (![img.png]&#40;../images/cichillis_first_steps.png&#41;)
+.1) Which encoding algorithm would be best suited to encode this string and why?
 
-[comment]: <> (|  |  |)
+```text
+Adaptive huffman, because you do not know the frequency of each character before hand. The adaptive, 
+huffman could dynamically map the encoded strings as it counts the frequency of each character encountered.
+```
 
-[comment]: <> (| --- | ---|)
+.2) Name a few disadvantages of Adaptive Huffman over regular Huffman
 
-[comment]: <> (| 0 | January |)
+```text
+* More complex decoding algorithms 
+* You have to store the Huffman Tree as well, whereas regular Huffman could be calculated on each iteration. 
+```
 
-[comment]: <> (| 1 | February |)
+5.2.1) Assume the following records were kept, which tracked the recorded percentages of rain fall in each month of a
+given year. You may assume that no rain fell in months that are not recorded. You are required to encode this data using
+Huffman encoding please provide the Huffman tree once you have finished applying the algorithm
 
-[comment]: <> (| 2 | April |)
+|January | February | June | September |October | November | December |
+| --- | --- | --- | --- | --- | --- | --- |
+| 0.17 | 0.12 | 0.02 | 0.25 | 0.11 | 0.11 | 0.22 |
 
-[comment]: <> (| 3 | May |)
+![img.png](../images/huffman_answer.png)
 
-[comment]: <> (| 4 | July |)
+5.2.2) Please fill in the Huffman encoded values for each month in the table below
 
-[comment]: <> (| 5 | vi |)
+|January | February | June | September |October | November | December |
+| --- | --- | --- | --- | --- | --- | --- |
+| 110 | 010 | 1111 | 10 | 011 | 110 | 00 |
 
-[comment]: <> ([img.png]&#40;../images/cichillis_result.png&#41;)
+5.3)
 
-[comment]: <> (4.2.2&#41; Give the offset values for each letter used after applying Cichelli's algorithm)
+The adaptive huffman is an extension to the regular Huffman tree which does not require the probability of each value to
 
-[comment]: <> (| Letter | Offset |)
+be known beforehand. Assume the following string
 
-[comment]: <> (| --- | ---|)
+> abeebac
 
-[comment]: <> (| y | 0 |)
+Please apply the adaptive huffman to the input string above **NB** please read all questions first before moving on from
 
-[comment]: <> (| J | 0 |)
+this point, you may assume the following alphabet node
 
-[comment]: <> (| M | 0 |)
+![img.png](../images/alphabet_node.png)
 
-[comment]: <> (| F | 0 |)
+5.3.1) Provide the encoded text for the String after the 4<sup>th</sup> input chapter has been added
 
-[comment]: <> (| A | 1 |)
+![img.png](../images/adaptive_huffman_part1.png)
 
-[comment]: <> (| L | 3 |)
+```text
+10011000110101
+```
 
-[comment]: <> (| E | 1 |)
+5.3.2) What is the encoded value for the letter b after it has been inserted the second time
 
-[comment]: <> (## Question 5: [Encoding]&#40;https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/Encoding/README.md&#41;)
+![img.png](../images/adaptive_huffman_part_2.png)
 
-[comment]: <> (5.1&#41; Assume the following string needed to be encoded in a way that would best make use of memory, while still being)
+```text
+11
+```
 
-[comment]: <> (able to be decoded.)
+5.3.2) If you were to add the letter `f` to the encoded string after all the values had been added, what would you add
 
-[comment]: <> (> Sassy Susy sells seashells)
+to the Encoded String after the letter `f` has been placed in the huffman tree.
 
-[comment]: <> (.1&#41; Which encoding algorithm would be best suited to encode this string and why?)
+![img.png](../images/adaptave_huffman_part_3.png)
 
-[comment]: <> (```text)
+```text
+110010
+```
 
-[comment]: <> (Adaptive huffman, because you do not know the frequency of each character before hand. The adaptive, )
+## Question 6: [String Matching](https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/StringMatching/README.md)
 
-[comment]: <> (huffman could dynamically map the encoded strings as it counts the frequency of each character encountered.)
+Assume you were applying the Knuth-Morris-Pratt algorithm for the pattern `cacctaca`
+fill in the values below for the next array
 
-[comment]: <> (```)
-
-[comment]: <> (.2&#41; Name a few disadvantages of Adaptive Huffman over regular Huffman)
-
-[comment]: <> (```text)
-
-[comment]: <> (* More complex decoding algorithms )
-
-[comment]: <> (* You have to store the Huffman Tree as well, whereas regular Huffman could be calculated on each iteration. )
-
-[comment]: <> (```)
-
-[comment]: <> (5.2.1&#41; Assume the following records were kept, which tracked the recorded percentages of rain fall in each month of a)
-
-[comment]: <> (given year. You may assume that no rain fell in months that are not recorded. You are required to encode this data using)
-
-[comment]: <> (Huffman encoding please provide the Huffman tree once you have finished applying the algorithm)
-
-[comment]: <> (|January | February | June | September |October | November | December |)
-
-[comment]: <> (| --- | --- | --- | --- | --- | --- | --- |)
-
-[comment]: <> (| 0.17 | 0.12 | 0.02 | 0.25 | 0.11 | 0.11 | 0.22 |)
-
-[comment]: <> (![img.png]&#40;../images/huffman_answer.png&#41;)
-
-[comment]: <> (5.2.2&#41; Please fill in the Huffman encoded values for each month in the table below)
-
-[comment]: <> (|January | February | June | September |October | November | December |)
-
-[comment]: <> (| --- | --- | --- | --- | --- | --- | --- |)
-
-[comment]: <> (| 110 | 010 | 1111 | 10 | 011 | 110 | 00 |)
-
-[comment]: <> (5.3&#41;)
-
-[comment]: <> (The adaptive huffman is an extension to the regular Huffman tree which does not require the probability of each value to)
-
-[comment]: <> (be known beforehand. Assume the following string)
-
-[comment]: <> (> abeebac)
-
-[comment]: <> (Please apply the adaptive huffman to the input string above **NB** please read all questions first before moving on from)
-
-[comment]: <> (this point, you may assume the following alphabet node)
-
-[comment]: <> (![img.png]&#40;images/alphabet_node.png&#41;)
-
-[comment]: <> (5.3.1&#41; Provide the encoded text for the String after the 4<sup>th</sup> input chapter has been added)
-
-[comment]: <> (![img.png]&#40;../images/adaptive_huffman_part1.png&#41;)
-
-[comment]: <> (```text)
-
-[comment]: <> (10011000110101)
-
-[comment]: <> (```)
-
-[comment]: <> (5.3.2&#41; What is the encoded value for the letter b after it has been inserted the second time)
-
-[comment]: <> (![img.png]&#40;../images/adaptive_huffman_part_2.png&#41;)
-
-[comment]: <> (```text)
-
-[comment]: <> (11)
-
-[comment]: <> (```)
-
-[comment]: <> (5.3.2&#41; If you were to add the letter `f` to the encoded string after all the values had been added, what would you add)
-
-[comment]: <> (to the Encoded String after the letter `f` has been placed in the huffman tree.)
-
-[comment]: <> (![img.png]&#40;../images/adaptave_huffman_part_3.png&#41;)
-
-[comment]: <> (```text)
-
-[comment]: <> (110010)
-
-[comment]: <> (```)
-
-[comment]: <> (## Question 6: [String Matching]&#40;https://gitlab.com/Paul_Wood_96/tutoring/-/blob/master/COS212/notes/StringMatching/README.md&#41;)
-
-[comment]: <> (Assume you were applying the Knuth-Morris-Pratt algorithm for the pattern `cacctaca`)
-
-[comment]: <> (fill in the values below for the next array)
-
-[comment]: <> (|Ptt: | c | a | c | c | t | a | c | a |)
-
-[comment]: <> (| --- | --- | --- | --- | --- | --- | --- | --- | --- |)
-
-[comment]: <> (| j | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 |)
-
-[comment]: <> (| next | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | )
+|Ptt: | c | a | c | c | t | a | c | a |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| j | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+| next | -1 | 0 | 0 | 1 | 1 | 0 | 0 | 1 | 
