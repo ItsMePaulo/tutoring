@@ -269,6 +269,7 @@ indicate the pointer values for each collision you encounter, in the case of mul
 Linear Probing. The cellar starts at index 8
 
 <img src="../images/hashing_answer.png" alt="hashing answer" width="30%">
+
 4.1.2) Assume the element 8 was deleted, describe the steps needed to perform this operation
 
 ```text
